@@ -4,5 +4,7 @@ extends Node
 
 """
 
+signal level_finished_loading
 
 var viewport : ViewportManager
+var current_door_target := ""
