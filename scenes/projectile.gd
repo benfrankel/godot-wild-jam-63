@@ -24,4 +24,4 @@ func _on_body_entered(body: Node2D):
 		
 func hit_player(player: Player):
 	self.queue_free()
-	player.health -= self.damage
+	player.take_damage(self.damage)
