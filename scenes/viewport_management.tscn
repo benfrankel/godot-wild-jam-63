@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bych7qbx3r7d6"]
+[gd_scene load_steps=3 format=3 uid="uid://btig22osf1onp"]
 
 [ext_resource type="Script" path="res://scenes/viewport_management.gd" id="1_oukxq"]
 [ext_resource type="Material" uid="uid://dukmvhqtqsqu8" path="res://assets/materials/crt_screen_effect.tres" id="3_b8tx2"]
@@ -6,9 +6,9 @@
 [node name="ViewportManagement" type="Node"]
 process_mode = 3
 script = ExtResource("1_oukxq")
-main_scene = "res://scenes/overworld_elements/level.tscn"
+main_scene = "res://scenes/overworld/rooms/room1.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
