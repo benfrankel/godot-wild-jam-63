@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgl13oui8i8l7"]
+[gd_scene load_steps=4 format=3 uid="uid://cgl13oui8i8l7"]
 
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/player/player.tscn" id="1_c1ec3"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_pxs3d"]
 [ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/projectile.tscn" id="2_gnusw"]
 
 [node name="Level" type="Node2D"]
 
-[node name="MainCamera" type="Camera2D" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_c1ec3")]
+
+[node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("1_pxs3d")
+follow_rate = Vector2(20, 20)
+target = NodePath("../Player")
 
 [node name="Projectile" parent="." instance=ExtResource("2_gnusw")]
 position = Vector2(-446, -1)
