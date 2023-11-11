@@ -6,7 +6,7 @@
 [node name="ViewportManagement" type="Node"]
 process_mode = 3
 script = ExtResource("1_oukxq")
-main_scene = "res://scenes/level.tscn"
+main_scene = "res://scenes/overworld_elements/level.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
