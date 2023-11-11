@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Godot Wild Jam 63"
-run/main_scene="res://scenes/level.tscn"
+run/main_scene="res://scenes/viewport_management.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/globals/GameManager.gd"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
@@ -44,5 +52,6 @@ down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
