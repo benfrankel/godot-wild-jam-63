@@ -28,7 +28,10 @@ func load_scene(path : String) -> void:
 	pixel_level_root.add_child(scene)
 	await _fade(0.0)
 	pause(false)
+	GameManager.level_finished_loading.emit()
 
+	
+	
 func _fade(target :float = 1.0) -> void:
 	var t := get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	t.tween_property(trans, "modulate:a", target, transition_time)
