@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://iw88my1p5ejp"]
+
+[ext_resource type="Script" path="res://scenes/projectile.gd" id="1_n7p07"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_e0qnb"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ri2h"]
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_n7p07")
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_e0qnb")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1ri2h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
