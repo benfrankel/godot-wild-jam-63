@@ -29,7 +29,7 @@ func _ready() -> void:
 		return
 	print("Dialog started: %s" % current_data.resource_path.get_file())
 	character_label.text = current_data.character_name
-	_load_line()
+	call_deferred("_load_line")
 
 func _load_line() -> void:
 	if tween:
@@ -39,13 +39,13 @@ func _load_line() -> void:
 		dialog_ended.emit()
 		queue_free()
 		return
-	tween = get_tree().create_tween()
 	# prep
 	textbox.parse_bbcode(current_data.lines[line_index])
 	textbox.visible_ratio = 0.0
 	continue_icon.visible = false
 	
 	# animate
+	tween = get_tree().create_tween()
 	tween.tween_property(textbox, "visible_ratio", 1.0, TEXT_SPEED)
 	tween.tween_property(continue_icon, "visible", true, 0.1)
 	tween.tween_callback(_on_line_end)
@@ -54,9 +54,8 @@ func _on_line_end() -> void:
 	line_index += 1
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("dialog_next"):
+	if event.is_action_pressed("interact"):
 		get_viewport().set_input_as_handled()
-
 		if tween.is_running():
 			tween.set_speed_scale(100.0)
 			await tween.finished

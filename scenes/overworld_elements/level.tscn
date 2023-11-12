@@ -1,11 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgl13oui8i8l7"]
+[gd_scene load_steps=13 format=3 uid="uid://cgl13oui8i8l7"]
 
+<<<<<<< Updated upstream:scenes/overworld_elements/level.tscn
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/player/player.tscn" id="1_e2x5p"]
 [ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat_elements/projectile.tscn" id="2_75ssr"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_dkuyo"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld_elements/transport/door.tscn" id="4_ia45l"]
 [ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://icon.svg" id="5_432n8"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="6_gq21d"]
+=======
+[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/player/player.tscn" id="1_wyldu"]
+[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile.tscn" id="2_iirmj"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_rhl0g"]
+[ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://icon.svg" id="4_5clq7"]
+[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="4_onw6f"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="5_i7mou"]
+[ext_resource type="Script" path="res://scenes/interaction_system/npc_component.gd" id="6_b2ewt"]
+[ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="7_fofe2"]
+>>>>>>> Stashed changes:scenes/overworld/rooms/room1.tscn
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f00ag"]
 load_path = "res://.godot/imported/tilesheet.png-55e778059ad55a1a47c5237b5db55343.ctex"
@@ -560,6 +571,33 @@ speed = 100.0
 [node name="Projectile" parent="." instance=ExtResource("2_75ssr")]
 position = Vector2(-446, -1)
 
+<<<<<<< Updated upstream:scenes/overworld_elements/level.tscn
+=======
+[node name="Doors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Door0" parent="Doors" instance=ExtResource("4_onw6f")]
+position = Vector2(32, -288)
+target_room = "res://scenes/overworld/rooms/room2.tscn"
+target_door = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 8)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("4_5clq7")
+
+[node name="InteractionComponent" type="Area2D" parent="Sprite2D"]
+scale = Vector2(4.34783, 4.34783)
+script = ExtResource("5_i7mou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent"]
+shape = SubResource("RectangleShape2D_fmi02")
+
+[node name="NPCComponent" type="Node" parent="Sprite2D"]
+script = ExtResource("6_b2ewt")
+dialog = ExtResource("7_fofe2")
+
+>>>>>>> Stashed changes:scenes/overworld/rooms/room1.tscn
 [node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -571,6 +609,7 @@ editor_draw_drag_margin = true
 script = ExtResource("3_dkuyo")
 target = NodePath("../Player")
 
+<<<<<<< Updated upstream:scenes/overworld_elements/level.tscn
 [node name="Door" parent="." instance=ExtResource("4_ia45l")]
 position = Vector2(32, -288)
 target_scene = "res://scenes/overworld_elements/levels/rooms/test_room.tscn"
@@ -589,3 +628,6 @@ script = ExtResource("6_gq21d")
 shape = SubResource("RectangleShape2D_frawm")
 
 [connection signal="interacted_with" from="Sprite2D/InteractionComponent" to="Sprite2D" method="queue_free"]
+=======
+[connection signal="interacted_with" from="Sprite2D/InteractionComponent" to="Sprite2D/NPCComponent" method="on_interacted"]
+>>>>>>> Stashed changes:scenes/overworld/rooms/room1.tscn
