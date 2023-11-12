@@ -1,0 +1,84 @@
+on:
+  release:
+    types: [published]
+
+env:
+  ARTIFACT: "cat-mafia" # gotta be the exported artifact name
+  GAME_PAGE: "godot-wild-jam-63-title-tbd"
+jobs:
+  release_windows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download Windows
+        id: download-windows
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          file: "#ARTIFACT-windows.zip"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (Windows)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: windows
+          ITCH_GAME: $GAME_PAGE
+          ITCH_USER: queenofsquiggles
+          PACKAGE: "$ARTIFACT_windows.zip"
+          VERSION: ${{ steps.download-windows.outputs.version }}
+  release_macos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download MacOS
+        id: download-macos
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "latest"
+          file: "#ARTIFACT-mac.zip"
+          token: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (MacOS)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: mac
+          ITCH_GAME: $GAME_PAGE
+          ITCH_USER: queenofsquiggles
+          PACKAGE: "$ARTIFACT_macos.zip"
+          VERSION: ${{ steps.download-macos.outputs.version }}
+  release_linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download Linux
+        id: download-linux
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "latest"
+          file: "#ARTIFACT-linux.zip"
+          token: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (Linux)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: linux
+          ITCH_GAME: $GAME_PAGE
+          ITCH_USER: queenofsquiggles
+          PACKAGE: "$ARTIFACT_linux.zip"
+          VERSION: ${{ steps.download-linux.outputs.version }}
+  release_html5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download HTML5
+        id: download-html
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "latest"
+          file: "#ARTIFACT-html.zip"
+          token: "${{ secrets.GH_CREDENTIALS }}"
+      - name: deploy to itch.io (Linux)
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: html5
+          ITCH_GAME: $GAME_PAGE
+          ITCH_USER: queenofsquiggles
+          PACKAGE: "$ARTIFACT_html.zip"
+          VERSION: ${{ steps.download-html.outputs.version }}
