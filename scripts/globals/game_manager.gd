@@ -22,3 +22,6 @@ func enter_room(room_path: String, door_idx: int):
 		player.global_position = door.global_position
 	
 	await viewport.transition_to_scene(room)
+
+func do_dialog(dialog : Dialog) -> void:
+	viewport.do_dialog(dialog)

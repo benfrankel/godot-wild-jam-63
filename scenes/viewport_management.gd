@@ -37,3 +37,11 @@ func fade(target := 1.0) -> void:
 	var t := get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	t.tween_property(trans, "modulate:a", target, transition_time)
 	await t.finished # makes this func awaitable
+
+func do_dialog(dialog : Dialog) -> void:
+	if hi_res_gui_root.get_child_count() > 0:
+		return
+	hi_res_gui_root.add_child(dialog)
+	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Player
+	player.is_animated = true
+	dialog.tree_exiting.connect(Callable(player, "set").bind("is_animated", false))

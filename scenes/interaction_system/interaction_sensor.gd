@@ -27,6 +27,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not enabled:
+		return
 	if event.is_action_pressed("interact") and last_interactable:
 		last_interactable.interact() # safety checked in physics process
 		get_viewport().set_input_as_handled()

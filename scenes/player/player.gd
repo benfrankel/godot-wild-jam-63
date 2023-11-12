@@ -10,6 +10,7 @@ extends CharacterBody2D
 var is_animated := false # configure in an animation player for cutscene
 
 func _physics_process(_delta: float) -> void:
+	interact_sensor.enabled = not is_animated
 	if is_animated:
 		return
 	var direction := Input.get_vector("left", "right", "up", "down")
