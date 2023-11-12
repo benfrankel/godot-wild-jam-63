@@ -14,24 +14,27 @@ func _ready() -> void:
 	GameManager.viewport = self
 	trans.modulate.a = 1.0
 	var scene := (load(main_scene) as PackedScene).instantiate()
-	transition_to_scene(scene, false)
+	swap_scene(scene, false)
 
 func pause(is_paused :bool) -> void:
 	get_tree().paused = is_paused
 
-## manages a sequence for the 
-func transition_to_scene(scene: Node, fade_out := true, fade_in := true) -> void:
+func swap_scene(scene: Node, fade_out := true, fade_in := true) -> Node:
 	pause(true)
 	if fade_out:
 		await fade(1.0)
 	
-	for c in pixel_level_root.get_children():
-		c.queue_free() # should only ever be one, but let's manage edge cases
+	var prev_scene: Node
+	for child in pixel_level_root.get_children():
+		prev_scene = child
+		child.queue_free() # should only ever be one, but let's manage edge cases
 	pixel_level_root.add_child(scene)
 	
 	if fade_in:
 		await fade(0.0)
 	pause(false)
+	
+	return prev_scene
 	
 func fade(target := 1.0) -> void:
 	var t := get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
