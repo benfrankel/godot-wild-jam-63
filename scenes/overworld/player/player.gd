@@ -1,4 +1,4 @@
-class_name OverworldPlayer
+class_name Player
 extends CharacterBody2D
 
 

@@ -13,9 +13,9 @@ func _process(delta: float):
 	position += delta * velocity
 
 func _on_body_entered(body: Node2D):
-	if body is CombatPlayer:
-		hit_player(body)
+	if body is Laser:
+		hit_laser(body)
 		
-func hit_player(player: CombatPlayer):
+func hit_laser(laser: Laser):
 	queue_free()
-	player.take_damage(damage)
+	laser.take_damage(damage)

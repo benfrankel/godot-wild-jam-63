@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=4 format=3 uid="uid://ck2541i45duru"]
 
-[ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/player/player.tscn" id="1_dvnqk"]
+[ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile/projectile.tscn" id="2_8twao"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rr51i"]
+size = Vector2(220, 100)
 
 [node name="Combat" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_dvnqk")]
+[node name="Arena" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = SubResource("PlaceholderTexture2D_rr51i")
+
+[node name="Laser" parent="." instance=ExtResource("1_dvnqk")]
+position = Vector2(0, 64)
 
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Projectile" parent="Projectiles" instance=ExtResource("2_8twao")]
-position = Vector2(-90, 0)
+position = Vector2(-179, 48)
+
+[node name="Camera2D" type="Camera2D" parent="."]
