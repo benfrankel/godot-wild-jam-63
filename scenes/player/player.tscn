@@ -6,11 +6,17 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mv100"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1lhx"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6npnt"]
+radius = 16.0
+
+[sub_resource type="Animation" id="Animation_rf3d7"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_ieeyg"]
 resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_ujmga"]
+resource_name = "walk_down"
 
 [sub_resource type="Animation" id="Animation_ayt54"]
 resource_name = "walk_left"
@@ -20,12 +26,6 @@ resource_name = "walk_right"
 
 [sub_resource type="Animation" id="Animation_qc4fl"]
 resource_name = "walk_up"
-
-[sub_resource type="Animation" id="Animation_ujmga"]
-resource_name = "walk_down"
-
-[sub_resource type="Animation" id="Animation_rf3d7"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_510kj"]
 _data = {
@@ -89,8 +89,8 @@ script = ExtResource("1_vexnj")
 [node name="Image" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_mv100")
 
-[node name="Hurtbox" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_n1lhx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6npnt")
 
 [node name="InteractionSensor" type="RayCast2D" parent="."]
 target_position = Vector2(50, 0)
