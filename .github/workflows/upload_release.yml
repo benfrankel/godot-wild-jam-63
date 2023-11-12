@@ -5,6 +5,8 @@ on:
 env:
   ARTIFACT: "cat-mafia" # gotta be the exported artifact name
   GAME_PAGE: "godot-wild-jam-63-title-tbd"
+  USER: "pyrious"
+  
 jobs:
   release_windows:
     runs-on: ubuntu-latest
@@ -22,7 +24,7 @@ jobs:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: windows
           ITCH_GAME: $GAME_PAGE
-          ITCH_USER: queenofsquiggles
+          ITCH_USER: $USER
           PACKAGE: "$ARTIFACT_windows.zip"
           VERSION: ${{ steps.download-windows.outputs.version }}
   release_macos:
@@ -41,7 +43,7 @@ jobs:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: mac
           ITCH_GAME: $GAME_PAGE
-          ITCH_USER: queenofsquiggles
+          ITCH_USER: $USER
           PACKAGE: "$ARTIFACT_macos.zip"
           VERSION: ${{ steps.download-macos.outputs.version }}
   release_linux:
@@ -60,7 +62,7 @@ jobs:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: linux
           ITCH_GAME: $GAME_PAGE
-          ITCH_USER: queenofsquiggles
+          ITCH_USER: $USER
           PACKAGE: "$ARTIFACT_linux.zip"
           VERSION: ${{ steps.download-linux.outputs.version }}
   release_html5:
@@ -79,6 +81,6 @@ jobs:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html5
           ITCH_GAME: $GAME_PAGE
-          ITCH_USER: queenofsquiggles
+          ITCH_USER: $USER
           PACKAGE: "$ARTIFACT_html.zip"
           VERSION: ${{ steps.download-html.outputs.version }}
