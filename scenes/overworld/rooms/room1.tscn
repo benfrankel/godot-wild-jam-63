@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://cgl13oui8i8l7"]
 
-[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/player/player.tscn" id="1_e2x5p"]
-[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat_elements/projectile.tscn" id="2_75ssr"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="3_dkuyo"]
-[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld_elements/transport/door.tscn" id="4_ia45l"]
-[ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://icon.svg" id="5_432n8"]
-[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="6_gq21d"]
-[ext_resource type="Script" path="res://scenes/interaction_system/npc_component.gd" id="6_b2ewt"]
-[ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="7_fofe2"]
+[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/player/player.tscn" id="1_wyldu"]
+[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile.tscn" id="2_iirmj"]
+[ext_resource type="Script" path="res://scenes/interaction_system/npc_component.gd" id="4_ka8ox"]
+[ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://icon.svg" id="4_n83hv"]
+[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="4_onw6f"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="5_ajiks"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="6_fvph6"]
+[ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="6_fw342"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f00ag"]
 load_path = "res://.godot/imported/tilesheet.png-55e778059ad55a1a47c5237b5db55343.ctex"
@@ -546,8 +546,8 @@ terrain_set_0/terrain_0/name = "Floor"
 terrain_set_0/terrain_0/color = Color(0.764706, 0.376471, 0.466667, 1)
 sources/0 = SubResource("TileSetAtlasSource_n34vn")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmi02"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdsjc"]
+size = Vector2(130.435, 130.435)
 
 [node name="Room1" type="Node2D"]
 
@@ -574,18 +574,17 @@ target_door = 0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(64, 8)
 scale = Vector2(0.23, 0.23)
-texture = ExtResource("4_5clq7")
-
-[node name="InteractionComponent" type="Area2D" parent="Sprite2D"]
-scale = Vector2(4.34783, 4.34783)
-script = ExtResource("5_i7mou")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent"]
-shape = SubResource("RectangleShape2D_fmi02")
+texture = ExtResource("4_n83hv")
 
 [node name="NPCComponent" type="Node" parent="Sprite2D"]
-script = ExtResource("6_b2ewt")
-dialog = ExtResource("7_fofe2")
+script = ExtResource("4_ka8ox")
+dialog = ExtResource("6_fw342")
+
+[node name="InteractionComponent" type="Area2D" parent="Sprite2D"]
+script = ExtResource("5_ajiks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent"]
+shape = SubResource("RectangleShape2D_rdsjc")
 
 [node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 drag_horizontal_enabled = true
@@ -595,7 +594,7 @@ drag_top_margin = 0.3
 drag_right_margin = 0.3
 drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
-script = ExtResource("3_rhl0g")
+script = ExtResource("6_fvph6")
 target = NodePath("../Player")
 
 [connection signal="interacted_with" from="Sprite2D/InteractionComponent" to="Sprite2D/NPCComponent" method="on_interacted"]
