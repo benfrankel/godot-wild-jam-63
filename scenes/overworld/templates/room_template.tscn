@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://oi3ugssh6kxs"]
 
-[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/player/player.tscn" id="1_wwx0g"]
+[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="1_wwx0g"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_p4pl4"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pahjx"]

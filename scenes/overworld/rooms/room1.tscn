@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgl13oui8i8l7"]
+[gd_scene load_steps=12 format=3 uid="uid://cgl13oui8i8l7"]
 
-[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/player/player.tscn" id="1_wyldu"]
-[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile.tscn" id="2_iirmj"]
+[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="1_wyldu"]
 [ext_resource type="Script" path="res://scenes/interaction_system/npc_component.gd" id="4_ka8ox"]
 [ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://icon.svg" id="4_n83hv"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="4_onw6f"]
@@ -560,9 +559,6 @@ layer_0/tile_data = PackedInt32Array(-131072, 327680, 3, -65536, 196608, 2, 0, 1
 unique_name_in_owner = true
 speed = 100.0
 
-[node name="Projectile" parent="." instance=ExtResource("2_iirmj")]
-position = Vector2(-446, -1)
-
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true
 
@@ -581,6 +577,8 @@ script = ExtResource("4_ka8ox")
 dialog = ExtResource("6_fw342")
 
 [node name="InteractionComponent" type="Area2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("5_ajiks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent"]

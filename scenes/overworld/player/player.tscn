@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://cy55kyr0fh46x"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_vexnj"]
-[ext_resource type="Script" path="res://scenes/interaction_system/interaction_sensor.gd" id="2_mpvc2"]
+[ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_pmhck"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_sensor.gd" id="2_vteu5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mv100"]
 size = Vector2(32, 32)
@@ -84,7 +84,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(128, 47)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-script = ExtResource("1_vexnj")
+script = ExtResource("1_pmhck")
 
 [node name="Image" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_mv100")
@@ -94,8 +94,10 @@ shape = SubResource("CircleShape2D_6npnt")
 
 [node name="InteractionSensor" type="RayCast2D" parent="."]
 target_position = Vector2(50, 0)
+collision_mask = 2
+hit_from_inside = true
 collide_with_areas = true
-script = ExtResource("2_mpvc2")
+script = ExtResource("2_vteu5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
