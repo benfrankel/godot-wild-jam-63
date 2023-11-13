@@ -16,17 +16,11 @@ func _exit_tree() -> void:
 
 func _process(_delta: float) -> void:
 	move_to_mouse()
-	
-	
-func get_global_bounds() -> Rect2:
-	var bounds: Rect2 = ($"../Arena/Bounds".shape as RectangleShape2D).get_rect()
-	bounds.position += $"../Arena".global_position
-	return bounds
 
 
 func move_to_mouse() -> void:
-	var bounds: Rect2 = get_global_bounds()
-	global_position = get_global_mouse_position().clamp(bounds.position, bounds.end)
+	var arena: Rect2 = $"..".get_global_arena_rect()
+	global_position = get_global_mouse_position().clamp(arena.position, arena.end)
 
 
 func take_damage(damage: float) -> void:
