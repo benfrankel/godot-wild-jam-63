@@ -14,12 +14,7 @@ jobs:
   # job id, can be anything
   compile_and_upload: # we need to be sequential with our jobs ;_;
     runs-on: ubuntu-latest
-    permissions: write-all
-    env:
-      BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
-      ITCH_GAME: ${{ env.G_ITCH_GAME }}
-      ITCH_USER: ${{ env.G_ITCH_USER }}
-    
+    permissions: write-all    
     steps:
     - name: checkout
       uses: actions/checkout@v3.3.0
@@ -38,21 +33,33 @@ jobs:
     - name: upload windows
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ env.G_ITCH_GAME }}
+        ITCH_USER: ${{ env.G_ITCH_USER }}
         CHANNEL: windows
         PACKAGE: build/windows
     - name: upload macos
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ env.G_ITCH_GAME }}
+        ITCH_USER: ${{ env.G_ITCH_USER }}
         CHANNEL: macos
         PACKAGE: build/mac
     - name: upload linux
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ env.G_ITCH_GAME }}
+        ITCH_USER: ${{ env.G_ITCH_USER }}
         CHANNEL: linux
         PACKAGE: build/linux
     - name: upload html5
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ env.G_ITCH_GAME }}
+        ITCH_USER: ${{ env.G_ITCH_USER }}
         CHANNEL: html
         PACKAGE: build/web
 
