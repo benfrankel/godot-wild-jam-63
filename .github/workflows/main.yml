@@ -33,6 +33,7 @@ jobs:
     - name: upload windows
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
         BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
         ITCH_GAME: ${{ env.G_ITCH_GAME }}
         ITCH_USER: ${{ env.G_ITCH_USER }}
@@ -41,6 +42,7 @@ jobs:
     - name: upload macos
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
         BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
         ITCH_GAME: ${{ env.G_ITCH_GAME }}
         ITCH_USER: ${{ env.G_ITCH_USER }}
@@ -49,6 +51,7 @@ jobs:
     - name: upload linux
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
         BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
         ITCH_GAME: ${{ env.G_ITCH_GAME }}
         ITCH_USER: ${{ env.G_ITCH_USER }}
@@ -57,6 +60,7 @@ jobs:
     - name: upload html5
       uses: manleydev/butler-publish-itchio-action@master
       env:
+        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
         BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
         ITCH_GAME: ${{ env.G_ITCH_GAME }}
         ITCH_USER: ${{ env.G_ITCH_USER }}
