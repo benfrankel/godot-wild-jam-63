@@ -12,16 +12,10 @@ env:
 
 jobs:
   # job id, can be anything
-  export_game:
-    # Always use ubuntu-latest for this action
+  compile_and_upload: # we need to be sequential with our jobs ;_;
     runs-on: ubuntu-latest
-    # Add permission for release creation. Can be made narrower according to your needs
     permissions: write-all
-    # Job name, can be anything
-    name: Export Game
     steps:
-      # Always include the checkout step so that 
-      # your project is available for Godot to export
     - name: checkout
       uses: actions/checkout@v3.3.0
   
@@ -35,9 +29,7 @@ jobs:
         godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_export_templates.tpz
         relative_project_path: ./
         cache: true
-  upload_projects:
-    runs-on: ubuntu-latest
-    steps:
+        
     - name: upload windows
       uses: manleydev/butler-publish-itchio-action@master
       with:
