@@ -8,3 +8,9 @@ signal interacted_with
 
 func interact() -> void:
 	interacted_with.emit()
+	_interact()
+
+
+## Virtual method called when the component is interacted with
+func _interact() -> void:
+	pass

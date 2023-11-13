@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnmynnpbigm2p"]
+[gd_scene load_steps=7 format=3 uid="uid://dnmynnpbigm2p"]
 
 [ext_resource type="PackedScene" uid="uid://oi3ugssh6kxs" path="res://scenes/overworld/templates/room_template.tscn" id="1_xocug"]
 [ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://assets/icon.svg" id="3_gdwwu"]
-[ext_resource type="Script" path="res://scenes/interaction_system/npc_component.gd" id="4_ka8ox"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="4_onw6f"]
-[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="5_ajiks"]
+[ext_resource type="Script" path="res://scenes/interaction_system/dialog_component.gd" id="6_5xur2"]
 [ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="6_fw342"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
@@ -20,21 +19,16 @@ position = Vector2(32, -288)
 target_room = "res://scenes/overworld/rooms/room2.tscn"
 target_door = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+[node name="NPC" type="Sprite2D" parent="." index="3"]
 position = Vector2(64, 8)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("3_gdwwu")
 
-[node name="NPCComponent" type="Node" parent="Sprite2D" index="0"]
-script = ExtResource("4_ka8ox")
-dialog = ExtResource("6_fw342")
-
-[node name="InteractionComponent" type="Area2D" parent="Sprite2D" index="1"]
+[node name="DialogComponent" type="Area2D" parent="NPC" index="0"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("5_ajiks")
+script = ExtResource("6_5xur2")
+dialog = ExtResource("6_fw342")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/DialogComponent" index="0"]
 shape = SubResource("RectangleShape2D_75wn5")
-
-[connection signal="interacted_with" from="Sprite2D/InteractionComponent" to="Sprite2D/NPCComponent" method="on_interacted"]
