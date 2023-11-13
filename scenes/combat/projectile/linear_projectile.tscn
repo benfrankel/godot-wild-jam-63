@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://iw88my1p5ejp"]
 
-[ext_resource type="Script" path="res://scenes/combat/projectile/projectile.gd" id="1_ebqy5"]
+[ext_resource type="Script" path="res://scenes/combat/projectile/linear_projectile.gd" id="1_sx2ok"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_e0qnb"]
 size = Vector2(16, 16)
@@ -9,12 +9,10 @@ size = Vector2(16, 16)
 size = Vector2(16, 16)
 
 [node name="LinearProjectile" type="Area2D"]
-script = ExtResource("1_ebqy5")
+script = ExtResource("1_sx2ok")
 
 [node name="Image" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_e0qnb")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1ri2h")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
