@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
 
 env:
-  BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-  ITCH_GAME: "godot-wild-jam-63-title-tbd"
-  ITCH_USER: "pyrious"
+  G_BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+  G_ITCH_GAME: "godot-wild-jam-63-title-tbd"
+  G_ITCH_USER: "pyrious"
 
 jobs:
   # job id, can be anything
@@ -33,21 +33,33 @@ jobs:
     - name: upload windows
       uses: manleydev/butler-publish-itchio-action@master
       with:
+        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
+        ITCH_GAME: $G_ITCH_GAME
+        ITCH_USER: $G_ITCH_USER
         CHANNEL: windows
         PACKAGE: build/windows
     - name: upload macos
       uses: manleydev/butler-publish-itchio-action@master
       with:
+        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
+        ITCH_GAME: $G_ITCH_GAME
+        ITCH_USER: $G_ITCH_USER
         CHANNEL: macos
         PACKAGE: build/mac
     - name: upload linux
       uses: manleydev/butler-publish-itchio-action@master
       with:
+        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
+        ITCH_GAME: $G_ITCH_GAME
+        ITCH_USER: $G_ITCH_USER
         CHANNEL: linux
         PACKAGE: build/linux
     - name: upload html5
       uses: manleydev/butler-publish-itchio-action@master
       with:
+        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
+        ITCH_GAME: $G_ITCH_GAME
+        ITCH_USER: $G_ITCH_USER
         CHANNEL: html
         PACKAGE: build/web
 
