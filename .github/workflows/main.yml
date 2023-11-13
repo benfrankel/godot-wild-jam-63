@@ -33,33 +33,33 @@ jobs:
     - name: upload windows
       uses: manleydev/butler-publish-itchio-action@master
       env:
-        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
-        ITCH_GAME: $G_ITCH_GAME
-        ITCH_USER: $G_ITCH_USER
+        BUTLER_CREDENTIALS: ${{ G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ G_ITCH_GAME }}
+        ITCH_USER: ${{ G_ITCH_USER }}
         CHANNEL: windows
         PACKAGE: build/windows
     - name: upload macos
       uses: manleydev/butler-publish-itchio-action@master
       env:
-        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
-        ITCH_GAME: $G_ITCH_GAME
-        ITCH_USER: $G_ITCH_USER
+        BUTLER_CREDENTIALS: ${{ G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ G_ITCH_GAME }}
+        ITCH_USER: ${{ G_ITCH_USER }}
         CHANNEL: macos
         PACKAGE: build/mac
     - name: upload linux
       uses: manleydev/butler-publish-itchio-action@master
       env:
-        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
-        ITCH_GAME: $G_ITCH_GAME
-        ITCH_USER: $G_ITCH_USER
+        BUTLER_CREDENTIALS: ${{ G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ G_ITCH_GAME }}
+        ITCH_USER: ${{ G_ITCH_USER }}
         CHANNEL: linux
         PACKAGE: build/linux
     - name: upload html5
       uses: manleydev/butler-publish-itchio-action@master
       env:
-        BUTLER_CREDENTIALS: $G_BUTLER_CREDENTIALS
-        ITCH_GAME: $G_ITCH_GAME
-        ITCH_USER: $G_ITCH_USER
+        BUTLER_CREDENTIALS: ${{ G_BUTLER_CREDENTIALS }}
+        ITCH_GAME: ${{ G_ITCH_GAME }}
+        ITCH_USER: ${{ G_ITCH_USER }}
         CHANNEL: html
         PACKAGE: build/web
 
