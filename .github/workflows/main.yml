@@ -18,7 +18,10 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v3.3.0
-  
+
+    #
+    #  Build exports
+    #
     - name: export game
       id: export
       # Use latest version (see releases for all versions)
@@ -30,57 +33,14 @@ jobs:
         relative_project_path: ./
         cache: true
         archive_output: true
-    - name: display files
-      shell: bash
-      run: |
-        cd build/windows
-        ls
-        cd ../linux
-        ls
-    - name: upload windows
-      uses: manleydev/butler-publish-itchio-action@master
-      env:
-        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
-        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
-        ITCH_GAME: ${{ env.G_ITCH_GAME }}
-        ITCH_USER: ${{ env.G_ITCH_USER }}
-        CHANNEL: windows
-        PACKAGE: build/windows
-    - name: upload macos
-      uses: manleydev/butler-publish-itchio-action@master
-      env:
-        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
-        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
-        ITCH_GAME: ${{ env.G_ITCH_GAME }}
-        ITCH_USER: ${{ env.G_ITCH_USER }}
-        CHANNEL: macos
-        PACKAGE: build/mac
-    - name: upload linux
-      uses: manleydev/butler-publish-itchio-action@master
-      env:
-        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
-        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
-        ITCH_GAME: ${{ env.G_ITCH_GAME }}
-        ITCH_USER: ${{ env.G_ITCH_USER }}
-        CHANNEL: linux
-        PACKAGE: build/linux
-    - name: upload html5
-      uses: manleydev/butler-publish-itchio-action@master
-      env:
-        BUTLER_API_KEY: ${{ env.G_BUTLER_CREDENTIALS }}
-        BUTLER_CREDENTIALS: ${{ env.G_BUTLER_CREDENTIALS }}
-        ITCH_GAME: ${{ env.G_ITCH_GAME }}
-        ITCH_USER: ${{ env.G_ITCH_USER }}
-        CHANNEL: html
-        PACKAGE: build/web
 
-    # skip producing a release and just directly upload the artifacts??
-    #   # This release action has worked well for me. However, you can most likely use any release action of your choosing.
-    #   # https://github.com/ncipollo/release-action
-    # - name: create release
-    #   uses: ncipollo/release-action@v1.12.0
-    #   with:
-    #     token: ${{ secrets.GITHUB_TOKEN }}
-    #     generateReleaseNotes: true
-    #     tag: ${{ github.ref_name }}
-    #     artifacts: ${{ steps.export.outputs.archive_directory }}/*
+    #
+    #  Create release with built files
+    #
+    - name: create release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        generateReleaseNotes: true
+        tag: "rel-$GITHUB_SHA"
+        artifacts: ${{ steps.export.outputs.archive_directory }}
