@@ -1,46 +1,31 @@
-# Whenever a tag push matching pattern "v*" then run the job
 on: 
   push:
     branches:
       - main
   workflow_dispatch:
 
-env:
-  G_BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-  G_ITCH_GAME: "godot-wild-jam-63-title-tbd"
-  G_ITCH_USER: "pyrious"
-
 jobs:
-  # job id, can be anything
-  compile_and_upload: # we need to be sequential with our jobs ;_;
+  export_game:
+    # Always use ubuntu-latest for this action
     runs-on: ubuntu-latest
-    permissions: write-all    
+    # Job name, can be anything
+    name: Export game to Github
     steps:
-    - name: checkout
-      uses: actions/checkout@v3.3.0
-
-    #
-    #  Build exports
-    #
-    - name: export game
-      id: export
-      # Use latest version (see releases for all versions)
-      uses: firebelley/godot-export@v5.2.0
-      with:
-        # Defining all the required inputs
-        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_linux.x86_64.zip
-        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_export_templates.tpz
-        relative_project_path: ./
-        cache: true
-        archive_output: true
-
-    #
-    #  Create release with built files
-    #
-    - name: create release
-      uses: ncipollo/release-action@v1.12.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        generateReleaseNotes: true
-        tag: "rel-$GITHUB_SHA"
-        artifacts: ${{ steps.export.outputs.archive_directory }}
+      # Always include the checkout step so that
+      # your project is available for Godot to export
+      - name: checkout
+        uses: actions/checkout@v2.3.1
+        # Ensure that you get the entire project history
+        with:
+          fetch-depth: 0
+      - name: create game release
+        # Use latest version (see releases for all versions)
+        uses: firebelley/godot-export@v3.0.0
+        with:
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_export_templates.tpz
+          relative_project_path: ./
+          generate_release_notes: 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_CREDENTIALS }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
