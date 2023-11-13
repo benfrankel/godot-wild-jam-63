@@ -2,7 +2,7 @@ class_name Laser
 extends Area2D
 
 
-var health := 10.0
+signal got_hit(projectile: Projectile)
 
 
 func _ready() -> void:
@@ -18,10 +18,13 @@ func _process(_delta: float) -> void:
 	move_to_mouse()
 
 
+func _on_area_entered(projectile: Projectile):
+	if not projectile:
+		return
+	
+	got_hit.emit(projectile)
+
+
 func move_to_mouse() -> void:
 	var arena: Rect2 = $"..".get_global_arena_rect()
 	global_position = get_global_mouse_position().clamp(arena.position, arena.end)
-
-
-func take_damage(damage: float) -> void:
-	health -= damage

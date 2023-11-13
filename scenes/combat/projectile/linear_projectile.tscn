@@ -12,7 +12,6 @@ size = Vector2(16, 16)
 script = ExtResource("1_sx2ok")
 speed = null
 angle = null
-damage = null
 
 [node name="Image" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_e0qnb")

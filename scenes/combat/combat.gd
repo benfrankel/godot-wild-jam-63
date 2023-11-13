@@ -2,11 +2,13 @@ extends Node2D
 
 
 var fight: Fight
+var exhaustion: int = 0
+var suspicion: int = 0
 
 
 func _ready() -> void:
 	print("Fighting ", fight.enemy_name)
-	$DurationTimer.start(fight.duration)
+	$ExhaustionTimer.start(fight.exhaustion_cooldown)
 	
 	for pattern_idx in fight.attack_patterns.size():
 		var pattern: AttackPattern = fight.attack_patterns[pattern_idx]
@@ -32,13 +34,30 @@ func attack(pattern_idx: int) -> void:
 	pattern.position += pattern.position_step
 	pattern.remaining_attacks -= 1
 
-	
+
 func get_global_arena_rect() -> Rect2:
 	var arena: Rect2 = ($Arena/Bounds.shape as RectangleShape2D).get_rect()
 	arena.position += $Arena/Bounds.global_position
 	return arena
 
 
-func _on_duration_timer_timeout() -> void:
-	# TODO: Player wins!
+func finish(win: bool) -> void:
+	# TODO: Handle win / loss
+	print("Combat over! Win? ", win)
 	GameManager.exit_combat()
+
+
+func _on_exhaustion_timer_timeout() -> void:
+	exhaustion += 1
+	# TODO: Update UI
+	print("Exhaustion is now ", exhaustion, " / ", fight.max_exhaustion)
+	if exhaustion >= fight.max_exhaustion:
+		finish(true)
+
+
+func _on_laser_got_hit(_projectile: Projectile) -> void:
+	suspicion += 1
+	# TODO: Update UI
+	print("Suspicion is now ", suspicion, " / ", fight.max_suspicion)
+	if suspicion >= fight.max_suspicion:
+		finish(false)
