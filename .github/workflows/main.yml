@@ -38,7 +38,7 @@ jobs:
           GODOT_VERSION: 4.1.2
       - name: Build
         run: |
-          mkdir -v -p build/${{ matrix.platform.name }}
+          mkdir -v -p build/${{ matrix.name }}
           godot -v --headless --export-release ${{ matrix.name}}  ./build/${{ matrix.name }}/${{ matrix.output }}
       - name: Deploy to Itch
         uses: manleydev/butler-publish-itchio-action@master
