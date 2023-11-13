@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnmynnpbigm2p"]
+[gd_scene load_steps=9 format=3 uid="uid://dnmynnpbigm2p"]
 
 [ext_resource type="PackedScene" uid="uid://oi3ugssh6kxs" path="res://scenes/overworld/templates/room_template.tscn" id="1_xocug"]
 [ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://assets/icon.svg" id="3_gdwwu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/interaction_system/dialog_component.gd" id="6_5xur2"]
 [ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="6_fw342"]
 [ext_resource type="Script" path="res://scenes/interaction_system/combat_component.gd" id="6_hs42k"]
+[ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_j4xr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
 size = Vector2(130.435, 130.435)
@@ -47,3 +48,10 @@ fight_path = "res://scenes/combat/fights/fight1.tres"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/CombatInteraction" index="0"]
 shape = SubResource("RectangleShape2D_75wn5")
+
+[node name="CombatArea" type="Area2D" parent="." index="6"]
+position = Vector2(215, -350)
+script = ExtResource("7_j4xr4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CombatArea" index="0"]
+polygon = PackedVector2Array(-32, 42, 114, 43, 73, -131, -38, -146)
