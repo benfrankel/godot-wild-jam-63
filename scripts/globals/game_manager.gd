@@ -21,7 +21,7 @@ func enter_room(room_path: String, door_idx: int) -> void:
 		door.is_active = false
 		player.global_position = door.global_position
 	
-	await viewport.swap_scene(room)
+	(await viewport.swap_scene(room)).queue_free()
 
 
 func enter_combat(fight_path: String) -> void:
@@ -31,7 +31,7 @@ func enter_combat(fight_path: String) -> void:
 
 
 func exit_combat() -> void:
-	await viewport.swap_scene(scene_backup)
+	(await viewport.swap_scene(scene_backup)).queue_free()
 
 
 func do_dialog(dialog : Dialog) -> void:

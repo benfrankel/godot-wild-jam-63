@@ -24,10 +24,11 @@ func swap_scene(scene: Node, fade_out := true, fade_in := true) -> Node:
 	if fade_out:
 		await fade(1.0)
 	
+	assert(pixel_level_root.get_child_count() <= 1)
 	var prev_scene: Node
-	for child in pixel_level_root.get_children():
-		prev_scene = child
-		child.queue_free() # should only ever be one, but let's manage edge cases
+	if pixel_level_root.get_child_count() >= 1:
+		prev_scene = pixel_level_root.get_child(-1)
+		pixel_level_root.remove_child(prev_scene)
 	pixel_level_root.add_child(scene)
 	
 	if fade_in:

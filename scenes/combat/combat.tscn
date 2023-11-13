@@ -26,3 +26,8 @@ shape = SubResource("RectangleShape2D_rlbjm")
 [node name="Laser" parent="." instance=ExtResource("1_dvnqk")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DurationTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
