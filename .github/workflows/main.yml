@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: |
           mkdir -v -p build/${{ matrix.platform.name }}
-          godot -v --export ${{ matrix.platform.name}}  ./build/${{ matrix.platform.name }}/${{ matrix.platform.output }}
+          godot -v --export-release ${{ matrix.platform.name}}  ./build/${{ matrix.platform.name }}/${{ matrix.platform.output }}
       - name: Deploy to Itch
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
