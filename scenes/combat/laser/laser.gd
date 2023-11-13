@@ -1,6 +1,8 @@
 class_name Laser
 extends Area2D
 
+@onready var bounds_shape := $"../Arena/Bounds"
+@onready var arena := $"../Arena"
 
 var health := 10.0
 
@@ -17,10 +19,9 @@ func _exit_tree() -> void:
 func _process(_delta: float) -> void:
 	move_to_mouse()
 	
-	
 func get_global_bounds() -> Rect2:
-	var bounds: Rect2 = ($"../Arena/Bounds".shape as RectangleShape2D).get_rect()
-	bounds.position += $"../Arena".global_position
+	var bounds: Rect2 = (bounds_shape.shape as RectangleShape2D).get_rect()
+	bounds.position += arena.global_position
 	return bounds
 
 

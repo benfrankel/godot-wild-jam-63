@@ -1,7 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=8 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
+[ext_resource type="Shader" path="res://scenes/combat/scrolling_bg.gdshader" id="2_ewwqg"]
+[ext_resource type="Texture2D" uid="uid://ds6kf42pschxl" path="res://assets/combat/scrollingbg.png" id="3_y0vie"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2oix"]
+shader = ExtResource("2_ewwqg")
+shader_parameter/scale = 3.275
+shader_parameter/speed = 10.0
+shader_parameter/direction = Vector2(1, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rr51i"]
 size = Vector2(200, 90)
@@ -9,20 +17,38 @@ size = Vector2(200, 90)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlbjm"]
 size = Vector2(195, 85.5)
 
-[node name="Combat" type="Node2D"]
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_npvr5")
 
-[node name="Arena" type="Area2D" parent="."]
+[node name="ScrollingBG" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_k2oix")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y0vie")
+
+[node name="Combat" type="Node2D" parent="."]
+position = Vector2(571, 353)
+
+[node name="Arena" type="Area2D" parent="Combat"]
 position = Vector2(0, 28)
 
-[node name="Background" type="Sprite2D" parent="Arena"]
+[node name="Background" type="Sprite2D" parent="Combat/Arena"]
 texture = SubResource("PlaceholderTexture2D_rr51i")
 
-[node name="Bounds" type="CollisionShape2D" parent="Arena"]
+[node name="Bounds" type="CollisionShape2D" parent="Combat/Arena"]
 shape = SubResource("RectangleShape2D_rlbjm")
 
-[node name="Projectiles" type="Node2D" parent="."]
+[node name="Projectiles" type="Node2D" parent="Combat"]
 
-[node name="Laser" parent="." instance=ExtResource("1_dvnqk")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Laser" parent="Combat" instance=ExtResource("1_dvnqk")]
