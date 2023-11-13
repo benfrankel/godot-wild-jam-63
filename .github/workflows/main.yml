@@ -24,7 +24,7 @@ jobs:
           - name: "web"
             output: "index.html"
     container:
-      image: barichello/godot-ci:3.4.2
+      image: barichello/godot-ci:4.1.2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
