@@ -47,4 +47,4 @@ jobs:
           CHANNEL: ${{ matrix.name }}
           ITCH_GAME: ${{ env.G_ITCH_PAGE }}
           ITCH_USER: ${{ env.G_ITCH_ACCOUNT }}
-          PACKAGE: build/${{ matrix.name }}
+          PACKAGE: build/${{ matrix.name }}/
