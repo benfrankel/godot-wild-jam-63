@@ -1,5 +1,6 @@
-extends Area2D
 class_name Door
+extends Area2D
+
 
 @export_file("*.tscn") var target_room := ""
 @export var target_door := -1

@@ -25,13 +25,13 @@ position = Vector2(64, 8)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("3_gdwwu")
 
-[node name="DialogComponent" type="Area2D" parent="NPC" index="0"]
+[node name="DialogInteraction" type="Area2D" parent="NPC" index="0"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_5xur2")
 dialog = ExtResource("6_fw342")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/DialogComponent" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/DialogInteraction" index="0"]
 shape = SubResource("RectangleShape2D_75wn5")
 
 [node name="NPC2" type="Sprite2D" parent="." index="4"]
@@ -39,10 +39,11 @@ position = Vector2(-71, 5)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("3_gdwwu")
 
-[node name="CombatComponent" type="Area2D" parent="NPC2" index="0"]
+[node name="CombatInteraction" type="Area2D" parent="NPC2" index="0"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_hs42k")
+fight_path = "res://scenes/combat/fights/fight1.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/CombatComponent" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/CombatInteraction" index="0"]
 shape = SubResource("RectangleShape2D_75wn5")

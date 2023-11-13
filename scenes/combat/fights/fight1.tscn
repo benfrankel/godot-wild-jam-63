@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bywrltlaa6glv"]
+
+[ext_resource type="Script" path="res://scenes/combat/fights/fight.gd" id="1_70pv3"]
+[ext_resource type="Script" path="res://scenes/combat/fights/attack1.gd" id="2_kyemu"]
+[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile/linear_projectile.tscn" id="3_di775"]
+
+[node name="Fight1" type="Node2D"]
+script = ExtResource("1_70pv3")
+enemy_name = "Kitty McCatface"
+
+[node name="DurationTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Attack1" type="Node2D" parent="."]
+script = ExtResource("2_kyemu")
+projectile = ExtResource("3_di775")
+
+[node name="CooldownTimer" type="Timer" parent="Attack1"]
+autostart = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
+[connection signal="timeout" from="Attack1/CooldownTimer" to="Attack1" method="_on_cooldown_timer_timeout"]

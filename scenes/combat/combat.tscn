@@ -1,23 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=5 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
-[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile/projectile.tscn" id="2_8twao"]
+[ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rr51i"]
-size = Vector2(220, 100)
+size = Vector2(200, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlbjm"]
+size = Vector2(195, 85.5)
 
 [node name="Combat" type="Node2D"]
+script = ExtResource("1_npvr5")
 
-[node name="Arena" type="Sprite2D" parent="."]
-position = Vector2(0, 32)
+[node name="Arena" type="Area2D" parent="."]
+position = Vector2(0, 28)
+
+[node name="Background" type="Sprite2D" parent="Arena"]
 texture = SubResource("PlaceholderTexture2D_rr51i")
 
-[node name="Laser" parent="." instance=ExtResource("1_dvnqk")]
-position = Vector2(0, 64)
+[node name="Bounds" type="CollisionShape2D" parent="Arena"]
+shape = SubResource("RectangleShape2D_rlbjm")
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[node name="Projectile" parent="Projectiles" instance=ExtResource("2_8twao")]
-position = Vector2(-179, 48)
+[node name="Laser" parent="." instance=ExtResource("1_dvnqk")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
