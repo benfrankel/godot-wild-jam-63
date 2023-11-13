@@ -42,5 +42,5 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         generateReleaseNotes: true
-        tag: "rel-${{ GITHUB_SHA }}"
+        tag: "rel-$GITHUB_SHA"
         artifacts: ${{ steps.export.outputs.archive_directory }}
