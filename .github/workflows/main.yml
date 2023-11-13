@@ -1,31 +1,50 @@
-on: 
+name: Build + Publish Game
+
+on:
   push:
-    branches:
-      - main
+    branches: main
   workflow_dispatch:
 
+env:
+  G_ITCH_PAGE: ""
+  G_ITCH_ACCOUNT: ""
+
 jobs:
-  export_game:
-    # Always use ubuntu-latest for this action
-    runs-on: ubuntu-latest
-    # Job name, can be anything
-    name: Export game to Github
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        include:
+          - name: "windows"
+            output: "game_windows.exe"
+          - name: "linux"
+            output: "game_linux.x86_64"
+          - name: "mac"
+            output: "game_mac.zip"
+          - name: "web"
+            output: "index.html"
+    container:
+      image: barichello/godot-ci:3.4.2
     steps:
-      # Always include the checkout step so that
-      # your project is available for Godot to export
-      - name: checkout
-        uses: actions/checkout@v2.3.1
-        # Ensure that you get the entire project history
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0
-      - name: create game release
-        # Use latest version (see releases for all versions)
-        uses: firebelley/godot-export@v3.0.0
-        with:
-          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_linux.x86_64.zip
-          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1.2/Godot_v4.1.2-stable_export_templates.tpz
-          relative_project_path: ./
-          generate_release_notes: 'true'
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_CREDENTIALS }}
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          GODOT_VERSION: 4.1.2
+      - name: Build
+        run: |
+          mkdir -v -p build/${{ matrix.platform.name }}
+          godot -v --export ${{ matrix.platform.name}}  ./build/${{ matrix.platform.name }}/${{ matrix.platform.output }}
+      - name: Deploy to Itch
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: ${{ matrix.platform.name }}
+          ITCH_GAME: ${{ env.G_ITCH_PAGE }}
+          ITCH_USER: ${{ env.G_ITCH_ACCOUNT }}
+          PACKAGE: build/${{ matrix.platform.name }}
