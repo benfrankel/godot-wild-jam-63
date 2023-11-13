@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  G_ITCH_PAGE: "pyrious"
-  G_ITCH_ACCOUNT: "godot-wild-jam-63-title-tbd"
+  G_ITCH_PAGE: "godot-wild-jam-63-title-tbd"
+  G_ITCH_ACCOUNT: "pyrious"
 
 jobs:
   build:
@@ -39,12 +39,12 @@ jobs:
       - name: Build
         run: |
           mkdir -v -p build/${{ matrix.platform.name }}
-          godot -v --headless --export-release ${{ matrix.platform.name}}  ./build/${{ matrix.platform.name }}/${{ matrix.platform.output }}
+          godot -v --headless --export-release ${{ matrix.name}}  ./build/${{ matrix.name }}/${{ matrix.output }}
       - name: Deploy to Itch
-        uses: josephbmanley/butler-publish-itchio-action@master
+        uses: manleydev/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: ${{ matrix.platform.name }}
+          CHANNEL: ${{ matrix.name }}
           ITCH_GAME: ${{ env.G_ITCH_PAGE }}
           ITCH_USER: ${{ env.G_ITCH_ACCOUNT }}
-          PACKAGE: build/${{ matrix.platform.name }}
+          PACKAGE: build/${{ matrix.name }}
