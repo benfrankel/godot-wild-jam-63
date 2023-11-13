@@ -15,13 +15,13 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: "windows"
+          - name: "Windows"
             output: "game_windows.exe"
-          - name: "linux"
+          - name: "Linux"
             output: "game_linux.x86_64"
-          - name: "mac"
+          - name: "Mac"
             output: "game_mac.zip"
-          - name: "web"
+          - name: "Web"
             output: "index.html"
     container:
       image: barichello/godot-ci:4.1.2
