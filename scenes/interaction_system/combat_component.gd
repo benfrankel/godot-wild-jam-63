@@ -1,7 +1,7 @@
 extends InteractionComponent
 
 
-@export_file("*.tscn") var fight_path := ""
+@export_file("*.tres") var fight_path := ""
 
 
 func _interact() -> void:

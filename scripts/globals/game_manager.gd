@@ -26,9 +26,7 @@ func enter_room(room_path: String, door_idx: int) -> void:
 
 func enter_combat(fight_path: String) -> void:
 	var combat := COMBAT_SCENE.instantiate()
-	var fight := (load(fight_path) as PackedScene).instantiate() as Fight
-	combat.find_child("Projectiles").add_child(fight)
-	combat.fight = fight
+	combat.fight = load(fight_path) as Fight
 	scene_backup = await viewport.swap_scene(combat)
 
 
