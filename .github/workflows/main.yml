@@ -16,11 +16,11 @@ jobs:
       matrix:
         include:
           - name: "Windows"
-            output: "game_windows.exe"
+            output: "Godot Wild Jam 63.exe"
           - name: "Linux"
-            output: "game_linux.x86_64"
+            output: "Godot Wild Jam 63.x86_64"
           - name: "Mac"
-            output: "game_mac.zip"
+            output: "Godot Wild Jam 63.zip"
           - name: "Web"
             output: "index.html"
     container:
