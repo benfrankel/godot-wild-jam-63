@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  G_ITCH_PAGE: ""
-  G_ITCH_ACCOUNT: ""
+  G_ITCH_PAGE: "pyrious"
+  G_ITCH_ACCOUNT: "godot-wild-jam-63-title-tbd"
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          lfs: true
+          lfs: true # do we really need LFS??
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
