@@ -3,8 +3,8 @@ extends Resource
 
 
 ## The name of the enemy the player is fighting
-var enemy_name: String
-## Duration of the fight, after which the player wins
-var duration: float
+@export var enemy_name := ""
+## Duration of the fight (in seconds), after which the player wins
+@export var duration := 60.0
 ## The attack patterns that spawn projectiles during the fight
-var attack_patterns: Array[AttackPattern]
+@export var attack_patterns: Array[AttackPattern]

@@ -1,19 +1,20 @@
 class_name AttackPattern
+extends Resource
 
 
 ## The projectile to spawn for each attack
-var projectile: PackedScene
+@export var projectile: PackedScene
 ## The delay before the first attack
-var delay: float
+@export var delay := 0.0
 ## The delay between consecutive attacks
-var cooldown: float
+@export var cooldown := 1.0
 ## The remaining number of attacks before the attack pattern finishes
-var remaining_attacks: int
+@export var remaining_attacks: int = 1
 ## The center of the arena is (0, 0), and the corners are (+-1, +-1)
-var position: Vector2
+@export var position: Vector2
 ## The difference in position between two consecutive attacks
-var position_step: Vector2
+@export var position_step: Vector2
 ## The initial direction of the projectile (in radians)
-var angle: float
+@export_range(0.0, TAU) var angle: float
 ## The difference in angle between two consecutive attacks
-var angle_step: float
+@export_range(0.0, TAU) var angle_step: float
