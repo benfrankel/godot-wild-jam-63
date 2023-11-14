@@ -1,15 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://pknwhm1v0qh3"]
+[gd_scene load_steps=6 format=3 uid="uid://pknwhm1v0qh3"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7t0qy"]
-size = Vector2(16, 16)
+[ext_resource type="Script" path="res://scenes/overworld/gui/pause_menu.gd" id="1_an0tv"]
+[ext_resource type="PackedScene" uid="uid://blts3g4blkbns" path="res://scenes/overworld/gui/components/inventory_panel.tscn" id="1_gu0jv"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="3_av3xm"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="4_jn4sq"]
+
+[sub_resource type="Resource" id="Resource_x6868"]
+script = ExtResource("4_jn4sq")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("3_av3xm"), ExtResource("3_av3xm")])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+capacity = 10
+boss_items_capacity = 5
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_an0tv")
 
 [node name="MainPanel" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -57,28 +68,11 @@ offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="InventoryPanel"]
+[node name="InventoryPanel" parent="InventoryPanel" instance=ExtResource("1_gu0jv")]
 layout_mode = 2
+inventory = SubResource("Resource_x6868")
 
-[node name="MarginContainer" type="MarginContainer" parent="InventoryPanel/PanelContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="InventoryPanel/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="InventoryPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_7t0qy")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="InventoryPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Item Name"
-
-[node name="Button" type="Button" parent="InventoryPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Drop"
+[connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnSave" to="." method="_on_btn_save_pressed"]
+[connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnInventory" to="." method="_on_btn_inventory_pressed"]
+[connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]
+[connection signal="focus_exited" from="InventoryPanel" to="." method="_on_inventory_panel_focus_exited"]
