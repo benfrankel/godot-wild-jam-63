@@ -4,15 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://c87d25u7wqd3t" path="res://assets/combat/projectiles/weapon_mace.png" id="2_qjx8v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0fwm"]
-height = 46.0
+radius = 7.0
+height = 40.0
 
 [node name="LinearProjectile" type="Area2D"]
 script = ExtResource("1_sx2ok")
 shock_time = 1.0
 wait = 0.2
-speed = null
-angle = null
-lifetime = null
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(-19, 0)
@@ -22,6 +20,3 @@ flip_h = true
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_w0fwm")
-disabled = true
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]

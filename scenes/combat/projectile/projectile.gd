@@ -10,12 +10,13 @@ extends Area2D
 @export var angle := 0.0
 ## Lifetime of the projectile in seconds.
 @export var lifetime := 10.0
-var is_moving := false
+@onready var hitbox: CollisionShape2D = $Hitbox
 
 
 func _ready() -> void:
-	start_moving_after_wait()
+	start_after_wait()
 	despawn_after_lifetime()
+	area_entered.connect(_on_area_entered)
 
 
 func despawn_after_lifetime() -> void:
@@ -23,15 +24,26 @@ func despawn_after_lifetime() -> void:
 	queue_free()
 
 
-func start_moving_after_wait() -> void:
+func start_after_wait() -> void:
 	stop()
 	await get_tree().create_timer(wait).timeout
 	start()
 
 
 func start() -> void:
-	is_moving = true
+	set_physics_process(true)
+	hitbox.set_deferred("disabled", false)
 
 
 func stop() -> void:
-	is_moving = false
+	set_physics_process(false)
+	hitbox.set_deferred("disabled", true)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Laser:
+		on_hit()
+
+
+func on_hit() -> void:
+	pass
