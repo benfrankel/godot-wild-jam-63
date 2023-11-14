@@ -44,7 +44,7 @@ texture = ExtResource("3_gdwwu")
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_hs42k")
-fight_path = "res://scenes/combat/fights/fight1.tres"
+fight_path = "res://scenes/combat/enemies/enemy1.tres"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/CombatInteraction" index="0"]
 shape = SubResource("RectangleShape2D_75wn5")

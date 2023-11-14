@@ -24,9 +24,9 @@ func enter_room(room_path: String, door_idx: int) -> void:
 	(await viewport.swap_scene(room)).queue_free()
 
 
-func enter_combat(fight_path: String) -> void:
+func enter_combat(enemy_path: String) -> void:
 	var combat := COMBAT_SCENE.instantiate()
-	combat.fight = load(fight_path) as Fight
+	combat.enemy = load(enemy_path) as Enemy
 	scene_backup = await viewport.swap_scene(combat)
 
 

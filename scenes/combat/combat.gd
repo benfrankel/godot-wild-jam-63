@@ -1,17 +1,17 @@
 extends Node2D
 
 
-var fight: Fight
+var enemy: Enemy
 var exhaustion: int = 0
 var suspicion: int = 0
 
 
 func _ready() -> void:
-	print("Fighting ", fight.enemy_name)
-	$ExhaustionTimer.start(fight.exhaustion_cooldown)
+	print("Fighting ", enemy.name)
+	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
 	
-	for pattern_idx in fight.attack_patterns.size():
-		var pattern: AttackPattern = fight.attack_patterns[pattern_idx]
+	for pattern_idx in enemy.attack_patterns.size():
+		var pattern: AttackPattern = enemy.attack_patterns[pattern_idx]
 		var cooldown_timer := Timer.new()
 		add_child(cooldown_timer)
 		cooldown_timer.timeout.connect(attack.bind(pattern_idx))
@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func attack(pattern_idx: int) -> void:
-	var pattern: AttackPattern = fight.attack_patterns[pattern_idx]
+	var pattern: AttackPattern = enemy.attack_patterns[pattern_idx]
 	if pattern.remaining_attacks <= 0:
 		return
 	
@@ -50,14 +50,14 @@ func finish(win: bool) -> void:
 func _on_exhaustion_timer_timeout() -> void:
 	exhaustion += 1
 	# TODO: Update UI
-	print("Exhaustion is now ", exhaustion, " / ", fight.max_exhaustion)
-	if exhaustion >= fight.max_exhaustion:
+	print("Exhaustion is now ", exhaustion, " / ", enemy.max_exhaustion)
+	if exhaustion >= enemy.max_exhaustion:
 		finish(true)
 
 
 func _on_laser_got_hit(_projectile: Projectile) -> void:
 	suspicion += 1
 	# TODO: Update UI
-	print("Suspicion is now ", suspicion, " / ", fight.max_suspicion)
-	if suspicion >= fight.max_suspicion:
+	print("Suspicion is now ", suspicion, " / ", enemy.max_suspicion)
+	if suspicion >= enemy.max_suspicion:
 		finish(false)
