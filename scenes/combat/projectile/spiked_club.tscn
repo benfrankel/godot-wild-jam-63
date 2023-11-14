@@ -11,6 +11,7 @@ height = 40.0
 collision_layer = 2
 center_of_mass_mode = 1
 gravity_scale = 0.0
+angular_damp_mode = 1
 script = ExtResource("1_t8teb")
 
 [node name="Image" type="Sprite2D" parent="."]

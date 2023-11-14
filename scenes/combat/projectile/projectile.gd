@@ -2,30 +2,22 @@ class_name Projectile
 extends RigidBody2D
 
 
-## Time in seconds before the projectile starts moving.
-@export var wait_time := 0.5
+## Duration in seconds of the projectile's spawn animation.
+@export var spawn_time := 0.5
+## Duration in seconds of the projectile's despawn animation.
+@export var despawn_time := 0.5
 ## Time to freeze in place after hitting the laser.
-@export var hit_stop := 0.3
+@export var hit_stop := 0.5
 var lifetime: float
 var lifetime_timer := Timer.new()
 
 
 func _ready() -> void:
-	lifetime_timer.timeout.connect(fade_away)
+	lifetime_timer.timeout.connect(fade_out.bind(despawn_time))
 	lifetime_timer.one_shot = true
 	add_child(lifetime_timer)
 	lifetime_timer.start(lifetime)
-	start_after_wait()
-
-
-func start_after_wait() -> void:
-	stop()
-	modulate = Color.TRANSPARENT
-	await create_tween()\
-			.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)\
-			.tween_property(self, "modulate", Color.WHITE, wait_time)\
-			.finished
-	start()
+	fade_in(spawn_time)
 
 
 func start() -> void:
@@ -38,17 +30,29 @@ func stop() -> void:
 	lifetime_timer.paused = true
 
 
-func fade_away() -> void:
-	stop()
-	var transparent: Color = modulate
-	transparent.a = 0
+func fade(duration: float, target: Color) -> void:
 	await create_tween()\
 			.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)\
-			.tween_property(self, "modulate", transparent, hit_stop)\
+			.tween_property(self, "modulate", target, duration)\
 			.finished
+
+
+func fade_in(duration: float) -> void:
+	var target: Color = modulate
+	modulate.a = 0
+	stop()
+	await fade(duration, target)
+	start()
+
+
+func fade_out(duration: float) -> void:
+	var target: Color = modulate
+	target.a = 0
+	stop()
+	await fade(duration, target)
 	queue_free()
 
 
 func on_hit() -> void:
 	modulate = Color.RED
-	fade_away()
+	fade_out(hit_stop)

@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_lcvym"]
 script = ExtResource("2_axrxq")
 projectile = ExtResource("1_3xgpr")
-delay = 2.0
+delay = 0.5
 lifetime = 0.5
 cooldown = 1.0
 remaining_attacks = 4
@@ -24,7 +24,7 @@ angular_velocity = -180.0
 [sub_resource type="Resource" id="Resource_u6fsg"]
 script = ExtResource("2_axrxq")
 projectile = ExtResource("3_2sxyi")
-delay = 2.5
+delay = 1.5
 lifetime = 5.0
 cooldown = 1.0
 remaining_attacks = 8
