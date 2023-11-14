@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://de5mhvl8elhdc"]
 
-[ext_resource type="Texture2D" uid="uid://ct8q1mt5bk6h4" path="res://assets/tilesheet.png" id="1_h051g"]
+[ext_resource type="Texture2D" uid="uid://ct8q1mt5bk6h4" path="res://assets/overworld/tilesheet.png" id="1_h051g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n34vn"]
 resource_name = "Placeholder"

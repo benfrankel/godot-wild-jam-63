@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
-[ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat_background.png" id="2_8sic4"]
-[ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://assets/arena_background.png" id="2_do8xl"]
-[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/enemy_sheet.png" id="3_4hiep"]
+[ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="2_k3uv0"]
+[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="3_ppl46"]
+[ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://assets/combat/arena_background.png" id="4_gsscs"]
 
 [sub_resource type="Gradient" id="Gradient_ckpei"]
 offsets = PackedFloat32Array(1)
@@ -26,13 +26,13 @@ texture = SubResource("GradientTexture1D_56ekf")
 
 [node name="BackgroundOverlay" type="Sprite2D" parent="."]
 texture_repeat = 2
-texture = ExtResource("2_8sic4")
+texture = ExtResource("2_k3uv0")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 180)
 
 [node name="EnemyImage" type="Sprite2D" parent="."]
 position = Vector2(0, -54)
-texture = ExtResource("3_4hiep")
+texture = ExtResource("3_ppl46")
 region_enabled = true
 region_rect = Rect2(1.33765, 0.0130005, 58.6026, 64.5806)
 
@@ -40,7 +40,7 @@ region_rect = Rect2(1.33765, 0.0130005, 58.6026, 64.5806)
 position = Vector2(0, 28)
 
 [node name="Background" type="Sprite2D" parent="Arena"]
-texture = ExtResource("2_do8xl")
+texture = ExtResource("4_gsscs")
 
 [node name="Bounds" type="CollisionShape2D" parent="Arena"]
 shape = SubResource("RectangleShape2D_rlbjm")

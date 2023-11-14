@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dnmynnpbigm2p"]
 
 [ext_resource type="PackedScene" uid="uid://oi3ugssh6kxs" path="res://scenes/overworld/templates/room_template.tscn" id="1_xocug"]
-[ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://assets/icon.svg" id="3_gdwwu"]
+[ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://assets/overworld/icon.svg" id="3_waqub"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="4_onw6f"]
 [ext_resource type="Script" path="res://scenes/interaction_system/dialog_component.gd" id="6_5xur2"]
 [ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="6_fw342"]
@@ -24,7 +24,7 @@ target_door = 0
 [node name="NPC" type="Sprite2D" parent="." index="3"]
 position = Vector2(64, 8)
 scale = Vector2(0.23, 0.23)
-texture = ExtResource("3_gdwwu")
+texture = ExtResource("3_waqub")
 
 [node name="DialogInteraction" type="Area2D" parent="NPC" index="0"]
 collision_layer = 2
@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_75wn5")
 [node name="NPC2" type="Sprite2D" parent="." index="4"]
 position = Vector2(-71, 5)
 scale = Vector2(0.23, 0.23)
-texture = ExtResource("3_gdwwu")
+texture = ExtResource("3_waqub")
 
 [node name="CombatInteraction" type="Area2D" parent="NPC2" index="0"]
 collision_layer = 2

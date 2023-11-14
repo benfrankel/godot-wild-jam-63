@@ -14,7 +14,11 @@ extends Resource
 @export var position: Vector2
 ## The difference in position between two consecutive attacks
 @export var position_step: Vector2
+## The initial speed of the projectile
+@export var speed: float
+## The difference in speed between two consecutive attacks
+@export var speed_step: float
 ## The initial direction of the projectile (in radians)
-@export_range(0.0, TAU) var angle: float
+@export var angle: float
 ## The difference in angle between two consecutive attacks
-@export_range(0.0, TAU) var angle_step: float
+@export var angle_step: float

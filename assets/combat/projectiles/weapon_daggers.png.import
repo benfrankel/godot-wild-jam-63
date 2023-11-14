@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvu1kts5ds02k"
-path="res://.godot/imported/laser.png-af9ca9427a51d96a36a733a4aa4be8b2.ctex"
+uid="uid://c2rb6crfh7qtf"
+path="res://.godot/imported/weapon_daggers.png-edb0e0396add322670e8f406c87c75c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/laser.png"
-dest_files=["res://.godot/imported/laser.png-af9ca9427a51d96a36a733a4aa4be8b2.ctex"]
+source_file="res://assets/combat/projectiles/weapon_daggers.png"
+dest_files=["res://.godot/imported/weapon_daggers.png-edb0e0396add322670e8f406c87c75c6.ctex"]
 
 [params]
 
