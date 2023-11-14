@@ -37,7 +37,6 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="ScreenVFX" type="ColorRect" parent="."]
-visible = false
 material = ExtResource("3_b8tx2")
 anchors_preset = 15
 anchor_right = 1.0
