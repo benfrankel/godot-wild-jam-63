@@ -16,3 +16,10 @@ extends Resource
 @export var max_suspicion: int = 10
 ## Projectile spawning patterns during the fight.
 @export var attack_patterns: Array[AttackPattern]
+
+@export_group("Combat Victory")
+## the loot that the player gets after winning (optional)
+@export var loot : Inventory
+
+## the dialog to play after victory (optional)
+@export var dialog : DialogData

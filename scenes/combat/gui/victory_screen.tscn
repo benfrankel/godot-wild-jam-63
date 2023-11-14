@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy10q155606wn"]
+
+[ext_resource type="PackedScene" uid="uid://blts3g4blkbns" path="res://scenes/overworld/gui/components/inventory_panel.tscn" id="1_5fy5n"]
+[ext_resource type="Script" path="res://scenes/combat/gui/victory_screen.gd" id="1_qtgjv"]
+[ext_resource type="PackedScene" uid="uid://c18v5gt5qy8pc" path="res://scenes/dialog_system/dialog.tscn" id="2_6ksd8"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="2_vlvft"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="3_rf0ab"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="4_4us7p"]
+[ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="5_2yof1"]
+
+[sub_resource type="Resource" id="Resource_vphdo"]
+script = ExtResource("3_rf0ab")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("2_vlvft")])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+capacity = 10
+boss_items_capacity = 5
+
+[sub_resource type="Resource" id="Resource_tud2e"]
+script = ExtResource("4_4us7p")
+character_name = "Test dialog"
+auto_progress = false
+lines = Array[String](["Exposition dump", "Even more lore", "OMFG so much lore!!!"])
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qtgjv")
+loot = SubResource("Resource_vphdo")
+dialog = SubResource("Resource_tud2e")
+
+[node name="BG" type="ColorRect" parent="."]
+modulate = Color(0.427451, 0.427451, 0.427451, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG_Overlay" type="TextureRect" parent="."]
+modulate = Color(0.290196, 0.290196, 0.290196, 1)
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2yof1")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="InventoryPanel" parent="." instance=ExtResource("1_5fy5n")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.5
+offset_top = 34.0
+offset_right = 185.5
+offset_bottom = 104.0
+grow_horizontal = 2
+style = 2
+
+[node name="Dialog" parent="." instance=ExtResource("2_6ksd8")]
+layout_mode = 1
+
+[connection signal="dialog_ended" from="Dialog" to="." method="_on_dialog_dialog_ended"]

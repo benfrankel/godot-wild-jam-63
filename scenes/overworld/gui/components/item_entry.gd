@@ -10,5 +10,8 @@ func set_item(item : Item) -> void:
 func set_action_name(action_name : String) -> void:
 	$BtnAction.text = action_name
 
+func set_no_action() -> void:
+	$BtnAction.queue_free()
+
 func _on_btn_action_pressed() -> void:
 	action_button_pressed.emit()

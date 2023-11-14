@@ -1,7 +1,8 @@
 extends PanelContainer
+class_name InventoryPanel
 
 enum InventoryStyle {
-	OVERWORLD, COMBAT
+	OVERWORLD, COMBAT, READONLY
 }
 
 
@@ -45,6 +46,8 @@ func reload_visuals() -> void:
 				entry.set_action_name("use")
 				entry.action_button_pressed.connect( \
 					Callable(_callback_use_item).bind(i))
+			InventoryStyle.READONLY:
+				entry.set_no_action()
 		entries.add_child(entry)
 
 func _callback_drop_item(item : Item) -> void:
