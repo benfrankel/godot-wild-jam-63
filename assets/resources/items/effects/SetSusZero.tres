@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemEffect" load_steps=3 format=3 uid="uid://81l4tjiwfsq1"]
+
+[ext_resource type="Script" path="res://assets/resources/items/effects/set_sus_zero.gd" id="1_rohd7"]
+[ext_resource type="Script" path="res://scripts/resource_types/ItemEffect.gd" id="2_45is4"]
+
+[resource]
+script = ExtResource("2_45is4")
+effect_script = ExtResource("1_rohd7")
