@@ -23,6 +23,10 @@ GameManager="*res://scripts/globals/game_manager.gd"
 
 import/blender/enabled=false
 
+[gui]
+
+theme/custom="res://assets/resources/theming/main_theme.tres"
+
 [input]
 
 left={

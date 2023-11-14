@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://c18v5gt5qy8pc"]
+[gd_scene load_steps=7 format=3 uid="uid://c18v5gt5qy8pc"]
 
+[ext_resource type="Theme" uid="uid://bbtyhsmcmpxrn" path="res://assets/resources/theming/main_theme.tres" id="1_lj0u1"]
 [ext_resource type="Script" path="res://scenes/dialog_system/dialog.gd" id="1_v2710"]
 [ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="2_x0hkj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfk5k"]
-font_size = 32
-shadow_size = 10
-shadow_color = Color(0, 0, 0, 0.447059)
-shadow_offset = Vector2(5, 5)
+font_size = 48
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cq0c"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.878431)
+skew = Vector2(0.25, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_soonh"]
 size = Vector2(16, 16)
@@ -20,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_lj0u1")
 script = ExtResource("1_v2710")
 current_data = ExtResource("2_x0hkj")
 
@@ -48,6 +57,8 @@ label_settings = SubResource("LabelSettings_sfk5k")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"DialogPanelVariant"
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cq0c")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
