@@ -4,6 +4,10 @@ extends Resource
 
 ## Name of the enemy.
 @export var name := ""
+## Color of the combat background.
+@export_color_no_alpha var bg_color := Color.BLACK
+## Color of the pattern overlay on the combat background.
+@export_color_no_alpha var bg_overlay_color := Color.BLACK
 ## Max exhaustion the enemy can reach before they give up (player wins).
 @export var max_exhaustion: int = 10
 ## Time it takes for the enemy to gain 1 exhaustion.

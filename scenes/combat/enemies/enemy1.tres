@@ -18,6 +18,8 @@ angle_step = 0.0
 [resource]
 script = ExtResource("1_es3y3")
 name = "Kitty McCatface"
+bg_color = Color(0.152941, 0.164706, 0.188235, 1)
+bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
 max_exhaustion = 10
 exhaustion_cooldown = 5.0
 max_suspicion = 10
