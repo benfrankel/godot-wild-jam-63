@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=11 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
 [ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="2_k3uv0"]
+[ext_resource type="PackedScene" uid="uid://cy10q155606wn" path="res://scenes/combat/gui/victory_screen.tscn" id="2_qeivt"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="3_ppl46"]
 [ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://assets/combat/arena_background.png" id="4_gsscs"]
 
-[sub_resource type="Gradient" id="Gradient_ckpei"]
+[sub_resource type="Gradient" id="Gradient_sdbt7"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_56ekf"]
-gradient = SubResource("Gradient_ckpei")
+gradient = SubResource("Gradient_sdbt7")
 width = 320
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlbjm"]
@@ -22,6 +23,7 @@ size = Vector2(320, 20)
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_npvr5")
+victory_scene = ExtResource("2_qeivt")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(1, 180)

@@ -25,6 +25,10 @@ const TEXT_SPEED := 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	set_dialog(current_data)
+
+func set_dialog(data : DialogData) -> void:
+	current_data = data
 	if not current_data:
 		return
 	print("Dialog started: %s" % current_data.resource_path.get_file())
@@ -53,7 +57,7 @@ func _load_line() -> void:
 func _on_line_end() -> void:
 	line_index += 1
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		get_viewport().set_input_as_handled()
 		if tween.is_running():

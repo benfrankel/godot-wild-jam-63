@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var victory_scene : PackedScene
 
 var enemy: Enemy
 var exhaustion: int = 0
@@ -48,6 +49,10 @@ func get_global_arena_rect() -> Rect2:
 func finish(win: bool) -> void:
 	# TODO: Handle win / loss
 	print("Combat over! Win? ", win)
+	if win:
+		var v :VictoryScreen = victory_scene.instantiate()
+		GameManager.viewport.hi_res_gui_root.add_child(v)
+		v.load_from(enemy)
 	GameManager.exit_combat()
 
 
