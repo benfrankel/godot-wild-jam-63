@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://btig22osf1onp"]
+[gd_scene load_steps=4 format=3 uid="uid://btig22osf1onp"]
 
 [ext_resource type="Script" path="res://scenes/viewport_management.gd" id="1_oukxq"]
+[ext_resource type="PackedScene" uid="uid://pknwhm1v0qh3" path="res://scenes/overworld/gui/pause_menu.tscn" id="2_lrauu"]
 [ext_resource type="Material" uid="uid://dukmvhqtqsqu8" path="res://assets/materials/crt_screen_effect.tres" id="3_b8tx2"]
 
 [node name="ViewportManagement" type="Node"]
 process_mode = 3
 script = ExtResource("1_oukxq")
 main_scene = "res://scenes/overworld/rooms/room1.tscn"
+pause_scene = ExtResource("2_lrauu")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -43,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HiResGUIRoot" type="Control" parent="."]
 process_mode = 3
@@ -52,6 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="TransitionFX" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -59,4 +63,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)

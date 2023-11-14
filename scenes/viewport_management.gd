@@ -2,7 +2,7 @@ extends Node
 class_name ViewportManager
 
 @export_file("*.tscn") var main_scene := ""
-
+@export var pause_scene : PackedScene
 @export var transition_time := 0.2
 
 @onready var pixel_level_root := $PixelScene/SubViewport
@@ -49,3 +49,9 @@ func do_dialog(dialog : Dialog) -> void:
 	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Player
 	player.is_animated = true
 	dialog.tree_exiting.connect(Callable(player, "set").bind("is_animated", false))
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit"):
+		get_viewport().set_input_as_handled()
+		var p := pause_scene.instantiate()
+		hi_res_gui_root.add_child(p)

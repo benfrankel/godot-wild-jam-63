@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://yt2d713uneud"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://yt2d713uneud"]
 
 [ext_resource type="Script" path="res://scripts/resource_types/Item.gd" id="1_e6hhg"]
 [ext_resource type="Resource" uid="uid://81l4tjiwfsq1" path="res://assets/resources/items/effects/SetSusZero.tres" id="1_wdtj4"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d2ik5"]
+size = Vector2(16, 16)
+
 [resource]
 script = ExtResource("1_e6hhg")
 item_name = "Catnip"
+texture = SubResource("PlaceholderTexture2D_d2ik5")
 effects = Array[Resource("res://scripts/resource_types/ItemEffect.gd")]([ExtResource("1_wdtj4")])
 is_boss_item = false
