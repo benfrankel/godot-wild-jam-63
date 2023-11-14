@@ -2,8 +2,9 @@ extends Resource
 class_name Item
 
 @export var item_name := ""
+@export var texture : Texture2D
 @export var effects : Array[ItemEffect] = []
-
+@export var is_boss_item := false
 
 func is_consumable() -> bool:
 	return not effects.is_empty()
