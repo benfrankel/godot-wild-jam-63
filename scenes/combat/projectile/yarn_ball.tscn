@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcoi23msy4lbf"]
+[gd_scene load_steps=5 format=3 uid="uid://bcoi23msy4lbf"]
 
-[ext_resource type="Script" path="res://scenes/combat/projectile/yarn_ball.gd" id="1_p2wuk"]
+[ext_resource type="Script" path="res://scenes/combat/projectile/projectile.gd" id="1_08noj"]
 [ext_resource type="Texture2D" uid="uid://caxodf0yjww5f" path="res://assets/combat/projectiles/yarn_ball.png" id="2_xdtws"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y4jp0"]
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qce5h"]
 radius = 19.0263
 
 [node name="YarnBall" type="RigidBody2D"]
-script = ExtResource("1_p2wuk")
+collision_layer = 2
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_y4jp0")
+script = ExtResource("1_08noj")
 
 [node name="Image" type="Sprite2D" parent="."]
 texture = ExtResource("2_xdtws")

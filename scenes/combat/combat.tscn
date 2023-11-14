@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=10 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
@@ -16,6 +16,9 @@ width = 320
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlbjm"]
 size = Vector2(166, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oirq6"]
+size = Vector2(320, 20)
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_npvr5")
@@ -44,6 +47,14 @@ texture = ExtResource("4_gsscs")
 
 [node name="Bounds" type="CollisionShape2D" parent="Arena"]
 shape = SubResource("RectangleShape2D_rlbjm")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0, 100)
+shape = SubResource("RectangleShape2D_oirq6")
 
 [node name="Projectiles" type="Node2D" parent="."]
 
