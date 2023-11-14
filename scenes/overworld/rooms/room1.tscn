@@ -53,7 +53,7 @@ shape = SubResource("RectangleShape2D_75wn5")
 [node name="CombatArea" type="Area2D" parent="." index="6"]
 position = Vector2(215, -350)
 script = ExtResource("7_j4xr4")
-available_fights = Array[Resource("res://scripts/enemy.gd")]([ExtResource("8_ciu2r")])
+available_fights = Array[Resource("res://scripts/resource_types/enemy.gd")]([ExtResource("8_ciu2r")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CombatArea" index="0"]
 polygon = PackedVector2Array(-32, 42, 114, 43, 73, -131, -38, -146)
