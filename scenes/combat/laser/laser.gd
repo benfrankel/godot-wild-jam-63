@@ -18,11 +18,11 @@ func _process(_delta: float) -> void:
 	move_to_mouse()
 
 
-func _on_area_entered(area: Area2D):
-	if not area is Projectile:
-		return
-	
-	got_hit.emit(area)
+func _on_body_entered(body: Node2D):
+	var projectile := body as Projectile
+	if projectile:
+		projectile.on_hit()
+		got_hit.emit(projectile)
 
 
 func move_to_mouse() -> void:

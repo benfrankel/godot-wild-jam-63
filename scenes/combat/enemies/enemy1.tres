@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://bh6taflv8p41w"]
 
-[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile/linear_projectile.tscn" id="1_3xgpr"]
+[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile/spiked_club.tscn" id="1_3xgpr"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_es3y3"]
 [ext_resource type="Script" path="res://scripts/attack_pattern.gd" id="2_axrxq"]
 
