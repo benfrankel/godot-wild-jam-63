@@ -9,14 +9,16 @@ height = 40.0
 
 [node name="SpikedClub" type="RigidBody2D"]
 collision_layer = 2
+center_of_mass_mode = 1
 gravity_scale = 0.0
 script = ExtResource("1_t8teb")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(-19, 0)
+position = Vector2(25, 0)
 texture = ExtResource("2_e186g")
 flip_h = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(44, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_w0fwm")

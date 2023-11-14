@@ -28,14 +28,16 @@ func attack(pattern_idx: int) -> void:
 		return
 	
 	var projectile := pattern.projectile.instantiate() as Projectile
+	projectile.lifetime = pattern.lifetime
 	var arena: Rect2 = get_global_arena_rect()
 	projectile.global_position = arena.get_center() + pattern.position * arena.size / 2.0
-	projectile.speed = pattern.speed
-	projectile.angle = pattern.angle
+	projectile.rotation = deg_to_rad(pattern.rotation)
+	projectile.linear_velocity = pattern.speed * Vector2.from_angle(deg_to_rad(pattern.angle))
+	projectile.angular_velocity = deg_to_rad(pattern.angular_velocity)
 	$Projectiles.add_child(projectile)
 	
 	pattern.position += pattern.position_step
-	pattern.speed += pattern.speed_step
+	pattern.rotation += pattern.rotation_step
 	pattern.angle += pattern.angle_step
 	pattern.remaining_attacks -= 1
 

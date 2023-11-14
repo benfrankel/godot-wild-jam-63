@@ -3,48 +3,52 @@ extends RigidBody2D
 
 
 ## Time in seconds before the projectile starts moving.
-@export var wait_time := 0.2
-## Lifetime of the projectile in seconds.
-@export var lifetime := 10.0
+@export var wait_time := 0.5
 ## Time to freeze in place after hitting the laser.
 @export var hit_stop := 0.3
-## Initial speed of the projectile.
-var speed := 300.0
-## Initial angle of the projectile.
-var angle := 0.0
+var lifetime: float
+var lifetime_timer := Timer.new()
 
 
 func _ready() -> void:
+	lifetime_timer.timeout.connect(fade_away)
+	lifetime_timer.one_shot = true
+	add_child(lifetime_timer)
+	lifetime_timer.start(lifetime)
 	start_after_wait()
-	despawn_after_lifetime()
-
-
-func _physics_process(delta: float) -> void:
-	var direction := Vector2.from_angle(angle)
-	var velocity := speed * direction
-	move_and_collide(delta * velocity)
-
-
-func despawn_after_lifetime() -> void:
-	await get_tree().create_timer(lifetime).timeout
-	queue_free()
 
 
 func start_after_wait() -> void:
 	stop()
-	await get_tree().create_timer(wait_time).timeout
+	modulate = Color.TRANSPARENT
+	await create_tween()\
+			.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)\
+			.tween_property(self, "modulate", Color.WHITE, wait_time)\
+			.finished
 	start()
 
 
 func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
+	lifetime_timer.paused = false
 
 
 func stop() -> void:
 	process_mode = PROCESS_MODE_DISABLED
+	lifetime_timer.paused = true
+
+
+func fade_away() -> void:
+	stop()
+	var transparent: Color = modulate
+	transparent.a = 0
+	await create_tween()\
+			.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)\
+			.tween_property(self, "modulate", transparent, hit_stop)\
+			.finished
+	queue_free()
 
 
 func on_hit() -> void:
-	stop()
-	await get_tree().create_timer(hit_stop).timeout
-	queue_free()
+	modulate = Color.RED
+	fade_away()

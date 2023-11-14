@@ -8,28 +8,34 @@
 [sub_resource type="Resource" id="Resource_lcvym"]
 script = ExtResource("2_axrxq")
 projectile = ExtResource("1_3xgpr")
-delay = 1.0
+delay = 2.0
+lifetime = 0.5
 cooldown = 1.0
-remaining_attacks = 8
-position = Vector2(-1.25, -1)
-position_step = Vector2(0, 0.25)
-speed = 200.0
-speed_step = 0.0
-angle = 0.5
-angle_step = -0.125
+remaining_attacks = 4
+position = Vector2(-1, 0.5)
+position_step = Vector2(0, 0)
+speed = 100.0
+angle = -90.0
+angle_step = 0.0
+rotation = 45.0
+rotation_step = 0.0
+angular_velocity = -180.0
 
 [sub_resource type="Resource" id="Resource_u6fsg"]
 script = ExtResource("2_axrxq")
 projectile = ExtResource("3_2sxyi")
-delay = 3.0
+delay = 2.5
+lifetime = 5.0
 cooldown = 1.0
 remaining_attacks = 8
 position = Vector2(1.25, -1)
 position_step = Vector2(0, 0)
 speed = 200.0
-speed_step = 0.0
-angle = 3.0
+angle = 180.0
 angle_step = 0.0
+rotation = 0.0
+rotation_step = 0.0
+angular_velocity = -45.0
 
 [resource]
 script = ExtResource("1_es3y3")
