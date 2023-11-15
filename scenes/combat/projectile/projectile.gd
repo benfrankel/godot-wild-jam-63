@@ -8,7 +8,7 @@ extends RigidBody2D
 @export var despawn_time := 0.5
 ## Time to freeze in place after hitting the laser.
 @export var hit_stop := 0.5
-var lifetime: float
+var lifetime := 5.0
 var lifetime_timer := Timer.new()
 
 
