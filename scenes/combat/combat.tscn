@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=10 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
 [ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="2_k3uv0"]
 [ext_resource type="PackedScene" uid="uid://cy10q155606wn" path="res://scenes/combat/gui/victory_screen.tscn" id="2_qeivt"]
-[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="3_ppl46"]
 [ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://assets/combat/arena_background.png" id="4_gsscs"]
 
 [sub_resource type="Gradient" id="Gradient_sdbt7"]
@@ -35,9 +34,8 @@ texture = ExtResource("2_k3uv0")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 180)
 
-[node name="EnemyImage" type="Sprite2D" parent="."]
+[node name="EnemyPortrait" type="Sprite2D" parent="."]
 position = Vector2(0, -54)
-texture = ExtResource("3_ppl46")
 region_enabled = true
 region_rect = Rect2(1.33765, 0.0130005, 58.6026, 64.5806)
 

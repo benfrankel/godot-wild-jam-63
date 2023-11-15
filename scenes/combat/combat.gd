@@ -12,6 +12,7 @@ func _ready() -> void:
 	print("Fighting ", enemy.name)
 	$Background.self_modulate = enemy.bg_color
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
+	$EnemyPortrait.texture = enemy.portrait
 	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
 	
 	for pattern_idx in enemy.attack_patterns.size():
