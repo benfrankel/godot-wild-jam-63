@@ -10,6 +10,7 @@ extends RigidBody2D
 @export var hit_stop := 0.5
 var lifetime := 5.0
 var lifetime_timer := Timer.new()
+var laser: Laser
 var _collision_layer_backup: int
 var _linear_velocity_backup: Vector2
 var _angular_velocity_backup: float
@@ -20,7 +21,9 @@ func _ready() -> void:
 	lifetime_timer.one_shot = true
 	add_child(lifetime_timer)
 	lifetime_timer.start(lifetime)
-	fade_in(spawn_time)
+	stop()
+	await fade_in(spawn_time)
+	start()
 
 
 func start() -> void:
@@ -45,21 +48,19 @@ func stop() -> void:
 func fade_in(duration: float) -> void:
 	var target: Color = modulate
 	modulate.a = 0
-	stop()
 	await create_tween().tween_property(self, "modulate", target, duration).finished
-	start()
 
 
 func fade_out(duration: float) -> void:
 	var target: Color = modulate
 	target.a = 0
-	stop()
 	await create_tween().tween_property(self, "modulate", target, duration).finished
 	queue_free()
 
 
 func on_hit() -> void:
 	modulate = Color.RED
+	stop()
 	fade_out(hit_stop)
 
 

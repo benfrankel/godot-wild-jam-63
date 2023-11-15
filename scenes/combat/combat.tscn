@@ -61,6 +61,7 @@ shape = SubResource("RectangleShape2D_oirq6")
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Laser" parent="." instance=ExtResource("1_dvnqk")]
+unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

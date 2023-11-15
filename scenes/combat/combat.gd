@@ -5,6 +5,7 @@ extends Node2D
 var enemy: Enemy
 var exhaustion: int = 0
 var suspicion: int = 0
+@onready var laser := %Laser as Laser
 
 
 func _ready() -> void:
@@ -28,6 +29,7 @@ func attack(pattern_idx: int) -> void:
 		return
 	
 	var projectile := pattern.projectile.instantiate() as Projectile
+	projectile.laser = laser
 	projectile.lifetime = pattern.lifetime
 	var arena: Rect2 = get_global_arena_rect()
 	projectile.global_position = arena.get_center() + pattern.position * arena.size / 2.0
