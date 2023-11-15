@@ -18,37 +18,63 @@ func _ready() -> void:
 	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
 	exh_meter.max_value = enemy.max_exhaustion
 	sus_meter.max_value = enemy.max_suspicion
-	
-	for pattern_idx in enemy.attack_patterns.size():
-		var pattern: AttackPattern = enemy.attack_patterns[pattern_idx]
-		var cooldown_timer := Timer.new()
-		add_child(cooldown_timer)
-		cooldown_timer.timeout.connect(attack.bind(pattern_idx))
-		cooldown_timer.start(pattern.delay)
-		cooldown_timer.wait_time = pattern.cooldown
+	for phase in enemy.attack_phases:
+		launch_phase(phase)
 
 
-func attack(pattern_idx: int) -> void:
-	var pattern: AttackPattern = enemy.attack_patterns[pattern_idx]
-	if pattern.remaining_attacks <= 0:
-		return
-	
-	var projectile := pattern.projectile.instantiate() as Projectile
-	projectile.laser = laser
-	projectile.lifetime = pattern.lifetime
+func launch_phase(phase: AttackPhase) -> void:
+	# Apply phase settings to each pattern
 	var arena: Rect2 = get_global_arena_rect()
-	projectile.global_position = arena.get_center() + pattern.position * arena.size / 2.0
-	projectile.rotation = deg_to_rad(pattern.rotation)
-	projectile.custom_set_scale(pattern.scale)
-	projectile.linear_velocity = pattern.speed * Vector2.from_angle(deg_to_rad(pattern.angle))
-	projectile.angular_velocity = deg_to_rad(pattern.angular_velocity)
-	$Projectiles.add_child(projectile)
+	for pattern in phase.patterns:
+		pattern.position = pattern.position.rotated(phase.rotation) * phase.scale + phase.position
+		pattern.position = arena.get_center() + pattern.position * arena.size / 2.0
+		pattern.position_step = pattern.position_step.rotated(phase.rotation) * phase.scale
+		pattern.position_step *= arena.size / 2.0
+		pattern.rotation += phase.rotation
+		pattern.scale *= phase.scale
 	
-	pattern.position += pattern.position_step
-	pattern.rotation += pattern.rotation_step
-	pattern.scale *= pattern.scale_step
-	pattern.angle += pattern.angle_step
-	pattern.remaining_attacks -= 1
+	# Wait on delay
+	if phase.delay > 0.0:
+		await get_tree().create_timer(phase.delay, false).timeout
+	
+	for _i in phase.count:
+		# Launch patterns
+		for pattern in phase.patterns:
+			launch_pattern(pattern.duplicate())
+		
+		# Wait on cooldown
+		if phase.cooldown > 0.0:
+			await get_tree().create_timer(phase.cooldown, false).timeout
+
+
+func launch_pattern(pattern: AttackPattern) -> void:
+	# Wait on delay
+	if pattern.delay > 0.0:
+		await get_tree().create_timer(pattern.delay, false).timeout
+	
+	for _i in pattern.count:
+		# Spawn projectile
+		var projectile := pattern.projectile.instantiate() as Projectile
+		projectile.laser = laser
+		projectile.spawn_time = pattern.spawn_time
+		projectile.lifetime = pattern.lifetime
+		projectile.despawn_time = pattern.despawn_time
+		projectile.global_position = pattern.position
+		projectile.rotation = deg_to_rad(pattern.rotation)
+		projectile.custom_set_scale(pattern.scale)
+		projectile.linear_velocity = pattern.speed * Vector2.from_angle(deg_to_rad(pattern.angle))
+		projectile.angular_velocity = deg_to_rad(pattern.angular_velocity)
+		$Projectiles.add_child(projectile)
+		
+		# Step pattern
+		pattern.position += pattern.position_step
+		pattern.rotation += pattern.rotation_step
+		pattern.scale *= pattern.scale_step
+		pattern.angle += pattern.angle_step
+		
+		# Wait on cooldown
+		if pattern.cooldown > 0.0:
+			await get_tree().create_timer(pattern.cooldown, false).timeout
 
 
 func get_global_arena_rect() -> Rect2:

@@ -1,129 +1,22 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=15 format=3 uid="uid://bh6taflv8p41w"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=9 format=3 uid="uid://bh6taflv8p41w"]
 
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_es3y3"]
-[ext_resource type="PackedScene" uid="uid://7ix26o6i7yxp" path="res://scenes/combat/projectile/dead_fish.tscn" id="1_fx22h"]
+[ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://scenes/combat/projectile/dead_fish_M.tscn" id="1_rq3gg"]
 [ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_axrxq"]
-[ext_resource type="PackedScene" uid="uid://r5nxd4ax7gr0" path="res://scenes/combat/projectile/yarn_ball_M.tscn" id="3_r3u6v"]
-[ext_resource type="PackedScene" uid="uid://cggdew5pttxui" path="res://scenes/combat/projectile/cat_arm1.tscn" id="4_j4v8e"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="3_ewvyi"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="5_fj3fk"]
 
-[sub_resource type="Resource" id="Resource_ccwyj"]
+[sub_resource type="Resource" id="Resource_tnnct"]
 script = ExtResource("2_axrxq")
-projectile = ExtResource("1_fx22h")
+projectile = ExtResource("1_rq3gg")
 delay = 0.0
-cooldown = 2.0
+cooldown = 0.0
+count = 6
+spawn_time = 1.0
 lifetime = 5.0
-remaining_attacks = 4
-position = Vector2(-1, 0.5)
-position_step = Vector2(0, 0)
-rotation = -30.0
-rotation_step = 0.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-speed = 200.0
-angle = -30.0
-angle_step = 0.0
-angular_velocity = 0.0
-
-[sub_resource type="Resource" id="Resource_fgs3c"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("1_fx22h")
-delay = 1.0
-cooldown = 2.0
-lifetime = 5.0
-remaining_attacks = 4
-position = Vector2(1, 0.5)
-position_step = Vector2(0, 0)
-rotation = 30.0
-rotation_step = 0.0
-scale = Vector2(-1, 1)
-scale_step = Vector2(1, 1)
-speed = 200.0
-angle = -150.0
-angle_step = 0.0
-angular_velocity = 0.0
-
-[sub_resource type="Resource" id="Resource_wj70g"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("3_r3u6v")
-delay = 2.0
-cooldown = 0.05
-lifetime = 3.0
-remaining_attacks = 6
-position = Vector2(-1, -1.2)
-position_step = Vector2(0.4, 0)
-rotation = 0.0
-rotation_step = 0.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-speed = 250.0
-angle = -90.0
-angle_step = 0.0
-angular_velocity = 100.0
-
-[sub_resource type="Resource" id="Resource_x3ufm"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("3_r3u6v")
-delay = 3.5
-cooldown = 0.05
-lifetime = 3.0
-remaining_attacks = 5
-position = Vector2(0.8, -1.2)
-position_step = Vector2(-0.4, 0)
-rotation = 0.0
-rotation_step = 0.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-speed = 250.0
-angle = -90.0
-angle_step = 0.0
-angular_velocity = 100.0
-
-[sub_resource type="Resource" id="Resource_l3wcq"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("3_r3u6v")
-delay = 5.0
-cooldown = 0.05
-lifetime = 3.0
-remaining_attacks = 6
-position = Vector2(-1, -1.2)
-position_step = Vector2(0.4, 0)
-rotation = 0.0
-rotation_step = 0.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-speed = 250.0
-angle = -90.0
-angle_step = 0.0
-angular_velocity = 100.0
-
-[sub_resource type="Resource" id="Resource_7ak6p"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("3_r3u6v")
-delay = 6.5
-cooldown = 0.05
-lifetime = 3.0
-remaining_attacks = 5
-position = Vector2(0.8, -1.2)
-position_step = Vector2(-0.4, 0)
-rotation = 0.0
-rotation_step = 0.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-speed = 250.0
-angle = -90.0
-angle_step = 0.0
-angular_velocity = 100.0
-
-[sub_resource type="Resource" id="Resource_3lq81"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("4_j4v8e")
-delay = 10.0
-cooldown = 2.0
-lifetime = 0.5
-remaining_attacks = 4
-position = Vector2(-1.25, 0)
-position_step = Vector2(0, 0)
+despawn_time = 0.5
+position = Vector2(0, 0)
+position_step = Vector2(0, 0.5)
 rotation = 0.0
 rotation_step = 0.0
 scale = Vector2(1, 1)
@@ -133,15 +26,17 @@ angle = 0.0
 angle_step = 0.0
 angular_velocity = 0.0
 
-[sub_resource type="Resource" id="Resource_qx7jb"]
+[sub_resource type="Resource" id="Resource_lyoex"]
 script = ExtResource("2_axrxq")
-projectile = ExtResource("4_j4v8e")
-delay = 11.0
-cooldown = 2.0
-lifetime = 0.5
-remaining_attacks = 4
-position = Vector2(1.25, 0)
-position_step = Vector2(0, 0)
+projectile = ExtResource("1_rq3gg")
+delay = 0.5
+cooldown = 0.0
+count = 4
+spawn_time = 1.0
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(2, 0.25)
+position_step = Vector2(0, 0.5)
 rotation = 0.0
 rotation_step = 0.0
 scale = Vector2(-1, 1)
@@ -150,6 +45,16 @@ speed = 300.0
 angle = 180.0
 angle_step = 0.0
 angular_velocity = 0.0
+
+[sub_resource type="Resource" id="Resource_6gmjd"]
+script = ExtResource("3_ewvyi")
+delay = 0.5
+cooldown = 2.0
+count = 4
+position = Vector2(-1, -1)
+rotation = 0.0
+scale = Vector2(1, 1)
+patterns = Array[ExtResource("2_axrxq")]([SubResource("Resource_tnnct"), SubResource("Resource_lyoex")])
 
 [resource]
 script = ExtResource("1_es3y3")
@@ -160,4 +65,4 @@ bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
 max_exhaustion = 25
 exhaustion_cooldown = 2.0
 max_suspicion = 10
-attack_patterns = Array[ExtResource("2_axrxq")]([SubResource("Resource_ccwyj"), SubResource("Resource_fgs3c"), SubResource("Resource_wj70g"), SubResource("Resource_x3ufm"), SubResource("Resource_l3wcq"), SubResource("Resource_7ak6p"), SubResource("Resource_3lq81"), SubResource("Resource_qx7jb")])
+attack_phases = Array[ExtResource("3_ewvyi")]([SubResource("Resource_6gmjd")])

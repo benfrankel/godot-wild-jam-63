@@ -19,8 +19,8 @@ extends Resource
 @export var exhaustion_cooldown := 5.0
 ## Max suspicion the enemy can reach before they realize what's going on (player loses).
 @export var max_suspicion: int = 10
-## Projectile spawning patterns during the fight.
-@export var attack_patterns: Array[AttackPattern]
+## Attack phases that play out during the combat.
+@export var attack_phases: Array[AttackPhase]
 
 @export_group("Combat Victory")
 ## the loot that the player gets after winning (optional)

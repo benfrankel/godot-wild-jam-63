@@ -114,12 +114,14 @@ offset_right = -67.0
 offset_bottom = 17.0
 
 [node name="ExhLabel" type="Label" parent="Hud/ExhSus"]
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 13.0
 theme_override_font_sizes/font_size = 8
 text = "EXH"
 
 [node name="ExhSusMeter" type="HBoxContainer" parent="Hud/ExhSus"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 3.0
 offset_right = 189.0
@@ -146,6 +148,7 @@ fill_mode = 1
 show_percentage = false
 
 [node name="SusLabel" type="Label" parent="Hud/ExhSus"]
+layout_mode = 0
 offset_left = 191.0
 offset_right = 215.0
 offset_bottom = 13.0

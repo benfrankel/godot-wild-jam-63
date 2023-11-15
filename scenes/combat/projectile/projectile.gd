@@ -2,25 +2,26 @@ class_name Projectile
 extends RigidBody2D
 
 
-## Duration in seconds of the projectile's spawn animation.
-@export var spawn_time := 0.5
-## Duration in seconds of the projectile's despawn animation.
-@export var despawn_time := 0.5
-## Time to freeze in place after hitting the laser.
+## Time to freeze in place after hitting the laser (in seconds).
 @export var hit_stop := 0.5
-var lifetime := 5.0
-var lifetime_timer := Timer.new()
+## Duration of the projectile's spawn animation (in seconds).
+var spawn_time: float
+## Duration before the projectile despawns on its own (in seconds).
+var lifetime: float
+## Duration of the projectile's despawn animation (in seconds).
+var despawn_time: float
 var laser: Laser
+var _lifetime_timer := Timer.new()
 var _collision_layer_backup: int
 var _linear_velocity_backup: Vector2
 var _angular_velocity_backup: float
 
 
 func _ready() -> void:
-	lifetime_timer.timeout.connect(fade_out.bind(despawn_time))
-	lifetime_timer.one_shot = true
-	add_child(lifetime_timer)
-	lifetime_timer.start(lifetime)
+	_lifetime_timer.timeout.connect(fade_out.bind(despawn_time))
+	_lifetime_timer.one_shot = true
+	add_child(_lifetime_timer)
+	_lifetime_timer.start(lifetime)
 	stop()
 	await fade_in(spawn_time)
 	start()
@@ -31,7 +32,7 @@ func start() -> void:
 	linear_velocity = _linear_velocity_backup
 	angular_velocity = _angular_velocity_backup
 	freeze = false
-	lifetime_timer.paused = false
+	_lifetime_timer.paused = false
 
 
 func stop() -> void:
@@ -42,7 +43,7 @@ func stop() -> void:
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0.0
 	set_deferred("freeze", true)
-	lifetime_timer.paused = true
+	_lifetime_timer.paused = true
 
 
 func fade_in(duration: float) -> void:

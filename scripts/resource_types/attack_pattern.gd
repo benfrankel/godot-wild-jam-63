@@ -4,14 +4,18 @@ extends Resource
 
 ## The projectile to spawn for each attack
 @export var projectile: PackedScene
-## The delay before the first attack (in seconds)
+## The delay before the attack starts (in seconds)
 @export var delay := 0.0
-## The delay between consecutive attacks (in seconds)
+## The cooldown between the attack repeats (in seconds)
 @export var cooldown := 1.0
+## The number of iterations before the pattern finishes
+@export var count: int = 1
+## The spawn time of the projectile (in seconds)
+@export var spawn_time := 0.5
 ## The lifetime of the projectile (in seconds)
 @export var lifetime := 5.0
-## The remaining number of attacks before the attack pattern finishes
-@export var remaining_attacks: int = 1
+## The despawn time of the projectile (in seconds)
+@export var despawn_time := 0.5
 ## The initial position of the projectile (center of the arena is (0, 0), corners are (+-1, +-1))
 @export var position: Vector2
 ## The difference in initial position between consecutive attacks
@@ -20,9 +24,9 @@ extends Resource
 @export var rotation := 0.0
 ## The difference in initial rotation between consecutive attacks (in degrees)
 @export var rotation_step := 0.0
-## The initial scale of the projectile (in degrees)
+## The initial scale of the projectile
 @export var scale := Vector2.ONE
-## The multiplier for initial scale between consecutive attacks (in degrees)
+## The multiplier for initial scale between consecutive attacks
 @export var scale_step := Vector2.ONE
 ## The initial speed of the projectile
 @export var speed := 300.0
