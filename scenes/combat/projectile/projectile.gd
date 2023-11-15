@@ -10,6 +10,9 @@ extends RigidBody2D
 @export var hit_stop := 0.5
 var lifetime := 5.0
 var lifetime_timer := Timer.new()
+var _collision_layer_backup: int
+var _linear_velocity_backup: Vector2
+var _angular_velocity_backup: float
 
 
 func _ready() -> void:
@@ -21,27 +24,29 @@ func _ready() -> void:
 
 
 func start() -> void:
-	process_mode = PROCESS_MODE_INHERIT
+	collision_layer = _collision_layer_backup
+	linear_velocity = _linear_velocity_backup
+	angular_velocity = _angular_velocity_backup
+	freeze = false
 	lifetime_timer.paused = false
 
 
 func stop() -> void:
-	process_mode = PROCESS_MODE_DISABLED
+	_collision_layer_backup = collision_layer
+	_linear_velocity_backup = linear_velocity
+	_angular_velocity_backup = angular_velocity
+	collision_layer = 0
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0.0
+	set_deferred("freeze", true)
 	lifetime_timer.paused = true
-
-
-func fade(duration: float, target: Color) -> void:
-	await create_tween()\
-			.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)\
-			.tween_property(self, "modulate", target, duration)\
-			.finished
 
 
 func fade_in(duration: float) -> void:
 	var target: Color = modulate
 	modulate.a = 0
 	stop()
-	await fade(duration, target)
+	await create_tween().tween_property(self, "modulate", target, duration).finished
 	start()
 
 
@@ -49,7 +54,7 @@ func fade_out(duration: float) -> void:
 	var target: Color = modulate
 	target.a = 0
 	stop()
-	await fade(duration, target)
+	await create_tween().tween_property(self, "modulate", target, duration).finished
 	queue_free()
 
 
