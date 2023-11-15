@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkp6qtg2eofgc" path="res://assets/combat/projectiles/arms.png" id="2_j1jip"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w20mq"]
-radius = 16.0
+radius = 9.05539
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nccbn"]
 radius = 7.0

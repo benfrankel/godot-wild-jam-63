@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/combat/projectile/cat_arm.gd" id="1_1vpkp"]
 [ext_resource type="Texture2D" uid="uid://dkp6qtg2eofgc" path="res://assets/combat/projectiles/arms.png" id="2_8txmh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w20mq"]
-radius = 16.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhldj"]
+radius = 9.05539
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nccbn"]
 radius = 7.0
@@ -28,7 +28,7 @@ region_rect = Rect2(0, 150, 357, 36)
 
 [node name="Hitbox1" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CircleShape2D_w20mq")
+shape = SubResource("CircleShape2D_xhldj")
 
 [node name="Hitbox2" type="CollisionShape2D" parent="."]
 position = Vector2(-177, 0)
