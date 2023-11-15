@@ -61,3 +61,13 @@ func fade_out(duration: float) -> void:
 func on_hit() -> void:
 	modulate = Color.RED
 	fade_out(hit_stop)
+
+
+# Workaround because RigidBody2D doesn't like being scaled
+func custom_set_scale(new_scale: Vector2) -> void:
+	var scale_ratio: Vector2 = new_scale / scale
+	for child in get_children():
+		var child_node := child as Node2D
+		if child_node:
+			child_node.position *= scale_ratio
+			child_node.scale *= scale_ratio
