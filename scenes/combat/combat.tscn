@@ -84,8 +84,28 @@ collision_mask = 0
 position = Vector2(0, 100)
 shape = SubResource("RectangleShape2D_oirq6")
 
-[node name="ExhSus" type="Control" parent="."]
+[node name="Hud" type="Control" parent="."]
 modulate = Color(0.882353, 0.870588, 0.905882, 1)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="EnemyName" type="Label" parent="Hud"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -30.0
+offset_right = 37.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "Enemy Name"
+horizontal_alignment = 1
+
+[node name="ExhSus" type="Control" parent="Hud"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -107.0
@@ -93,20 +113,20 @@ offset_top = -23.0
 offset_right = -67.0
 offset_bottom = 17.0
 
-[node name="ExhLabel" type="Label" parent="ExhSus"]
+[node name="ExhLabel" type="Label" parent="Hud/ExhSus"]
 offset_right = 24.0
 offset_bottom = 13.0
 theme_override_font_sizes/font_size = 8
 text = "EXH"
 
-[node name="ExhSusMeter" type="HBoxContainer" parent="ExhSus"]
+[node name="ExhSusMeter" type="HBoxContainer" parent="Hud/ExhSus"]
 offset_left = 25.0
 offset_top = 3.0
 offset_right = 189.0
 offset_bottom = 8.0
 theme_override_constants/separation = -1
 
-[node name="ExhMeter" type="ProgressBar" parent="ExhSus/ExhSusMeter"]
+[node name="ExhMeter" type="ProgressBar" parent="Hud/ExhSus/ExhSusMeter"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -115,7 +135,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ms1of")
 step = 0.0
 show_percentage = false
 
-[node name="SusMeter" type="ProgressBar" parent="ExhSus/ExhSusMeter"]
+[node name="SusMeter" type="ProgressBar" parent="Hud/ExhSus/ExhSusMeter"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -125,7 +145,7 @@ step = 0.0
 fill_mode = 1
 show_percentage = false
 
-[node name="SusLabel" type="Label" parent="ExhSus"]
+[node name="SusLabel" type="Label" parent="Hud/ExhSus"]
 offset_left = 191.0
 offset_right = 215.0
 offset_bottom = 13.0

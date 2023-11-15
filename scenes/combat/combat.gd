@@ -6,12 +6,12 @@ var enemy: Enemy
 var exhaustion: int = 0
 var suspicion: int = 0
 @onready var laser := %Laser as Laser
-@onready var exh_meter := $ExhSus/ExhSusMeter/ExhMeter as ProgressBar
-@onready var sus_meter := $ExhSus/ExhSusMeter/SusMeter as ProgressBar
+@onready var exh_meter := $Hud/ExhSus/ExhSusMeter/ExhMeter as ProgressBar
+@onready var sus_meter := $Hud/ExhSus/ExhSusMeter/SusMeter as ProgressBar
 
 
 func _ready() -> void:
-	print("Fighting ", enemy.name)
+	$Hud/EnemyName.text = enemy.name
 	$Background.self_modulate = enemy.bg_color
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
 	$EnemyPortrait.texture = enemy.portrait
