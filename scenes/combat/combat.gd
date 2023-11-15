@@ -6,6 +6,8 @@ var enemy: Enemy
 var exhaustion: int = 0
 var suspicion: int = 0
 @onready var laser := %Laser as Laser
+@onready var exh_meter := $ExhSus/ExhSusMeter/ExhMeter as ProgressBar
+@onready var sus_meter := $ExhSus/ExhSusMeter/SusMeter as ProgressBar
 
 
 func _ready() -> void:
@@ -14,6 +16,8 @@ func _ready() -> void:
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
 	$EnemyPortrait.texture = enemy.portrait
 	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
+	exh_meter.max_value = enemy.max_exhaustion
+	sus_meter.max_value = enemy.max_suspicion
 	
 	for pattern_idx in enemy.attack_patterns.size():
 		var pattern: AttackPattern = enemy.attack_patterns[pattern_idx]
@@ -65,15 +69,13 @@ func finish(win: bool) -> void:
 
 func _on_exhaustion_timer_timeout() -> void:
 	exhaustion += 1
-	# TODO: Update UI
-	print("Exhaustion is now ", exhaustion, " / ", enemy.max_exhaustion)
+	exh_meter.value = exhaustion
 	if exhaustion >= enemy.max_exhaustion:
 		finish(true)
 
 
 func _on_laser_got_hit(_projectile: Projectile) -> void:
 	suspicion += 1
-	# TODO: Update UI
-	print("Suspicion is now ", suspicion, " / ", enemy.max_suspicion)
+	sus_meter.value = suspicion
 	if suspicion >= enemy.max_suspicion:
 		finish(false)
