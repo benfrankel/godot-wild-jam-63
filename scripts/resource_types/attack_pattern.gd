@@ -10,6 +10,12 @@ extends Resource
 @export var cooldown := 1.0
 ## The number of iterations before the pattern finishes
 @export var count: int = 1
+## An attack to skip (by index, negative for no skip)
+@export var skip: int = -1
+## The difference in skip between consecutive launches of this attack pattern (wraps around)
+@export var skip_step: int = 0
+## The number of attacks to be randomly skipped
+@export var random_skips: int = 0
 ## The spawn time of the projectile (in seconds)
 @export var spawn_time := 0.5
 ## The lifetime of the projectile (in seconds)
@@ -17,9 +23,9 @@ extends Resource
 ## The despawn time of the projectile (in seconds)
 @export var despawn_time := 0.5
 ## The initial position of the projectile (center of the arena is (0, 0), corners are (+-1, +-1))
-@export var position: Vector2
+@export var position := Vector2.ZERO
 ## The difference in initial position between consecutive attacks
-@export var position_step: Vector2
+@export var position_step := Vector2.ZERO
 ## The initial rotation of the projectile (in degrees)
 @export var rotation := 0.0
 ## The difference in initial rotation between consecutive attacks (in degrees)

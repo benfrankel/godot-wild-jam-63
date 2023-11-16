@@ -19,7 +19,11 @@ func _ready() -> void:
 	exh_meter.max_value = enemy.max_exhaustion
 	sus_meter.max_value = enemy.max_suspicion
 	for phase in enemy.attack_phases:
-		launch_phase(phase)
+		# Work-around for https://github.com/godotengine/godot/issues/74918
+		var dupe_phase := phase.duplicate(true)
+		for i in dupe_phase.patterns.size():
+			dupe_phase.patterns[i] = dupe_phase.patterns[i].duplicate(true)
+		launch_phase(dupe_phase)
 
 
 func launch_phase(phase: AttackPhase) -> void:
@@ -41,6 +45,10 @@ func launch_phase(phase: AttackPhase) -> void:
 		# Launch patterns
 		for pattern in phase.patterns:
 			launch_pattern(pattern.duplicate())
+			
+		# Step phase
+		for pattern in phase.patterns:
+			pattern.skip += pattern.skip_step
 		
 		# Wait on cooldown
 		if phase.cooldown > 0.0:
@@ -52,19 +60,32 @@ func launch_pattern(pattern: AttackPattern) -> void:
 	if pattern.delay > 0.0:
 		await get_tree().create_timer(pattern.delay, false).timeout
 	
-	for _i in pattern.count:
+	# Remove skips
+	var idxs := range(pattern.count)
+	if pattern.skip >= 0:
+		pattern.skip %= pattern.count
+		idxs.erase(pattern.skip)
+	if not idxs:
+		return
+	for _i in pattern.random_skips:
+		idxs.remove_at(randi() % idxs.size())
+		if not idxs:
+			return
+	
+	for i in pattern.count:
 		# Spawn projectile
-		var projectile := pattern.projectile.instantiate() as Projectile
-		projectile.laser = laser
-		projectile.spawn_time = pattern.spawn_time
-		projectile.lifetime = pattern.lifetime
-		projectile.despawn_time = pattern.despawn_time
-		projectile.global_position = pattern.position
-		projectile.rotation = deg_to_rad(pattern.rotation)
-		projectile.custom_set_scale(pattern.scale)
-		projectile.linear_velocity = pattern.speed * Vector2.from_angle(deg_to_rad(pattern.angle))
-		projectile.angular_velocity = deg_to_rad(pattern.angular_velocity)
-		$Projectiles.add_child(projectile)
+		if i in idxs:
+			var projectile := pattern.projectile.instantiate() as Projectile
+			projectile.laser = laser
+			projectile.spawn_time = pattern.spawn_time
+			projectile.lifetime = pattern.lifetime
+			projectile.despawn_time = pattern.despawn_time
+			projectile.global_position = pattern.position
+			projectile.rotation = deg_to_rad(pattern.rotation)
+			projectile.custom_set_scale(pattern.scale)
+			projectile.linear_velocity = pattern.speed * Vector2.from_angle(deg_to_rad(pattern.angle))
+			projectile.angular_velocity = deg_to_rad(pattern.angular_velocity)
+			$Projectiles.add_child(projectile)
 		
 		# Step pattern
 		pattern.position += pattern.position_step
@@ -84,8 +105,6 @@ func get_global_arena_rect() -> Rect2:
 
 
 func finish(win: bool) -> void:
-	# TODO: Handle win / loss
-	print("Combat over! Win? ", win)
 	if win:
 		var v :VictoryScreen = victory_scene.instantiate()
 		GameManager.viewport.hi_res_gui_root.add_child(v)

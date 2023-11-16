@@ -1,8 +1,8 @@
 extends InteractionComponent
 
 
-@export_file("*.tres") var fight_path := ""
+@export_file("*.tres") var enemy_path := ""
 
 
 func _interact() -> void:
-	GameManager.enter_combat(fight_path)
+	GameManager.enter_combat(enemy_path)
