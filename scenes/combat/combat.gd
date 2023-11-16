@@ -27,28 +27,33 @@ func _ready() -> void:
 
 
 func launch_phase(phase: AttackPhase) -> void:
-	# Apply phase settings to each pattern
-	var arena: Rect2 = get_global_arena_rect()
-	for pattern in phase.patterns:
-		pattern.position = pattern.position.rotated(phase.rotation) * phase.scale + phase.position
-		pattern.position = arena.get_center() + pattern.position * arena.size / 2.0
-		pattern.position_step = pattern.position_step.rotated(phase.rotation) * phase.scale
-		pattern.position_step *= arena.size / 2.0
-		pattern.rotation += phase.rotation
-		pattern.scale *= phase.scale
-	
 	# Wait on delay
 	if phase.delay > 0.0:
 		await get_tree().create_timer(phase.delay, false).timeout
 	
 	for _i in phase.count:
 		# Launch patterns
+		var arena: Rect2 = get_global_arena_rect()
 		for pattern in phase.patterns:
-			launch_pattern(pattern.duplicate())
+			pattern = pattern.duplicate()
+			pattern.position = pattern.position.rotated(phase.rotation) * phase.scale + phase.position
+			pattern.position = arena.get_center() + pattern.position * arena.size / 2.0
+			pattern.position_step = pattern.position_step.rotated(phase.rotation) * phase.scale
+			pattern.position_step *= arena.size / 2.0
+			pattern.rotation += phase.rotation
+			pattern.scale *= phase.scale
+			var flip := phase.scale.sign()
+			pattern.angle *= flip.x * flip.y
+			if flip.x < 0.0:
+				pattern.angle += 180.0
+			launch_pattern(pattern)
 			
 		# Step phase
 		for pattern in phase.patterns:
 			pattern.skip += pattern.skip_step
+		phase.position += phase.position_step
+		phase.rotation += phase.rotation_step
+		phase.scale *= phase.scale_step
 		
 		# Wait on cooldown
 		if phase.cooldown > 0.0:

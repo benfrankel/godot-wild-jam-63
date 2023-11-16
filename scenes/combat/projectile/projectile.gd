@@ -18,13 +18,14 @@ var _angular_velocity_backup: float
 
 
 func _ready() -> void:
-	_lifetime_timer.timeout.connect(fade_out.bind(despawn_time))
+	_lifetime_timer.timeout.connect(expire)
 	_lifetime_timer.one_shot = true
 	add_child(_lifetime_timer)
 	_lifetime_timer.start(lifetime)
-	stop()
-	await fade_in(spawn_time)
-	start()
+	if spawn_time != 0.0:
+		stop()
+		await fade_in(spawn_time)
+		start()
 
 
 func start() -> void:
@@ -49,13 +50,19 @@ func stop() -> void:
 func fade_in(duration: float) -> void:
 	var target: Color = modulate
 	modulate.a = 0
-	await create_tween().tween_property(self, "modulate", target, duration).finished
+	if duration != 0:
+		await create_tween().tween_property(self, "modulate", target, duration).finished
+	else:
+		modulate = target
 
 
 func fade_out(duration: float) -> void:
 	var target: Color = modulate
 	target.a = 0
-	await create_tween().tween_property(self, "modulate", target, duration).finished
+	if duration != 0:
+		await create_tween().tween_property(self, "modulate", target, duration).finished
+	else:
+		modulate = target
 	queue_free()
 
 
@@ -65,9 +72,16 @@ func on_hit() -> void:
 	fade_out(hit_stop)
 
 
+func expire() -> void:
+	fade_out(despawn_time)
+
+
 # Workaround because RigidBody2D doesn't like being scaled
 func custom_set_scale(new_scale: Vector2) -> void:
 	var scale_ratio: Vector2 = new_scale / scale
+	var flip: Vector2 = scale_ratio.sign()
+	if flip.x * flip.y == -1.0:
+		rotation *= -1.0
 	for child in get_children():
 		var child_node := child as Node2D
 		if child_node:

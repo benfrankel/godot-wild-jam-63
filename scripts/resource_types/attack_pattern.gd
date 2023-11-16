@@ -12,7 +12,7 @@ extends Resource
 @export var count: int = 1
 ## An attack to skip (by index, negative for no skip)
 @export var skip: int = -1
-## The difference in skip between consecutive launches of this attack pattern (wraps around)
+## The change in skip per launch of this pattern (wraps around)
 @export var skip_step: int = 0
 ## The number of attacks to be randomly skipped
 @export var random_skips: int = 0
@@ -24,21 +24,21 @@ extends Resource
 @export var despawn_time := 0.5
 ## The initial position of the projectile (center of the arena is (0, 0), corners are (+-1, +-1))
 @export var position := Vector2.ZERO
-## The difference in initial position between consecutive attacks
+## The change in position between attacks
 @export var position_step := Vector2.ZERO
 ## The initial rotation of the projectile (in degrees)
 @export var rotation := 0.0
-## The difference in initial rotation between consecutive attacks (in degrees)
+## The change in rotation between attacks
 @export var rotation_step := 0.0
 ## The initial scale of the projectile
 @export var scale := Vector2.ONE
-## The multiplier for initial scale between consecutive attacks
+## The multiplier to scale between attacks
 @export var scale_step := Vector2.ONE
 ## The initial speed of the projectile
 @export var speed := 300.0
 ## The initial direction of the projectile (as an angle, in degrees)
 @export var angle := 0.0
-## The difference in initial direction between consecutive attacks (as an angle, in degrees)
+## The change in angle between attacks
 @export var angle_step := 0.0
 ## The initial angular velocity of the projectile (in degrees per second)
 @export var angular_velocity := 0.0

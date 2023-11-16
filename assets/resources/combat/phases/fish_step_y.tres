@@ -1,30 +1,12 @@
-[gd_resource type="Resource" script_class="AttackPhase" load_steps=10 format=3 uid="uid://k47rmkxebl4s"]
+[gd_resource type="Resource" script_class="AttackPhase" load_steps=6 format=3 uid="uid://k47rmkxebl4s"]
 
-[ext_resource type="Script" path="res://scenes/combat/projectile/projectile.gd" id="1_2jiqu"]
-[ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_a8rwm"]
-[ext_resource type="Texture2D" uid="uid://ck278etie6tkn" path="res://assets/combat/projectiles/dead_fish_M.png" id="2_bu58e"]
-[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="3_j8fby"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0fwm"]
-radius = 4.0
-height = 28.0
-
-[sub_resource type="PackedScene" id="PackedScene_x3bir"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("DeadFishM", "collision_layer", "gravity_scale", "angular_damp_mode", "script", "RigidBody2D", "Image", "position", "texture", "Sprite2D", "Hitbox", "rotation", "shape", "CollisionShape2D"),
-"node_count": 3,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 9, 6, -1, 2, 7, 4, 8, 5, 0, 0, 0, 13, 10, -1, 2, 11, 6, 12, 7, 0),
-"variants": [2, 0.0, 1, ExtResource("1_2jiqu"), Vector2(-3, 0), ExtResource("2_bu58e"), 1.5708, SubResource("CapsuleShape2D_w0fwm")],
-"version": 3
-}
+[ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://scenes/combat/projectile/dead_fish_M.tscn" id="1_cayiv"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_s1rub"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="3_o4vjr"]
 
 [sub_resource type="Resource" id="Resource_8v1pp"]
-script = ExtResource("2_a8rwm")
-projectile = SubResource("PackedScene_x3bir")
+script = ExtResource("2_s1rub")
+projectile = ExtResource("1_cayiv")
 delay = 0.0
 cooldown = 0.0
 count = 5
@@ -45,22 +27,9 @@ angle = 0.0
 angle_step = 0.0
 angular_velocity = 0.0
 
-[sub_resource type="PackedScene" id="PackedScene_6oagw"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("DeadFishM", "collision_layer", "gravity_scale", "angular_damp_mode", "script", "RigidBody2D", "Image", "position", "texture", "Sprite2D", "Hitbox", "rotation", "shape", "CollisionShape2D"),
-"node_count": 3,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 1, 3, 2, 4, 3, 0, 0, 0, 9, 6, -1, 2, 7, 4, 8, 5, 0, 0, 0, 13, 10, -1, 2, 11, 6, 12, 7, 0),
-"variants": [2, 0.0, 1, ExtResource("1_2jiqu"), Vector2(-3, 0), ExtResource("2_bu58e"), 1.5708, SubResource("CapsuleShape2D_w0fwm")],
-"version": 3
-}
-
 [sub_resource type="Resource" id="Resource_065vs"]
-script = ExtResource("2_a8rwm")
-projectile = SubResource("PackedScene_6oagw")
+script = ExtResource("2_s1rub")
+projectile = ExtResource("1_cayiv")
 delay = 0.5
 cooldown = 0.0
 count = 4
@@ -82,11 +51,11 @@ angle_step = 0.0
 angular_velocity = 0.0
 
 [resource]
-script = ExtResource("3_j8fby")
+script = ExtResource("3_o4vjr")
 delay = 0.0
 cooldown = 1.0
 count = 6
 position = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
-patterns = Array[ExtResource("2_a8rwm")]([SubResource("Resource_8v1pp"), SubResource("Resource_065vs")])
+patterns = Array[ExtResource("2_s1rub")]([SubResource("Resource_8v1pp"), SubResource("Resource_065vs")])

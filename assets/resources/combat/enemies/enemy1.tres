@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=4 format=3 uid="uid://bh6taflv8p41w"]
 
-[ext_resource type="Resource" uid="uid://dgwccirpvoy7y" path="res://assets/resources/combat/phases/fish_corners_cw.tres" id="1_wbyyi"]
+[ext_resource type="Resource" uid="uid://dj6nw3sbqbl1x" path="res://assets/resources/combat/phases/yarn_wave.tres" id="1_7nk2h"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="2_y1j31"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="3_amgom"]
 
@@ -13,4 +13,4 @@ bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
 max_exhaustion = 25
 exhaustion_cooldown = 2.0
 max_suspicion = 10
-attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([ExtResource("1_wbyyi")])
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([ExtResource("1_7nk2h")])

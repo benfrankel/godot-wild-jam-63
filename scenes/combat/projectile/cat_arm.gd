@@ -17,6 +17,11 @@ func _ready() -> void:
 	start()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if is_following:
 		position += laser.position.project(follow_axis) - position.project(follow_axis)
+
+
+func expire() -> void:
+	stop()
+	super.expire()
