@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=7 format=3 uid="uid://cb1bsqv7pexg5"]
+
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="1_18u30"]
+[ext_resource type="Resource" uid="uid://ck51fflytvlgq" path="res://assets/resources/items/ItemCanTuna.tres" id="1_htta6"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="2_moa3i"]
+[ext_resource type="Resource" uid="uid://b7ihq53ypryco" path="res://assets/resources/items/ItemCucumber.tres" id="3_c5pw1"]
+[ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://assets/resources/items/ItemMilk.tres" id="4_sxg3t"]
+[ext_resource type="Resource" uid="uid://bxlawrtuugwk8" path="res://assets/resources/items/ItemSprayBottle.tres" id="5_4t8lf"]
+
+[resource]
+script = ExtResource("1_18u30")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("1_htta6"), ExtResource("2_moa3i"), ExtResource("3_c5pw1"), ExtResource("4_sxg3t"), ExtResource("5_4t8lf")])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+capacity = 10
+boss_items_capacity = 5

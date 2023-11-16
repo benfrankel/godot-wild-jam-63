@@ -14,6 +14,8 @@ var inventory : CombatInventory
 
 func _ready() -> void:
 	state.projectiles_root = $Projectiles
+	state.enemy = enemy
+	
 	$Hud/EnemyName.text = enemy.name
 	$Background.self_modulate = enemy.bg_color
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color

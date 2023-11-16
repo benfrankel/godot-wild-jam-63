@@ -9,3 +9,4 @@ class_name CombatState
 var exhaustion: int = 0
 var suspicion: int = 0
 var projectiles_root : Node
+var enemy : Enemy
