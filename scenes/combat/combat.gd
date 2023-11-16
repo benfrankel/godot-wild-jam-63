@@ -1,10 +1,12 @@
 extends Node2D
 
 @export var victory_scene : PackedScene
+@export var enemy: Enemy # exporting to allow quick testing
+@export var inventory_scene : PackedScene
 
-var enemy: Enemy
 var exhaustion: int = 0
 var suspicion: int = 0
+var inventory : Control
 @onready var laser := %Laser as Laser
 @onready var exh_meter := $Hud/ExhSus/ExhSusMeter/ExhMeter as ProgressBar
 @onready var sus_meter := $Hud/ExhSus/ExhSusMeter/SusMeter as ProgressBar
@@ -18,6 +20,9 @@ func _ready() -> void:
 	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
 	exh_meter.max_value = enemy.max_exhaustion
 	sus_meter.max_value = enemy.max_suspicion
+	inventory = inventory_scene.instantiate()
+	GameManager.viewport.hi_res_gui_root.add_child(inventory)
+	
 	for phase in enemy.attack_phases:
 		# Work-around for https://github.com/godotengine/godot/issues/74918
 		var dupe_phase := phase.duplicate(true)
@@ -114,6 +119,7 @@ func finish(win: bool) -> void:
 		var v :VictoryScreen = victory_scene.instantiate()
 		GameManager.viewport.hi_res_gui_root.add_child(v)
 		v.load_from(enemy)
+	inventory.queue_free()
 	GameManager.exit_combat()
 
 

@@ -41,5 +41,7 @@ func get_consumables() -> Array[Item]:
 func consume_inventory(other : Inventory) -> void:
 	for item in other.items:
 		add_item(item)
+		print("Inventory added: %s" % str(item))
 	for item in other.boss_items:
 		add_item(item)
+		print("Inventory added: %s" % str(item))

@@ -1,58 +1,6 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=9 format=3 uid="uid://bh6taflv8p41w"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=2 format=3 uid="uid://bh6taflv8p41w"]
 
-[ext_resource type="PackedScene" uid="uid://iw88my1p5ejp" path="res://scenes/combat/projectile/spiked_club.tscn" id="1_3xgpr"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_es3y3"]
-[ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_axrxq"]
-[ext_resource type="PackedScene" uid="uid://bcoi23msy4lbf" path="res://scenes/combat/projectile/yarn_ball.tscn" id="3_2sxyi"]
-[ext_resource type="PackedScene" uid="uid://dtv818xd0ui2r" path="res://scenes/combat/projectile/glass_cup.tscn" id="4_tsh3l"]
-
-[sub_resource type="Resource" id="Resource_lcvym"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("1_3xgpr")
-delay = 0.5
-lifetime = 0.5
-cooldown = 1.0
-remaining_attacks = 4
-position = Vector2(-1, 0.5)
-position_step = Vector2(0, 0)
-speed = 100.0
-angle = -90.0
-angle_step = 0.0
-rotation = 45.0
-rotation_step = 0.0
-angular_velocity = -180.0
-
-[sub_resource type="Resource" id="Resource_u6fsg"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("3_2sxyi")
-delay = 1.5
-lifetime = 5.0
-cooldown = 1.0
-remaining_attacks = 8
-position = Vector2(1.25, -1)
-position_step = Vector2(0, 0)
-speed = 200.0
-angle = 180.0
-angle_step = 0.0
-rotation = 0.0
-rotation_step = 0.0
-angular_velocity = -45.0
-
-[sub_resource type="Resource" id="Resource_55tmb"]
-script = ExtResource("2_axrxq")
-projectile = ExtResource("4_tsh3l")
-delay = 3.0
-lifetime = 5.0
-cooldown = 1.0
-remaining_attacks = 6
-position = Vector2(-0.8, -1.5)
-position_step = Vector2(0, 0)
-speed = 200.0
-angle = -90.0
-angle_step = 0.0
-rotation = 20.0
-rotation_step = 80.0
-angular_velocity = 0.0
 
 [resource]
 script = ExtResource("1_es3y3")
@@ -62,4 +10,4 @@ bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
 max_exhaustion = 10
 exhaustion_cooldown = 5.0
 max_suspicion = 10
-attack_patterns = Array[ExtResource("2_axrxq")]([SubResource("Resource_lcvym"), SubResource("Resource_u6fsg"), SubResource("Resource_55tmb")])
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])

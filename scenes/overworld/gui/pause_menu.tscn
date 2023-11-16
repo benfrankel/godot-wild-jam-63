@@ -1,16 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://pknwhm1v0qh3"]
+[gd_scene load_steps=3 format=3 uid="uid://pknwhm1v0qh3"]
 
 [ext_resource type="Script" path="res://scenes/overworld/gui/pause_menu.gd" id="1_an0tv"]
 [ext_resource type="PackedScene" uid="uid://blts3g4blkbns" path="res://scenes/overworld/gui/components/inventory_panel.tscn" id="1_gu0jv"]
-[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="3_av3xm"]
-[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="4_jn4sq"]
-
-[sub_resource type="Resource" id="Resource_x6868"]
-script = ExtResource("4_jn4sq")
-items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("3_av3xm"), ExtResource("3_av3xm")])
-boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
-capacity = 10
-boss_items_capacity = 5
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -70,7 +61,6 @@ grow_vertical = 2
 
 [node name="InventoryPanel" parent="InventoryPanel" instance=ExtResource("1_gu0jv")]
 layout_mode = 2
-inventory = SubResource("Resource_x6868")
 
 [connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnSave" to="." method="_on_btn_save_pressed"]
 [connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnInventory" to="." method="_on_btn_inventory_pressed"]

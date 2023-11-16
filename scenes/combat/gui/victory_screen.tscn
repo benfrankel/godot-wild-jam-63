@@ -1,25 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy10q155606wn"]
+[gd_scene load_steps=7 format=3 uid="uid://cy10q155606wn"]
 
 [ext_resource type="PackedScene" uid="uid://blts3g4blkbns" path="res://scenes/overworld/gui/components/inventory_panel.tscn" id="1_5fy5n"]
 [ext_resource type="Script" path="res://scenes/combat/gui/victory_screen.gd" id="1_qtgjv"]
 [ext_resource type="PackedScene" uid="uid://c18v5gt5qy8pc" path="res://scenes/dialog_system/dialog.tscn" id="2_6ksd8"]
-[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="2_vlvft"]
-[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="3_rf0ab"]
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="4_4us7p"]
 [ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="5_2yof1"]
 
-[sub_resource type="Resource" id="Resource_vphdo"]
-script = ExtResource("3_rf0ab")
-items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("2_vlvft")])
-boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
-capacity = 10
-boss_items_capacity = 5
-
-[sub_resource type="Resource" id="Resource_tud2e"]
+[sub_resource type="Resource" id="Resource_52ns5"]
 script = ExtResource("4_4us7p")
-character_name = "Test dialog"
+character_name = ""
 auto_progress = false
-lines = Array[String](["Exposition dump", "Even more lore", "OMFG so much lore!!!"])
+lines = Array[String](["You win!"])
 
 [node name="VictoryScreen" type="Control"]
 layout_mode = 3
@@ -29,8 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtgjv")
-loot = SubResource("Resource_vphdo")
-dialog = SubResource("Resource_tud2e")
+dialog = SubResource("Resource_52ns5")
 
 [node name="BG" type="ColorRect" parent="."]
 modulate = Color(0.427451, 0.427451, 0.427451, 1)
