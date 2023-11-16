@@ -10,7 +10,7 @@ const COMBAT_SCENE := preload("res://scenes/combat/combat.tscn") as PackedScene
 var viewport: ViewportManager
 var scene_backup: Node
 var pausing_allowed := true
-var player_inventory : Inventory = Inventory.new()
+var player_inventory : Inventory = preload("res://assets/resources/PlayerDefaultInventory.tres") # load from default inventory for testing with different items
 
 func enter_room(room_path: String, door_idx: int) -> void:
 	var room := (load(room_path) as PackedScene).instantiate() # may cause stutter here for large rooms.

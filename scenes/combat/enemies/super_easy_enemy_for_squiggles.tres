@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=9 format=3 uid="uid://dluyqbubbpetf"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=13 format=3 uid="uid://dluyqbubbpetf"]
 
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_18pqs"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_d7veh"]
 [ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="1_puckt"]
 [ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="1_sm00t"]
+[ext_resource type="Resource" uid="uid://ck51fflytvlgq" path="res://assets/resources/items/ItemCanTuna.tres" id="2_ckg3d"]
+[ext_resource type="Resource" uid="uid://b7ihq53ypryco" path="res://assets/resources/items/ItemCucumber.tres" id="4_loh35"]
+[ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://assets/resources/items/ItemMilk.tres" id="5_7f3dd"]
+[ext_resource type="Resource" uid="uid://bxlawrtuugwk8" path="res://assets/resources/items/ItemSprayBottle.tres" id="6_8n3xf"]
 
 [sub_resource type="Resource" id="Resource_shxyb"]
 script = ExtResource("1_18pqs")
@@ -13,7 +17,7 @@ lines = Array[String](["Yay loot!"])
 
 [sub_resource type="Resource" id="Resource_q0uor"]
 script = ExtResource("1_puckt")
-items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("1_sm00t")])
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("2_ckg3d"), ExtResource("1_sm00t"), ExtResource("4_loh35"), ExtResource("5_7f3dd"), ExtResource("6_8n3xf")])
 boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
 capacity = 10
 boss_items_capacity = 5

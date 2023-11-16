@@ -3,7 +3,7 @@ class_name Item
 
 @export var item_name := ""
 @export var texture : Texture2D
-@export var effects : Array[ItemEffect] = []
+@export var effects : Array[Script] = []
 @export var is_boss_item := false
 
 func is_consumable() -> bool:
@@ -12,7 +12,7 @@ func is_consumable() -> bool:
 func apply_effects(game_state : CombatState) -> void:
 	for eff in effects:
 		var node := Node.new()
-		node.set_script(eff.effect_script)
+		node.set_script(eff)
 		if "apply" in node:
 			node.apply(game_state)
 			game_state.emit_changed()

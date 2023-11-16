@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bxlawrtuugwk8"]
+
+[ext_resource type="Script" path="res://assets/resources/items/effects/slow_time_2s.gd" id="1_j8gjg"]
+[ext_resource type="Script" path="res://scripts/resource_types/Item.gd" id="2_imvub"]
+[ext_resource type="Texture2D" uid="uid://c8sn2wip6m1u8" path="res://assets/resources/items/item_placeholder_icon.tres" id="3_4q44t"]
+
+[resource]
+script = ExtResource("2_imvub")
+item_name = "Spray Bottle"
+texture = ExtResource("3_4q44t")
+effects = Array[Script]([ExtResource("1_j8gjg")])
+is_boss_item = false
