@@ -1,16 +1,19 @@
 extends Node2D
+class_name Combat
 
 @export var victory_scene : PackedScene
+@export var enemy: Enemy # exporting to allow quick testing
+@export var inventory_scene : PackedScene
 
-var enemy: Enemy
-var exhaustion: int = 0
-var suspicion: int = 0
+var state := CombatState.new()
+var inventory : CombatInventory
 @onready var laser := %Laser as Laser
 @onready var exh_meter := $Hud/ExhSus/ExhSusMeter/ExhMeter as ProgressBar
 @onready var sus_meter := $Hud/ExhSus/ExhSusMeter/SusMeter as ProgressBar
 
 
 func _ready() -> void:
+	state.projectiles_root = $Projectiles
 	$Hud/EnemyName.text = enemy.name
 	$Background.self_modulate = enemy.bg_color
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
@@ -18,6 +21,10 @@ func _ready() -> void:
 	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
 	exh_meter.max_value = enemy.max_exhaustion
 	sus_meter.max_value = enemy.max_suspicion
+	inventory = inventory_scene.instantiate()
+	inventory.combat_state = state
+	GameManager.viewport.hi_res_gui_root.add_child(inventory)
+	state.changed.connect(_on_state_change)
 	for phase in enemy.attack_phases:
 		# Work-around for https://github.com/godotengine/godot/issues/74918
 		var dupe_phase := phase.duplicate(true)
@@ -114,18 +121,22 @@ func finish(win: bool) -> void:
 		var v :VictoryScreen = victory_scene.instantiate()
 		GameManager.viewport.hi_res_gui_root.add_child(v)
 		v.load_from(enemy)
+	inventory.queue_free()
 	GameManager.exit_combat()
 
-
 func _on_exhaustion_timer_timeout() -> void:
-	exhaustion += 1
-	exh_meter.value = exhaustion
-	if exhaustion >= enemy.max_exhaustion:
-		finish(true)
+	state.exhaustion += 1
+	state.emit_changed()
 
 
 func _on_laser_got_hit(_projectile: Projectile) -> void:
-	suspicion += 1
-	sus_meter.value = suspicion
-	if suspicion >= enemy.max_suspicion:
+	state.suspicion += 1
+	state.emit_changed()
+
+func _on_state_change() -> void:
+	exh_meter.value = state.exhaustion
+	if state.exhaustion >= enemy.max_exhaustion:
+		finish(true)
+	sus_meter.value = state.suspicion
+	if state.suspicion >= enemy.max_suspicion:
 		finish(false)

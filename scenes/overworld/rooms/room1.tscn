@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="6_fw342"]
 [ext_resource type="Script" path="res://scenes/interaction_system/combat_component.gd" id="6_hs42k"]
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_j4xr4"]
-[ext_resource type="Resource" uid="uid://bh6taflv8p41w" path="res://assets/resources/combat/enemies/enemy1.tres" id="8_vyyxe"]
+[ext_resource type="Resource" uid="uid://bh6taflv8p41w" path="res://scenes/combat/enemies/enemy1.tres" id="8_vyyxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
 size = Vector2(130.435, 130.435)
@@ -50,7 +50,22 @@ enemy_path = "res://assets/resources/combat/enemies/enemy1.tres"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/CombatInteraction" index="0"]
 shape = SubResource("RectangleShape2D_75wn5")
 
-[node name="CombatArea" type="Area2D" parent="." index="6"]
+[node name="NPC3" type="Sprite2D" parent="." index="5"]
+self_modulate = Color(0.623529, 0, 0.160784, 1)
+position = Vector2(-61, -85)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("3_waqub")
+
+[node name="CombatInteraction" type="Area2D" parent="NPC3" index="0"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_hs42k")
+enemy_path = "res://scenes/combat/enemies/super_easy_enemy_for_squiggles.tres"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/CombatInteraction" index="0"]
+shape = SubResource("RectangleShape2D_75wn5")
+
+[node name="CombatArea" type="Area2D" parent="." index="7"]
 position = Vector2(215, -350)
 script = ExtResource("7_j4xr4")
 available_fights = Array[Resource("res://scripts/resource_types/enemy.gd")]([ExtResource("8_vyyxe")])

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=9 format=3 uid="uid://dluyqbubbpetf"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_18pqs"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_d7veh"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="1_puckt"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="1_sm00t"]
+
+[sub_resource type="Resource" id="Resource_shxyb"]
+script = ExtResource("1_18pqs")
+character_name = "Test"
+auto_progress = false
+lines = Array[String](["Yay loot!"])
+
+[sub_resource type="Resource" id="Resource_q0uor"]
+script = ExtResource("1_puckt")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("1_sm00t")])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+capacity = 10
+boss_items_capacity = 5
+
+[sub_resource type="Curve" id="Curve_ubd58"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.478756, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_c37fe"]
+width = 64
+curve = SubResource("Curve_ubd58")
+
+[resource]
+script = ExtResource("1_d7veh")
+name = "Testing enemy"
+portrait = SubResource("CurveTexture_c37fe")
+bg_color = Color(0.160784, 0.160784, 0.160784, 1)
+bg_overlay_color = Color(0.709804, 0.709804, 0.709804, 1)
+max_exhaustion = 3
+exhaustion_cooldown = 2.0
+max_suspicion = 10000
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
+loot = SubResource("Resource_q0uor")
+dialog = SubResource("Resource_shxyb")

@@ -5,24 +5,28 @@ enum InventoryStyle {
 	OVERWORLD, COMBAT, READONLY
 }
 
+signal item_action_pressed(item : Item)
 
 @export var item_entry_scene : PackedScene
 @export var inventory : Inventory
 @export var style := InventoryStyle.OVERWORLD
+## limits visible items to only consumable items. Good for combat focus
+@export var filter_consumables := false
 
 @onready var entries := $%ItemEntriesContainer
 
 
-var filter_consumables := false
 
 func _ready() -> void:
-	if inventory:
-		reload_visuals()
+	if not inventory:
+		inventory = GameManager.player_inventory
+	reload_visuals()
 
 func load_inventory(inven : Inventory) -> void:
 	inventory = inven
-	if inventory:
-		reload_visuals()
+	if not inventory:
+		inventory = GameManager.player_inventory
+	reload_visuals()
 
 func reload_visuals() -> void:
 	for c in entries.get_children():
@@ -51,7 +55,9 @@ func reload_visuals() -> void:
 		entries.add_child(entry)
 
 func _callback_drop_item(item : Item) -> void:
-	pass
+	item_action_pressed.emit(item)
+	inventory.remove_item(item)
+	reload_visuals()
 
 func _callback_use_item(item : Item) -> void:
-	pass
+	item_action_pressed.emit(item)

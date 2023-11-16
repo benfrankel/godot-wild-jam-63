@@ -22,7 +22,10 @@ func _load(m_loot : Inventory, m_dialog : DialogData) -> void:
 	self.dialog = m_dialog
 	node_loot.load_inventory(loot)
 	node_dialog.set_dialog(dialog)
-
+#	if not loot:
+#		node_loot.queue_free()
 
 func _on_dialog_dialog_ended() -> void:
+	if loot:
+		GameManager.player_inventory.consume_inventory(loot)
 	queue_free()
