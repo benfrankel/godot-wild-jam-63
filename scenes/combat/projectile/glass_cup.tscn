@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtv818xd0ui2r"]
 
-[ext_resource type="Script" path="res://scenes/combat/projectile/projectile.gd" id="1_xmkpg"]
+[ext_resource type="Script" path="res://scenes/combat/projectile/glass_cup.gd" id="1_xiumc"]
 [ext_resource type="Texture2D" uid="uid://cpja4tdrttltj" path="res://assets/combat/projectiles/glass_cup.png" id="2_iugrn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gd0xf"]
@@ -14,8 +14,10 @@ height = 36.0
 collision_layer = 2
 collision_mask = 5
 center_of_mass_mode = 1
+max_contacts_reported = 1
+contact_monitor = true
 angular_damp_mode = 1
-script = ExtResource("1_xmkpg")
+script = ExtResource("1_xiumc")
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(-2.49991, 0)
@@ -31,3 +33,5 @@ shape = SubResource("CircleShape2D_gd0xf")
 position = Vector2(-21.4999, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xu5is")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=14 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
 [ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="2_k3uv0"]
 [ext_resource type="PackedScene" uid="uid://cy10q155606wn" path="res://scenes/combat/gui/victory_screen.tscn" id="2_qeivt"]
-[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="3_ppl46"]
+[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="4_72uc3"]
 [ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://assets/combat/arena_background.png" id="4_gsscs"]
 
 [sub_resource type="Gradient" id="Gradient_sdbt7"]
@@ -21,28 +21,54 @@ size = Vector2(166, 86)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oirq6"]
 size = Vector2(320, 20)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvnln"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms1of"]
+bg_color = Color(0.105882, 0.282353, 0.658824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arqxh"]
+bg_color = Color(0.729412, 0.145098, 0.309804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_npvr5")
 victory_scene = ExtResource("2_qeivt")
 
 [node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0.152941, 0.164706, 0.188235, 1)
 scale = Vector2(1, 180)
 texture = SubResource("GradientTexture1D_56ekf")
 
 [node name="BackgroundOverlay" type="Sprite2D" parent="."]
+self_modulate = Color(0.121569, 0.133333, 0.160784, 1)
 texture_repeat = 2
 texture = ExtResource("2_k3uv0")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 180)
 
-[node name="EnemyImage" type="Sprite2D" parent="."]
-position = Vector2(0, -54)
-texture = ExtResource("3_ppl46")
+[node name="EnemyPortrait" type="Sprite2D" parent="."]
+position = Vector2(0, -55)
+texture = ExtResource("4_72uc3")
 region_enabled = true
 region_rect = Rect2(1.33765, 0.0130005, 58.6026, 64.5806)
 
 [node name="Arena" type="Area2D" parent="."]
-position = Vector2(0, 28)
+position = Vector2(0, 35)
 
 [node name="Background" type="Sprite2D" parent="Arena"]
 texture = ExtResource("4_gsscs")
@@ -58,9 +84,81 @@ collision_mask = 0
 position = Vector2(0, 100)
 shape = SubResource("RectangleShape2D_oirq6")
 
+[node name="Hud" type="Control" parent="."]
+modulate = Color(0.882353, 0.870588, 0.905882, 1)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="EnemyName" type="Label" parent="Hud"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -30.0
+offset_right = 37.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "Enemy Name"
+horizontal_alignment = 1
+
+[node name="ExhSus" type="Control" parent="Hud"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -107.0
+offset_top = -23.0
+offset_right = -67.0
+offset_bottom = 17.0
+
+[node name="ExhLabel" type="Label" parent="Hud/ExhSus"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "EXH"
+
+[node name="ExhSusMeter" type="HBoxContainer" parent="Hud/ExhSus"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 3.0
+offset_right = 189.0
+offset_bottom = 8.0
+theme_override_constants/separation = -1
+
+[node name="ExhMeter" type="ProgressBar" parent="Hud/ExhSus/ExhSusMeter"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_bvnln")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ms1of")
+step = 0.0
+show_percentage = false
+
+[node name="SusMeter" type="ProgressBar" parent="Hud/ExhSus/ExhSusMeter"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_bvnln")
+theme_override_styles/fill = SubResource("StyleBoxFlat_arqxh")
+step = 0.0
+fill_mode = 1
+show_percentage = false
+
+[node name="SusLabel" type="Label" parent="Hud/ExhSus"]
+layout_mode = 0
+offset_left = 191.0
+offset_right = 215.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "SUS"
+
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Laser" parent="." instance=ExtResource("1_dvnqk")]
+unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

@@ -1,0 +1,112 @@
+[gd_resource type="Resource" script_class="AttackPhase" load_steps=10 format=3 uid="uid://dj6nw3sbqbl1x"]
+
+[ext_resource type="PackedScene" uid="uid://bw747i8qe5l7b" path="res://scenes/combat/projectile/yarn_ball_S.tscn" id="1_2umy6"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_td2a4"]
+[ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://scenes/combat/projectile/dead_fish_M.tscn" id="3_pv3xv"]
+[ext_resource type="PackedScene" uid="uid://7ix26o6i7yxp" path="res://scenes/combat/projectile/dead_fish_L.tscn" id="4_cdt3d"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="4_pih1f"]
+
+[sub_resource type="Resource" id="Resource_6khpe"]
+script = ExtResource("2_td2a4")
+projectile = ExtResource("3_pv3xv")
+delay = 0.0
+cooldown = 0.0
+count = 15
+skip = 0
+skip_step = 0
+random_skips = 0
+spawn_time = 1.0
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(-1, -1.25)
+position_step = Vector2(0.143, 0)
+rotation = 90.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 200.0
+angle = 90.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[sub_resource type="Resource" id="Resource_6yycf"]
+script = ExtResource("2_td2a4")
+projectile = ExtResource("3_pv3xv")
+delay = 0.5
+cooldown = 1.0
+count = 1
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 1.0
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(-1, -1.25)
+position_step = Vector2(0, 0)
+rotation = 90.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 200.0
+angle = 90.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[sub_resource type="Resource" id="Resource_l2qyg"]
+script = ExtResource("2_td2a4")
+projectile = ExtResource("1_2umy6")
+delay = 1.0
+cooldown = 0.05
+count = 35
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.0
+lifetime = 1.0
+despawn_time = 0.0
+position = Vector2(-0.85, 1)
+position_step = Vector2(0.05, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 400.0
+angle = -90.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[sub_resource type="Resource" id="Resource_66jhb"]
+script = ExtResource("2_td2a4")
+projectile = ExtResource("4_cdt3d")
+delay = 1.0
+cooldown = 0.0
+count = 2
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(1.25, 0.8)
+position_step = Vector2(0, -0.5)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(-1, 1)
+scale_step = Vector2(1, 1)
+speed = 100.0
+angle = 180.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[resource]
+script = ExtResource("4_pih1f")
+delay = 0.0
+cooldown = 3.5
+count = 4
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(-1, 1)
+patterns = Array[ExtResource("2_td2a4")]([SubResource("Resource_6khpe"), SubResource("Resource_6yycf"), SubResource("Resource_l2qyg"), SubResource("Resource_66jhb")])

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd8ncluc3omjt"
-path="res://.godot/imported/dead_fish.png-83b882bb73f2cfcf993e142a318bb4a6.ctex"
+uid="uid://cp2yx26vb7ynm"
+path="res://.godot/imported/yarn_ball_L.png-b2dc54e3c1cd6d655317149042a33087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/combat/projectiles/dead_fish.png"
-dest_files=["res://.godot/imported/dead_fish.png-83b882bb73f2cfcf993e142a318bb4a6.ctex"]
+source_file="res://assets/combat/projectiles/yarn_ball_L.png"
+dest_files=["res://.godot/imported/yarn_ball_L.png-b2dc54e3c1cd6d655317149042a33087.ctex"]
 
 [params]
 

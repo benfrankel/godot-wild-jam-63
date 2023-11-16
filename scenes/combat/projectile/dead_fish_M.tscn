@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://deqkbfeyp4vi4"]
+
+[ext_resource type="Script" path="res://scenes/combat/projectile/projectile.gd" id="1_se47u"]
+[ext_resource type="Texture2D" uid="uid://ck278etie6tkn" path="res://assets/combat/projectiles/dead_fish_M.png" id="2_tsht0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0fwm"]
+radius = 4.0
+height = 28.0
+
+[node name="DeadFishM" type="RigidBody2D"]
+collision_layer = 2
+gravity_scale = 0.0
+angular_damp_mode = 1
+script = ExtResource("1_se47u")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+texture = ExtResource("2_tsht0")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w0fwm")
