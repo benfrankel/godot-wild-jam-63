@@ -5,6 +5,7 @@ enum InventoryStyle {
 	OVERWORLD, COMBAT, READONLY
 }
 
+signal item_action_pressed(item : Item)
 
 @export var item_entry_scene : PackedScene
 @export var inventory : Inventory
@@ -54,7 +55,9 @@ func reload_visuals() -> void:
 		entries.add_child(entry)
 
 func _callback_drop_item(item : Item) -> void:
-	pass
+	item_action_pressed.emit(item)
+	inventory.remove_item(item)
+	reload_visuals()
 
 func _callback_use_item(item : Item) -> void:
-	pass
+	item_action_pressed.emit(item)

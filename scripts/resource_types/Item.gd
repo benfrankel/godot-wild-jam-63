@@ -9,11 +9,12 @@ class_name Item
 func is_consumable() -> bool:
 	return not effects.is_empty()
 	
-func apply_effects(game_state : Variant) -> void:
+func apply_effects(game_state : CombatState) -> void:
 	for eff in effects:
 		var node := Node.new()
 		node.set_script(eff.effect_script)
 		if "apply" in node:
 			node.apply(game_state)
+			game_state.emit_changed()
 		else:
 			push_warning("Invalid item effect found: [ %s ] does not implement 'apply'" % eff.effect_script.resource_path )
