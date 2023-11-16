@@ -1,6 +1,27 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bbtyhsmcmpxrn"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bbtyhsmcmpxrn"]
 
 [ext_resource type="FontFile" uid="uid://dkmve3plvm2f8" path="res://assets/resources/theming/font/Fonts/Kenney Rocket.ttf" id="1_rqpke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7at5"]
+bg_color = Color(0.556863, 0.556863, 0.556863, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2nqw"]
+bg_color = Color(0.286275, 0.286275, 0.286275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnpfh"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5txm"]
 bg_color = Color(0, 0, 0, 0.321569)
@@ -12,6 +33,9 @@ corner_radius_bottom_left = 8
 [resource]
 default_font = ExtResource("1_rqpke")
 default_font_size = 24
+Button/styles/focus = SubResource("StyleBoxFlat_b7at5")
+Button/styles/normal = SubResource("StyleBoxFlat_h2nqw")
+Button/styles/pressed = SubResource("StyleBoxFlat_jnpfh")
 MarginContainer/constants/margin_bottom = 16
 MarginContainer/constants/margin_left = 16
 MarginContainer/constants/margin_right = 16

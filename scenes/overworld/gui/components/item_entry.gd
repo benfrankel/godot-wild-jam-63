@@ -15,3 +15,7 @@ func set_no_action() -> void:
 
 func _on_btn_action_pressed() -> void:
 	action_button_pressed.emit()
+
+## grabs focus on the entry's button
+func do_grab_focus() -> void:
+	$BtnAction.grab_focus()

@@ -52,10 +52,20 @@ func reload_visuals() -> void:
 				entry.set_no_action()
 		entries.add_child(entry)
 
+func try_grab_focus() -> void:
+	if entries.get_child_count() <= 0:
+		push_error("No item entries found!")
+		return
+	for c in entries.get_children():
+		if "do_grab_focus" in c:
+			c.do_grab_focus()
+			break
+
 func _callback_drop_item(item : Item) -> void:
 	item_action_pressed.emit(item)
 	inventory.remove_item(item)
 	reload_visuals()
+	try_grab_focus()
 
 func _callback_use_item(item : Item) -> void:
 	item_action_pressed.emit(item)
