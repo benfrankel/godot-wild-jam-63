@@ -10,7 +10,9 @@ const COMBAT_SCENE := preload("res://scenes/combat/combat.tscn") as PackedScene
 var viewport: ViewportManager
 var scene_backup: Node
 var pausing_allowed := true
-var player_inventory : Inventory = preload("res://assets/resources/PlayerDefaultInventory.tres") # load from default inventory for testing with different items
+# load from default inventory for testing with different items
+var player_inventory := preload("res://assets/resources/PlayerDefaultInventory.tres") as Inventory
+
 
 func enter_room(room_path: String, door_idx: int) -> void:
 	var room := (load(room_path) as PackedScene).instantiate() # may cause stutter here for large rooms.
@@ -24,12 +26,11 @@ func enter_room(room_path: String, door_idx: int) -> void:
 	pausing_allowed = false
 	(await viewport.swap_scene(room)).queue_free()
 	pausing_allowed = true
-	
 
 
 func enter_combat(enemy_path: String) -> void:
 	pausing_allowed = false
-	var combat := COMBAT_SCENE.instantiate()
+	var combat := COMBAT_SCENE.instantiate() as Combat
 	combat.enemy = load(enemy_path) as Enemy
 	scene_backup = await viewport.swap_scene(combat)
 
@@ -39,6 +40,5 @@ func exit_combat() -> void:
 	pausing_allowed = true
 	
 
-
-func do_dialog(dialog : Dialog) -> void:
+func do_dialog(dialog: Dialog) -> void:
 	viewport.do_dialog(dialog)

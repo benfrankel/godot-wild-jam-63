@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnmynnpbigm2p"]
+[gd_scene load_steps=11 format=3 uid="uid://dnmynnpbigm2p"]
 
 [ext_resource type="PackedScene" uid="uid://oi3ugssh6kxs" path="res://scenes/overworld/templates/room_template.tscn" id="1_xocug"]
 [ext_resource type="Texture2D" uid="uid://m6n5g13uniq5" path="res://assets/overworld/icon.svg" id="3_waqub"]
@@ -7,10 +7,20 @@
 [ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="6_fw342"]
 [ext_resource type="Script" path="res://scenes/interaction_system/combat_component.gd" id="6_hs42k"]
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_j4xr4"]
-[ext_resource type="Resource" uid="uid://bh6taflv8p41w" path="res://scenes/combat/enemies/enemy1.tres" id="8_vyyxe"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="8_7olal"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
 size = Vector2(130.435, 130.435)
+
+[sub_resource type="Resource" id="Resource_kumwe"]
+script = ExtResource("8_7olal")
+name = "Kitty McCatface"
+bg_color = Color(0.152941, 0.164706, 0.188235, 1)
+bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
+max_exhaustion = 10
+exhaustion_cooldown = 5.0
+max_suspicion = 10
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
 
 [node name="Room1" instance=ExtResource("1_xocug")]
 
@@ -60,7 +70,7 @@ texture = ExtResource("3_waqub")
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_hs42k")
-enemy_path = "res://scenes/combat/enemies/super_easy_enemy_for_squiggles.tres"
+enemy_path = "res://assets/resources/combat/enemies/super_easy_enemy_for_squiggles.tres"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/CombatInteraction" index="0"]
 shape = SubResource("RectangleShape2D_75wn5")
@@ -68,7 +78,7 @@ shape = SubResource("RectangleShape2D_75wn5")
 [node name="CombatArea" type="Area2D" parent="." index="7"]
 position = Vector2(215, -350)
 script = ExtResource("7_j4xr4")
-available_fights = Array[Resource("res://scripts/resource_types/enemy.gd")]([ExtResource("8_vyyxe")])
+available_fights = Array[ExtResource("8_7olal")]([SubResource("Resource_kumwe")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CombatArea" index="0"]
 polygon = PackedVector2Array(-32, 42, 114, 43, 73, -131, -38, -146)

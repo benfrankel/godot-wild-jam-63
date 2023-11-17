@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("1_18u30")
-items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("1_htta6"), ExtResource("2_moa3i"), ExtResource("3_c5pw1"), ExtResource("4_sxg3t"), ExtResource("5_4t8lf")])
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("1_htta6"), ExtResource("2_moa3i"), ExtResource("3_c5pw1"), ExtResource("4_sxg3t"), ExtResource("5_4t8lf"), ExtResource("4_sxg3t")])
 boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
 capacity = 10
 boss_items_capacity = 5

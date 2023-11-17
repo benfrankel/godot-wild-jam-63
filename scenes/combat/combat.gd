@@ -1,38 +1,73 @@
 extends Node2D
 class_name Combat
 
+const ITEM_ENTRY_SCENE := preload("res://scenes/combat/gui/item_entry.tscn") as PackedScene
+
 @export var victory_scene : PackedScene
 @export var enemy: Enemy # exporting to allow quick testing
-@export var inventory_scene : PackedScene
 
 var state := CombatState.new()
-var inventory : CombatInventory
+var item_entries: Array[CombatItemEntry]
 @onready var laser := %Laser as Laser
 @onready var exh_meter := $Hud/ExhSus/ExhSusMeter/ExhMeter as ProgressBar
 @onready var sus_meter := $Hud/ExhSus/ExhSusMeter/SusMeter as ProgressBar
 
 
 func _ready() -> void:
+	# Set up CombatState
 	state.projectiles_root = $Projectiles
 	state.enemy = enemy
+	state.changed.connect(_on_state_change)
 	
-	$Hud/EnemyName.text = enemy.name
+	# Set up nodes
 	$Background.self_modulate = enemy.bg_color
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
 	$EnemyPortrait.texture = enemy.portrait
-	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
+	$Hud/EnemyName.text = enemy.name
 	exh_meter.max_value = enemy.max_exhaustion
 	sus_meter.max_value = enemy.max_suspicion
-	inventory = inventory_scene.instantiate()
-	inventory.combat_state = state
-	GameManager.viewport.hi_res_gui_root.add_child(inventory)
-	state.changed.connect(_on_state_change)
+	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
+	for idx in GameManager.player_inventory.items.size():
+		var item_entry := ITEM_ENTRY_SCENE.instantiate() as CombatItemEntry
+		item_entry.slot = idx
+		item_entry.combat_state = state
+		var container := $Hud/Inventory/InventoryL if idx < 5 else $Hud/Inventory/InventoryR
+		container.add_child(item_entry)
+		if idx == 0:
+			item_entry.grab_focus()
+		elif idx != 5:
+			var top := container.get_child(idx - 1) as CombatItemEntry
+			top.focus_neighbor_bottom = item_entry.get_path()
+			item_entry.focus_neighbor_top = top.get_path()
+		item_entry.update()
+		item_entries.append(item_entry)
+	
+	# Launch attack phases
 	for phase in enemy.attack_phases:
 		# Work-around for https://github.com/godotengine/godot/issues/74918
 		var dupe_phase := phase.duplicate(true)
 		for i in dupe_phase.patterns.size():
 			dupe_phase.patterns[i] = dupe_phase.patterns[i].duplicate(true)
 		launch_phase(dupe_phase)
+
+
+func _input(event: InputEvent) -> void:
+	if not event.is_action_pressed("ui_accept"):
+		return
+
+	var item_entry := item_entries.pop_back() as CombatItemEntry
+	if not item_entry:
+		return
+
+	item_entry.queue_free()
+	if item_entries.is_empty():
+		return
+
+	item_entries[-1].focus_neighbor_bottom = ""
+	if not item_entry.has_focus():
+		return
+
+	item_entries[-1].grab_focus()
 
 
 func launch_phase(phase: AttackPhase) -> void:
@@ -123,7 +158,6 @@ func finish(win: bool) -> void:
 		var v :VictoryScreen = victory_scene.instantiate()
 		GameManager.viewport.hi_res_gui_root.add_child(v)
 		v.load_from(enemy)
-	inventory.queue_free()
 	GameManager.exit_combat()
 
 func _on_exhaustion_timer_timeout() -> void:

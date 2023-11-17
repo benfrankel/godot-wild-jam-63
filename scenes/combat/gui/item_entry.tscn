@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu6xo6ingr7om"]
+
+[ext_resource type="Script" path="res://scenes/combat/gui/item_entry.gd" id="1_ehpbj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3bgk"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.882353, 0.870588, 0.905882, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_awbbn"]
+size = Vector2(16, 16)
+
+[node name="ItemEntry" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 22)
+focus_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a3bgk")
+script = ExtResource("1_ehpbj")
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_awbbn")
+stretch_mode = 3
