@@ -14,11 +14,11 @@ extends Resource
 
 @export_group("Fight")
 ## Max exhaustion the enemy can reach before they give up (player wins).
-@export var max_exhaustion: int = 10
+@export var max_exhaustion := 10.0
 ## Time it takes for the enemy to gain 1 exhaustion.
 @export var exhaustion_cooldown := 5.0
 ## Max suspicion the enemy can reach before they realize what's going on (player loses).
-@export var max_suspicion: int = 10
+@export var max_suspicion := 10.0
 ## Attack phases that play out during the combat.
 @export var attack_phases: Array[AttackPhase]
 

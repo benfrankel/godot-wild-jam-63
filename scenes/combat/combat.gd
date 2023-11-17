@@ -155,13 +155,14 @@ func get_global_arena_rect() -> Rect2:
 
 
 func finish(win: bool) -> void:
-	if win or enemy.lose_dialog:
+	if (win and enemy.win_dialog) or enemy.lose_dialog:
 		var result := RESULT_SCENE.instantiate() as ResultScreen
 		if win:
 			result.loot = enemy.win_loot
 			result.dialog = enemy.win_dialog
 		else:
 			result.dialog = enemy.lose_dialog
+		result.dialog.character_name = enemy.name
 		GameManager.viewport.hi_res_gui_root.add_child(result)
 	GameManager.exit_combat()
 

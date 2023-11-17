@@ -17,9 +17,9 @@ script = ExtResource("8_7olal")
 name = "Kitty McCatface"
 bg_color = Color(0.152941, 0.164706, 0.188235, 1)
 bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
-max_exhaustion = 10
+max_exhaustion = 10.0
 exhaustion_cooldown = 5.0
-max_suspicion = 10
+max_suspicion = 10.0
 attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
 
 [node name="Room1" instance=ExtResource("1_xocug")]

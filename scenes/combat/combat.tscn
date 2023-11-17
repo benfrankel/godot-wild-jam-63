@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
 [ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="2_k3uv0"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="3_1bgdu"]
-[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="4_72uc3"]
+[ext_resource type="Texture2D" uid="uid://b0xjckorhdlei" path="res://assets/combat/mutant1.png" id="4_fikq3"]
 [ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://assets/combat/arena_background.png" id="4_gsscs"]
 [ext_resource type="Script" path="res://scenes/combat/BiteBuffer.gd" id="7_gslqi"]
 
@@ -13,9 +13,9 @@ script = ExtResource("3_1bgdu")
 name = "Kitty McCatface"
 bg_color = Color(0.152941, 0.164706, 0.188235, 1)
 bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
-max_exhaustion = 10
+max_exhaustion = 10.0
 exhaustion_cooldown = 5.0
-max_suspicion = 10
+max_suspicion = 10.0
 attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
 
 [sub_resource type="Gradient" id="Gradient_sdbt7"]
@@ -72,11 +72,19 @@ texture = ExtResource("2_k3uv0")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 180)
 
-[node name="EnemyPortrait" type="Sprite2D" parent="."]
-position = Vector2(0, -55)
-texture = ExtResource("4_72uc3")
-region_enabled = true
-region_rect = Rect2(1.33765, 0.0130005, 58.6026, 64.5806)
+[node name="EnemyPortrait" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -61.0
+offset_right = 16.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_fikq3")
 
 [node name="Arena" type="Area2D" parent="."]
 position = Vector2(0, 35)
