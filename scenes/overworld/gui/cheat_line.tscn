@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://rlfacuap8e1c"]
+
+[ext_resource type="Script" path="res://scenes/cheat_line.gd" id="1_sqbdw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly1xu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="CheatLine" type="LineEdit"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_ly1xu")
+alignment = 1
+max_length = 16
+context_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+flat = true
+script = ExtResource("1_sqbdw")

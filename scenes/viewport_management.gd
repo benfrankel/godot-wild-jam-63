@@ -1,7 +1,6 @@
 extends Node
 class_name ViewportManager
 
-@export_file("*.tscn") var main_scene := ""
 @export var pause_scene: PackedScene
 @export var transition_time := 0.2
 
@@ -12,9 +11,6 @@ class_name ViewportManager
 
 func _ready() -> void:
 	GameManager.viewport = self
-	trans.modulate.a = 1.0
-	var scene := (load(main_scene) as PackedScene).instantiate()
-	swap_scene(scene, false)
 
 func pause(is_paused :bool) -> void:
 	get_tree().paused = is_paused

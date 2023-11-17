@@ -1,5 +1,7 @@
 extends Control
 
+@export_file("*.tscn") var start_scene := ""
+@export_file("*.tscn") var start_ui := ""
 @onready var quit_btn := $%BtnQuit
 @onready var play_btn := $%BtnPlay
 @onready var color_rect := $ColorRect
@@ -12,12 +14,12 @@ func _ready() -> void:
 
 
 func _on_btn_play_pressed() -> void:
-	var tween := get_tree().create_tween()
-	tween.tween_property(color_rect, "modulate:a", 1.0, 1.5)
-	tween.tween_callback(Callable(get_tree(), "change_scene_to_file").bind("res://scenes/viewport_management.tscn"))
+	queue_free()
+	var ui := (load(start_ui) as PackedScene).instantiate()
+	GameManager.viewport.hi_res_gui_root.add_child(ui)
+	var start := (load(start_scene) as PackedScene).instantiate()
+	GameManager.viewport.swap_scene(start)
 
 
 func _on_btn_quit_pressed() -> void:
-	var tween := get_tree().create_tween()
-	tween.tween_property(color_rect, "modulate:a", 1.0, 1.5)
-	tween.tween_callback(Callable(get_tree(), "quit"))
+	get_tree().quit()
