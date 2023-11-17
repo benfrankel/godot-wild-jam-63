@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2vgewmf8wsju"]
+
+[ext_resource type="Texture2D" uid="uid://bhpbwdxan7dh7" path="res://assets/gui/cover_x4.png" id="1_okuy6"]
+[ext_resource type="Script" path="res://scenes/gui/main_menu.gd" id="1_r6xid"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_404a5"]
+font_size = 64
+outline_size = 32
+outline_color = Color(0.0937819, 0.0547036, 0.160708, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r6xid")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_okuy6")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/Control"]
+layout_mode = 1
+offset_right = 540.0
+offset_bottom = 249.0
+text = "Speecy Spicy Meat-A-Ball"
+label_settings = SubResource("LabelSettings_404a5")
+autowrap_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="BtnPlay" type="Button" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="BtnQuit" type="Button" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]
