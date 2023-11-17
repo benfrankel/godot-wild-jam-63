@@ -72,7 +72,7 @@ func do_hocuspocus() -> void:
 
 
 func do_pspspsps() -> void:
-	pass
+	GameManager.enter_combat(EnemyGen.random_enemy())
 
 
 func do_anypercent() -> void:
