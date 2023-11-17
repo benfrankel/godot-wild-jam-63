@@ -16,6 +16,7 @@ var player_speed := 100.0
 var combat_size := Vector2(320.0, 180.0)
 var overworld_size := Vector2(320.0, 180.0)
 var dog_mode := false
+var bite_mode := false
 
 
 func enter_room(room_path: String, door_idx: int) -> void:
