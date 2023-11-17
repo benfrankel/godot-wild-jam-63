@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=15 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
 [ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://assets/combat/combat_background.png" id="2_k3uv0"]
-[ext_resource type="PackedScene" uid="uid://cy10q155606wn" path="res://scenes/combat/gui/victory_screen.tscn" id="2_qeivt"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="3_1bgdu"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="4_72uc3"]
 [ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://assets/combat/arena_background.png" id="4_gsscs"]
@@ -58,7 +57,6 @@ border_color = Color(1, 1, 1, 1)
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_npvr5")
-victory_scene = ExtResource("2_qeivt")
 enemy = SubResource("Resource_kumwe")
 
 [node name="Background" type="Sprite2D" parent="."]

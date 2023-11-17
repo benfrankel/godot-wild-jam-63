@@ -37,6 +37,8 @@ func set_dialog(data : DialogData) -> void:
 func _load_line() -> void:
 	if tween:
 		tween.kill()
+	if not current_data:
+		return
 	if line_index >= current_data.lines.size():
 		print("Dialog ended: %s" % current_data.resource_path.get_file())
 		dialog_ended.emit()

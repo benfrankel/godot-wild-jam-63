@@ -22,9 +22,10 @@ extends Resource
 ## Attack phases that play out during the combat.
 @export var attack_phases: Array[AttackPhase]
 
-@export_group("Combat Victory")
-## the loot that the player gets after winning (optional)
-@export var loot : Inventory
-
-## the dialog to play after victory (optional)
-@export var dialog : DialogData
+@export_group("Results")
+## The loot that the player gets after winning (optional).
+@export var win_loot: Inventory
+## The dialog to play after victory (optional).
+@export var win_dialog: DialogData
+## The dialog to play after defeat (optional).
+@export var lose_dialog: DialogData

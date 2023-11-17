@@ -1,5 +1,5 @@
+class_name ResultScreen
 extends Control
-class_name VictoryScreen
 
 
 @export var loot: Inventory
@@ -10,23 +10,10 @@ class_name VictoryScreen
 
 
 func _ready() -> void:
-	_load()
-
-
-## combat can instance this scene and call this method to automatically set up the screen
-func load_from(enemy: Enemy) -> void:
-	if enemy.loot:
-		loot = enemy.loot
-	if enemy.dialog:
-		dialog = enemy.dialog
-	_load()
-
-
-func _load() -> void:
 	node_loot.load_inventory(loot)
 	node_dialog.set_dialog(dialog)
-#	if not loot:
-#		node_loot.queue_free()
+	if not loot:
+		node_loot.visible = false
 
 
 func _on_dialog_dialog_ended() -> void:
