@@ -5,32 +5,37 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_lojvp"]
 gradient = SubResource("Gradient_1mtr6")
-width = 16
+width = 1
 
 [sub_resource type="Curve" id="Curve_1xdnk"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.089431, 1), 0.0, 0.0, 0, 0, Vector2(0.455285, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Gradient" id="Gradient_w0vr4"]
-offsets = PackedFloat32Array(0, 0.0677687, 0.472727, 0.84876, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.0705882, 1, 1, 1, 1, 1, 1, 1, 1, 0.623529, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.0677687, 0.397297, 0.84876, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.221571, 0.668824, 0.584266, 1, 0.960784, 0.960784, 0.882353, 1, 0.872374, 0.245623, 0.601486, 1, 1, 1, 1, 0)
 
 [node name="hocus_pocus_vfx" type="CPUParticles2D"]
-amount = 32
-lifetime = 0.6
+amount = 128
+lifetime = 0.4
+speed_scale = 0.6
 explosiveness = 1.0
+local_coords = true
 texture = SubResource("GradientTexture1D_lojvp")
 emission_shape = 1
 emission_sphere_radius = 16.0
 direction = Vector2(0, -1)
-initial_velocity_min = 128.0
-initial_velocity_max = 256.0
+spread = 30.0
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
 angular_velocity_min = -720.0
 angular_velocity_max = 720.0
 radial_accel_min = -100.0
 radial_accel_max = 100.0
 angle_min = -720.0
 angle_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_1xdnk")
 color_ramp = SubResource("Gradient_w0vr4")
 hue_variation_min = -0.64

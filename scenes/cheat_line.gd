@@ -72,12 +72,13 @@ func do_hocuspocus() -> void:
 	var vfx := preload("res://assets/vfx/hocus_pocus_vfx.tscn").instantiate() as CPUParticles2D
 	vfx.one_shot = true
 	vfx.emitting = true
-	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Node2D
+	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Player
 	if not player:
 		push_warning("failed to find player target for hocus pocus")
 		return
-	player.add_child(vfx)
-	vfx.position = Vector2.ZERO # center on player
+	player.add_sibling(vfx)
+	# center where player is looking
+	vfx.position = player.position + 30.0 * Vector2.from_angle(player.interact_sensor.rotation)
 	await get_tree().create_timer(vfx.lifetime * 2.0).timeout
 	# remove the particle system once it's done being used
 	vfx.queue_free()

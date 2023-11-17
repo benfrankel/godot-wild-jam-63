@@ -66,7 +66,7 @@ static func random_attack_phases() -> Array[AttackPhase]:
 	const DELAY_BETWEEN_PHASES := 8.0
 	const INITIAL_DELAY := 0.5
 	
-	var phases: Array[AttackPhase]
+	var phases: Array[AttackPhase] = []
 	var delay := INITIAL_DELAY
 	for _i in NUM_PHASES:
 		var phase := ATTACK_PHASE_LIST.pick_random().duplicate() as AttackPhase

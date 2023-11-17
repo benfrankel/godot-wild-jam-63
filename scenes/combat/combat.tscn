@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=16 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
