@@ -12,6 +12,8 @@ var item_entries: Array[CombatItemEntry]
 @onready var exh_meter := $Hud/ExhSus/ExhSusMeter/ExhMeter as ProgressBar
 @onready var sus_meter := $Hud/ExhSus/ExhSusMeter/SusMeter as ProgressBar
 
+signal player_damaged
+
 
 func _ready() -> void:
 	# Set up CombatState
@@ -168,6 +170,7 @@ func _on_exhaustion_timer_timeout() -> void:
 func _on_laser_got_hit(_projectile: Projectile) -> void:
 	state.suspicion += 1
 	state.emit_changed()
+	player_damaged.emit()
 
 func _on_state_change() -> void:
 	exh_meter.value = state.exhaustion

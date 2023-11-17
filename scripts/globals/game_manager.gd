@@ -14,6 +14,7 @@ var pausing_allowed := true
 var player_inventory := preload("res://assets/resources/PlayerDefaultInventory.tres") as Inventory
 var player_speed := 100.0
 var dog_mode := false
+var bite_mode := false
 
 
 func enter_room(room_path: String, door_idx: int) -> void:

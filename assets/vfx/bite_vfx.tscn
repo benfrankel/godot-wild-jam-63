@@ -1,0 +1,738 @@
+[gd_scene load_steps=168 format=3 uid="uid://b77nbhqrvab5b"]
+
+[ext_resource type="Texture2D" uid="uid://cj1kqjiu67m83" path="res://assets/combat/bite_mode/bite_00001.jpg" id="1_31ddw"]
+[ext_resource type="Texture2D" uid="uid://b58typf6t6uqf" path="res://assets/combat/bite_mode/bite_00002.jpg" id="2_0sh6y"]
+[ext_resource type="Texture2D" uid="uid://djwso67fcvcrw" path="res://assets/combat/bite_mode/bite_00003.jpg" id="3_hktxc"]
+[ext_resource type="Texture2D" uid="uid://beh033y4loybk" path="res://assets/combat/bite_mode/bite_00004.jpg" id="4_xqr87"]
+[ext_resource type="Texture2D" uid="uid://dbj2vuns2mcmv" path="res://assets/combat/bite_mode/bite_00005.jpg" id="5_nymu3"]
+[ext_resource type="Texture2D" uid="uid://doot7s2rycsvm" path="res://assets/combat/bite_mode/bite_00006.jpg" id="6_isjbb"]
+[ext_resource type="Texture2D" uid="uid://dc22txi0g3eqp" path="res://assets/combat/bite_mode/bite_00007.jpg" id="7_cporb"]
+[ext_resource type="Texture2D" uid="uid://cirm0x0rvxqif" path="res://assets/combat/bite_mode/bite_00008.jpg" id="8_5cjl5"]
+[ext_resource type="Texture2D" uid="uid://w5emr6ui20e2" path="res://assets/combat/bite_mode/bite_00009.jpg" id="9_psrdi"]
+[ext_resource type="Texture2D" uid="uid://bmoiuwh8f4hrg" path="res://assets/combat/bite_mode/bite_00010.jpg" id="10_xjvok"]
+[ext_resource type="Texture2D" uid="uid://lvnlm0agqhlr" path="res://assets/combat/bite_mode/bite_00011.jpg" id="11_kwgkc"]
+[ext_resource type="Texture2D" uid="uid://1y7sqfx8tccg" path="res://assets/combat/bite_mode/bite_00012.jpg" id="12_85cso"]
+[ext_resource type="Texture2D" uid="uid://dn4po5v6jloes" path="res://assets/combat/bite_mode/bite_00013.jpg" id="13_8rgwx"]
+[ext_resource type="Texture2D" uid="uid://dsktenw8i812q" path="res://assets/combat/bite_mode/bite_00014.jpg" id="14_yq3bs"]
+[ext_resource type="Texture2D" uid="uid://dqmpc6oa3j04g" path="res://assets/combat/bite_mode/bite_00015.jpg" id="15_a78y0"]
+[ext_resource type="Texture2D" uid="uid://rufmu2k1jqw4" path="res://assets/combat/bite_mode/bite_00016.jpg" id="16_y27v7"]
+[ext_resource type="Texture2D" uid="uid://bkqb3g0xrn8al" path="res://assets/combat/bite_mode/bite_00017.jpg" id="17_6ke7t"]
+[ext_resource type="Texture2D" uid="uid://dhe6yeodfbvut" path="res://assets/combat/bite_mode/bite_00018.jpg" id="18_hsuvj"]
+[ext_resource type="Texture2D" uid="uid://b000fjiqd4hsm" path="res://assets/combat/bite_mode/bite_00019.jpg" id="19_sq23r"]
+[ext_resource type="Texture2D" uid="uid://bnaliyq8g8dac" path="res://assets/combat/bite_mode/bite_00020.jpg" id="20_c6mpg"]
+[ext_resource type="Texture2D" uid="uid://c06mkt2qu6lb6" path="res://assets/combat/bite_mode/bite_00021.jpg" id="21_n71kc"]
+[ext_resource type="Texture2D" uid="uid://dc5dt5d5bfg5a" path="res://assets/combat/bite_mode/bite_00022.jpg" id="22_kpmuh"]
+[ext_resource type="Texture2D" uid="uid://uxojim6ykopb" path="res://assets/combat/bite_mode/bite_00023.jpg" id="23_82jlq"]
+[ext_resource type="Texture2D" uid="uid://i7sf8w2kph73" path="res://assets/combat/bite_mode/bite_00024.jpg" id="24_sssnu"]
+[ext_resource type="Texture2D" uid="uid://mbkoyhy81rpu" path="res://assets/combat/bite_mode/bite_00025.jpg" id="25_rwchk"]
+[ext_resource type="Texture2D" uid="uid://hmqxt8mtomov" path="res://assets/combat/bite_mode/bite_00026.jpg" id="26_p2pf8"]
+[ext_resource type="Texture2D" uid="uid://cq5hxgg8y8swd" path="res://assets/combat/bite_mode/bite_00027.jpg" id="27_fnm32"]
+[ext_resource type="Texture2D" uid="uid://blwiewx13g4cv" path="res://assets/combat/bite_mode/bite_00028.jpg" id="28_lcu6r"]
+[ext_resource type="Texture2D" uid="uid://dkob40i0eukj4" path="res://assets/combat/bite_mode/bite_00029.jpg" id="29_1roup"]
+[ext_resource type="Texture2D" uid="uid://kxjirccvx8w0" path="res://assets/combat/bite_mode/bite_00030.jpg" id="30_0oy1l"]
+[ext_resource type="Texture2D" uid="uid://b1p8v7oi7nn5n" path="res://assets/combat/bite_mode/bite_00031.jpg" id="31_6kflj"]
+[ext_resource type="Texture2D" uid="uid://bqpesdm2b7m72" path="res://assets/combat/bite_mode/bite_00032.jpg" id="32_gfgta"]
+[ext_resource type="Texture2D" uid="uid://c5wbtk66epyes" path="res://assets/combat/bite_mode/bite_00033.jpg" id="33_mpadg"]
+[ext_resource type="Texture2D" uid="uid://ddd8war7lk4cq" path="res://assets/combat/bite_mode/bite_00034.jpg" id="34_pa7tb"]
+[ext_resource type="Texture2D" uid="uid://dlr0exw5d83jc" path="res://assets/combat/bite_mode/bite_00035.jpg" id="35_aeuye"]
+[ext_resource type="Texture2D" uid="uid://cnv7djyaye0qd" path="res://assets/combat/bite_mode/bite_00036.jpg" id="36_jeap6"]
+[ext_resource type="Texture2D" uid="uid://breuivexneds4" path="res://assets/combat/bite_mode/bite_00037.jpg" id="37_8c2b7"]
+[ext_resource type="Texture2D" uid="uid://ciow482ilfjwk" path="res://assets/combat/bite_mode/bite_00038.jpg" id="38_d5g7h"]
+[ext_resource type="Texture2D" uid="uid://cci1s6ebg1isf" path="res://assets/combat/bite_mode/bite_00039.jpg" id="39_tps1f"]
+[ext_resource type="Texture2D" uid="uid://b2bk5fal77n27" path="res://assets/combat/bite_mode/bite_00040.jpg" id="40_caf1g"]
+[ext_resource type="Texture2D" uid="uid://c21bu2tb6og5" path="res://assets/combat/bite_mode/bite_00041.jpg" id="41_02kr8"]
+[ext_resource type="Texture2D" uid="uid://ywxvse7efub1" path="res://assets/combat/bite_mode/bite_00042.jpg" id="42_8g4b6"]
+[ext_resource type="Texture2D" uid="uid://dob2ikcxsapce" path="res://assets/combat/bite_mode/bite_00043.jpg" id="43_ytt7x"]
+[ext_resource type="Texture2D" uid="uid://wca8gs8b5duo" path="res://assets/combat/bite_mode/bite_00044.jpg" id="44_cg0xg"]
+[ext_resource type="Texture2D" uid="uid://6o025iwou7nu" path="res://assets/combat/bite_mode/bite_00045.jpg" id="45_kkjs6"]
+[ext_resource type="Texture2D" uid="uid://o8y4trpbkpgb" path="res://assets/combat/bite_mode/bite_00046.jpg" id="46_vmpyy"]
+[ext_resource type="Texture2D" uid="uid://cpfiyokvebiw3" path="res://assets/combat/bite_mode/bite_00047.jpg" id="47_rtymj"]
+[ext_resource type="Texture2D" uid="uid://brm00odm437si" path="res://assets/combat/bite_mode/bite_00048.jpg" id="48_yxrno"]
+[ext_resource type="Texture2D" uid="uid://cijll2862vd66" path="res://assets/combat/bite_mode/bite_00049.jpg" id="49_usx70"]
+[ext_resource type="Texture2D" uid="uid://yrnq3ey8j0hm" path="res://assets/combat/bite_mode/bite_00050.jpg" id="50_jy2rj"]
+[ext_resource type="Texture2D" uid="uid://c6k13rub4ojwp" path="res://assets/combat/bite_mode/bite_00051.jpg" id="51_ykiq4"]
+[ext_resource type="Texture2D" uid="uid://cjuqpp1ljp4cn" path="res://assets/combat/bite_mode/bite_00052.jpg" id="52_0ihfn"]
+[ext_resource type="Texture2D" uid="uid://c7hdhme16qhsj" path="res://assets/combat/bite_mode/bite_00053.jpg" id="53_sx1r2"]
+[ext_resource type="Texture2D" uid="uid://dw7ymmfm0qyml" path="res://assets/combat/bite_mode/bite_00054.jpg" id="54_mrnq8"]
+[ext_resource type="Texture2D" uid="uid://blhsy3xhfhdl3" path="res://assets/combat/bite_mode/bite_00055.jpg" id="55_f4jt2"]
+[ext_resource type="Texture2D" uid="uid://46maod13lxtb" path="res://assets/combat/bite_mode/bite_00056.jpg" id="56_lvcdg"]
+[ext_resource type="Texture2D" uid="uid://7ei5ltyt8vr0" path="res://assets/combat/bite_mode/bite_00057.jpg" id="57_bf1hp"]
+[ext_resource type="Texture2D" uid="uid://bffxbsu2dqqc0" path="res://assets/combat/bite_mode/bite_00058.jpg" id="58_b5arj"]
+[ext_resource type="Texture2D" uid="uid://dwxbmm214mmkr" path="res://assets/combat/bite_mode/bite_00059.jpg" id="59_s7i5j"]
+[ext_resource type="Texture2D" uid="uid://c74me8hir0epk" path="res://assets/combat/bite_mode/bite_00060.jpg" id="60_5s251"]
+[ext_resource type="Texture2D" uid="uid://b4q8213jdet5n" path="res://assets/combat/bite_mode/bite_00061.jpg" id="61_lxluy"]
+[ext_resource type="Texture2D" uid="uid://b3blh1pnk1qlc" path="res://assets/combat/bite_mode/bite_00062.jpg" id="62_jm6s7"]
+[ext_resource type="Texture2D" uid="uid://dehre7dhfl0s7" path="res://assets/combat/bite_mode/bite_00063.jpg" id="63_ldcg1"]
+[ext_resource type="Texture2D" uid="uid://b6bryfe5yuuq" path="res://assets/combat/bite_mode/bite_00064.jpg" id="64_88oyc"]
+[ext_resource type="Texture2D" uid="uid://cpvlu04qxbh4y" path="res://assets/combat/bite_mode/bite_00065.jpg" id="65_icyqa"]
+[ext_resource type="Texture2D" uid="uid://c3dqdf620w7y2" path="res://assets/combat/bite_mode/bite_00066.jpg" id="66_pvopl"]
+[ext_resource type="Texture2D" uid="uid://bieb8446qhuig" path="res://assets/combat/bite_mode/bite_00067.jpg" id="67_ywwej"]
+[ext_resource type="Texture2D" uid="uid://cekeup4u2qaii" path="res://assets/combat/bite_mode/bite_00068.jpg" id="68_qbtaa"]
+[ext_resource type="Texture2D" uid="uid://ddt6q1jdewcpd" path="res://assets/combat/bite_mode/bite_00069.jpg" id="69_bshfy"]
+[ext_resource type="Texture2D" uid="uid://cn2gdtxt2apmc" path="res://assets/combat/bite_mode/bite_00070.jpg" id="70_6yppl"]
+[ext_resource type="Texture2D" uid="uid://buj5vqipa8vrv" path="res://assets/combat/bite_mode/bite_00071.jpg" id="71_ver6c"]
+[ext_resource type="Texture2D" uid="uid://bshk3vftqasjy" path="res://assets/combat/bite_mode/bite_00072.jpg" id="72_eulua"]
+[ext_resource type="Texture2D" uid="uid://loheovpobj2b" path="res://assets/combat/bite_mode/bite_00073.jpg" id="73_gyp2q"]
+[ext_resource type="Texture2D" uid="uid://c2y65ojgwlvn0" path="res://assets/combat/bite_mode/bite_00074.jpg" id="74_gn6md"]
+[ext_resource type="Texture2D" uid="uid://cke510gwxg7ex" path="res://assets/combat/bite_mode/bite_00075.jpg" id="75_jdlcg"]
+[ext_resource type="Texture2D" uid="uid://dgogquiffg5h3" path="res://assets/combat/bite_mode/bite_00076.jpg" id="76_0go1g"]
+[ext_resource type="Texture2D" uid="uid://b06rylddh4vel" path="res://assets/combat/bite_mode/bite_00077.jpg" id="77_57gpj"]
+[ext_resource type="Texture2D" uid="uid://sfw4pfc6q6nc" path="res://assets/combat/bite_mode/bite_00078.jpg" id="78_bjcim"]
+[ext_resource type="Texture2D" uid="uid://bbf6rdb6nxwy3" path="res://assets/combat/bite_mode/bite_00079.jpg" id="79_wtb1k"]
+[ext_resource type="Texture2D" uid="uid://mc78asmw1268" path="res://assets/combat/bite_mode/bite_00080.jpg" id="80_oga06"]
+[ext_resource type="Texture2D" uid="uid://ctl7wghk0nxrs" path="res://assets/combat/bite_mode/bite_00081.jpg" id="81_sdyhf"]
+[ext_resource type="Texture2D" uid="uid://dvj7oxkwyksgs" path="res://assets/combat/bite_mode/bite_00082.jpg" id="82_ygl6s"]
+[ext_resource type="Texture2D" uid="uid://dmi8enu7q1d5v" path="res://assets/combat/bite_mode/bite_00083.jpg" id="83_qmqcq"]
+[ext_resource type="Texture2D" uid="uid://ydo2jsya5m85" path="res://assets/combat/bite_mode/bite_00084.jpg" id="84_opnnf"]
+[ext_resource type="Texture2D" uid="uid://ceueogmuh0jkj" path="res://assets/combat/bite_mode/bite_00085.jpg" id="85_45711"]
+[ext_resource type="Texture2D" uid="uid://c2hcjf3ldla2p" path="res://assets/combat/bite_mode/bite_00086.jpg" id="86_7t0qb"]
+[ext_resource type="Texture2D" uid="uid://psis6lxi8hs6" path="res://assets/combat/bite_mode/bite_00087.jpg" id="87_sxxsl"]
+[ext_resource type="Texture2D" uid="uid://dgx5i316m3v0e" path="res://assets/combat/bite_mode/bite_00088.jpg" id="88_f5dk1"]
+[ext_resource type="Texture2D" uid="uid://c4p04x0i4ribs" path="res://assets/combat/bite_mode/bite_00089.jpg" id="89_y3qgd"]
+[ext_resource type="Texture2D" uid="uid://bnuklh5aoytf0" path="res://assets/combat/bite_mode/bite_00090.jpg" id="90_ma73p"]
+[ext_resource type="Texture2D" uid="uid://bdk8gp5nd3a5r" path="res://assets/combat/bite_mode/bite_00091.jpg" id="91_siual"]
+[ext_resource type="Texture2D" uid="uid://c42j6qu4b4y3m" path="res://assets/combat/bite_mode/bite_00092.jpg" id="92_bcpkr"]
+[ext_resource type="Texture2D" uid="uid://ckg21157yi3s1" path="res://assets/combat/bite_mode/bite_00093.jpg" id="93_jm5s1"]
+[ext_resource type="Texture2D" uid="uid://dld0qkfkicc7h" path="res://assets/combat/bite_mode/bite_00094.jpg" id="94_snrei"]
+[ext_resource type="Texture2D" uid="uid://bvv6phfvcm181" path="res://assets/combat/bite_mode/bite_00095.jpg" id="95_fqkis"]
+[ext_resource type="Texture2D" uid="uid://d3axxh2m7sgat" path="res://assets/combat/bite_mode/bite_00096.jpg" id="96_bq1ny"]
+[ext_resource type="Texture2D" uid="uid://dpwa8v88u0v4h" path="res://assets/combat/bite_mode/bite_00097.jpg" id="97_a3gor"]
+[ext_resource type="Texture2D" uid="uid://cxlcv4k4efkbf" path="res://assets/combat/bite_mode/bite_00098.jpg" id="98_pr7bo"]
+[ext_resource type="Texture2D" uid="uid://blgxywlr378gs" path="res://assets/combat/bite_mode/bite_00099.jpg" id="99_srfx4"]
+[ext_resource type="Texture2D" uid="uid://ysuu6inhpen8" path="res://assets/combat/bite_mode/bite_00100.jpg" id="100_46shi"]
+[ext_resource type="Texture2D" uid="uid://g3d1mo5664tb" path="res://assets/combat/bite_mode/bite_00101.jpg" id="101_0wkiw"]
+[ext_resource type="Texture2D" uid="uid://dqimvrngd87yh" path="res://assets/combat/bite_mode/bite_00102.jpg" id="102_1xdm3"]
+[ext_resource type="Texture2D" uid="uid://dqjy6dbf0x6ua" path="res://assets/combat/bite_mode/bite_00103.jpg" id="103_gikrf"]
+[ext_resource type="Texture2D" uid="uid://cq6cylq1ym3bj" path="res://assets/combat/bite_mode/bite_00104.jpg" id="104_t8uql"]
+[ext_resource type="Texture2D" uid="uid://cao1lt88y0rtt" path="res://assets/combat/bite_mode/bite_00105.jpg" id="105_okr4b"]
+[ext_resource type="Texture2D" uid="uid://c2uah26bkehqa" path="res://assets/combat/bite_mode/bite_00106.jpg" id="106_fenm4"]
+[ext_resource type="Texture2D" uid="uid://dc7barp7q56g7" path="res://assets/combat/bite_mode/bite_00107.jpg" id="107_nlwq2"]
+[ext_resource type="Texture2D" uid="uid://csi7l3l5h7ebs" path="res://assets/combat/bite_mode/bite_00108.jpg" id="108_2pls5"]
+[ext_resource type="Texture2D" uid="uid://e7dmnw3yu06s" path="res://assets/combat/bite_mode/bite_00109.jpg" id="109_8toga"]
+[ext_resource type="Texture2D" uid="uid://dy82gv8v5xf1k" path="res://assets/combat/bite_mode/bite_00110.jpg" id="110_bqhxc"]
+[ext_resource type="Texture2D" uid="uid://dv81dg2ia8hwh" path="res://assets/combat/bite_mode/bite_00111.jpg" id="111_2m56b"]
+[ext_resource type="Texture2D" uid="uid://qqiny8kfcbhs" path="res://assets/combat/bite_mode/bite_00112.jpg" id="112_1owcw"]
+[ext_resource type="Texture2D" uid="uid://b5udjtcyr53ij" path="res://assets/combat/bite_mode/bite_00113.jpg" id="113_q33u1"]
+[ext_resource type="Texture2D" uid="uid://cf2jdxha88y14" path="res://assets/combat/bite_mode/bite_00114.jpg" id="114_y32pu"]
+[ext_resource type="Texture2D" uid="uid://knp527irrx4f" path="res://assets/combat/bite_mode/bite_00115.jpg" id="115_kku5b"]
+[ext_resource type="Texture2D" uid="uid://bkwru6glcwqoi" path="res://assets/combat/bite_mode/bite_00116.jpg" id="116_opyov"]
+[ext_resource type="Texture2D" uid="uid://ddiptu3jilory" path="res://assets/combat/bite_mode/bite_00117.jpg" id="117_mls3i"]
+[ext_resource type="Texture2D" uid="uid://d07tr55sfwbwm" path="res://assets/combat/bite_mode/bite_00118.jpg" id="118_540ln"]
+[ext_resource type="Texture2D" uid="uid://ddmpsr77grx2g" path="res://assets/combat/bite_mode/bite_00119.jpg" id="119_d0l2v"]
+[ext_resource type="Texture2D" uid="uid://blp11mh7prkmk" path="res://assets/combat/bite_mode/bite_00120.jpg" id="120_g50ap"]
+[ext_resource type="Texture2D" uid="uid://02ug4wwc34op" path="res://assets/combat/bite_mode/bite_00121.jpg" id="121_w12o7"]
+[ext_resource type="Texture2D" uid="uid://bv6mi58ma8f7q" path="res://assets/combat/bite_mode/bite_00122.jpg" id="122_wi6s1"]
+[ext_resource type="Texture2D" uid="uid://q58stkf3kaud" path="res://assets/combat/bite_mode/bite_00123.jpg" id="123_2xvma"]
+[ext_resource type="Texture2D" uid="uid://bxx7c88t4wftn" path="res://assets/combat/bite_mode/bite_00124.jpg" id="124_p5t33"]
+[ext_resource type="Texture2D" uid="uid://bvgogeurscrio" path="res://assets/combat/bite_mode/bite_00125.jpg" id="125_8yd3q"]
+[ext_resource type="Texture2D" uid="uid://pqemqc781ggs" path="res://assets/combat/bite_mode/bite_00126.jpg" id="126_15alj"]
+[ext_resource type="Texture2D" uid="uid://b8mldm3ft2xqw" path="res://assets/combat/bite_mode/bite_00127.jpg" id="127_cdusn"]
+[ext_resource type="Texture2D" uid="uid://dfa4nf2s7hyb" path="res://assets/combat/bite_mode/bite_00128.jpg" id="128_gw118"]
+[ext_resource type="Texture2D" uid="uid://c426021t6gbqo" path="res://assets/combat/bite_mode/bite_00129.jpg" id="129_htp1e"]
+[ext_resource type="Texture2D" uid="uid://wl47m8t5gnny" path="res://assets/combat/bite_mode/bite_00130.jpg" id="130_74410"]
+[ext_resource type="Texture2D" uid="uid://bpweyy3qqnvm2" path="res://assets/combat/bite_mode/bite_00131.jpg" id="131_2y13a"]
+[ext_resource type="Texture2D" uid="uid://derkqtynk20kr" path="res://assets/combat/bite_mode/bite_00132.jpg" id="132_07dgy"]
+[ext_resource type="Texture2D" uid="uid://d3s6exkgbsbbd" path="res://assets/combat/bite_mode/bite_00133.jpg" id="133_j0076"]
+[ext_resource type="Texture2D" uid="uid://dmn4kwoushtwo" path="res://assets/combat/bite_mode/bite_00134.jpg" id="134_k0afb"]
+[ext_resource type="Texture2D" uid="uid://clv6vhj6nfve" path="res://assets/combat/bite_mode/bite_00135.jpg" id="135_gjvol"]
+[ext_resource type="Texture2D" uid="uid://c3rxwx7n6lvd1" path="res://assets/combat/bite_mode/bite_00136.jpg" id="136_vutul"]
+[ext_resource type="Texture2D" uid="uid://b5ck7p2w6wot0" path="res://assets/combat/bite_mode/bite_00137.jpg" id="137_cli7j"]
+[ext_resource type="Texture2D" uid="uid://do0s26pinghmj" path="res://assets/combat/bite_mode/bite_00138.jpg" id="138_3gs6h"]
+[ext_resource type="Texture2D" uid="uid://dbw5n0hl4jmbs" path="res://assets/combat/bite_mode/bite_00139.jpg" id="139_8nud1"]
+[ext_resource type="Texture2D" uid="uid://bk8878ee0akcj" path="res://assets/combat/bite_mode/bite_00140.jpg" id="140_hqfnk"]
+[ext_resource type="Texture2D" uid="uid://dkp18o2qprdvs" path="res://assets/combat/bite_mode/bite_00141.jpg" id="141_0xqgh"]
+[ext_resource type="Texture2D" uid="uid://d4buc1torjom8" path="res://assets/combat/bite_mode/bite_00142.jpg" id="142_1vb53"]
+[ext_resource type="Texture2D" uid="uid://bvrgc7koi2olm" path="res://assets/combat/bite_mode/bite_00143.jpg" id="143_bd6we"]
+[ext_resource type="Texture2D" uid="uid://bid4ll3ax1lno" path="res://assets/combat/bite_mode/bite_00144.jpg" id="144_ad3tm"]
+[ext_resource type="Texture2D" uid="uid://m627b7tratfp" path="res://assets/combat/bite_mode/bite_00145.jpg" id="145_nm5fw"]
+[ext_resource type="Texture2D" uid="uid://cv4ukby6bovrd" path="res://assets/combat/bite_mode/bite_00146.jpg" id="146_c58f6"]
+[ext_resource type="Texture2D" uid="uid://bxu6wa0x1fpg3" path="res://assets/combat/bite_mode/bite_00147.jpg" id="147_wnvoe"]
+[ext_resource type="Texture2D" uid="uid://dmcl5s43eyc0b" path="res://assets/combat/bite_mode/bite_00148.jpg" id="148_nxm5h"]
+[ext_resource type="Texture2D" uid="uid://cxny6qhxc0p5f" path="res://assets/combat/bite_mode/bite_00149.jpg" id="149_vs58w"]
+[ext_resource type="Texture2D" uid="uid://yhgf5grgfu66" path="res://assets/combat/bite_mode/bite_00150.jpg" id="150_qenbt"]
+[ext_resource type="Texture2D" uid="uid://bhj6xxh7110hk" path="res://assets/combat/bite_mode/bite_00151.jpg" id="151_gpcwj"]
+[ext_resource type="Texture2D" uid="uid://m04lr2g21kos" path="res://assets/combat/bite_mode/bite_00152.jpg" id="152_t5srh"]
+[ext_resource type="Texture2D" uid="uid://lcpkdcgcn62a" path="res://assets/combat/bite_mode/bite_00153.jpg" id="153_ecjyj"]
+[ext_resource type="Texture2D" uid="uid://bohaf20luprd1" path="res://assets/combat/bite_mode/bite_00154.jpg" id="154_rj021"]
+[ext_resource type="Texture2D" uid="uid://d1umntyf6o7q5" path="res://assets/combat/bite_mode/bite_00155.jpg" id="155_n84qy"]
+[ext_resource type="Texture2D" uid="uid://c1vw0e8xpeklq" path="res://assets/combat/bite_mode/bite_00156.jpg" id="156_l76hv"]
+[ext_resource type="Texture2D" uid="uid://bbwdfhecwcqgr" path="res://assets/combat/bite_mode/bite_00157.jpg" id="157_txfpr"]
+[ext_resource type="Texture2D" uid="uid://b8mti7q4f38o" path="res://assets/combat/bite_mode/bite_00158.jpg" id="158_jhv78"]
+[ext_resource type="Texture2D" uid="uid://cvttryq01x10g" path="res://assets/combat/bite_mode/bite_00159.jpg" id="159_d7haa"]
+[ext_resource type="Texture2D" uid="uid://b5oh6t17avcka" path="res://assets/combat/bite_mode/bite_00160.jpg" id="160_tdx0v"]
+[ext_resource type="Texture2D" uid="uid://b53wq0k4enudh" path="res://assets/combat/bite_mode/bite_00161.jpg" id="161_q103r"]
+[ext_resource type="Texture2D" uid="uid://djamp7o8dvtnj" path="res://assets/combat/bite_mode/bite_00162.jpg" id="162_e11xv"]
+[ext_resource type="Texture2D" uid="uid://d4fft8oowbwqx" path="res://assets/combat/bite_mode/bite_00163.jpg" id="163_cs571"]
+[ext_resource type="AudioStream" uid="uid://ce57rhnyu0n0b" path="res://assets/combat/bite_mode/bite.ogg" id="164_gifux"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sredw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_31ddw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0sh6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hktxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xqr87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nymu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_isjbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cporb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5cjl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_psrdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xjvok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kwgkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_85cso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8rgwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yq3bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_a78y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y27v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6ke7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hsuvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sq23r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_c6mpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_n71kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kpmuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_82jlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sssnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rwchk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_p2pf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fnm32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_lcu6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1roup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_0oy1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6kflj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gfgta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_mpadg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_pa7tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_aeuye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jeap6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_8c2b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_d5g7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tps1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_caf1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_02kr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_8g4b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ytt7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_cg0xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_kkjs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_vmpyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rtymj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_yxrno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_usx70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_jy2rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ykiq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_0ihfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_sx1r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_mrnq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_f4jt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_lvcdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_bf1hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_b5arj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_s7i5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_5s251")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_lxluy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_jm6s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ldcg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_88oyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_icyqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_pvopl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ywwej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_qbtaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_bshfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_6yppl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ver6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_eulua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_gyp2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_gn6md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_jdlcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_0go1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_57gpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_bjcim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_wtb1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_oga06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_sdyhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ygl6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_qmqcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_opnnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_45711")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_7t0qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_sxxsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_f5dk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_y3qgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_ma73p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_siual")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_bcpkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_jm5s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_snrei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_fqkis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_bq1ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_a3gor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_pr7bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_srfx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_46shi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_0wkiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_1xdm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_gikrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_t8uql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_okr4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_fenm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_nlwq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_2pls5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_8toga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_bqhxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_2m56b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_1owcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_q33u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_y32pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_kku5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_opyov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_mls3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_540ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_d0l2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_g50ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_w12o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_wi6s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_2xvma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_p5t33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_8yd3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_15alj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_cdusn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_gw118")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_htp1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_74410")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_2y13a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_07dgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_j0076")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_k0afb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_gjvol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_vutul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_cli7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_3gs6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_8nud1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_hqfnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_0xqgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_1vb53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_bd6we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_ad3tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_nm5fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_c58f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_wnvoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_nxm5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_vs58w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_qenbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_gpcwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_t5srh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_ecjyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_rj021")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_n84qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_l76hv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_txfpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_jhv78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_d7haa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_tdx0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_q103r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_e11xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_cs571")
+}],
+"loop": false,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="Animation" id="Animation_plk30"]
+resource_name = "anim"
+length = 2.7
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("164_gifux")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdakc"]
+_data = {
+"anim": SubResource("Animation_plk30")
+}
+
+[node name="BiteModeVFX" type="PanelContainer"]
+custom_minimum_size = Vector2(64, 16)
+offset_right = 64.0
+offset_bottom = 16.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 2
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_sredw")
+frame = 35
+frame_progress = 0.25722
+centered = false
+offset = Vector2(64, 64)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("164_gifux")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "anim"
+libraries = {
+"": SubResource("AnimationLibrary_fdakc")
+}

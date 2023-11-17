@@ -64,11 +64,23 @@ func attempt_cheat(code: String) -> void:
 		"/any%": do_anypercent()
 		"/openyoureyes": do_openyoureyes()
 		"/dogmode": do_dogmode()
+		"/1987" : do_bite_mode()
 		_: print("Invalid cheat code: ", code)
 
 
 func do_hocuspocus() -> void:
-	pass
+	var vfx := preload("res://assets/vfx/hocus_pocus_vfx.tscn").instantiate() as CPUParticles2D
+	vfx.one_shot = true
+	vfx.emitting = true
+	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Node2D
+	if not player:
+		push_warning("failed to find player target for hocus pocus")
+		return
+	player.add_child(vfx)
+	vfx.position = Vector2.ZERO # center on player
+	await get_tree().create_timer(vfx.lifetime * 2.0).timeout
+	# remove the particle system once it's done being used
+	vfx.queue_free()
 
 
 func do_pspspsps() -> void:
@@ -86,3 +98,6 @@ func do_openyoureyes() -> void:
 
 func do_dogmode() -> void:
 	GameManager.dog_mode = not GameManager.dog_mode
+
+func do_bite_mode() -> void:
+	GameManager.bite_mode = not GameManager.bite_mode
