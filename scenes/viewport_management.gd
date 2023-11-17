@@ -19,11 +19,13 @@ func _ready() -> void:
 func pause(is_paused :bool) -> void:
 	get_tree().paused = is_paused
 
-func swap_scene(scene: Node, fade_out := true, fade_in := true) -> Node:
+func swap_scene(scene: Node, fade_out := true, fade_in := true, new_size := Vector2.ZERO) -> Node:
 	pause(true)
 	if fade_out:
 		await fade(1.0)
 	
+	if new_size != Vector2.ZERO:
+		pixel_level_root.size_2d_override = new_size
 	assert(pixel_level_root.get_child_count() <= 1)
 	var prev_scene: Node
 	if pixel_level_root.get_child_count() >= 1:
@@ -43,10 +45,8 @@ func fade(target := 1.0) -> void:
 	await t.finished # makes this func awaitable
 
 func do_dialog(dialog : Dialog) -> void:
-	if hi_res_gui_root.get_child_count() > 0:
-		return
 	hi_res_gui_root.add_child(dialog)
-	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Player
+	var player := pixel_level_root.get_child(0).get_node(GameManager.PLAYER_PATH) as Player
 	player.is_animated = true
 	dialog.tree_exiting.connect(Callable(player, "set").bind("is_animated", false))
 

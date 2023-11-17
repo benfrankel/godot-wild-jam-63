@@ -3,12 +3,15 @@ extends CharacterBody2D
 
 
 @export_range(0.0, 1000.0) var speed := 100.0
-
+var is_animated := false
 @onready var anim_tree := $AnimationTree as AnimationTree
 @onready var interact_sensor := $InteractionSensor as RayCast2D
 
 
 func _physics_process(_delta: float) -> void:
+	if is_animated:
+		return
+
 	var direction := Input.get_vector("left", "right", "up", "down")
 	velocity = speed * direction
 	move_and_slide()
