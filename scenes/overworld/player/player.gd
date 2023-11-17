@@ -13,11 +13,14 @@ func _physics_process(_delta: float) -> void:
 	velocity = speed * direction
 	move_and_slide()
 	
-	
 	var is_moving := direction != Vector2.ZERO
 	anim_tree.set("parameters/conditions/moving", is_moving)
 	anim_tree.set("parameters/conditions/not_moving", !is_moving)
+	
 	if is_moving:
-		interact_sensor.look_at(interact_sensor.global_position + velocity.sign())
+		# Consider diagonal directions as horizontal
+		if direction.x != 0.0 and direction.y != 0.0:
+			direction.y = 0.0
+		interact_sensor.look_at(interact_sensor.global_position + direction.sign())
 		anim_tree.set("parameters/Idle/blend_position", direction)
 		anim_tree.set("parameters/Walk/blend_position", direction)

@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bxd1qvmfjiis7" path="res://scenes/overworld/player/Character.png" id="2_q8ebl"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_sensor.gd" id="2_vteu5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uihn3"]
-radius = 7.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8g7cc"]
+radius = 4.0
+height = 14.0
 
 [sub_resource type="Animation" id="Animation_684el"]
 length = 0.8
@@ -603,7 +604,7 @@ script = ExtResource("1_pmhck")
 
 [node name="Image" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -27)
+position = Vector2(0, -28)
 texture = ExtResource("2_q8ebl")
 hframes = 6
 vframes = 6
@@ -622,7 +623,7 @@ metadata/_aseprite_wizard_config_ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CircleShape2D_uihn3")
+shape = SubResource("CapsuleShape2D_8g7cc")
 
 [node name="InteractionSensor" type="RayCast2D" parent="."]
 target_position = Vector2(50, 0)
