@@ -13,6 +13,8 @@ var pausing_allowed := true
 # load from default inventory for testing with different items
 var player_inventory := preload("res://assets/resources/PlayerDefaultInventory.tres") as Inventory
 var player_speed := 100.0
+var combat_size := Vector2(320.0, 180.0)
+var overworld_size := Vector2(320.0, 180.0)
 var dog_mode := false
 var bite_mode := false
 
@@ -27,7 +29,7 @@ func enter_room(room_path: String, door_idx: int) -> void:
 		door.is_active = false
 		player.global_position = door.global_position
 	pausing_allowed = false
-	(await viewport.swap_scene(room)).queue_free()
+	(await viewport.swap_scene(room, true, true, overworld_size)).queue_free()
 	update_player_speed()
 	pausing_allowed = true
 
@@ -38,11 +40,11 @@ func enter_combat(enemy: Enemy) -> void:
 	combat.enemy = enemy.duplicate()
 	if dog_mode:
 		combat.enemy.max_suspicion = 1
-	scene_backup = await viewport.swap_scene(combat)
+	scene_backup = await viewport.swap_scene(combat, true, true, combat_size)
 
 
 func exit_combat() -> void:
-	(await viewport.swap_scene(scene_backup)).queue_free()
+	(await viewport.swap_scene(scene_backup, true, true, overworld_size)).queue_free()
 	pausing_allowed = true
 	
 

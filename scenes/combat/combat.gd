@@ -2,10 +2,9 @@ extends Node2D
 class_name Combat
 
 const ITEM_ENTRY_SCENE := preload("res://scenes/combat/gui/item_entry.tscn") as PackedScene
+const RESULT_SCENE := preload("res://scenes/combat/gui/result_screen.tscn") as PackedScene
 
-@export var victory_scene : PackedScene
 @export var enemy: Enemy # exporting to allow quick testing
-
 var state := CombatState.new()
 var item_entries: Array[CombatItemEntry]
 @onready var laser := %Laser as Laser
@@ -156,11 +155,16 @@ func get_global_arena_rect() -> Rect2:
 
 
 func finish(win: bool) -> void:
-	if win:
-		var v :VictoryScreen = victory_scene.instantiate()
-		GameManager.viewport.hi_res_gui_root.add_child(v)
-		v.load_from(enemy)
+	if win or enemy.lose_dialog:
+		var result := RESULT_SCENE.instantiate() as ResultScreen
+		if win:
+			result.loot = enemy.win_loot
+			result.dialog = enemy.win_dialog
+		else:
+			result.dialog = enemy.lose_dialog
+		GameManager.viewport.hi_res_gui_root.add_child(result)
 	GameManager.exit_combat()
+
 
 func _on_exhaustion_timer_timeout() -> void:
 	state.exhaustion += 1

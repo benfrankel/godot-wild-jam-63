@@ -93,7 +93,8 @@ func do_anypercent() -> void:
 
 
 func do_openyoureyes() -> void:
-	GameManager.viewport.pixel_level_root.size_2d_override = Vector2(640.0, 360.0)
+	GameManager.overworld_size = Vector2(640.0, 360.0)
+	GameManager.viewport.pixel_level_root.size_2d_override = GameManager.overworld_size
 
 
 func do_dogmode() -> void:
