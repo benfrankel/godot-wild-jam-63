@@ -85,4 +85,4 @@ func do_openyoureyes() -> void:
 
 
 func do_dogmode() -> void:
-	pass
+	GameManager.dog_mode = not GameManager.dog_mode

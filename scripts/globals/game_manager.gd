@@ -13,6 +13,7 @@ var pausing_allowed := true
 # load from default inventory for testing with different items
 var player_inventory := preload("res://assets/resources/PlayerDefaultInventory.tres") as Inventory
 var player_speed := 100.0
+var dog_mode := false
 
 
 func enter_room(room_path: String, door_idx: int) -> void:
@@ -33,7 +34,9 @@ func enter_room(room_path: String, door_idx: int) -> void:
 func enter_combat(enemy: Enemy) -> void:
 	pausing_allowed = false
 	var combat := COMBAT_SCENE.instantiate() as Combat
-	combat.enemy = enemy
+	combat.enemy = enemy.duplicate()
+	if dog_mode:
+		combat.enemy.max_suspicion = 1
 	scene_backup = await viewport.swap_scene(combat)
 
 
