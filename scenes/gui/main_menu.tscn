@@ -17,12 +17,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r6xid")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BGCOL" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0937819, 0.0547036, 0.160708, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -741.0
+offset_top = -78.0
+offset_bottom = 192.0
+grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("1_okuy6")
 expand_mode = 1
