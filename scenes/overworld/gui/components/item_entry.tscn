@@ -6,6 +6,7 @@
 size = Vector2(16, 16)
 
 [node name="ItemEntry" type="HBoxContainer"]
+theme_override_constants/separation = 8
 script = ExtResource("1_dgji7")
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -17,10 +18,6 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "Item Name"
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="BtnAction" type="Button" parent="."]
 layout_mode = 2

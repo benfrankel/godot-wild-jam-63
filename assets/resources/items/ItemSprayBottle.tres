@@ -1,12 +1,17 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bxlawrtuugwk8"]
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bxlawrtuugwk8"]
 
 [ext_resource type="Script" path="res://assets/resources/items/effects/slow_time_2s.gd" id="1_j8gjg"]
 [ext_resource type="Script" path="res://scripts/resource_types/Item.gd" id="2_imvub"]
-[ext_resource type="Texture2D" uid="uid://c8sn2wip6m1u8" path="res://assets/resources/items/item_placeholder_icon.tres" id="3_4q44t"]
+[ext_resource type="Texture2D" uid="uid://vrf2dtiauqmt" path="res://assets/icons.png" id="3_qhf06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jon77"]
+atlas = ExtResource("3_qhf06")
+region = Rect2(48, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_imvub")
 item_name = "Spray Bottle"
-texture = ExtResource("3_4q44t")
+description = "Slows all projectiles for 2 seconds"
+texture = SubResource("AtlasTexture_jon77")
 effects = Array[Script]([ExtResource("1_j8gjg")])
 is_boss_item = false
