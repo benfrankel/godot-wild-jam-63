@@ -12,6 +12,7 @@ var scene_backup: Node
 var pausing_allowed := true
 # load from default inventory for testing with different items
 var player_inventory := preload("res://assets/resources/PlayerDefaultInventory.tres") as Inventory
+var player_speed := 100.0
 
 
 func enter_room(room_path: String, door_idx: int) -> void:
@@ -25,6 +26,7 @@ func enter_room(room_path: String, door_idx: int) -> void:
 		player.global_position = door.global_position
 	pausing_allowed = false
 	(await viewport.swap_scene(room)).queue_free()
+	update_player_speed()
 	pausing_allowed = true
 
 
@@ -42,3 +44,9 @@ func exit_combat() -> void:
 
 func do_dialog(dialog: Dialog) -> void:
 	viewport.do_dialog(dialog)
+
+
+func update_player_speed() -> void:
+	var player := viewport.pixel_level_root.get_child(0).get_node("%Player") as Player
+	if player:
+		player.speed = player_speed

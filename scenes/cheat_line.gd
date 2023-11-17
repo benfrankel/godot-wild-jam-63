@@ -58,4 +58,31 @@ func exit_cheat_mode() -> void:
 
 
 func attempt_cheat(code: String) -> void:
-	print("Entered cheat code: ", code)
+	match code:
+		"/hocuspocus": do_hocuspocus()
+		"/pspspsps": do_pspspsps()
+		"/any%": do_anypercent()
+		"/openyoureyes": do_openyoureyes()
+		"/dogmode": do_dogmode()
+		_: print("Invalid cheat code: ", code)
+
+
+func do_hocuspocus() -> void:
+	pass
+
+
+func do_pspspsps() -> void:
+	pass
+
+
+func do_anypercent() -> void:
+	GameManager.player_speed = 200.0
+	GameManager.update_player_speed()
+
+
+func do_openyoureyes() -> void:
+	GameManager.viewport.pixel_level_root.size_2d_override = Vector2(640.0, 360.0)
+
+
+func do_dogmode() -> void:
+	pass

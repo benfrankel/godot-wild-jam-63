@@ -13,7 +13,6 @@ layer_0/tile_data = PackedInt32Array(65537, 196608, 3, 65536, 196608, 3, 131071,
 
 [node name="Player" parent="." instance=ExtResource("1_wwx0g")]
 unique_name_in_owner = true
-speed = 100.0
 
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true

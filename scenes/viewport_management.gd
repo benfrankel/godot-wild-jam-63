@@ -2,13 +2,13 @@ extends Node
 class_name ViewportManager
 
 @export_file("*.tscn") var main_scene := ""
-@export var pause_scene : PackedScene
+@export var pause_scene: PackedScene
 @export var transition_time := 0.2
 
-@onready var pixel_level_root := $PixelScene/SubViewport
-@onready var hi_res_gui_root := $HiResGUIRoot
+@onready var pixel_level_root := $PixelScene/SubViewport as SubViewport
+@onready var hi_res_gui_root := $HiResGUIRoot as Control
 
-@onready var trans := $TransitionFX
+@onready var trans := $TransitionFX as ColorRect
 
 func _ready() -> void:
 	GameManager.viewport = self

@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 
-@export_range(0.0, 1000.0) var speed := 300.0
+@export_range(0.0, 1000.0) var speed := 100.0
 
 @onready var anim_tree := $AnimationTree
 @onready var interact_sensor := $InteractionSensor
