@@ -19,6 +19,10 @@ config/icon="res://assets/overworld/icon.svg"
 
 GameManager="*res://scripts/globals/game_manager.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
 [filesystem]
 
 import/blender/enabled=false
