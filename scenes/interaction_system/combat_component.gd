@@ -5,4 +5,4 @@ extends InteractionComponent
 
 
 func _interact() -> void:
-	GameManager.enter_combat(enemy_path)
+	GameManager.enter_combat(load(enemy_path) as Enemy)

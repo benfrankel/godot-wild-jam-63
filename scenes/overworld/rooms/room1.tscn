@@ -78,7 +78,7 @@ target_door = 0
 [node name="CombatArea" type="Area2D" parent="." index="4"]
 position = Vector2(215, -350)
 script = ExtResource("7_j4xr4")
-available_fights = Array[ExtResource("8_7olal")]([SubResource("Resource_kumwe")])
+enemy_list = Array[ExtResource("8_7olal")]([SubResource("Resource_kumwe")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CombatArea" index="0"]
 polygon = PackedVector2Array(-32, 42, 114, 43, 73, -131, -38, -146)

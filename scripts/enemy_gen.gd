@@ -1,4 +1,4 @@
-class_name NameGen
+class_name EnemyGen
 
 
 const FIRST_NAME_LIST: Array[String] = [
@@ -9,7 +9,6 @@ const FIRST_NAME_LIST: Array[String] = [
 	"Max",
 	"Oliver",
 ]
-
 const LAST_NAME_PREFIX_LIST: Array[String] = [
 	"Cuddle",
 	"Cutey",
@@ -22,7 +21,6 @@ const LAST_NAME_PREFIX_LIST: Array[String] = [
 	"Snuggle",
 	"Tuna",
 ]
-
 const LAST_NAME_SUFFIX_LIST: Array[String] = [
 	"belly",
 	"boots",
@@ -32,13 +30,18 @@ const LAST_NAME_SUFFIX_LIST: Array[String] = [
 	"puff",
 	"tail",
 ]
-
 const FULL_NAME_PATTERN := "{first} {last_prefix}{last_suffix}"
 
 
-static func random() -> String:
+static func random_name() -> String:
 	return FULL_NAME_PATTERN.format({
 		"first": FIRST_NAME_LIST.pick_random(),
 		"last_prefix": LAST_NAME_PREFIX_LIST.pick_random(),
 		"last_suffix": LAST_NAME_SUFFIX_LIST.pick_random(),
 	})
+
+
+static func random_enemy() -> Enemy:
+	var enemy := Enemy.new()
+	enemy.name = random_name()
+	return enemy

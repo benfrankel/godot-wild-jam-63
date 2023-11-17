@@ -8,7 +8,7 @@ Translates any arbitrary collider (including CollisionPolygon2D) into a grid of 
 @export var cell_size := 32.0
 @export_range(0, 1) var chance_combat_per_cell := 0.2
 # use the resource refs so it is resiliant to file moves
-@export var available_fights : Array[Enemy] = []
+@export var enemy_list: Array[Enemy] = []
 @export var clear_on_win := false
 
 var last_cell := Vector2.ONE * -1
@@ -28,9 +28,7 @@ func _physics_process(_delta: float) -> void:
 
 func _try_do_combat() -> void:
 	if randf() < chance_combat_per_cell:
-		var fight :Enemy = available_fights[randi() % available_fights.size()]
-		print("Doing combat!!!!!")
-		GameManager.enter_combat(fight.resource_path)
+		GameManager.enter_combat(enemy_list.pick_random() as Enemy)
 	else:
 		print("did not do combat")
 

@@ -30,10 +30,10 @@ func enter_room(room_path: String, door_idx: int) -> void:
 	pausing_allowed = true
 
 
-func enter_combat(enemy_path: String) -> void:
+func enter_combat(enemy: Enemy) -> void:
 	pausing_allowed = false
 	var combat := COMBAT_SCENE.instantiate() as Combat
-	combat.enemy = load(enemy_path) as Enemy
+	combat.enemy = enemy
 	scene_backup = await viewport.swap_scene(combat)
 
 
