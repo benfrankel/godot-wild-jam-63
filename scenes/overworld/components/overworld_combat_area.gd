@@ -28,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 
 func _try_do_combat() -> void:
 	if randf() < chance_combat_per_cell:
-		var enemy: Enemy = enemy_list.pick_random() if enemy_list else EnemyGen.random_enemy()
+		var enemy: Enemy = enemy_list.pick_random() if not enemy_list.is_empty() else EnemyGen.random_enemy()
 		GameManager.enter_combat(enemy)
 
 func _get_cell(global_pos : Vector2) -> Vector2:
