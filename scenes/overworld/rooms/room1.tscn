@@ -9,7 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bpxlqho3kvegi" path="res://scenes/overworld/npcs/special/coco.tscn" id="6_lq5se"]
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_j4xr4"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="8_7olal"]
+[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="10_m50bi"]
+
+[ext_resource type="AudioStream" uid="uid://b2xh7bkienoiy" path="res://assets/audio/compos/song4-converted.ogg" id="11_3eqxo"]
 [ext_resource type="PackedScene" uid="uid://jjr5sr25uoal" path="res://scenes/overworld/npcs/generic/npc3.tscn" id="9_se86n"]
+
 [ext_resource type="PackedScene" uid="uid://cq6sv218kthwx" path="res://scenes/overworld/npcs/generic/npc1.tscn" id="10_8ogt4"]
 [ext_resource type="PackedScene" uid="uid://bf8c5l2bowub0" path="res://scenes/overworld/npcs/generic/npc4.tscn" id="10_mmwmp"]
 [ext_resource type="PackedScene" uid="uid://blixfanxcne4d" path="res://scenes/overworld/npcs/generic/npc2.tscn" id="11_nwjco"]
@@ -75,3 +79,11 @@ enemy_list = Array[ExtResource("8_7olal")]([SubResource("Resource_kumwe")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CombatArea" index="0"]
 polygon = PackedVector2Array(-32, 42, 114, 43, 73, -131, -38, -146)
+
+[node name="BGM_Load" type="Node" parent="." index="5"]
+script = ExtResource("10_m50bi")
+music = ExtResource("11_3eqxo")
+crossfade = 1.0
+
+[node name="NPC1" parent="." index="5" instance=ExtResource("10_8ogt4")]
+position = Vector2(-76, 7)

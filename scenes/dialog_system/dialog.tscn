@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c18v5gt5qy8pc"]
+[gd_scene load_steps=6 format=3 uid="uid://c18v5gt5qy8pc"]
 
 [ext_resource type="Theme" uid="uid://bbtyhsmcmpxrn" path="res://assets/resources/theming/main_theme.tres" id="1_lj0u1"]
 [ext_resource type="Script" path="res://scenes/dialog_system/dialog.gd" id="1_v2710"]
+[ext_resource type="AudioStream" uid="uid://cceiiy68sdrpw" path="res://assets/audio/hit.wav" id="3_vcm24"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfk5k"]
 font_size = 48
@@ -77,3 +78,6 @@ text = "lorem ipsum dolor sit amet!!!!!"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
+
+[node name="SFX_Progress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vcm24")

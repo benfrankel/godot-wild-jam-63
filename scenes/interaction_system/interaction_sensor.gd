@@ -8,7 +8,7 @@ signal target_lost
 
 ## the current target interaction, or null
 var target: InteractionComponent
-
+@onready var interact_sfx := $"../SFX_Interact"
 
 func _physics_process(_delta: float) -> void:
 	var seen = get_collider() as InteractionComponent
@@ -25,5 +25,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if target and event.is_action_pressed("interact"):
 		target.interact()
+		interact_sfx.play()
 		get_viewport().set_input_as_handled()
 		

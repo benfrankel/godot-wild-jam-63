@@ -11,7 +11,7 @@ static func create_dialog(data: DialogData) -> Dialog:
 
 @onready var character_label := $%CharacterLabel
 @onready var textbox := $%TextBox as RichTextLabel
-
+@onready var sfx_progress := $SFX_Progress
 @export var current_data : DialogData
 
 signal dialog_ended
@@ -67,3 +67,5 @@ func _input(event: InputEvent) -> void:
 		tween.set_speed_scale(1.0)
 	else:
 		_load_line()
+	sfx_progress.play()
+		
