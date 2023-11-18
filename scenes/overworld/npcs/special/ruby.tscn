@@ -33,7 +33,6 @@ shape = SubResource("CapsuleShape2D_fqno1")
 [node name="InteractionComponent" type="Area2D" parent="."]
 collision_layer = 2
 script = ExtResource("2_7c771")
-auto_trigger = true
 dialog = SubResource("Resource_n6q0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
