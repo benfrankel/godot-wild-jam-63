@@ -3,7 +3,7 @@ class_name BGM_Load
 
 @export var music : AudioStream
 @export var crossfade := 5.0
-@export var reset_on_end := false
+@export var reset_on_end := true
 
 func _ready() -> void:
 	BGM.play_stream(music, crossfade)

@@ -1,7 +1,7 @@
 extends Node
 
-@onready var active := $A
-@onready var background := $B
+@onready var active := $A as AudioStreamPlayer
+@onready var background := $B as AudioStreamPlayer
 
 var tween : Tween
 
