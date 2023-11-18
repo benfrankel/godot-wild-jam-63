@@ -78,24 +78,28 @@ static func random_attack_phases() -> Array[AttackPhase]:
 
 
 static func random_loot() -> Inventory:
-	const ENEMY_LOOT_LIST: Array[Item] = [
+	const LOOT_LIST: Array[Item] = [
 		preload("res://assets/resources/items/ItemCanTuna.tres"),
 		preload("res://assets/resources/items/ItemCatnip.tres"),
 		preload("res://assets/resources/items/ItemCucumber.tres"),
 		preload("res://assets/resources/items/ItemSprayBottle.tres"),
 	]
-	const ENEMY_LOOT_CHANCE := 0.5
+	const LOOT_CHANCE := 0.2
+	const RARE_LOOT_LIST: Array[Item] = [
+		preload("res://assets/resources/items/ItemMilk.tres"),
+	]
+	const RARE_LOOT_CHANCE := 0.05
+	const LOOT_ATTEMPTS: int = 4
 	
 	var inventory := Inventory.new()
-	if randf() < ENEMY_LOOT_CHANCE:
-		inventory.add_item(ENEMY_LOOT_LIST.pick_random())
+	for _i in LOOT_ATTEMPTS:
+		if randf() < RARE_LOOT_CHANCE:
+			inventory.add_item(RARE_LOOT_LIST.pick_random())
+		elif randf() < LOOT_CHANCE:
+			inventory.add_item(LOOT_LIST.pick_random())
 	return inventory
 
 
-@export var character_name : String = ""
-@export var text_sound : AudioStream
-@export var auto_progress := false
-@export var lines : Array[String] = []
 static func random_win_dialog() -> DialogData:
 	const LINES: Array[String] = [
 		"Prrrrr... *falls asleep from exhaustion*",
