@@ -11,6 +11,7 @@ height = 14.0
 [sub_resource type="Resource" id="Resource_n6q0v"]
 script = ExtResource("3_jd46h")
 character_name = "P.J. the Punctual"
+text_speed = 50.0
 auto_progress = false
 lines = Array[String](["I used to be slow like you. But I've left the old me behind... in the dust.", "I've got places to be, and I bet you do too. Give it a whirl: [wave amp=50.0 freq=5.0 connected=1]/any%[/wave]"])
 

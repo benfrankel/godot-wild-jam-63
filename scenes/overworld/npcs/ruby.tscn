@@ -11,6 +11,7 @@ height = 14.0
 [sub_resource type="Resource" id="Resource_n6q0v"]
 script = ExtResource("3_jarxk")
 character_name = "Ruby the Arcane"
+text_speed = 30.0
 auto_progress = false
 lines = Array[String](["Did you know? Magic exists in this world.", "You can press / to begin an incantation, and then press Return to cast it!", "I know of one such incantation. It is the grand culmination of my ancestors' tireless study of the arcane arts...", "Now I will pass it on to you: [wave amp=50.0 freq=5.0 connected=1]/hocuspocus[/wave]"])
 

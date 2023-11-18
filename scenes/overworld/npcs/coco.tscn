@@ -11,6 +11,7 @@ height = 14.0
 [sub_resource type="Resource" id="Resource_n6q0v"]
 script = ExtResource("3_ww1fl")
 character_name = "Coco the Shrewd"
+text_speed = 30.0
 auto_progress = false
 lines = Array[String](["These mutant cats are a sore sight, eh?", "I've tried all manner of hisses, whistles, chirps, and even meows to spook 'em off, but nothing works.", "The only sound that had an effect actually made MORE of 'em show their tails. Ironic...", "Just so you know what NOT to do, the sound I made was: [wave amp=50.0 freq=5.0 connected=1]/pspspsps[/wave]"])
 

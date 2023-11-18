@@ -19,9 +19,6 @@ signal dialog_ended
 var line_index := 0
 var tween : Tween
 
-# maybe refactor these consts into a settings property?
-const TEXT_SPEED := 0.5
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_dialog(current_data)
@@ -52,7 +49,8 @@ func _load_line() -> void:
 	
 	# animate
 	tween = get_tree().create_tween()
-	tween.tween_property(textbox, "visible_ratio", 1.0, TEXT_SPEED)
+	var duration := textbox.get_parsed_text().length() / current_data.text_speed
+	tween.tween_property(textbox, "visible_ratio", 1.0, duration)
 	tween.tween_callback(_on_line_end)
 
 func _on_line_end() -> void:
