@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bhpbwdxan7dh7" path="res://assets/gui/cover_x4.png" id="1_okuy6"]
 [ext_resource type="Script" path="res://scenes/gui/main_menu.gd" id="1_r6xid"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="3_540sc"]
-[ext_resource type="AudioStream" uid="uid://blc8rhihv0q3f" path="res://assets/audio/compos/song1-converted.ogg" id="4_6k4eu"]
+[ext_resource type="AudioStream" uid="uid://cgkjm41y6o2ei" path="res://assets/audio/compos/song1.wav" id="4_i5amu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbfow"]
 atlas = ExtResource("1_okuy6")
@@ -113,7 +113,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("3_540sc")
-music = ExtResource("4_6k4eu")
+music = ExtResource("4_i5amu")
 
 [connection signal="pressed" from="MarginContainer/Control/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="MarginContainer/Control/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]

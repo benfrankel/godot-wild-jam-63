@@ -2,11 +2,11 @@ extends Projectile
 
 
 const SHARD_SCENES: Array[PackedScene] = [
-	preload("res://scenes/combat/projectile/glass_cup_shard1.tscn"),
-	preload("res://scenes/combat/projectile/glass_cup_shard2.tscn"),
-	preload("res://scenes/combat/projectile/glass_cup_shard3.tscn"),
-	preload("res://scenes/combat/projectile/glass_cup_shard4.tscn"),
-	preload("res://scenes/combat/projectile/glass_cup_shard5.tscn"),
+	preload("res://scenes/combat/projectile/glass_cup_L_shard1.tscn"),
+	preload("res://scenes/combat/projectile/glass_cup_L_shard2.tscn"),
+	preload("res://scenes/combat/projectile/glass_cup_L_shard3.tscn"),
+	preload("res://scenes/combat/projectile/glass_cup_L_shard4.tscn"),
+	preload("res://scenes/combat/projectile/glass_cup_L_shard5.tscn"),
 ]
 
 
