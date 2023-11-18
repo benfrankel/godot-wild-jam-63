@@ -114,6 +114,8 @@ color = Color(0, 0, 0, 1)
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("3_540sc")
 music = ExtResource("4_i5amu")
+crossfade = 0.2
+volume = -8.0
 
 [connection signal="pressed" from="MarginContainer/Control/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="MarginContainer/Control/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]

@@ -43,4 +43,3 @@ target = NodePath("../Objects/Player")
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_1x6n6")
 music = ExtResource("6_aff8d")
-crossfade = 1.0

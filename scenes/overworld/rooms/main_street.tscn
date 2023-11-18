@@ -76,7 +76,6 @@ target = NodePath("../Objects/Player")
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_66omq")
 music = ExtResource("6_4lfxf")
-crossfade = 1.0
 
 [node name="Combat Zones" type="Node2D" parent="."]
 
