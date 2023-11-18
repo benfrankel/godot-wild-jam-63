@@ -52,10 +52,19 @@ static func random_portrait() -> Texture2D:
 static func random_colors() -> Array:
 	# Each item: [bg, bg_overlay]
 	const ENEMY_COLORS_LIST := [
-		[Color.RED, Color.BLUE],
+		[Color("6e4b28"), Color("7c6132")],
+		[Color("52453e"), Color("625b4f")],
+		[Color("272a30"), Color("1f2229")],
 	]
+	const HUE_SHIFT_CHANCE := 0.3
 	
-	return ENEMY_COLORS_LIST.pick_random()
+	var colors := ENEMY_COLORS_LIST.pick_random().duplicate() as Array
+	if randf() < HUE_SHIFT_CHANCE:
+		var shift := randf()
+		for i in colors.size():
+			colors[i].h = fmod(colors[i].h + shift, 1.0)
+	
+	return colors
 
 
 static func random_attack_phases() -> Array[AttackPhase]:
@@ -103,6 +112,8 @@ static func random_loot() -> Inventory:
 static func random_win_dialog() -> DialogData:
 	const LINES: Array[String] = [
 		"Prrrrr... *falls asleep from exhaustion*",
+		"Mew... *slinks away, looking defeated*",
+		"Meow! *hastily retreats*",
 	]
 	
 	var line := LINES.pick_random() as String
@@ -115,6 +126,7 @@ static func random_win_dialog() -> DialogData:
 static func random_lose_dialog() -> DialogData:
 	const LINES: Array[String] = [
 		"Hissss! *leaves in frustration*",
+		"... *glares at you menacingly*",
 	]
 	
 	var line := LINES.pick_random() as String
@@ -129,9 +141,8 @@ static func random_enemy() -> Enemy:
 	
 	# Appearance
 	enemy.name = random_name()
-	var colors := random_colors()
-	# TODO: Apply random colors to portrait?
 	enemy.portrait = random_portrait()
+	var colors := random_colors()
 	enemy.bg_color = colors[0]
 	enemy.bg_overlay_color = colors[1]
 	
