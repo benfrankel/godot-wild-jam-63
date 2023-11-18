@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://blixfanxcne4d"]
+
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_mcgsv"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_bj341"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_jy2um"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="Resource" id="Resource_n6q0v"]
+script = ExtResource("3_jy2um")
+character_name = "Rosebud"
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["The worst part about this whole mutant cat thing is that it takes the spotlight away from other very real problems. Like the subway's been out of service for a whole month!", "I guess the conductor did turn into a mutant cat, though. Hm."])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
+size = Vector2(32, 32)
+
+[node name="NPC2" type="StaticBody2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_mcgsv")
+offset = Vector2(1, -18)
+region_enabled = true
+region_rect = Rect2(224, 0, 28, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fqno1")
+
+[node name="InteractionComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2_bj341")
+dialog = SubResource("Resource_n6q0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+shape = SubResource("RectangleShape2D_75wn5")
