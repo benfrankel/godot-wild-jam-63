@@ -4,7 +4,7 @@ class_name Dialog
 const DIALOG_SCENE := "res://scenes/dialog_system/dialog.tscn"
 
 ## Utility function to load a dialog with specific data
-static func create_dialog(data : DialogData) -> Dialog:
+static func create_dialog(data: DialogData) -> Dialog:
 	var d := load(DIALOG_SCENE).instantiate() as Dialog
 	d.current_data = data
 	return d
@@ -30,7 +30,6 @@ func set_dialog(data : DialogData) -> void:
 	current_data = data
 	if not current_data:
 		return
-	print("Dialog started: %s" % current_data.resource_path.get_file())
 	character_label.text = current_data.character_name
 	call_deferred("_load_line")
 

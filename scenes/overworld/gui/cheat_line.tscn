@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://rlfacuap8e1c"]
+[gd_scene load_steps=4 format=3 uid="uid://rlfacuap8e1c"]
 
+[ext_resource type="FontFile" uid="uid://cr8knrs45y8w" path="res://assets/resources/theming/font/Kenney/Kenney Pixel.ttf" id="1_445bi"]
 [ext_resource type="Script" path="res://scenes/cheat_line.gd" id="1_sqbdw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly1xu"]
@@ -19,6 +20,7 @@ offset_top = -24.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_445bi")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_ly1xu")
 alignment = 1

@@ -49,7 +49,7 @@ func exit_combat() -> void:
 	
 
 func do_dialog(dialog: Dialog) -> void:
-	viewport.do_dialog(dialog)
+	await viewport.do_dialog(dialog)
 
 
 func update_player_speed() -> void:

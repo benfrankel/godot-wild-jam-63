@@ -2,7 +2,6 @@ extends Node2D
 class_name Combat
 
 const ITEM_ENTRY_SCENE := preload("res://scenes/combat/gui/item_entry.tscn") as PackedScene
-const RESULT_SCENE := preload("res://scenes/combat/gui/result_screen.tscn") as PackedScene
 
 @export var enemy: Enemy # exporting to allow quick testing
 var state := CombatState.new()
@@ -15,6 +14,11 @@ signal player_damaged
 
 
 func _ready() -> void:
+	if enemy.win_dialog and not enemy.win_dialog.character_name:
+		enemy.win_dialog.character_name = enemy.name
+	if enemy.lose_dialog and not enemy.lose_dialog.character_name:
+		enemy.lose_dialog.character_name = enemy.name
+	
 	# Set up CombatState
 	state.projectiles_root = $Projectiles
 	state.enemy = enemy
@@ -154,17 +158,16 @@ func get_global_arena_rect() -> Rect2:
 	return arena
 
 
-func finish(win: bool) -> void:
-	if (win and enemy.win_dialog) or enemy.lose_dialog:
-		var result := RESULT_SCENE.instantiate() as ResultScreen
-		if win:
-			result.loot = enemy.win_loot
-			result.dialog = enemy.win_dialog
-		else:
-			result.dialog = enemy.lose_dialog
-		result.dialog.character_name = enemy.name
-		GameManager.viewport.hi_res_gui_root.add_child(result)
-	GameManager.exit_combat()
+static func finish(enemy_: Enemy, win: bool) -> void:
+	await GameManager.exit_combat()
+	if win:
+		await GameManager.do_dialog(Dialog.create_dialog(enemy_.win_dialog))
+		if enemy_.win_loot.items or enemy_.win_loot.boss_items:
+			await GameManager.viewport.do_loot_screen(LootScreen.create(enemy_.win_loot))
+		GameManager.player_inventory.consume_inventory(enemy_.win_loot)
+		
+	else:
+		GameManager.do_dialog(Dialog.create_dialog(enemy_.lose_dialog))
 
 
 func _on_exhaustion_timer_timeout() -> void:
@@ -180,7 +183,7 @@ func _on_laser_got_hit(_projectile: Projectile) -> void:
 func _on_state_change() -> void:
 	exh_meter.value = state.exhaustion
 	if state.exhaustion >= enemy.max_exhaustion:
-		finish(true)
+		Combat.finish(enemy, true)
 	sus_meter.value = state.suspicion
 	if state.suspicion >= enemy.max_suspicion:
-		finish(false)
+		Combat.finish(enemy, false)

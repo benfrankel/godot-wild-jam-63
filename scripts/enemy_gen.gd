@@ -92,12 +92,32 @@ static func random_loot() -> Inventory:
 	return inventory
 
 
+@export var character_name : String = ""
+@export var text_sound : AudioStream
+@export var auto_progress := false
+@export var lines : Array[String] = []
 static func random_win_dialog() -> DialogData:
-	return null
+	const LINES: Array[String] = [
+		"Prrrrr... *falls asleep from exhaustion*",
+	]
+	
+	var line := LINES.pick_random() as String
+	var dialog := DialogData.new()
+	dialog.lines = [line]
+	
+	return dialog
 
 
 static func random_lose_dialog() -> DialogData:
-	return null
+	const LINES: Array[String] = [
+		"Hissss! *leaves in frustration*",
+	]
+	
+	var line := LINES.pick_random() as String
+	var dialog := DialogData.new()
+	dialog.lines = [line]
+	
+	return dialog
 
 
 static func random_enemy() -> Enemy:
