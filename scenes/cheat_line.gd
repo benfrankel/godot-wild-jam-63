@@ -18,7 +18,6 @@ func _input(event: InputEvent) -> void:
 
 
 func enter_cheat_mode() -> void:
-	BGM.play_stream(null, 2.0)
 	GameManager.pausing_allowed = false
 	get_tree().paused = true
 	grab_focus()
@@ -56,7 +55,6 @@ func exit_cheat_mode() -> void:
 	text = ""
 	
 	vfx_rect.material = backup_vfx
-	BGM.play_stream(BGM.background.stream, 0.1)
 
 
 
