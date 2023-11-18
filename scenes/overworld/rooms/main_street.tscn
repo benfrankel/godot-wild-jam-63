@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_4k55o"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_8re1c"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_66omq"]
-[ext_resource type="AudioStream" uid="uid://b2xh7bkienoiy" path="res://assets/audio/compos/song4-converted.ogg" id="6_6sj8o"]
+[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_4lfxf"]
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_y8p6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uetds"]
@@ -75,7 +75,7 @@ target = NodePath("../Objects/Player")
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_66omq")
-music = ExtResource("6_6sj8o")
+music = ExtResource("6_4lfxf")
 crossfade = 1.0
 
 [node name="Combat Zones" type="Node2D" parent="."]
