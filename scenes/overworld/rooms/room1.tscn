@@ -14,10 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://cq6sv218kthwx" path="res://scenes/overworld/npcs/generic/npc1.tscn" id="10_8ogt4"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="10_m50bi"]
 [ext_resource type="PackedScene" uid="uid://bf8c5l2bowub0" path="res://scenes/overworld/npcs/generic/npc4.tscn" id="10_mmwmp"]
-[ext_resource type="AudioStream" uid="uid://b2xh7bkienoiy" path="res://assets/audio/compos/song4-converted.ogg" id="11_3eqxo"]
 [ext_resource type="PackedScene" uid="uid://blixfanxcne4d" path="res://scenes/overworld/npcs/generic/npc2.tscn" id="11_nwjco"]
 [ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://scenes/overworld/npcs/special/tutorial_cat.tscn" id="12_wv8i2"]
 [ext_resource type="PackedScene" uid="uid://bt318oqn6o5e0" path="res://scenes/overworld/npcs/generic/npc5.tscn" id="14_7tp4j"]
+[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="17_tm68f"]
 
 [sub_resource type="Resource" id="Resource_kumwe"]
 script = ExtResource("8_7olal")
@@ -89,5 +89,5 @@ position = Vector2(-76, 7)
 
 [node name="BGM_Load" type="Node" parent="." index="6"]
 script = ExtResource("10_m50bi")
-music = ExtResource("11_3eqxo")
+music = ExtResource("17_tm68f")
 crossfade = 1.0
