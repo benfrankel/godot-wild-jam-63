@@ -6,6 +6,14 @@ class_name Inventory
 @export var capacity := 10
 @export var boss_items_capacity := 5
 
+
+static func from_items(item_list: Array[Item]) -> Inventory:
+	var inv := Inventory.new()
+	for item in item_list:
+		inv.add_item(item)
+	return inv
+
+
 func add_item(item: Item) -> bool:
 	if item.is_boss_item:
 		if boss_items.size() >= boss_items_capacity:

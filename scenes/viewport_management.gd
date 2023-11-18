@@ -54,6 +54,7 @@ func do_loot_screen(loot: LootScreen) -> void:
 	var player := pixel_level_root.get_child(0).get_node(GameManager.PLAYER_PATH) as Player
 	player.is_animated = true
 	await loot.tree_exiting
+	GameManager.player_inventory.consume_inventory(loot.loot)
 	player.is_animated = false
 
 func _unhandled_input(event: InputEvent) -> void:

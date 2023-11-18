@@ -1,16 +1,17 @@
 [gd_scene load_steps=13 format=3 uid="uid://dnmynnpbigm2p"]
 
 [ext_resource type="PackedScene" uid="uid://oi3ugssh6kxs" path="res://scenes/overworld/templates/room_template.tscn" id="1_xocug"]
-[ext_resource type="PackedScene" uid="uid://da28k80r7yfkj" path="res://scenes/overworld/npcs/cheat/pj.tscn" id="3_56l60"]
-[ext_resource type="PackedScene" uid="uid://udhnyc07fphe" path="res://scenes/overworld/npcs/cheat/bella.tscn" id="3_sclix"]
+[ext_resource type="PackedScene" uid="uid://da28k80r7yfkj" path="res://scenes/overworld/npcs/special/pj.tscn" id="3_56l60"]
+[ext_resource type="PackedScene" uid="uid://udhnyc07fphe" path="res://scenes/overworld/npcs/special/bella.tscn" id="3_sclix"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="4_onw6f"]
-[ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://scenes/overworld/npcs/cheat/ruby.tscn" id="5_ltgax"]
-[ext_resource type="PackedScene" uid="uid://bjg3ahy5gyfwo" path="res://scenes/overworld/npcs/cheat/cutie_pie.tscn" id="6_cjq0f"]
-[ext_resource type="PackedScene" uid="uid://bpxlqho3kvegi" path="res://scenes/overworld/npcs/cheat/coco.tscn" id="6_lq5se"]
+[ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://scenes/overworld/npcs/special/ruby.tscn" id="5_ltgax"]
+[ext_resource type="PackedScene" uid="uid://bjg3ahy5gyfwo" path="res://scenes/overworld/npcs/special/cutie_pie.tscn" id="6_cjq0f"]
+[ext_resource type="PackedScene" uid="uid://bpxlqho3kvegi" path="res://scenes/overworld/npcs/special/coco.tscn" id="6_lq5se"]
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_j4xr4"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="8_7olal"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="10_m50bi"]
 [ext_resource type="AudioStream" uid="uid://b2xh7bkienoiy" path="res://assets/audio/compos/song4-converted.ogg" id="11_3eqxo"]
+[ext_resource type="PackedScene" uid="uid://cq6sv218kthwx" path="res://scenes/overworld/npcs/generic/npc1.tscn" id="10_8ogt4"]
 
 [sub_resource type="Resource" id="Resource_kumwe"]
 script = ExtResource("8_7olal")
@@ -62,3 +63,6 @@ polygon = PackedVector2Array(-32, 42, 114, 43, 73, -131, -38, -146)
 script = ExtResource("10_m50bi")
 music = ExtResource("11_3eqxo")
 crossfade = 1.0
+
+[node name="NPC1" parent="." index="5" instance=ExtResource("10_8ogt4")]
+position = Vector2(-76, 7)
