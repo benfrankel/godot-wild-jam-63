@@ -79,6 +79,7 @@ func do_hocuspocus() -> void:
 	player.add_sibling(vfx)
 	# center where player is looking
 	vfx.position = player.position + 30.0 * Vector2.from_angle(player.interact_sensor.rotation)
+	vfx.position.y -= 10.0
 	await get_tree().create_timer(vfx.lifetime * 2.0).timeout
 	# remove the particle system once it's done being used
 	vfx.queue_free()
