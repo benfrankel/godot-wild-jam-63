@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnmynnpbigm2p"]
+[gd_scene load_steps=12 format=3 uid="uid://dnmynnpbigm2p"]
 
 [ext_resource type="PackedScene" uid="uid://oi3ugssh6kxs" path="res://scenes/overworld/templates/room_template.tscn" id="1_xocug"]
 [ext_resource type="PackedScene" uid="uid://da28k80r7yfkj" path="res://scenes/overworld/npcs/special/pj.tscn" id="3_56l60"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bpxlqho3kvegi" path="res://scenes/overworld/npcs/special/coco.tscn" id="6_lq5se"]
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_j4xr4"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="8_7olal"]
+[ext_resource type="PackedScene" uid="uid://cq6sv218kthwx" path="res://scenes/overworld/npcs/generic/npc1.tscn" id="10_8ogt4"]
 
 [sub_resource type="Resource" id="Resource_kumwe"]
 script = ExtResource("8_7olal")
@@ -55,3 +56,6 @@ enemy_list = Array[ExtResource("8_7olal")]([SubResource("Resource_kumwe")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CombatArea" index="0"]
 polygon = PackedVector2Array(-32, 42, 114, 43, 73, -131, -38, -146)
+
+[node name="NPC1" parent="." index="5" instance=ExtResource("10_8ogt4")]
+position = Vector2(-76, 7)
