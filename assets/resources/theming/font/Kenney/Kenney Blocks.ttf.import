@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cfpgmf1uxv0f0"
-path="res://.godot/imported/Kenney High Square.ttf-a52bd8cbf890a977198ff04f5b340919.fontdata"
+uid="uid://dpk4npgmm6oxo"
+path="res://.godot/imported/Kenney Blocks.ttf-82d69c463e211b3348c72d0817b462a2.fontdata"
 
 [deps]
 
-source_file="res://assets/resources/theming/font/Fonts/Kenney High Square.ttf"
-dest_files=["res://.godot/imported/Kenney High Square.ttf-a52bd8cbf890a977198ff04f5b340919.fontdata"]
+source_file="res://assets/resources/theming/font/Kenney/Kenney Blocks.ttf"
+dest_files=["res://.godot/imported/Kenney Blocks.ttf-82d69c463e211b3348c72d0817b462a2.fontdata"]
 
 [params]
 

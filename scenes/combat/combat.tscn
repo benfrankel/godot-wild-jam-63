@@ -79,15 +79,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -16.0
-offset_top = -61.0
+offset_top = -54.0
 offset_right = 16.0
-offset_bottom = -29.0
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("4_fikq3")
 
 [node name="Arena" type="Area2D" parent="."]
-position = Vector2(0, 35)
+position = Vector2(0, 38)
 
 [node name="Background" type="Sprite2D" parent="Arena"]
 texture = ExtResource("4_gsscs")
@@ -109,15 +109,16 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="EnemyName" type="Label" parent="Hud"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -37.5
-offset_top = -30.0
-offset_right = 37.5
-offset_bottom = -17.0
+offset_left = -35.0
+offset_top = -88.0
+offset_right = 40.0
+offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 8
@@ -134,17 +135,20 @@ offset_bottom = 17.0
 
 [node name="ExhLabel" type="Label" parent="Hud/ExhSus"]
 layout_mode = 0
-offset_right = 24.0
-offset_bottom = 13.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 25.0
+offset_bottom = 14.0
 theme_override_font_sizes/font_size = 8
-text = "EXH"
+text = "exh"
+horizontal_alignment = 2
 
 [node name="ExhSusMeter" type="HBoxContainer" parent="Hud/ExhSus"]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 3.0
+offset_top = 6.0
 offset_right = 189.0
-offset_bottom = 8.0
+offset_bottom = 11.0
 theme_override_constants/separation = -1
 
 [node name="ExhMeter" type="ProgressBar" parent="Hud/ExhSus/ExhSusMeter"]
@@ -169,10 +173,11 @@ show_percentage = false
 [node name="SusLabel" type="Label" parent="Hud/ExhSus"]
 layout_mode = 0
 offset_left = 191.0
+offset_top = 1.0
 offset_right = 215.0
-offset_bottom = 13.0
+offset_bottom = 14.0
 theme_override_font_sizes/font_size = 8
-text = "SUS"
+text = "sus"
 
 [node name="Inventory" type="HBoxContainer" parent="Hud"]
 layout_mode = 2

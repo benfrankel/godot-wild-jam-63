@@ -44,10 +44,6 @@ func reload_visuals() -> void:
 				entry.set_action_name("drop")
 				entry.action_button_pressed.connect( \
 					Callable(_callback_drop_item).bind(i))
-			InventoryStyle.COMBAT:
-				entry.set_action_name("use")
-				entry.action_button_pressed.connect( \
-					Callable(_callback_use_item).bind(i))
 			InventoryStyle.READONLY:
 				entry.set_no_action()
 		entries.add_child(entry)
@@ -56,6 +52,3 @@ func _callback_drop_item(item : Item) -> void:
 	item_action_pressed.emit(item)
 	inventory.remove_item(item)
 	reload_visuals()
-
-func _callback_use_item(item : Item) -> void:
-	item_action_pressed.emit(item)

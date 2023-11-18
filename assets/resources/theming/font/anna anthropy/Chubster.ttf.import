@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://hmrjrlvggokr"
-path="res://.godot/imported/Kenney Mini Square Mono.ttf-6f54321d857ce0be24fc0e1095de0bf8.fontdata"
+uid="uid://c585lahqean7i"
+path="res://.godot/imported/Chubster.ttf-ad404b8c2d1858599699ad676477c194.fontdata"
 
 [deps]
 
-source_file="res://assets/resources/theming/font/Fonts/Kenney Mini Square Mono.ttf"
-dest_files=["res://.godot/imported/Kenney Mini Square Mono.ttf-6f54321d857ce0be24fc0e1095de0bf8.fontdata"]
+source_file="res://assets/resources/theming/font/anna anthropy/Chubster.ttf"
+dest_files=["res://.godot/imported/Chubster.ttf-ad404b8c2d1858599699ad676477c194.fontdata"]
 
 [params]
 

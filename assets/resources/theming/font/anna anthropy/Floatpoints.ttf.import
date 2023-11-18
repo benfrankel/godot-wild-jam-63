@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dpk4npgmm6oxo"
-path="res://.godot/imported/Kenney Blocks.ttf-a41c3b83ebdf6cf91e08c7a5c6301b49.fontdata"
+uid="uid://bu3c1vnegh014"
+path="res://.godot/imported/Floatpoints.ttf-5c5e5f8aebd1fb698f505a977f0884f1.fontdata"
 
 [deps]
 
-source_file="res://assets/resources/theming/font/Fonts/Kenney Blocks.ttf"
-dest_files=["res://.godot/imported/Kenney Blocks.ttf-a41c3b83ebdf6cf91e08c7a5c6301b49.fontdata"]
+source_file="res://assets/resources/theming/font/anna anthropy/Floatpoints.ttf"
+dest_files=["res://.godot/imported/Floatpoints.ttf-5c5e5f8aebd1fb698f505a977f0884f1.fontdata"]
 
 [params]
 

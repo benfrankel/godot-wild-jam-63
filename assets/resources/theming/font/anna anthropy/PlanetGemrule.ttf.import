@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cr8knrs45y8w"
-path="res://.godot/imported/Kenney Pixel.ttf-eec01457b843646efa07af9f8c1d4e71.fontdata"
+uid="uid://c0b21lochqbt6"
+path="res://.godot/imported/PlanetGemrule.ttf-45252207dd8aef439a01f066dd2e9bdc.fontdata"
 
 [deps]
 
-source_file="res://assets/resources/theming/font/Fonts/Kenney Pixel.ttf"
-dest_files=["res://.godot/imported/Kenney Pixel.ttf-eec01457b843646efa07af9f8c1d4e71.fontdata"]
+source_file="res://assets/resources/theming/font/anna anthropy/PlanetGemrule.ttf"
+dest_files=["res://.godot/imported/PlanetGemrule.ttf-45252207dd8aef439a01f066dd2e9bdc.fontdata"]
 
 [params]
 

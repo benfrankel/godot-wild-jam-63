@@ -40,12 +40,15 @@ func _load_line() -> void:
 	if not current_data:
 		return
 	if line_index >= current_data.lines.size():
-		print("Dialog ended: %s" % current_data.resource_path.get_file())
 		dialog_ended.emit()
 		queue_free()
 		return
+	
 	# prep
-	textbox.parse_bbcode(current_data.lines[line_index])
+	var line := "> " + current_data.lines[line_index]
+	if line_index < current_data.lines.size() - 1:
+		line += " ..."
+	textbox.parse_bbcode(line)
 	textbox.visible_ratio = 0.0
 	
 	# animate
