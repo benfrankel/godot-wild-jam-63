@@ -17,7 +17,7 @@ script = ExtResource("3_w60qa")
 character_name = "Frankie"
 text_speed = 40.0
 auto_progress = false
-lines = Array[String](["Heya there, bud!", "Things have been getting crazy this part of town.", "Like, cool cats are going completely feral!", "You best take care of yourself", "I got a spare piece, so don't say I never did nothing for ya!"])
+lines = Array[String](["Heya there, bud!", "Things have been getting crazy this part of town.", "Like, cool cats are going completely feral!", "You best take care of yourself", "I got a spare piece, so don't say I never did nothing for ya!", "Just make sure the feral doesn't get too suspicious of ya when fending them off!", "Tire them out enough and they'll leave you alone"])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4ci"]
 size = Vector2(40, 38)
