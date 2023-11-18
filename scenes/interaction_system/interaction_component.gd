@@ -5,12 +5,13 @@ extends Area2D
 
 signal interacted_with
 
+@export var dialog: DialogData
+@export var enemy: Enemy
+
 
 func interact() -> void:
 	interacted_with.emit()
-	_interact()
-
-
-## Virtual method called when the component is interacted with
-func _interact() -> void:
-	pass
+	if dialog:
+		await GameManager.do_dialog(Dialog.create_dialog(dialog))
+	if enemy:
+		GameManager.enter_combat(enemy)

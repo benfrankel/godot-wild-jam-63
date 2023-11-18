@@ -57,10 +57,13 @@ func _on_line_end() -> void:
 	line_index += 1
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		get_viewport().set_input_as_handled()
-		if tween.is_running():
-			tween.set_speed_scale(100.0)
-			await tween.finished
-			tween.set_speed_scale(1.0)
+	if not event.is_action_pressed("interact"):
+		return
+
+	get_viewport().set_input_as_handled()
+	if tween.is_running():
+		tween.set_speed_scale(100.0)
+		await tween.finished
+		tween.set_speed_scale(1.0)
+	else:
 		_load_line()

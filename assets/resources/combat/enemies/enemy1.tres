@@ -10,11 +10,11 @@ region = Rect2(0, 0, 64, 64)
 
 [resource]
 script = ExtResource("3_amgom")
-name = "Kitty McCatface"
+name = "KittyMcCatface"
 portrait = SubResource("AtlasTexture_fv5hh")
 bg_color = Color(0.152941, 0.164706, 0.188235, 1)
 bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
 max_exhaustion = 25
 exhaustion_cooldown = 2.0
-max_suspicion = 10
+max_suspicion = 10.0
 attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([ExtResource("1_7nk2h")])

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnwtg7vqa8m6s"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_lsyy7"]
-[ext_resource type="Script" path="res://scenes/interaction_system/dialog_component.gd" id="2_j354y"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_j354y"]
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_jarxk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
@@ -30,11 +30,11 @@ region_rect = Rect2(0, 0, 28, 44)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_fqno1")
 
-[node name="DialogInteraction" type="Area2D" parent="."]
+[node name="InteractionComponent" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_j354y")
 dialog = SubResource("Resource_n6q0v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteraction"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
 shape = SubResource("RectangleShape2D_75wn5")
