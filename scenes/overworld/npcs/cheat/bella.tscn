@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://udhnyc07fphe"]
 
-[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_7aa2h"]
-[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_qmv6o"]
-[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_dlddv"]
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_nsldu"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_57j3i"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_0ciuo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0
 height = 14.0
 
 [sub_resource type="Resource" id="Resource_n6q0v"]
-script = ExtResource("3_dlddv")
+script = ExtResource("3_0ciuo")
 character_name = "Bella the Observant"
 text_speed = 30.0
 auto_progress = false
@@ -21,7 +21,7 @@ size = Vector2(32, 32)
 [node name="BellaNPC" type="StaticBody2D"]
 
 [node name="Image" type="Sprite2D" parent="."]
-texture = ExtResource("1_7aa2h")
+texture = ExtResource("1_nsldu")
 offset = Vector2(1, -18)
 region_enabled = true
 region_rect = Rect2(112, 0, 28, 44)
@@ -32,8 +32,7 @@ shape = SubResource("CapsuleShape2D_fqno1")
 
 [node name="InteractionComponent" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
-script = ExtResource("2_qmv6o")
+script = ExtResource("2_57j3i")
 dialog = SubResource("Resource_n6q0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]

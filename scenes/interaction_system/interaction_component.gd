@@ -5,8 +5,19 @@ extends Area2D
 
 signal interacted_with
 
+
+@export var auto_trigger := false
 @export var dialog: DialogData
 @export var enemy: Enemy
+
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if auto_trigger and body is Player:
+		interact()
 
 
 func interact() -> void:

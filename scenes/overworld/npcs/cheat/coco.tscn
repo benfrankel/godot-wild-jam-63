@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpxlqho3kvegi"]
 
-[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_qy1qi"]
-[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_k76sy"]
-[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_ww1fl"]
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_2c3jt"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_fwdin"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_f8duo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0
 height = 14.0
 
 [sub_resource type="Resource" id="Resource_n6q0v"]
-script = ExtResource("3_ww1fl")
+script = ExtResource("3_f8duo")
 character_name = "Coco the Shrewd"
 text_speed = 30.0
 auto_progress = false
@@ -21,7 +21,7 @@ size = Vector2(32, 32)
 [node name="CocoNPC" type="StaticBody2D"]
 
 [node name="Image" type="Sprite2D" parent="."]
-texture = ExtResource("1_qy1qi")
+texture = ExtResource("1_2c3jt")
 offset = Vector2(1, -18)
 region_enabled = true
 region_rect = Rect2(28, 0, 28, 44)
@@ -32,8 +32,7 @@ shape = SubResource("CapsuleShape2D_fqno1")
 
 [node name="InteractionComponent" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
-script = ExtResource("2_k76sy")
+script = ExtResource("2_fwdin")
 dialog = SubResource("Resource_n6q0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]

@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://da28k80r7yfkj"]
 
-[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_f6lv0"]
-[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_tmjlw"]
-[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_jd46h"]
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_yt408"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_4obf8"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_n56jn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0
 height = 14.0
 
 [sub_resource type="Resource" id="Resource_n6q0v"]
-script = ExtResource("3_jd46h")
+script = ExtResource("3_n56jn")
 character_name = "P.J. the Punctual"
 text_speed = 50.0
 auto_progress = false
@@ -21,7 +21,7 @@ size = Vector2(32, 32)
 [node name="PjNPC" type="StaticBody2D"]
 
 [node name="Image" type="Sprite2D" parent="."]
-texture = ExtResource("1_f6lv0")
+texture = ExtResource("1_yt408")
 offset = Vector2(1, -18)
 region_enabled = true
 region_rect = Rect2(84, 0, 28, 44)
@@ -32,8 +32,7 @@ shape = SubResource("CapsuleShape2D_fqno1")
 
 [node name="InteractionComponent" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
-script = ExtResource("2_tmjlw")
+script = ExtResource("2_4obf8")
 dialog = SubResource("Resource_n6q0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]

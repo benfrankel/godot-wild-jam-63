@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjg3ahy5gyfwo"]
 
-[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_n4kst"]
-[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_66vgx"]
-[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_l6vm2"]
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_80p4h"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_gvxyf"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_7nj4c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0
 height = 14.0
 
 [sub_resource type="Resource" id="Resource_n6q0v"]
-script = ExtResource("3_l6vm2")
+script = ExtResource("3_7nj4c")
 character_name = "Cutie-pie the Cursed"
 text_speed = 30.0
 auto_progress = false
@@ -21,7 +21,7 @@ size = Vector2(32, 32)
 [node name="CutiePieNPC" type="StaticBody2D"]
 
 [node name="Image" type="Sprite2D" parent="."]
-texture = ExtResource("1_n4kst")
+texture = ExtResource("1_80p4h")
 offset = Vector2(1, -18)
 region_enabled = true
 region_rect = Rect2(140, 0, 28, 44)
@@ -32,8 +32,7 @@ shape = SubResource("CapsuleShape2D_fqno1")
 
 [node name="InteractionComponent" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
-script = ExtResource("2_66vgx")
+script = ExtResource("2_gvxyf")
 dialog = SubResource("Resource_n6q0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
