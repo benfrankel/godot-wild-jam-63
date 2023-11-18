@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://fi2xcmonrb8y"]
+
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_vew74"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_nx6o8"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_w60qa"]
+[ext_resource type="Resource" uid="uid://dwaewvj8khe76" path="res://assets/resources/items/ItemLaserPointer.tres" id="4_puefv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s7mkn"]
+size = Vector2(16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n10ug"]
+radius = 3.5
+height = 20.0
+
+[sub_resource type="Resource" id="Resource_ucr13"]
+script = ExtResource("3_w60qa")
+character_name = "Frankie"
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Heya there, bud!", "Things have been getting crazy this part of town.", "Like, cool cats are going completely feral!", "You best take care of yourself", "I got a spare piece, so don't say I never did nothing for ya!", "Just make sure the feral doesn't get too suspicious of ya when fending them off!", "Tire them out enough and they'll leave you alone"])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4ci"]
+size = Vector2(40, 38)
+
+[node name="TutorialCat" type="StaticBody2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = SubResource("PlaceholderTexture2D_s7mkn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vew74")
+region_enabled = true
+region_rect = Rect2(56, 0, 28, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_n10ug")
+
+[node name="InteractionComponent" type="Area2D" parent="."]
+script = ExtResource("2_nx6o8")
+auto_trigger = true
+dialog = SubResource("Resource_ucr13")
+gift = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_puefv")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_wk4ci")
+debug_color = Color(0.913725, 0.243137, 0.423529, 0.419608)
