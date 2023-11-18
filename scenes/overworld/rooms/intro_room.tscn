@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceo5nb7evdjkm"]
+
+[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_jtsoe"]
+[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_abuon"]
+[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_gdal2"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="4_d8pqw"]
+[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_cbesi"]
+[ext_resource type="AudioStream" uid="uid://b2xh7bkienoiy" path="res://assets/audio/compos/song4-converted.ogg" id="6_07wkh"]
+
+[node name="SandwichShop" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_jtsoe")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131063, 262144, 3, -196599, 262144, 1, -131064, 196608, 3, -196600, 196608, 1, -131065, 196608, 3, -196601, 196608, 1, -131066, 196608, 3, -196602, 196608, 1, -131067, 196608, 3, -196603, 196608, 1, -131068, 327680, 2, -196604, 196608, 1, -131069, 196608, 2, -196605, 196608, 1, -131070, 131072, 2, -196606, 131072, 1, 65540, 262144, 2, 4, 262144, 2, -65532, 262144, 2, 65539, 196608, 2, 3, 196608, 2, -65533, 196608, 2, 65538, 131072, 2, 2, 131072, 2, -65534, 131072, 2, 262148, 262144, 3, 196612, 262144, 2, 131076, 262144, 2, 262147, 196608, 3, 196611, 196608, 2, 131075, 196608, 2, 262146, 196608, 3, 196610, 196608, 2, 131074, 393216, 3, 262145, 327680, 2, 196609, 196608, 2, 131073, 196608, 1, 262144, 196608, 2, 196608, 196608, 2, 131072, 196608, 1, 327679, 196608, 2, 262143, 196608, 2, 196607, 196608, 1, 327678, 196608, 2, 262142, 196608, 2, 196606, 196608, 1, 327677, 131072, 2, 262141, 131072, 2, 196605, 131072, 1, 458753, 262144, 3, 393217, 262144, 2, 327681, 262144, 2, 458752, 196608, 3, 393216, 196608, 2, 327680, 196608, 2, 524287, 196608, 3, 458751, 196608, 2, 393215, 196608, 2, 524286, 196608, 3, 458750, 196608, 2, 393214, 196608, 2, 524285, 131072, 3, 458749, 131072, 2, 393213, 131072, 2)
+
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Objects" instance=ExtResource("2_abuon")]
+unique_name_in_owner = true
+position = Vector2(-16, 208)
+
+[node name="Doors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MainStreet" parent="Doors" instance=ExtResource("3_gdal2")]
+position = Vector2(288, -64)
+target_room = "res://scenes/overworld/rooms/main_street.tscn"
+target_door = 4
+
+[node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.3
+drag_top_margin = 0.3
+drag_right_margin = 0.3
+drag_bottom_margin = 0.3
+editor_draw_drag_margin = true
+script = ExtResource("4_d8pqw")
+target = NodePath("../Objects/Player")
+
+[node name="BGM_Load" type="Node" parent="."]
+script = ExtResource("5_cbesi")
+music = ExtResource("6_07wkh")
+crossfade = 1.0

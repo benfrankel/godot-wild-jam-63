@@ -59,6 +59,7 @@ mouse_filter = 1
 
 [node name="MainMenu" parent="HiResGUIRoot" instance=ExtResource("5_scb48")]
 layout_mode = 1
+start_scene = "res://scenes/overworld/rooms/intro_room.tscn"
 
 [node name="TransitionFX" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

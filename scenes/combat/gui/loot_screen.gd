@@ -2,14 +2,14 @@ class_name LootScreen
 extends Control
 
 
-const LOOT_SCREEN_SCENE := preload("res://scenes/combat/gui/loot_screen.tscn") as PackedScene
+const LOOT_SCREEN_SCENE := "res://scenes/combat/gui/loot_screen.tscn"
 
 @export var loot: Inventory
 @onready var node_loot := $CenterContainer/VBoxContainer/InventoryPanel as InventoryPanel
 
 
 static func create(inv: Inventory) -> LootScreen:
-	var l := LOOT_SCREEN_SCENE.instantiate() as LootScreen
+	var l := load(LOOT_SCREEN_SCENE).instantiate() as LootScreen
 	l.loot = inv
 	return l
 

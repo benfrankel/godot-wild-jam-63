@@ -1,10 +1,10 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://de5mhvl8elhdc"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cnsrref7v5e22"]
 
-[ext_resource type="Texture2D" uid="uid://ct8q1mt5bk6h4" path="res://assets/overworld/tilesheet.png" id="1_h051g"]
+[ext_resource type="Texture2D" uid="uid://ct8q1mt5bk6h4" path="res://assets/overworld/tilesheet.png" id="1_nqhu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n34vn"]
 resource_name = "Placeholder"
-texture = ExtResource("1_h051g")
+texture = ExtResource("1_nqhu8")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/terrain_set = 0
