@@ -1,6 +1,6 @@
 extends Control
 
-@onready var save_button := $MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnSave
+@onready var first_button := $MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnInventory
 @onready var inventory_panel := $InventoryPanel
 
 var prior_mouse_state : Input.MouseMode
@@ -13,7 +13,7 @@ func _ready() -> void:
 		return
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE # pause menu requires mouse access
 	get_tree().paused = true
-	save_button.grab_focus()
+	first_button.grab_focus()
 	inventory_panel.visible = false
 
 func _on_btn_save_pressed() -> void:

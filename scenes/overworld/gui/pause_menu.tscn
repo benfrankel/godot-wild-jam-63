@@ -15,8 +15,14 @@ script = ExtResource("1_an0tv")
 
 [node name="MainPanel" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_right = 32.0
-offset_bottom = 32.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -112.0
+offset_right = 341.0
+offset_bottom = 112.0
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MainPanel"]
 layout_mode = 2
@@ -26,17 +32,6 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/PanelContainer/MarginContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="MainPanel/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Pause Menu"
-
-[node name="HSeparator" type="HSeparator" parent="MainPanel/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="BtnSave" type="Button" parent="MainPanel/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Save"
 
 [node name="BtnInventory" type="Button" parent="MainPanel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -53,16 +48,16 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_left = -557.0
+offset_top = -71.0
+offset_right = -40.0
+offset_bottom = 71.0
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="InventoryPanel" parent="InventoryPanel" instance=ExtResource("1_gu0jv")]
 layout_mode = 2
 
-[connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnSave" to="." method="_on_btn_save_pressed"]
 [connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnInventory" to="." method="_on_btn_inventory_pressed"]
 [connection signal="pressed" from="MainPanel/PanelContainer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]
 [connection signal="focus_exited" from="InventoryPanel" to="." method="_on_inventory_panel_focus_exited"]

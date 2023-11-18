@@ -11,7 +11,7 @@ region = Rect2(48, 0, 16, 16)
 [resource]
 script = ExtResource("2_imvub")
 item_name = "Spray Bottle"
-description = "Slows all projectiles for 2 seconds"
+description = "Slows down time for 2 seconds"
 texture = SubResource("AtlasTexture_jon77")
 effects = Array[Script]([ExtResource("1_j8gjg")])
 is_boss_item = false
