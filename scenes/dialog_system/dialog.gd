@@ -33,9 +33,7 @@ func set_dialog(data : DialogData) -> void:
 func _load_line() -> void:
 	if tween:
 		tween.kill()
-	if not current_data:
-		return
-	if line_index >= current_data.lines.size():
+	if not current_data or line_index >= current_data.lines.size():
 		dialog_ended.emit()
 		queue_free()
 		return
@@ -61,7 +59,7 @@ func _input(event: InputEvent) -> void:
 		return
 
 	get_viewport().set_input_as_handled()
-	if tween.is_running():
+	if tween and tween.is_running():
 		tween.set_speed_scale(100.0)
 		await tween.finished
 		tween.set_speed_scale(1.0)

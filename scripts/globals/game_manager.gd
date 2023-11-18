@@ -2,6 +2,9 @@ extends Node
 ## Globally loaded script for managing all global game data.
 
 
+signal exited_combat()
+
+
 const PLAYER_GROUP := "player"
 const PLAYER_PATH := "%Player"
 const DOORS_PATH := "%Doors"
@@ -17,6 +20,7 @@ var combat_size := Vector2(320.0, 180.0)
 var overworld_size := Vector2(320.0, 180.0)
 var dog_mode := false
 var bite_mode := false
+var won_last_combat := false
 
 
 func enter_room(room_path: String, door_idx: int) -> void:
@@ -34,16 +38,20 @@ func enter_room(room_path: String, door_idx: int) -> void:
 	pausing_allowed = true
 
 
-func enter_combat(enemy: Enemy) -> void:
+func enter_combat(enemy: Enemy) -> bool:
 	pausing_allowed = false
 	var combat := COMBAT_SCENE.instantiate() as Combat
 	combat.enemy = enemy.duplicate()
 	if dog_mode:
 		combat.enemy.max_suspicion = 1
 	scene_backup = await viewport.swap_scene(combat, true, true, combat_size)
+	await exited_combat
+	return won_last_combat
 
 
-func exit_combat() -> void:
+func exit_combat(win: bool) -> void:
+	won_last_combat = win
+	exited_combat.emit()
 	(await viewport.swap_scene(scene_backup, true, true, overworld_size)).queue_free()
 	pausing_allowed = true
 	

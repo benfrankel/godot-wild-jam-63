@@ -159,10 +159,10 @@ func get_global_arena_rect() -> Rect2:
 
 
 static func finish(enemy_: Enemy, win: bool) -> void:
-	await GameManager.exit_combat()
+	await GameManager.exit_combat(win)
 	if win:
 		await GameManager.do_dialog(Dialog.create_dialog(enemy_.win_dialog))
-		if enemy_.win_loot.items or enemy_.win_loot.boss_items:
+		if enemy_.win_loot and (enemy_.win_loot.items or enemy_.win_loot.boss_items):
 			await GameManager.viewport.do_loot_screen(LootScreen.create(enemy_.win_loot))
 		
 	else:

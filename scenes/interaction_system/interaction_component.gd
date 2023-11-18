@@ -29,4 +29,5 @@ func interact() -> void:
 		await GameManager.viewport.do_loot_screen(LootScreen.create(Inventory.from_items(gift.duplicate())))
 		gift.clear()
 	if enemy:
-		GameManager.enter_combat(enemy)
+		if await GameManager.enter_combat(enemy):
+			enemy = null

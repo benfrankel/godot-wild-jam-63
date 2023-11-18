@@ -13,7 +13,8 @@ func _ready() -> void:
 	GameManager.viewport = self
 
 func pause(is_paused :bool) -> void:
-	get_tree().paused = is_paused
+	if is_inside_tree():
+		get_tree().paused = is_paused
 
 func swap_scene(scene: Node, fade_out := true, fade_in := true, new_size := Vector2.ZERO) -> Node:
 	pause(true)
