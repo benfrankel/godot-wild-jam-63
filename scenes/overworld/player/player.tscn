@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://cy55kyr0fh46x"]
+[gd_scene load_steps=30 format=3 uid="uid://cy55kyr0fh46x"]
 
 [ext_resource type="Script" path="res://scenes/overworld/player/player.gd" id="1_pmhck"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_sensor.gd" id="2_vteu5"]
+[ext_resource type="AudioStream" uid="uid://dkuku5raxeqvx" path="res://assets/audio/click.wav" id="3_6ytp7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbshv"]
 load_path = "res://.godot/imported/Character.png-f9bd1b456b5c85e8f8ee1178f16f0660.ctex"
@@ -717,3 +718,6 @@ parameters/conditions/moving = false
 parameters/conditions/not_moving = false
 parameters/Idle/blend_position = Vector2(-0.00192308, 0.148936)
 parameters/Walk/blend_position = Vector2(-0.00384617, 0.157447)
+
+[node name="SFX_Interact" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6ytp7")

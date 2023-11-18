@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=19 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://scenes/combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://scenes/combat/combat.gd" id="1_npvr5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/combat/BiteBuffer.gd" id="7_gslqi"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="8_ytdk2"]
 [ext_resource type="AudioStream" uid="uid://cmeqt0hd72clv" path="res://assets/audio/PixelPunch_By_Dk.wav" id="9_gv7x6"]
+[ext_resource type="AudioStream" uid="uid://bapl7s41vr2nw" path="res://assets/audio/idkwhichisthis.wav" id="10_14ejk"]
 
 [sub_resource type="Resource" id="Resource_kumwe"]
 script = ExtResource("3_1bgdu")
@@ -226,6 +227,10 @@ music = ExtResource("9_gv7x6")
 crossfade = 0.1
 reset_on_end = true
 
+[node name="hitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_14ejk")
+
 [connection signal="player_damaged" from="." to="Hud/BiteBuffer" method="_on_combat_player_damaged"]
+[connection signal="player_damaged" from="." to="hitSFX" method="play"]
 [connection signal="got_hit" from="Laser" to="." method="_on_laser_got_hit"]
 [connection signal="timeout" from="ExhaustionTimer" to="." method="_on_exhaustion_timer_timeout"]
