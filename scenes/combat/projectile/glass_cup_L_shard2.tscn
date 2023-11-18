@@ -1,23 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://08tkcokkwxrg"]
 
-[ext_resource type="Script" path="res://scenes/combat/projectile/projectile.gd" id="1_6u33k"]
-[ext_resource type="Texture2D" uid="uid://cug1y2eey1fs7" path="res://assets/combat/projectiles/glass_cup_shard2.png" id="2_vagax"]
+[ext_resource type="Script" path="res://scenes/combat/projectile/projectile.gd" id="1_ucgov"]
+[ext_resource type="Texture2D" uid="uid://cug1y2eey1fs7" path="res://assets/combat/projectiles/glass_cup_L_shard2.png" id="2_4wvl3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yxwmu"]
 radius = 9.71723
 
-[node name="GlassCupShard1" type="RigidBody2D"]
+[node name="GlassCupLShard2" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 5
 center_of_mass_mode = 1
 angular_damp_mode = 1
-script = ExtResource("1_6u33k")
-spawn_time = 0.0
+script = ExtResource("1_ucgov")
 
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(-24.9999, -1.99993)
 rotation = 1.5708
-texture = ExtResource("2_vagax")
+texture = ExtResource("2_4wvl3")
 flip_h = true
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]

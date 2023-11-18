@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cug1y2eey1fs7"
-path="res://.godot/imported/glass_cup_shard2.png-896cf178ad0089c371963191c7446c33.ctex"
+uid="uid://baetvdejmsbcs"
+path="res://.godot/imported/glass_cup_M_shard2.png-b449c7553a06d7857444793687ff2a1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/combat/projectiles/glass_cup_shard2.png"
-dest_files=["res://.godot/imported/glass_cup_shard2.png-896cf178ad0089c371963191c7446c33.ctex"]
+source_file="res://assets/combat/projectiles/glass_cup_M_shard2.png"
+dest_files=["res://.godot/imported/glass_cup_M_shard2.png-b449c7553a06d7857444793687ff2a1d.ctex"]
 
 [params]
 

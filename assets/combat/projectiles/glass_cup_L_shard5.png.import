@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm8ctmd0aua07"
-path="res://.godot/imported/glass_cup_shard3.png-d23928bcb7c485d0d974bc9e06719cef.ctex"
+uid="uid://dnif7p7shnra6"
+path="res://.godot/imported/glass_cup_L_shard5.png-8cbf89e5c780878b926ee612b0b662e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/combat/projectiles/glass_cup_shard3.png"
-dest_files=["res://.godot/imported/glass_cup_shard3.png-d23928bcb7c485d0d974bc9e06719cef.ctex"]
+source_file="res://assets/combat/projectiles/glass_cup_L_shard5.png"
+dest_files=["res://.godot/imported/glass_cup_L_shard5.png-8cbf89e5c780878b926ee612b0b662e8.ctex"]
 
 [params]
 

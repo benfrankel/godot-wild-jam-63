@@ -1,36 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtv818xd0ui2r"]
+[gd_scene load_steps=5 format=3 uid="uid://go8wioqaw0wh"]
 
-[ext_resource type="Script" path="res://scenes/combat/projectile/glass_cup.gd" id="1_xiumc"]
-[ext_resource type="Texture2D" uid="uid://cpja4tdrttltj" path="res://assets/combat/projectiles/glass_cup.png" id="2_iugrn"]
+[ext_resource type="Script" path="res://scenes/combat/projectile/glass_cup_M.gd" id="1_3qpwo"]
+[ext_resource type="Texture2D" uid="uid://b1mbt7ncwoprs" path="res://assets/combat/projectiles/glass_cup_M.png" id="2_ik2m5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gd0xf"]
-radius = 18.0
+radius = 11.4999
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xu5is"]
 radius = 3.0
-height = 36.0
+height = 21.0002
 
-[node name="GlassCup" type="RigidBody2D"]
+[node name="GlassCupM" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 5
 center_of_mass_mode = 1
 max_contacts_reported = 1
 contact_monitor = true
 angular_damp_mode = 1
-script = ExtResource("1_xiumc")
+script = ExtResource("1_3qpwo")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(-2.49991, 0)
 rotation = 1.5708
-texture = ExtResource("2_iugrn")
+texture = ExtResource("2_ik2m5")
+offset = Vector2(-1, -3)
 flip_h = true
 
 [node name="Hitbox1" type="CollisionShape2D" parent="."]
-position = Vector2(16.5001, 0)
+position = Vector2(13.5001, 0)
 shape = SubResource("CircleShape2D_gd0xf")
 
 [node name="Hitbox2" type="CollisionShape2D" parent="."]
-position = Vector2(-21.4999, 0)
+position = Vector2(-11, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xu5is")
 
