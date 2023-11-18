@@ -10,7 +10,7 @@ static func create_dialog(data: DialogData) -> Dialog:
 	return d
 
 @onready var character_label := $%CharacterLabel
-@onready var textbox := $%TextBox
+@onready var textbox := $%TextBox as RichTextLabel
 
 @export var current_data : DialogData
 
@@ -46,7 +46,7 @@ func _load_line() -> void:
 	# prep
 	var line := "> " + current_data.lines[line_index]
 	if line_index < current_data.lines.size() - 1:
-		line += " ..."
+		line += " [...]"
 	textbox.parse_bbcode(line)
 	textbox.visible_ratio = 0.0
 	

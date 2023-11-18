@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c18v5gt5qy8pc"]
+[gd_scene load_steps=5 format=3 uid="uid://c18v5gt5qy8pc"]
 
 [ext_resource type="Theme" uid="uid://bbtyhsmcmpxrn" path="res://assets/resources/theming/main_theme.tres" id="1_lj0u1"]
 [ext_resource type="Script" path="res://scenes/dialog_system/dialog.gd" id="1_v2710"]
-[ext_resource type="Resource" uid="uid://b2v7reuxvw5v1" path="res://scenes/dialog_system/data/TestDialog.tres" id="2_x0hkj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfk5k"]
 font_size = 48
@@ -26,7 +25,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lj0u1")
 script = ExtResource("1_v2710")
-current_data = ExtResource("2_x0hkj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -70,8 +68,10 @@ theme_override_constants/margin_bottom = 16
 
 [node name="TextBox" type="RichTextLabel" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 unique_name_in_owner = true
+clip_contents = false
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+theme_override_constants/line_separation = 6
 bbcode_enabled = true
 text = "lorem ipsum dolor sit amet!!!!!"
 fit_content = true

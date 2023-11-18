@@ -44,6 +44,8 @@ func do_dialog(dialog : Dialog) -> void:
 	hi_res_gui_root.call_deferred("add_child", dialog)
 	var player := pixel_level_root.get_child(0).get_node(GameManager.PLAYER_PATH) as Player
 	player.is_animated = true
+	player.anim_tree.set("parameters/conditions/moving", false)
+	player.anim_tree.set("parameters/conditions/not_moving", true)
 	await dialog.tree_exiting
 	player.is_animated = false
 

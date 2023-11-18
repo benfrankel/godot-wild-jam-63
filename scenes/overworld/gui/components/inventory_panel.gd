@@ -35,7 +35,6 @@ func reload_visuals() -> void:
 	else:
 		items.append_array(inventory.items)
 		items.append_array(inventory.boss_items)
-#	print("Inventory panel found: %s items" % str(items.size()))
 	for i in items:
 		var entry := item_entry_scene.instantiate() as ItemEntry
 		entry.set_item(i)

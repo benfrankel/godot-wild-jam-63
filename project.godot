@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Godot Wild Jam 63"
+config/name="Guiseppe's al dente Adventure"
 run/main_scene="res://scenes/viewport_management.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://assets/overworld/icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 

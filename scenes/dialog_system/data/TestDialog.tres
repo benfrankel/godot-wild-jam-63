@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://b2v7reuxvw5v1"]
-
-[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_u0tcl"]
-
-[resource]
-script = ExtResource("1_u0tcl")
-character_name = "Godette"
-auto_progress = false
-lines = Array[String](["Hey there!", "Wassup!", "Hola!", "Eat my fluffly butt!! >:D"])
