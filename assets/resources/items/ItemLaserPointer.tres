@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dwaewvj8khe76"]
+
+[ext_resource type="Script" path="res://scripts/resource_types/Item.gd" id="2_le6hr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_b0seg"]
+size = Vector2(16, 16)
+
+[resource]
+script = ExtResource("2_le6hr")
+item_name = "Laser Pointer"
+description = "Self defense from feral cats"
+texture = SubResource("PlaceholderTexture2D_b0seg")
+effects = Array[Script]([])
+is_boss_item = false
