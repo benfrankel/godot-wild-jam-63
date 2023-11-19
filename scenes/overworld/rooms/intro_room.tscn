@@ -9,13 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://assets/audio/compos/song2.wav" id="6_68g5q"]
 [ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://scenes/overworld/npcs/special/tutorial_cat.tscn" id="8_ma38j"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="9_bich2"]
-[ext_resource type="Resource" uid="uid://cwh30jr4tiyjd" path="res://assets/resources/combat/enemies/lady_muttonsnuf.tres" id="10_777os"]
+[ext_resource type="Resource" uid="uid://cs7hex3e5p1c" path="res://assets/resources/combat/enemies/muffin.tres" id="10_r2prr"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o2ns7"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o4mqo"]
 size = Vector2(32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_67jt4"]
-radius = 22.561
+[sub_resource type="CircleShape2D" id="CircleShape2D_cf0i0"]
+radius = 27.074
 
 [node name="IntroRoom" type="Node2D"]
 
@@ -74,13 +74,13 @@ script = ExtResource("5_cbesi")
 music = ExtResource("6_68g5q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-69, 141)
-texture = SubResource("PlaceholderTexture2D_o2ns7")
+position = Vector2(-18, 124)
+texture = SubResource("PlaceholderTexture2D_o4mqo")
 
 [node name="InteractionComponent" type="Area2D" parent="Sprite2D"]
 script = ExtResource("9_bich2")
 auto_trigger = true
-enemy = ExtResource("10_777os")
+enemy = ExtResource("10_r2prr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent"]
-shape = SubResource("CircleShape2D_67jt4")
+shape = SubResource("CircleShape2D_cf0i0")

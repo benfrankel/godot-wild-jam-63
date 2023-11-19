@@ -4,7 +4,8 @@ extends Area2D
 
 
 signal interacted_with
-
+signal combat_won
+signal combat_lost
 
 @export var auto_trigger := false
 @export var one_shot := false
@@ -44,5 +45,8 @@ func interact() -> void:
 	if enemy:
 		if await GameManager.enter_combat(enemy):
 			enemy = null
+			combat_won.emit()
+		else:
+			combat_lost.emit()
 	if not one_shot:
 		is_active = true
