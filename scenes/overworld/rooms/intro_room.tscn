@@ -17,7 +17,7 @@ size = Vector2(32, 32)
 [sub_resource type="CircleShape2D" id="CircleShape2D_67jt4"]
 radius = 22.561
 
-[node name="SandwichShop" type="Node2D"]
+[node name="IntroRoom" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -41,14 +41,11 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-327673, 851976, 4, -262137, 851976, 5, -327672, 917512, 4, -262136, 917512, 5)
 
-[node name="Objects" type="Node2D" parent="."]
-y_sort_enabled = true
-
-[node name="Player" parent="Objects" instance=ExtResource("2_abuon")]
+[node name="Player" parent="TileMap" instance=ExtResource("2_abuon")]
 unique_name_in_owner = true
-position = Vector2(-16, 208)
+position = Vector2(45, 164)
 
-[node name="TutorialCat" parent="Objects" instance=ExtResource("8_ma38j")]
+[node name="TutorialCat" parent="TileMap" instance=ExtResource("8_ma38j")]
 position = Vector2(148, -56)
 
 [node name="Doors" type="Node2D" parent="."]
@@ -62,6 +59,7 @@ target_door = 4
 require = ExtResource("4_l5ghw")
 
 [node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+position = Vector2(47, 161)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.3
@@ -70,7 +68,7 @@ drag_right_margin = 0.3
 drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
 script = ExtResource("4_d8pqw")
-target = NodePath("../Objects/Player")
+target = NodePath("../TileMap/Player")
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_cbesi")
