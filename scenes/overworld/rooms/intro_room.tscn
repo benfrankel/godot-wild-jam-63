@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://assets/audio/compos/song2.wav" id="6_68g5q"]
 [ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://scenes/overworld/npcs/special/tutorial_cat.tscn" id="8_ma38j"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="9_bich2"]
-[ext_resource type="Resource" uid="uid://2s2xrtfr5rke" path="res://assets/resources/combat/enemies/squigs_test_enemy.tres" id="10_6fbc3"]
+[ext_resource type="Resource" uid="uid://cwh30jr4tiyjd" path="res://assets/resources/combat/enemies/lady_muttonsnuf.tres" id="10_777os"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o2ns7"]
 size = Vector2(32, 32)
@@ -80,7 +80,7 @@ texture = SubResource("PlaceholderTexture2D_o2ns7")
 [node name="InteractionComponent" type="Area2D" parent="Sprite2D"]
 script = ExtResource("9_bich2")
 auto_trigger = true
-enemy = ExtResource("10_6fbc3")
+enemy = ExtResource("10_777os")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent"]
 shape = SubResource("CircleShape2D_67jt4")
