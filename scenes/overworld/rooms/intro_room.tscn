@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dl3wtk3igd3i" path="res://assets/resources/items/BossItemLaser.tres" id="4_l5ghw"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_cbesi"]
 [ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://assets/audio/compos/song2.wav" id="6_68g5q"]
-[ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://scenes/overworld/npcs/boss/tutorial_cat.tscn" id="8_ma38j"]
+[ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://scenes/overworld/npcs/special/tutorial_cat.tscn" id="8_ma38j"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="9_bich2"]
 [ext_resource type="Resource" uid="uid://2s2xrtfr5rke" path="res://assets/resources/combat/enemies/squigs_test_enemy.tres" id="10_6fbc3"]
 

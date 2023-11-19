@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://r4yxqyce07n1"]
+[gd_scene load_steps=22 format=3 uid="uid://r4yxqyce07n1"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_e4t5u"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_wfug2"]
@@ -17,8 +17,8 @@
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_y8p6l"]
 [ext_resource type="PackedScene" uid="uid://jjr5sr25uoal" path="res://scenes/overworld/npcs/generic/npc3.tscn" id="14_oankj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uetds"]
-size = Vector2(51, 49)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a1ib"]
+size = Vector2(151, 180)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l8u5"]
 size = Vector2(232, 188)
@@ -28,6 +28,9 @@ size = Vector2(375, 188)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5j80"]
 size = Vector2(147, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uetds"]
+size = Vector2(51, 49)
 
 [node name="MainStreet" type="Node2D"]
 
@@ -110,15 +113,14 @@ music = ExtResource("6_pud57")
 [node name="CombatArea" type="Area2D" parent="Combat Zones"]
 position = Vector2(500, -294)
 script = ExtResource("7_y8p6l")
-chance_combat_per_cell = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Zones/CombatArea"]
-shape = SubResource("RectangleShape2D_uetds")
+position = Vector2(-3.5, 6)
+shape = SubResource("RectangleShape2D_4a1ib")
 
 [node name="CombatArea2" type="Area2D" parent="Combat Zones"]
 position = Vector2(952, -291)
 script = ExtResource("7_y8p6l")
-chance_combat_per_cell = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Zones/CombatArea2"]
 shape = SubResource("RectangleShape2D_1l8u5")
@@ -126,7 +128,6 @@ shape = SubResource("RectangleShape2D_1l8u5")
 [node name="CombatArea3" type="Area2D" parent="Combat Zones"]
 position = Vector2(1025, 219)
 script = ExtResource("7_y8p6l")
-chance_combat_per_cell = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Zones/CombatArea3"]
 position = Vector2(-7.5, 0)

@@ -6,7 +6,7 @@ Translates any arbitrary collider (including CollisionPolygon2D) into a grid of 
 
 
 @export var cell_size := 32.0
-@export_range(0, 1) var chance_combat_per_cell := 0.2
+@export_range(0, 1) var chance_combat_per_cell := 0.1
 # use the resource refs so it is resiliant to file moves
 @export var enemy_list: Array[Enemy] = []
 @export var clear_on_win := false
@@ -33,14 +33,14 @@ func _try_do_combat() -> void:
 		return
 
 	var enemy: Enemy = enemy_list.pick_random() if not enemy_list.is_empty() else EnemyGen.random_enemy()
-	if clear_on_win and await GameManager.enter_combat(enemy):
+	if await GameManager.enter_combat(enemy) and clear_on_win:
 		is_active = false
 
 func _get_cell(global_pos : Vector2) -> Vector2:
 	return (global_pos / cell_size).floor()
 
 func _on_body_enter(body : Node2D) -> void:
-	if body.is_in_group(GameManager.PLAYER_GROUP):
+	if body is Player:
 		target_body = body
 
 func _on_body_exit(body : Node2D) -> void:
