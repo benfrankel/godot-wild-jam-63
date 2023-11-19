@@ -42,7 +42,7 @@ func _ready() -> void:
 		if idx == 0:
 			item_entry.grab_focus()
 		elif idx != 5:
-			var top := container.get_child(idx - 1) as CombatItemEntry
+			var top := container.get_child(idx % 5 - 1) as CombatItemEntry
 			top.focus_neighbor_bottom = item_entry.get_path()
 			item_entry.focus_neighbor_top = top.get_path()
 		item_entry.update()
