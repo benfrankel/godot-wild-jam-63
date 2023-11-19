@@ -18,7 +18,7 @@ auto_progress = false
 lines = Array[String](["Hey there, Giuseppe!", "Things have been crazy around this part of town, huh?", "It seems like every other day there's another mutant cat out there. Those poor things. It could even happen to a cool cat like me or you!", "On top of that, I've noticed an uptick in shady business lately. You best keep yourself safe.", "I got a spare piece I can lend, so don't say I never did nothing for ya!", "Let me give ya a quick rundown of how you can use it.", "You gotta dodge whatever they throw at ya, to keep their suspicion (sus) low.", "If you can keep it up long enough, you'll see their exhaustion (exh) increase, sure enough.", "Give it a test run with me, I'll show you the ropes."])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4ci"]
-size = Vector2(85, 38)
+size = Vector2(85, 61)
 
 [node name="TutorialCat" type="StaticBody2D"]
 
@@ -42,6 +42,6 @@ gift = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_f
 enemy = ExtResource("5_y36yy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
-position = Vector2(22.5, 19)
+position = Vector2(22.5, 30.5)
 shape = SubResource("RectangleShape2D_wk4ci")
 debug_color = Color(0.913725, 0.243137, 0.423529, 0.419608)
