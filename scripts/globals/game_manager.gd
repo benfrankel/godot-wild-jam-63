@@ -15,7 +15,6 @@ var scene_backup: Node
 var pausing_allowed := true
 # load from default inventory for testing with different items
 var player_inventory := preload("res://assets/resources/PlayerDefaultInventory.tres") as Inventory
-var player_speed := 100.0
 var combat_size := Vector2(320.0, 180.0)
 var overworld_size := Vector2(320.0, 180.0)
 var dog_mode := false
@@ -28,13 +27,25 @@ func enter_room(room_path: String, door_idx: int) -> void:
 	
 	# Teleport player to target door
 	if door_idx != -1:
-		var player := room.get_node(PLAYER_PATH) as Player
-		var door := room.get_node(DOORS_PATH).get_children()[door_idx] as Door
-		door.is_active = false
-		player.global_position = door.global_position
+		var player := viewport.pixel_level_root.get_child(0).get_node(PLAYER_PATH) as Player
+		var next_player := room.get_node(PLAYER_PATH) as Player
+		var next_door := room.get_node(DOORS_PATH).get_children()[door_idx] as Door
+		next_door.is_active = false
+		next_player.global_position = next_door.global_position
+		next_player.speed = player.speed
+		var anim_tree := next_player.get_node("AnimationTree") as AnimationTree
+		anim_tree.set("parameters/Idle/blend_position", player.anim_tree.get("parameters/Idle/blend_position"))
+		anim_tree.set("parameters/Walk/blend_position", player.anim_tree.get("parameters/Walk/blend_position"))
+
 	pausing_allowed = false
-	(await viewport.swap_scene(room, true, true, overworld_size)).queue_free()
-	update_player_speed()
+	(await viewport.swap_scene(room, true, false, overworld_size)).queue_free()
+	
+	var player := viewport.pixel_level_root.get_child(0).get_node(PLAYER_PATH) as Player
+	player.anim_tree.advance(0.0)
+	viewport.pause(true)
+	await viewport.fade(0.0)
+	viewport.pause(false)
+	
 	pausing_allowed = true
 
 
@@ -58,9 +69,3 @@ func exit_combat(win: bool) -> void:
 
 func do_dialog(dialog: Dialog) -> void:
 	await viewport.do_dialog(dialog)
-
-
-func update_player_speed() -> void:
-	var player := viewport.pixel_level_root.get_child(0).get_node("%Player") as Player
-	if player:
-		player.speed = player_speed

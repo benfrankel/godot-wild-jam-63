@@ -91,8 +91,8 @@ func do_pspspsps() -> void:
 
 
 func do_anypercent() -> void:
-	GameManager.player_speed = 200.0
-	GameManager.update_player_speed()
+	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Player
+	player.speed = 200.0
 
 
 func do_openyoureyes() -> void:
