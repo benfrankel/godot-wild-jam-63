@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://r4yxqyce07n1"]
+[gd_scene load_steps=16 format=3 uid="uid://r4yxqyce07n1"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_e4t5u"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_wfug2"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_4k55o"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_8re1c"]
+[ext_resource type="Resource" uid="uid://clg0g6yo6l2st" path="res://assets/resources/items/BossItemSandwich.tres" id="4_jrvde"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_66omq"]
+[ext_resource type="Resource" uid="uid://cjqndudcdwate" path="res://assets/resources/items/BossItemButton.tres" id="5_mb2a7"]
+[ext_resource type="Resource" uid="uid://bhiy5seawhav8" path="res://assets/resources/items/BossItemBeer.tres" id="6_l3b4c"]
 [ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://assets/audio/compos/song2.wav" id="6_pud57"]
+[ext_resource type="Resource" uid="uid://df3ja020saton" path="res://assets/resources/items/BossItemHandcuffs.tres" id="7_i6itj"]
 [ext_resource type="Script" path="res://scenes/overworld/components/overworld_combat_area.gd" id="7_y8p6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uetds"]
@@ -41,21 +45,25 @@ unique_name_in_owner = true
 position = Vector2(32, -160)
 target_room = "res://scenes/overworld/rooms/sandwich_shop.tscn"
 target_door = 0
+require = ExtResource("4_jrvde")
 
 [node name="Tailor" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(256, -160)
 target_room = "res://scenes/overworld/rooms/tailor_shop.tscn"
 target_door = 0
+require = ExtResource("5_mb2a7")
 
 [node name="Church" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(672, -160)
 target_room = "res://scenes/overworld/rooms/church.tscn"
 target_door = 0
+require = ExtResource("6_l3b4c")
 
 [node name="Hideout" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(288, 576)
 target_room = "res://scenes/overworld/rooms/hideout.tscn"
 target_door = 0
+require = ExtResource("7_i6itj")
 
 [node name="IntroLevel" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(-96, 320)

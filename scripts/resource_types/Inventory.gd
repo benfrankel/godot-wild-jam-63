@@ -25,7 +25,7 @@ func add_item(item: Item) -> bool:
 		items.append(item)
 	return true
 
-# 
+
 func remove_item(item : Item) -> void:
 	if item.is_boss_item:
 		if boss_items.has(item):
@@ -33,6 +33,14 @@ func remove_item(item : Item) -> void:
 	else:
 		if items.has(item):
 			items.erase(item)
+
+
+func has_item(item: Item) -> bool:
+	if item.is_boss_item:
+		return boss_items.has(item)
+	else:
+		return items.has(item)
+
 
 ## finds only consumable items that are useful in combat
 func get_consumables() -> Array[Item]:

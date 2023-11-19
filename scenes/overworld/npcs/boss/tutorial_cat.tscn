@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://fi2xcmonrb8y"]
+[gd_scene load_steps=8 format=3 uid="uid://fi2xcmonrb8y"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_vew74"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_nx6o8"]
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_w60qa"]
 [ext_resource type="Resource" uid="uid://dwaewvj8khe76" path="res://assets/resources/items/ItemLaserPointer.tres" id="4_puefv"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s7mkn"]
-size = Vector2(16, 16)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n10ug"]
 radius = 3.5
@@ -24,21 +21,18 @@ size = Vector2(40, 38)
 
 [node name="TutorialCat" type="StaticBody2D"]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
-texture = SubResource("PlaceholderTexture2D_s7mkn")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vew74")
+offset = Vector2(1, -19)
 region_enabled = true
 region_rect = Rect2(56, 0, 28, 44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 20)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_n10ug")
 
 [node name="InteractionComponent" type="Area2D" parent="."]
+position = Vector2(0, -20)
 script = ExtResource("2_nx6o8")
 auto_trigger = true
 dialog = SubResource("Resource_ucr13")
