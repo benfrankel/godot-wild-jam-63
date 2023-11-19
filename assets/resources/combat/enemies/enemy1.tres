@@ -11,6 +11,7 @@ region = Rect2(0, 0, 64, 64)
 [resource]
 script = ExtResource("3_amgom")
 name = "KittyMcCatface"
+is_mafia = false
 portrait = SubResource("AtlasTexture_fv5hh")
 bg_color = Color(0.152941, 0.164706, 0.188235, 1)
 bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)

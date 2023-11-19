@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwenn0r4tasiy"]
+[gd_scene load_steps=9 format=3 uid="uid://cwenn0r4tasiy"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_e711w"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_e44f4"]
 [ext_resource type="PackedScene" uid="uid://da28k80r7yfkj" path="res://scenes/overworld/npcs/special/pj.tscn" id="3_4wvwk"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_dwvbi"]
+[ext_resource type="PackedScene" uid="uid://dm1vjjj0kw0ov" path="res://scenes/overworld/npcs/boss/button.tscn" id="4_ccn7c"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_j8cj4"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_6utrv"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_ubeyw"]
@@ -38,6 +39,9 @@ position = Vector2(33, 210)
 
 [node name="PjNPC" parent="TileMap" instance=ExtResource("3_4wvwk")]
 position = Vector2(-81, 104)
+
+[node name="Button" parent="TileMap" instance=ExtResource("4_ccn7c")]
+position = Vector2(-48, -120)
 
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true
