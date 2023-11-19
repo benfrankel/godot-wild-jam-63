@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=18 format=3 uid="uid://cmxqg01v5elm0"]
 
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_0h2qi"]
-[ext_resource type="PackedScene" uid="uid://go8wioqaw0wh" path="res://scenes/combat/projectile/glass_cup_M.tscn" id="1_64mfl"]
+[ext_resource type="PackedScene" path="res://scenes/combat/projectile/glass_cup_M.tscn" id="1_64mfl"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_ejang"]
 [ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_8cgwu"]
 [ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="3_e8x2e"]
