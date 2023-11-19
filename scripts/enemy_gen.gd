@@ -70,6 +70,7 @@ static func random_colors() -> Array:
 static func random_attack_phases() -> Array[AttackPhase]:
 	const ATTACK_PHASE_LIST: Array[AttackPhase] = [
 		preload("res://assets/resources/combat/phases/yarn_skip_x.tres"),
+		preload("res://assets/resources/combat/phases/pounce.tres"),
 	]
 	const NUM_PHASES: int = 8
 	const DELAY_BETWEEN_PHASES := 8.0
