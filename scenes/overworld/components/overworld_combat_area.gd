@@ -11,8 +11,10 @@ Translates any arbitrary collider (including CollisionPolygon2D) into a grid of 
 @export var enemy_list: Array[Enemy] = []
 @export var clear_on_win := false
 
+var is_active := true
 var last_cell := Vector2.ONE * -1
 var target_body : Node2D
+
 
 func _ready() -> void:
 	body_entered.connect(_on_body_enter)
@@ -27,9 +29,12 @@ func _physics_process(_delta: float) -> void:
 		_try_do_combat()
 
 func _try_do_combat() -> void:
-	if randf() < chance_combat_per_cell:
-		var enemy: Enemy = enemy_list.pick_random() if not enemy_list.is_empty() else EnemyGen.random_enemy()
-		GameManager.enter_combat(enemy)
+	if not is_active or randf() >= chance_combat_per_cell:
+		return
+
+	var enemy: Enemy = enemy_list.pick_random() if not enemy_list.is_empty() else EnemyGen.random_enemy()
+	if clear_on_win and await GameManager.enter_combat(enemy):
+		is_active = false
 
 func _get_cell(global_pos : Vector2) -> Vector2:
 	return (global_pos / cell_size).floor()
