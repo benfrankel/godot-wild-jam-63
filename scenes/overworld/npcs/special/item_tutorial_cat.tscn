@@ -16,7 +16,7 @@ script = ExtResource("3_ioqtq")
 character_name = "Barry"
 text_speed = 40.0
 auto_progress = false
-lines = Array[String](["Woah, Giuseppe, fancy seeing you around here.", "It looks to me like you're planning something. Let me give you some advice:", "Cool cats like you and me, and the shady cats around here, and even those mutant cats, when it really comes down to it... we're all cats just the same.", "You can throw anything you've got at whoever's giving you trouble using WASD and Space; it'll keep you safe in a pinch.", "I see you don’t have much of anything right now, though. Let me give you a headstart.", "Press Escape > Inventory to see what you're carrying. Good luck out there!"])
+lines = Array[String](["Woah, Giuseppe, fancy seeing you around here.", "It looks to me like you're planning something. Let me give you some advice:", "Cool cats like you and me, and the shady cats around here, and even those mutant cats, when it really comes down to it... we're all cats just the same.", "You can throw anything you've got at whoever's giving you trouble using WASD and Space; it'll keep you safe in a pinch.", "I see you don’t have much of anything right now, though. Let me give you a headstart.", "Press Escape > Inventory to see what you're carrying, and don't forget that you're not alone! Press E to talk to other cats.", "Good luck out there!"])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
 size = Vector2(32, 32)

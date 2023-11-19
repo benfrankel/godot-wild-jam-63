@@ -13,7 +13,7 @@ script = ExtResource("3_fev0h")
 character_name = "Gloria"
 text_speed = 40.0
 auto_progress = false
-lines = Array[String](["Ughhh I can't stand looking at those mutant cats! Serious uncanny valley vibes.", "Um, oh, I mean, it’s so sad what happened to them..."])
+lines = Array[String](["Ughhh I can't stand looking at these mutant cats! Serious uncanny valley vibes.", "Um, oh, I mean, it’s so sad what happened to them..."])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
 size = Vector2(32, 32)
