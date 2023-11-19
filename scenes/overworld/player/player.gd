@@ -7,6 +7,7 @@ var is_animated := false
 @onready var anim_tree := $AnimationTree as AnimationTree
 @onready var interact_sensor := $InteractionSensor as RayCast2D
 
+
 func _physics_process(_delta: float) -> void:
 	if is_animated:
 		return

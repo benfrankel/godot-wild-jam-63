@@ -671,6 +671,7 @@ graph_offset = Vector2(128, 47)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
+input_pickable = true
 script = ExtResource("1_pmhck")
 
 [node name="Image" type="Sprite2D" parent="."]
