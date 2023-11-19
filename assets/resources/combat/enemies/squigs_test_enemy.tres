@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=9 format=3 uid="uid://2s2xrtfr5rke"]
+
+[ext_resource type="PackedScene" uid="uid://ddykboalfb6lh" path="res://scenes/combat/projectile/dead_fish_S.tscn" id="1_n67rs"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_v4wvc"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_ug4m5"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="3_jdvht"]
+
+[sub_resource type="Resource" id="Resource_n754q"]
+script = ExtResource("2_ug4m5")
+projectile = ExtResource("1_n67rs")
+delay = 0.0
+cooldown = 0.2
+count = 3
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 200.0
+angle = -90.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[sub_resource type="Resource" id="Resource_p36qm"]
+script = ExtResource("3_jdvht")
+delay = 0.0
+cooldown = 0.3
+count = 20
+position = Vector2(-1, 1)
+position_step = Vector2(0.1, 0)
+rotation = 0.0
+rotation_step = 45.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[ExtResource("2_ug4m5")]([SubResource("Resource_n754q")])
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_71sgi"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_afic4"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_71sgi")
+
+[resource]
+script = ExtResource("1_v4wvc")
+name = "Squiggle Test"
+portrait = SubResource("NoiseTexture2D_afic4")
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+bg_overlay_color = Color(0.105882, 0.105882, 0.105882, 1)
+max_exhaustion = 4.0
+exhaustion_cooldown = 10.0
+max_suspicion = 3.0
+attack_phases = Array[ExtResource("3_jdvht")]([SubResource("Resource_p36qm")])

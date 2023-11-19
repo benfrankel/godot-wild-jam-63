@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceo5nb7evdjkm"]
+[gd_scene load_steps=13 format=3 uid="uid://ceo5nb7evdjkm"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_jtsoe"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_abuon"]
@@ -8,6 +8,14 @@
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_cbesi"]
 [ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://assets/audio/compos/song2.wav" id="6_68g5q"]
 [ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://scenes/overworld/npcs/boss/tutorial_cat.tscn" id="8_ma38j"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="9_bich2"]
+[ext_resource type="Resource" uid="uid://2s2xrtfr5rke" path="res://assets/resources/combat/enemies/squigs_test_enemy.tres" id="10_6fbc3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o2ns7"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67jt4"]
+radius = 22.561
 
 [node name="SandwichShop" type="Node2D"]
 
@@ -49,3 +57,15 @@ target = NodePath("../Objects/Player")
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_cbesi")
 music = ExtResource("6_68g5q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-69, 141)
+texture = SubResource("PlaceholderTexture2D_o2ns7")
+
+[node name="InteractionComponent" type="Area2D" parent="Sprite2D"]
+script = ExtResource("9_bich2")
+auto_trigger = true
+enemy = ExtResource("10_6fbc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionComponent"]
+shape = SubResource("CircleShape2D_67jt4")

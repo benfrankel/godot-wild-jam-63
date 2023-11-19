@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=8 format=3 uid="uid://cothk5yywlu2d"]
+
+[ext_resource type="Resource" uid="uid://cg2314ggu6pfb" path="res://assets/resources/combat/patterns/dagger_simple_L.tres" id="1_neq5x"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="2_hn2tt"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="3_gdryj"]
+
+[sub_resource type="Resource" id="Resource_nj4th"]
+script = ExtResource("2_hn2tt")
+delay = 0.0
+cooldown = 0.2
+count = 3
+position = Vector2(-1.5, -1)
+position_step = Vector2(0, -0.5)
+rotation = 0.0
+rotation_step = -15.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[Resource("res://scripts/resource_types/attack_pattern.gd")]([ExtResource("1_neq5x")])
+
+[sub_resource type="Resource" id="Resource_5268q"]
+script = ExtResource("2_hn2tt")
+delay = 2.0
+cooldown = 0.2
+count = 3
+position = Vector2(-1.5, -1)
+position_step = Vector2(0, -0.5)
+rotation = 0.0
+rotation_step = -15.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[Resource("res://scripts/resource_types/attack_pattern.gd")]([ExtResource("1_neq5x")])
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_71sgi"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_afic4"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_71sgi")
+
+[resource]
+script = ExtResource("3_gdryj")
+name = "Squiggle Test"
+portrait = SubResource("NoiseTexture2D_afic4")
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+bg_overlay_color = Color(0.105882, 0.105882, 0.105882, 1)
+max_exhaustion = 4.0
+exhaustion_cooldown = 1.0
+max_suspicion = 3.0
+attack_phases = Array[ExtResource("2_hn2tt")]([SubResource("Resource_nj4th"), SubResource("Resource_5268q")])

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AttackPattern" load_steps=3 format=3 uid="uid://cg2314ggu6pfb"]
+
+[ext_resource type="PackedScene" uid="uid://d2rhohgveru23" path="res://scenes/combat/projectile/dagger_L.tscn" id="1_ahpk8"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_sr3ep"]
+
+[resource]
+script = ExtResource("2_sr3ep")
+projectile = ExtResource("1_ahpk8")
+delay = 0.2
+cooldown = 2.0
+count = 1
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 2.0
+despawn_time = 0.5
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 300.0
+angle = 0.0
+angle_step = -45.0
+angular_velocity = 0.0
