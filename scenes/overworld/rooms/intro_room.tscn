@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_gdal2"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_d8pqw"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_cbesi"]
-[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_kamjr"]
+[ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://assets/audio/compos/song2.wav" id="6_68g5q"]
 
 [node name="SandwichShop" type="Node2D"]
 
@@ -42,4 +42,4 @@ target = NodePath("../Objects/Player")
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_cbesi")
-music = ExtResource("6_kamjr")
+music = ExtResource("6_68g5q")
