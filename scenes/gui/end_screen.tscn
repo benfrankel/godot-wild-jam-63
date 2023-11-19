@@ -137,7 +137,7 @@ autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "This game was created in one week for Godot Wild Jam #63"
+text = "This game was created in 9 days for Godot Wild Jam #63"
 autowrap_mode = 3
 
 [node name="Label3" type="Label" parent="Control/MarginContainer/VBoxContainer"]
