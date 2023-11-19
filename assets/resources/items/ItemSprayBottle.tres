@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/resources/items/effects/slow_time_2s.gd" id="1_j8gjg"]
 [ext_resource type="Script" path="res://scripts/resource_types/Item.gd" id="2_imvub"]
-[ext_resource type="Texture2D" uid="uid://vrf2dtiauqmt" path="res://assets/icons.png" id="3_qhf06"]
+[ext_resource type="Texture2D" uid="uid://vrf2dtiauqmt" path="res://assets/items/icons.png" id="3_qhf06"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jon77"]
 atlas = ExtResource("3_qhf06")

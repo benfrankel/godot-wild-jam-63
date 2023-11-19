@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cjqndudcdwate"]
+
+[ext_resource type="Script" path="res://scripts/resource_types/Item.gd" id="2_lns5k"]
+[ext_resource type="Texture2D" uid="uid://buqsdr3fnxaro" path="res://assets/items/button.png" id="2_ombe2"]
+
+[resource]
+script = ExtResource("2_lns5k")
+item_name = "Button"
+description = "A classy fabric fastener"
+texture = ExtResource("2_ombe2")
+effects = Array[Script]([])
+is_boss_item = true

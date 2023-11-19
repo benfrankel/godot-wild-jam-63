@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=2 format=3 uid="uid://cb1bsqv7pexg5"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://cb1bsqv7pexg5"]
 
+[ext_resource type="Resource" uid="uid://clg0g6yo6l2st" path="res://assets/resources/items/BossItemSandwich.tres" id="1_5iynu"]
 [ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="1_18u30"]
 
 [resource]
 script = ExtResource("1_18u30")
 items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
-boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("1_5iynu")])
 capacity = 10
 boss_items_capacity = 5

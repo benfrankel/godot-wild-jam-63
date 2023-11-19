@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/resources/items/effects/set_sus_zero.gd" id="1_0l8nt"]
 [ext_resource type="Script" path="res://scripts/resource_types/Item.gd" id="1_e6hhg"]
-[ext_resource type="Texture2D" uid="uid://vrf2dtiauqmt" path="res://assets/icons.png" id="3_dylvk"]
+[ext_resource type="Texture2D" uid="uid://vrf2dtiauqmt" path="res://assets/items/icons.png" id="3_dylvk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36f3s"]
 atlas = ExtResource("3_dylvk")
