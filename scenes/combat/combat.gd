@@ -130,6 +130,8 @@ func launch_pattern(pattern: AttackPattern) -> void:
 		# Spawn projectile
 		if i in idxs:
 			var projectile := pattern.projectile.instantiate() as Projectile
+			if not projectile:
+				push_error("projectile scenes must extend or use class `Projectile`")
 			projectile.laser = laser
 			projectile.spawn_time = pattern.spawn_time
 			projectile.lifetime = pattern.lifetime
