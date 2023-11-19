@@ -1,0 +1,88 @@
+[gd_scene load_steps=16 format=3 uid="uid://dkx8j4l2wy3ba"]
+
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_2h7ts"]
+[ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_svi57"]
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_m7suc"]
+[ext_resource type="Texture2D" uid="uid://crchd6hq5fahb" path="res://assets/combat/ezekiel.png" id="4_gxfli"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="5_uq60e"]
+[ext_resource type="Resource" uid="uid://df3ja020saton" path="res://assets/resources/items/BossItemHandcuffs.tres" id="6_0lgw4"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="7_kevis"]
+[ext_resource type="Texture2D" uid="uid://d364c1hk4eiiq" path="res://assets/overworld/accessories/npc_ezekiel_shirt.png" id="8_ts8fr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="Resource" id="Resource_n6q0v"]
+script = ExtResource("3_m7suc")
+character_name = "Ezekiel"
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["You ain't supposed to be back here without a badge, ya sees?", "Gonna have to break your knees."])
+
+[sub_resource type="Resource" id="Resource_jl7gd"]
+script = ExtResource("3_m7suc")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["You'll never best me, I'd bet my hat.", "Look at yous, barely half a cat."])
+
+[sub_resource type="Resource" id="Resource_x2amb"]
+script = ExtResource("3_m7suc")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Crooked be, oh my, oh me...", "*cough* *cough*", "Hey you. Is that a pint of beer in your bag? *sniff* Button?", "I swore a vow to the boss I'd never talk, but I could really use a sip. Desperate times.", "*sip* ahhhh there we go. I'll tell you what you need to knowst.", "The boss? He's in the penthouse of The Scratching Post.", "Over in the alleys, but it's still a luxury hotel, ya'hear?", "If you take him down you might want this: (for another sip of beer)"])
+
+[sub_resource type="Resource" id="Resource_bj6d4"]
+script = ExtResource("7_kevis")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("6_0lgw4")])
+capacity = 10
+boss_items_capacity = 5
+
+[sub_resource type="Resource" id="Resource_4sox8"]
+script = ExtResource("5_uq60e")
+name = "Ezekiel"
+is_mafia = true
+portrait = ExtResource("4_gxfli")
+bg_color = Color(0.580392, 0.447059, 0.133333, 1)
+bg_overlay_color = Color(0.6, 0.592157, 0.364706, 1)
+max_exhaustion = 20.0
+exhaustion_cooldown = 0.5
+max_suspicion = 8.0
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
+win_loot = SubResource("Resource_bj6d4")
+win_dialog = SubResource("Resource_x2amb")
+lose_dialog = SubResource("Resource_jl7gd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
+size = Vector2(32, 42)
+
+[node name="Ezekiel" type="StaticBody2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_2h7ts")
+offset = Vector2(1, -18)
+region_enabled = true
+region_rect = Rect2(224, 0, 28, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fqno1")
+
+[node name="InteractionComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2_svi57")
+auto_trigger = true
+dialog = SubResource("Resource_n6q0v")
+enemy = SubResource("Resource_4sox8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_75wn5")
+debug_color = Color(0.952941, 0.196078, 0.223529, 0.419608)
+
+[node name="NpcEzekielShirt" type="Sprite2D" parent="."]
+position = Vector2(1, -18)
+texture = ExtResource("8_ts8fr")

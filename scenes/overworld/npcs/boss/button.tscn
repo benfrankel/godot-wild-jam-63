@@ -36,7 +36,6 @@ shape = SubResource("CapsuleShape2D_fqno1")
 collision_layer = 2
 script = ExtResource("2_6f6q1")
 auto_trigger = true
-one_shot = true
 dialog = SubResource("Resource_n6q0v")
 enemy = ExtResource("4_cn271")
 

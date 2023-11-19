@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://m8bhqfomxupn"]
+[gd_scene load_steps=9 format=3 uid="uid://m8bhqfomxupn"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_sl5k2"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_govro"]
 [ext_resource type="PackedScene" uid="uid://udhnyc07fphe" path="res://scenes/overworld/npcs/special/bella.tscn" id="3_ei0bw"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_vp2jm"]
+[ext_resource type="PackedScene" uid="uid://dkx8j4l2wy3ba" path="res://scenes/overworld/npcs/boss/ezekiel.tscn" id="4_b06ym"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_lynjb"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_7piba"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_65usr"]
@@ -38,6 +39,9 @@ position = Vector2(35, 191)
 
 [node name="BellaNPC" parent="TileMap" instance=ExtResource("3_ei0bw")]
 position = Vector2(112, -661)
+
+[node name="Ezekiel" parent="TileMap" instance=ExtResource("4_b06ym")]
+position = Vector2(140, -921)
 
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true
