@@ -2,6 +2,7 @@ extends Node2D
 class_name Combat
 
 const ITEM_ENTRY_SCENE := preload("res://scenes/combat/gui/item_entry.tscn") as PackedScene
+const MAFIA_MUSIC := preload("res://assets/audio/compos/song3.wav") as AudioStreamWAV
 
 @export var enemy: Enemy # exporting to allow quick testing
 var state := CombatState.new()
@@ -25,6 +26,9 @@ func _ready() -> void:
 	state.changed.connect(_on_state_change)
 	
 	# Set up nodes
+	if enemy.is_mafia:
+		$BGM_Load.music = MAFIA_MUSIC
+		$BGM_Load.update_music()
 	$Background.self_modulate = enemy.bg_color
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
 	$EnemyPortrait.texture = enemy.portrait

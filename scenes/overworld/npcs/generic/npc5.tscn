@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt318oqn6o5e0"]
+[gd_scene load_steps=9 format=3 uid="uid://bt318oqn6o5e0"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_e3vv3"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_eg0g7"]
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_syxd3"]
 [ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://assets/resources/items/ItemMilk.tres" id="4_m87oi"]
+[ext_resource type="Texture2D" uid="uid://dg66xn88h73oy" path="res://assets/overworld/accessories/npc_glasses.png" id="5_q6mxq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0
@@ -39,3 +40,7 @@ gift = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_m
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
 shape = SubResource("RectangleShape2D_75wn5")
+
+[node name="NpcGlasses" type="Sprite2D" parent="."]
+position = Vector2(1, -17)
+texture = ExtResource("5_q6mxq")

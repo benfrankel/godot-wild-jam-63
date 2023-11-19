@@ -7,6 +7,9 @@ class_name BGM_Load
 @export var reset_on_end := false
 
 func _ready() -> void:
+	update_music()
+
+func update_music() -> void:
 	if BGM.active.stream != music:
 		BGM.play_stream(music, crossfade, volume)
 

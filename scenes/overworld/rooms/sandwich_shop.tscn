@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhixxfusjb4mv"]
+[gd_scene load_steps=10 format=3 uid="uid://bhixxfusjb4mv"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_dnnd0"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_i0bod"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_t4dy4"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_jy76o"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_1x6n6"]
+[ext_resource type="PackedScene" uid="uid://bt0v6ie6u3wyq" path="res://scenes/overworld/npcs/boss/lady_muttonsnuf.tscn" id="5_r6d14"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_aff8d"]
 [ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://scenes/overworld/npcs/special/ruby.tscn" id="8_javja"]
 
@@ -42,6 +43,9 @@ position = Vector2(161, 96)
 
 [node name="RubyNPC" parent="TileMap" instance=ExtResource("8_javja")]
 position = Vector2(162, -46)
+
+[node name="LadyMuttonsnuf" parent="TileMap" instance=ExtResource("5_r6d14")]
+position = Vector2(-4, 29)
 
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true

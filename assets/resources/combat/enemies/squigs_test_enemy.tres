@@ -51,6 +51,7 @@ noise = SubResource("FastNoiseLite_71sgi")
 [resource]
 script = ExtResource("1_v4wvc")
 name = "Squiggle Test"
+is_mafia = true
 portrait = SubResource("NoiseTexture2D_afic4")
 bg_color = Color(0.164706, 0.164706, 0.164706, 1)
 bg_overlay_color = Color(0.105882, 0.105882, 0.105882, 1)

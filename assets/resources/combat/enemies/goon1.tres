@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=11 format=3 uid="uid://byluh5sbaxr8g"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_vvs6q"]
+[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="2_tno4r"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="3_ag372"]
+[ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://assets/resources/items/ItemMilk.tres" id="4_hndid"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="5_ksx5w"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="6_fhlss"]
+
+[sub_resource type="Resource" id="Resource_j73wm"]
+script = ExtResource("1_vvs6q")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Ha! You thought that cheap trick would work on me? NOW GET LOST!"])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_771hf"]
+atlas = ExtResource("2_tno4r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_x3hrn"]
+script = ExtResource("1_vvs6q")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["*huff* *puff* how're you so fast..."])
+
+[sub_resource type="Resource" id="Resource_bx88g"]
+script = ExtResource("6_fhlss")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_hndid"), ExtResource("5_ksx5w")])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+capacity = 10
+boss_items_capacity = 5
+
+[resource]
+script = ExtResource("3_ag372")
+name = "Angelo"
+is_mafia = true
+portrait = SubResource("AtlasTexture_771hf")
+bg_color = Color(0.329412, 0.223529, 0.164706, 1)
+bg_overlay_color = Color(0.466667, 0.360784, 0.262745, 1)
+max_exhaustion = 20.0
+exhaustion_cooldown = 0.5
+max_suspicion = 8.0
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
+win_loot = SubResource("Resource_bx88g")
+win_dialog = SubResource("Resource_x3hrn")
+lose_dialog = SubResource("Resource_j73wm")

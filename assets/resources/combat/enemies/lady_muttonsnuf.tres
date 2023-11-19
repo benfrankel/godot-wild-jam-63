@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=9 format=3 uid="uid://cwh30jr4tiyjd"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_0dy8j"]
+[ext_resource type="Texture2D" uid="uid://yfgidsg3xgoo" path="res://assets/combat/muttonsnuf.png" id="1_8v7ox"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_ydwpq"]
+[ext_resource type="Resource" uid="uid://cjqndudcdwate" path="res://assets/resources/items/BossItemButton.tres" id="3_w4kdj"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="4_5tqf1"]
+
+[sub_resource type="Resource" id="Resource_2p83p"]
+script = ExtResource("1_0dy8j")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Ha! You're just a little kitten. Come back with some meat on your bones!"])
+
+[sub_resource type="Resource" id="Resource_frrhn"]
+script = ExtResource("1_0dy8j")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Ugh... *huff* *huff", "Honest to betsy, I gots nothing to tell yous.", "Theys just wanting me'a go gettem some sammies.", "I.. *huff* don't think I can gets it back to em like this.", "I see yous gots a nice tasty sammie on yous right now.", "Tell ya what, take this Button and go see Button in the Tailor's Shop next door. And hows about you take that sammie with yous?"])
+
+[sub_resource type="Resource" id="Resource_ugtnn"]
+script = ExtResource("4_5tqf1")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("3_w4kdj")])
+capacity = 10
+boss_items_capacity = 5
+
+[resource]
+script = ExtResource("1_ydwpq")
+name = "Lady Muttonsnuf"
+is_mafia = true
+portrait = ExtResource("1_8v7ox")
+bg_color = Color(0.290196, 0.0627451, 0.227451, 1)
+bg_overlay_color = Color(0.141176, 0.141176, 0.141176, 1)
+max_exhaustion = 20.0
+exhaustion_cooldown = 0.5
+max_suspicion = 8.0
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
+win_loot = SubResource("Resource_ugtnn")
+win_dialog = SubResource("Resource_frrhn")
+lose_dialog = SubResource("Resource_2p83p")
