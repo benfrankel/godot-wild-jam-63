@@ -38,13 +38,16 @@ func reload_visuals() -> void:
 	for i in items:
 		var entry := item_entry_scene.instantiate() as ItemEntry
 		entry.set_item(i)
-		match style:
-			InventoryStyle.OVERWORLD:
-				entry.set_action_name("drop")
-				entry.action_button_pressed.connect( \
-					Callable(_callback_drop_item).bind(i))
-			InventoryStyle.READONLY:
-				entry.set_no_action()
+		if i.is_boss_item:
+			entry.set_action_name("Keep")
+		else:
+			match style:
+				InventoryStyle.OVERWORLD:
+					entry.set_action_name("Drop")
+					entry.action_button_pressed.connect( \
+						Callable(_callback_drop_item).bind(i))
+				InventoryStyle.READONLY:
+					entry.set_no_action()
 		entries.add_child(entry)
 
 func _callback_drop_item(item : Item) -> void:
