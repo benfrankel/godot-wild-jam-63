@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8x5ujewyqavo"]
+[gd_scene load_steps=10 format=3 uid="uid://c8x5ujewyqavo"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_hybbe"]
+[ext_resource type="Script" path="res://scenes/overworld/npcs/boss/muffin.gd" id="1_pf214"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_iyd8f"]
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_djrcn"]
 [ext_resource type="Resource" uid="uid://cs7hex3e5p1c" path="res://assets/resources/combat/enemies/muffin.tres" id="4_j46g5"]
@@ -21,6 +22,7 @@ lines = Array[String](["Heya pipsqueak!", "You sure are a real thorn in my side.
 size = Vector2(32, 42)
 
 [node name="Muffin" type="StaticBody2D"]
+script = ExtResource("1_pf214")
 
 [node name="Image" type="Sprite2D" parent="."]
 texture = ExtResource("1_hybbe")
@@ -47,3 +49,5 @@ debug_color = Color(0.952941, 0.196078, 0.223529, 0.419608)
 [node name="NpcTheBoss" type="Sprite2D" parent="."]
 position = Vector2(1, -19)
 texture = ExtResource("8_k4d2x")
+
+[connection signal="combat_won" from="InteractionComponent" to="." method="_on_interaction_component_combat_won"]

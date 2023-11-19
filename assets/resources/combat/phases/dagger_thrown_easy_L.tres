@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackPhase" load_steps=3 format=3 uid="uid://16giwi1t5fw1"]
+
+[ext_resource type="Resource" uid="uid://cg2314ggu6pfb" path="res://assets/resources/combat/patterns/dagger_simple_L.tres" id="1_n1gny"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="2_73jbx"]
+
+[resource]
+script = ExtResource("2_73jbx")
+delay = 0.0
+cooldown = 0.2
+count = 3
+position = Vector2(-1.5, -1)
+position_step = Vector2(0, -0.5)
+rotation = 0.0
+rotation_step = -15.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[Resource("res://scripts/resource_types/attack_pattern.gd")]([ExtResource("1_n1gny")])
