@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=9 format=3 uid="uid://ujojflk4xm3q"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_7cfdg"]
+[ext_resource type="Texture2D" uid="uid://crchd6hq5fahb" path="res://assets/combat/ezekiel.png" id="2_gltc4"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="3_xq1mj"]
+[ext_resource type="Resource" uid="uid://df3ja020saton" path="res://assets/resources/items/BossItemHandcuffs.tres" id="4_5m1hf"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="5_pghpi"]
+
+[sub_resource type="Resource" id="Resource_jl7gd"]
+script = ExtResource("1_7cfdg")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["You'll never best me, I'd bet my hat.", "Look at yous, barely half a cat."])
+
+[sub_resource type="Resource" id="Resource_x2amb"]
+script = ExtResource("1_7cfdg")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Crooked be, oh my, oh me...", "*cough* *cough*", "Hey you. Is that a pint of beer in your bag? *sniff* Button?", "I swore a vow to the boss I'd never talk, but I could really use a sip. Desperate times.", "*sip* ahhhh there we go. I'll tell you what you need to knowst.", "The boss? He's in the penthouse of The Scratching Post.", "Over in the alleys, but it's still a luxury hotel, ya'hear?", "If you take him down you might want this: (for another sip of beer)"])
+
+[sub_resource type="Resource" id="Resource_bj6d4"]
+script = ExtResource("5_pghpi")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_5m1hf")])
+capacity = 10
+boss_items_capacity = 5
+
+[resource]
+script = ExtResource("3_xq1mj")
+name = "Ezekiel"
+is_mafia = true
+portrait = ExtResource("2_gltc4")
+bg_color = Color(0.580392, 0.447059, 0.133333, 1)
+bg_overlay_color = Color(0.6, 0.592157, 0.364706, 1)
+max_exhaustion = 20.0
+exhaustion_cooldown = 0.5
+max_suspicion = 8.0
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
+win_loot = SubResource("Resource_bj6d4")
+win_dialog = SubResource("Resource_x2amb")
+lose_dialog = SubResource("Resource_jl7gd")

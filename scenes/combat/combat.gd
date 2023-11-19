@@ -26,9 +26,6 @@ func _ready() -> void:
 	state.changed.connect(_on_state_change)
 	
 	# Set up nodes
-	if enemy.is_mafia:
-		$BGM_Load.music = MAFIA_MUSIC
-		$BGM_Load.update_music()
 	$Background.self_modulate = enemy.bg_color
 	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
 	$EnemyPortrait.texture = enemy.portrait

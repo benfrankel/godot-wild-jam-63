@@ -8,17 +8,19 @@ signal target_lost
 
 ## the current target interaction, or null
 var target: InteractionComponent
+var is_active := true
 @onready var interact_sfx := $"../SFX_Interact"
 
 
 func _process(_delta: float) -> void:
-	if enabled and target and Input.is_action_just_pressed("interact"):
+	if is_active and target and Input.is_action_just_pressed("interact"):
 		get_viewport().set_input_as_handled()
 		interact_sfx.play()
-		enabled = false
+		is_active = false
 		await target.interact()
-		await get_tree().create_timer(0.25).timeout
-		enabled = true
+		if is_inside_tree():
+			await get_tree().create_timer(0.25).timeout
+		is_active = true
 
 
 func _physics_process(_delta: float) -> void:

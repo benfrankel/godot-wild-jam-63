@@ -33,8 +33,7 @@ func _on_body_exited(body: Node2D) -> void:
 func interact() -> void:
 	if not is_active:
 		return
-	if one_shot:
-		is_active = false
+	is_active = false
 
 	interacted_with.emit()
 	if dialog:
@@ -45,3 +44,5 @@ func interact() -> void:
 	if enemy:
 		if await GameManager.enter_combat(enemy):
 			enemy = null
+	if not one_shot:
+		is_active = true

@@ -55,6 +55,8 @@ func enter_combat(enemy: Enemy) -> bool:
 	combat.enemy = enemy.duplicate()
 	if dog_mode:
 		combat.enemy.max_suspicion = 1
+	if enemy.is_mafia:
+		combat.get_node("BGM_Load").music = combat.MAFIA_MUSIC
 	scene_backup = await viewport.swap_scene(combat, true, true, combat_size)
 	await exited_combat
 	return won_last_combat

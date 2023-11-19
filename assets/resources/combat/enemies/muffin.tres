@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=10 format=3 uid="uid://cs7hex3e5p1c"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_rj3yb"]
+[ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://assets/combat/enemy_sheet.png" id="2_825p3"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="3_cy50v"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://assets/resources/items/ItemCatnip.tres" id="4_snedj"]
+[ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="5_4g5y1"]
+
+[sub_resource type="Resource" id="Resource_jl7gd"]
+script = ExtResource("1_rj3yb")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["You should stay down."])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l71h"]
+atlas = ExtResource("2_825p3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="Resource" id="Resource_x2amb"]
+script = ExtResource("1_rj3yb")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["You bastard. *huff* *huff*", "That's what I get for smokin' all those cigarettes...", "You really wanna know what we been up to, huh? Alright then. Take a look around you, kid.", "Them mutants, out there? That's us.", "We made a drug that we cut with catnip, to turn those cats into the ugly mutants they always were inside.", "Works real good for taking the heat off my paws, ya'see?", "The fuzz is so busy with mutants that we've been able to push the clean stuff hard. It's good for business.", "The other cats stay afraid because it's untraceable, and we make some extra cash offa \"protection\" rackets.", "*huff* Well... I'm gonna take a quick nap. Wake me up in an hour."])
+
+[sub_resource type="Resource" id="Resource_bj6d4"]
+script = ExtResource("5_4g5y1")
+items = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj")])
+boss_items = Array[Resource("res://scripts/resource_types/Item.gd")]([])
+capacity = 10
+boss_items_capacity = 5
+
+[resource]
+script = ExtResource("3_cy50v")
+name = "Muffin"
+is_mafia = true
+portrait = SubResource("AtlasTexture_2l71h")
+bg_color = Color(0.4, 0.329412, 0.301961, 1)
+bg_overlay_color = Color(0.388235, 0.145098, 0.12549, 1)
+max_exhaustion = 20.0
+exhaustion_cooldown = 0.5
+max_suspicion = 8.0
+attack_phases = Array[Resource("res://scripts/resource_types/attack_phase.gd")]([])
+win_loot = SubResource("Resource_bj6d4")
+win_dialog = SubResource("Resource_x2amb")
+lose_dialog = SubResource("Resource_jl7gd")
