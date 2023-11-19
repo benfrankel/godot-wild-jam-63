@@ -7,6 +7,21 @@
 atlas = ExtResource("1_h87bt")
 region = Rect2(-120, 200, 1152, 648)
 
+[sub_resource type="Animation" id="Animation_hhnl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(682, -333.5)]
+}
+
 [sub_resource type="Animation" id="Animation_61oc7"]
 resource_name = "text_scroll"
 length = 45.0
@@ -36,21 +51,6 @@ tracks/1/keys = {
 "args": [],
 "method": &"_on_end"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_hhnl0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/MarginContainer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(682, -333.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5hwku"]
@@ -118,7 +118,7 @@ anchor_bottom = 1.0
 offset_left = 170.0
 offset_top = -333.5
 offset_right = 640.0
-offset_bottom = 394.5
+offset_bottom = 790.5
 grow_horizontal = 0
 grow_vertical = 2
 

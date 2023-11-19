@@ -14,4 +14,4 @@ func _input(event: InputEvent) -> void:
 		tween.tween_property(anim, "speed_scale", speed, 0.3)
 
 func _on_end() -> void:
-	push_error("What do we want to happen at this point!?")
+	get_tree().change_scene_to_file("res://scenes/viewport_management.tscn")
