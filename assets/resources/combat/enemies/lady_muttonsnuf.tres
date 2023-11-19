@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=22 format=3 uid="uid://cwh30jr4tiyjd"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=21 format=3 uid="uid://cwh30jr4tiyjd"]
 
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_0dy8j"]
 [ext_resource type="Texture2D" uid="uid://yfgidsg3xgoo" path="res://assets/combat/muttonsnuf.png" id="1_8v7ox"]
@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://cjqndudcdwate" path="res://assets/resources/items/BossItemButton.tres" id="3_w4kdj"]
 [ext_resource type="Script" path="res://scripts/resource_types/Inventory.gd" id="4_5tqf1"]
 [ext_resource type="PackedScene" uid="uid://ddykboalfb6lh" path="res://scenes/combat/projectile/dead_fish_S.tscn" id="4_3546t"]
-[ext_resource type="Resource" uid="uid://cg2314ggu6pfb" path="res://assets/resources/combat/patterns/dagger_simple_L.tres" id="5_sa1pd"]
+[ext_resource type="Resource" uid="uid://qnqncmbkk1no" path="res://assets/resources/combat/phases/dagger_toss.tres" id="5_in0y7"]
 
 [sub_resource type="Resource" id="Resource_l4jvw"]
 script = ExtResource("2_7lthn")
@@ -122,19 +122,6 @@ scale = Vector2(1, 1)
 scale_step = Vector2(1.1, 1.1)
 patterns = Array[ExtResource("2_7lthn")]([SubResource("Resource_l4jvw")])
 
-[sub_resource type="Resource" id="Resource_n5fa2"]
-script = ExtResource("3_uoewf")
-delay = 28.0
-cooldown = 0.2
-count = 3
-position = Vector2(-1.5, -1)
-position_step = Vector2(0, -0.5)
-rotation = 0.0
-rotation_step = -15.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-patterns = Array[ExtResource("2_7lthn")]([ExtResource("5_sa1pd")])
-
 [sub_resource type="Resource" id="Resource_2p83p"]
 script = ExtResource("1_0dy8j")
 character_name = ""
@@ -166,7 +153,7 @@ bg_overlay_color = Color(0.176471, 0.482353, 0.243137, 1)
 max_exhaustion = 32.0
 exhaustion_cooldown = 1.0
 max_suspicion = 8.0
-attack_phases = Array[ExtResource("3_uoewf")]([SubResource("Resource_34cjr"), SubResource("Resource_pk386"), SubResource("Resource_5tgfg"), SubResource("Resource_xmbwt"), SubResource("Resource_vqnh1"), SubResource("Resource_n5fa2")])
+attack_phases = Array[ExtResource("3_uoewf")]([SubResource("Resource_34cjr"), SubResource("Resource_pk386"), SubResource("Resource_5tgfg"), SubResource("Resource_xmbwt"), SubResource("Resource_vqnh1"), ExtResource("5_in0y7")])
 win_loot = SubResource("Resource_ugtnn")
 win_dialog = SubResource("Resource_frrhn")
 lose_dialog = SubResource("Resource_2p83p")

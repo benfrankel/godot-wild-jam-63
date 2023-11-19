@@ -1,36 +1,36 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=18 format=3 uid="uid://cmxqg01v5elm0"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=16 format=3 uid="uid://cmxqg01v5elm0"]
 
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_0h2qi"]
-[ext_resource type="PackedScene" path="res://scenes/combat/projectile/glass_cup_M.tscn" id="1_64mfl"]
+[ext_resource type="PackedScene" uid="uid://go8wioqaw0wh" path="res://scenes/combat/projectile/glass_cup_M.tscn" id="1_64mfl"]
 [ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_ejang"]
 [ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_8cgwu"]
 [ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="3_e8x2e"]
 [ext_resource type="PackedScene" uid="uid://bw747i8qe5l7b" path="res://scenes/combat/projectile/yarn_ball_S.tscn" id="4_8oq8v"]
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="5_3yghj"]
-[ext_resource type="Resource" uid="uid://cg2314ggu6pfb" path="res://assets/resources/combat/patterns/dagger_simple_L.tres" id="5_ifkdc"]
+[ext_resource type="Resource" uid="uid://qnqncmbkk1no" path="res://assets/resources/combat/phases/dagger_toss.tres" id="5_p2ops"]
 
 [sub_resource type="Resource" id="Resource_16tda"]
 script = ExtResource("2_8cgwu")
 projectile = ExtResource("1_64mfl")
 delay = 0.0
 cooldown = 1.0
-count = 1
+count = 6
 skip = -1
 skip_step = 0
 random_skips = 0
 spawn_time = 0.5
 lifetime = 5.0
 despawn_time = 0.5
-position = Vector2(0, -1.2)
-position_step = Vector2(0, 0)
-rotation = 0.0
+position = Vector2(-0.9, -1.25)
+position_step = Vector2(0.3, 0)
+rotation = -90.0
 rotation_step = 0.0
 scale = Vector2(1, 1)
 scale_step = Vector2(1, 1)
-speed = 300.0
-angle = 0.0
+speed = 200.0
+angle = -90.0
 angle_step = 0.0
-angular_velocity = 0.0
+angular_velocity = 180.0
 
 [sub_resource type="Resource" id="Resource_862qm"]
 script = ExtResource("3_e8x2e")
@@ -50,62 +50,36 @@ script = ExtResource("2_8cgwu")
 projectile = ExtResource("4_8oq8v")
 delay = 0.0
 cooldown = 0.1
-count = 1
+count = 32
 skip = -1
 skip_step = 0
 random_skips = 0
 spawn_time = 0.5
 lifetime = 5.0
 despawn_time = 0.5
+position = Vector2(1.2, 1)
+position_step = Vector2(0, -0.1)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 300.0
+angle = -105.0
+angle_step = -1.0
+angular_velocity = 45.0
+
+[sub_resource type="Resource" id="Resource_1flvs"]
+script = ExtResource("3_e8x2e")
+delay = 5.0
+cooldown = 1.0
+count = 1
 position = Vector2(0, 0)
 position_step = Vector2(0, 0)
 rotation = 0.0
 rotation_step = 0.0
 scale = Vector2(1, 1)
 scale_step = Vector2(1, 1)
-speed = 300.0
-angle = 180.0
-angle_step = 15.0
-angular_velocity = 45.0
-
-[sub_resource type="Resource" id="Resource_1flvs"]
-script = ExtResource("3_e8x2e")
-delay = 5.0
-cooldown = 0.3
-count = 32
-position = Vector2(1, 1)
-position_step = Vector2(0, -0.1)
-rotation = 0.0
-rotation_step = 45.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1.01, 1.01)
 patterns = Array[ExtResource("2_8cgwu")]([SubResource("Resource_hh6l6")])
-
-[sub_resource type="Resource" id="Resource_uvjy4"]
-script = ExtResource("3_e8x2e")
-delay = 10.0
-cooldown = 0.2
-count = 3
-position = Vector2(-1.5, -1)
-position_step = Vector2(0, -0.5)
-rotation = 0.0
-rotation_step = -15.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-patterns = Array[ExtResource("2_8cgwu")]([ExtResource("5_ifkdc")])
-
-[sub_resource type="Resource" id="Resource_o7m1j"]
-script = ExtResource("3_e8x2e")
-delay = 17.0
-cooldown = 0.2
-count = 3
-position = Vector2(-1.5, -1)
-position_step = Vector2(0, -0.5)
-rotation = 0.0
-rotation_step = -15.0
-scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
-patterns = Array[ExtResource("2_8cgwu")]([ExtResource("5_ifkdc")])
 
 [sub_resource type="Resource" id="Resource_4am3b"]
 script = ExtResource("1_0h2qi")
@@ -135,6 +109,6 @@ bg_overlay_color = Color(0.145098, 0.141176, 0.188235, 1)
 max_exhaustion = 20.0
 exhaustion_cooldown = 1.0
 max_suspicion = 4.0
-attack_phases = Array[ExtResource("3_e8x2e")]([SubResource("Resource_862qm"), SubResource("Resource_1flvs"), SubResource("Resource_uvjy4"), SubResource("Resource_o7m1j")])
+attack_phases = Array[ExtResource("3_e8x2e")]([SubResource("Resource_862qm"), SubResource("Resource_1flvs"), ExtResource("5_p2ops")])
 win_dialog = SubResource("Resource_8tgir")
 lose_dialog = SubResource("Resource_4am3b")

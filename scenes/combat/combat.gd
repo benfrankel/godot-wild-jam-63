@@ -94,6 +94,7 @@ func launch_phase(phase: AttackPhase) -> void:
 			pattern.scale *= phase.scale
 			var flip := phase.scale.sign()
 			pattern.angle *= flip.x * flip.y
+			pattern.angle_step *= flip.x * flip.y
 			if flip.x < 0.0:
 				pattern.angle += 180.0
 			launch_pattern(pattern)

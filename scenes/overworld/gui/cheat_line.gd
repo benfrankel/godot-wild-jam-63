@@ -66,6 +66,7 @@ func attempt_cheat(code: String) -> void:
 		"/openyoureyes": do_openyoureyes()
 		"/dogmode": do_dogmode()
 		"/1987" : do_bite_mode()
+		"/pyrious": do_pyrious()
 		_: print("Invalid cheat code: ", code)
 
 
@@ -103,5 +104,10 @@ func do_openyoureyes() -> void:
 func do_dogmode() -> void:
 	GameManager.dog_mode = not GameManager.dog_mode
 
+
 func do_bite_mode() -> void:
 	GameManager.bite_mode = not GameManager.bite_mode
+
+
+func do_pyrious() -> void:
+	GameManager.enter_combat(load("res://assets/resources/combat/enemies/muffin.tres"))

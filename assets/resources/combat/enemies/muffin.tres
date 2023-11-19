@@ -13,17 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://r5nxd4ax7gr0" path="res://scenes/combat/projectile/yarn_ball_M.tscn" id="6_o3n3t"]
 [ext_resource type="PackedScene" uid="uid://ddykboalfb6lh" path="res://scenes/combat/projectile/dead_fish_S.tscn" id="7_wtu2o"]
 
-[sub_resource type="Resource" id="Resource_l2px8"]
+[sub_resource type="Resource" id="Resource_8dhix"]
 script = ExtResource("2_rrfco")
 delay = 0.0
-cooldown = 0.2
-count = 3
-position = Vector2(-1.5, -1)
-position_step = Vector2(0, -0.5)
+cooldown = 1.0
+count = 6
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
 rotation = 0.0
-rotation_step = -15.0
+rotation_step = 0.0
 scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
+scale_step = Vector2(-1, 1)
 patterns = Array[ExtResource("4_d70fk")]([ExtResource("1_f8826")])
 
 [sub_resource type="Resource" id="Resource_l4jvw"]
@@ -262,17 +262,17 @@ scale = Vector2(1, 1)
 scale_step = Vector2(1, 1)
 patterns = Array[ExtResource("4_d70fk")]([SubResource("Resource_n754q")])
 
-[sub_resource type="Resource" id="Resource_nqg1s"]
+[sub_resource type="Resource" id="Resource_0kuyk"]
 script = ExtResource("2_rrfco")
 delay = 30.0
-cooldown = 0.2
-count = 3
-position = Vector2(-1.5, -1)
-position_step = Vector2(0, -0.5)
+cooldown = 1.0
+count = 6
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
 rotation = 0.0
-rotation_step = -15.0
+rotation_step = 0.0
 scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
+scale_step = Vector2(-1, 1)
 patterns = Array[ExtResource("4_d70fk")]([ExtResource("1_f8826")])
 
 [sub_resource type="Resource" id="Resource_x76ga"]
@@ -327,17 +327,17 @@ scale = Vector2(1, 1)
 scale_step = Vector2(1, 1)
 patterns = Array[ExtResource("4_d70fk")]([SubResource("Resource_n754q")])
 
-[sub_resource type="Resource" id="Resource_xk2u5"]
+[sub_resource type="Resource" id="Resource_fhbdq"]
 script = ExtResource("2_rrfco")
 delay = 60.0
-cooldown = 0.2
-count = 3
-position = Vector2(-1.5, -1)
-position_step = Vector2(0, -0.5)
+cooldown = 1.0
+count = 6
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
 rotation = 0.0
-rotation_step = -15.0
+rotation_step = 0.0
 scale = Vector2(1, 1)
-scale_step = Vector2(1, 1)
+scale_step = Vector2(-1, 1)
 patterns = Array[ExtResource("4_d70fk")]([ExtResource("1_f8826")])
 
 [sub_resource type="Resource" id="Resource_bs0kg"]
@@ -424,10 +424,10 @@ is_mafia = true
 portrait = SubResource("AtlasTexture_2l71h")
 bg_color = Color(0.121569, 0.0941176, 0.0823529, 1)
 bg_overlay_color = Color(0.270588, 0.101961, 0.0823529, 1)
-max_exhaustion = 5.0
-exhaustion_cooldown = 1.0
+max_exhaustion = 180.0
+exhaustion_cooldown = 0.5
 max_suspicion = 12.0
-attack_phases = Array[ExtResource("2_rrfco")]([SubResource("Resource_l2px8"), SubResource("Resource_3m0gk"), SubResource("Resource_hbppb"), SubResource("Resource_5to76"), SubResource("Resource_g8mwe"), SubResource("Resource_nqg1s"), SubResource("Resource_x76ga"), SubResource("Resource_1ejsf"), SubResource("Resource_n0vnt"), SubResource("Resource_q3s05"), SubResource("Resource_xk2u5"), SubResource("Resource_bs0kg"), SubResource("Resource_3yjcu"), SubResource("Resource_n3h65"), SubResource("Resource_4sbqy")])
+attack_phases = Array[ExtResource("2_rrfco")]([SubResource("Resource_8dhix"), SubResource("Resource_3m0gk"), SubResource("Resource_hbppb"), SubResource("Resource_5to76"), SubResource("Resource_g8mwe"), SubResource("Resource_0kuyk"), SubResource("Resource_x76ga"), SubResource("Resource_1ejsf"), SubResource("Resource_n0vnt"), SubResource("Resource_q3s05"), SubResource("Resource_fhbdq"), SubResource("Resource_bs0kg"), SubResource("Resource_3yjcu"), SubResource("Resource_n3h65"), SubResource("Resource_4sbqy")])
 win_loot = SubResource("Resource_bj6d4")
 win_dialog = SubResource("Resource_x2amb")
 lose_dialog = SubResource("Resource_jl7gd")
