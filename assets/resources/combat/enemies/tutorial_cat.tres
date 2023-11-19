@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=10 format=3 uid="uid://cmxqg01v5elm0"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="1_0h2qi"]
+[ext_resource type="PackedScene" uid="uid://go8wioqaw0wh" path="res://scenes/combat/projectile/glass_cup_M.tscn" id="1_64mfl"]
+[ext_resource type="Script" path="res://scripts/resource_types/enemy.gd" id="1_ejang"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_pattern.gd" id="2_8cgwu"]
+[ext_resource type="Script" path="res://scripts/resource_types/attack_phase.gd" id="3_e8x2e"]
+
+[sub_resource type="Resource" id="Resource_16tda"]
+script = ExtResource("2_8cgwu")
+projectile = ExtResource("1_64mfl")
+delay = 0.0
+cooldown = 1.0
+count = 1
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(0, -1.2)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 300.0
+angle = 0.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[sub_resource type="Resource" id="Resource_862qm"]
+script = ExtResource("3_e8x2e")
+delay = 0.0
+cooldown = 1.0
+count = 1
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[ExtResource("2_8cgwu")]([SubResource("Resource_16tda")])
+
+[sub_resource type="Resource" id="Resource_4am3b"]
+script = ExtResource("1_0h2qi")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Ah well, it takes some gettin' used to, that's for sure.", "Maybe you should have a look around town, get some practice in, and see if you can figure out what's going on?"])
+
+[sub_resource type="Resource" id="Resource_8tgir"]
+script = ExtResource("1_0h2qi")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["I knew you had it in ya.", "Maybe you should have a look around town, see if you can figure out what's going on?"])
+
+[resource]
+script = ExtResource("1_ejang")
+name = "Frankie"
+bg_color = Color(0, 0, 0, 1)
+bg_overlay_color = Color(0, 0, 0, 1)
+max_exhaustion = 10.0
+exhaustion_cooldown = 1.0
+max_suspicion = 4.0
+attack_phases = Array[ExtResource("3_e8x2e")]([SubResource("Resource_862qm")])
+win_dialog = SubResource("Resource_8tgir")
+lose_dialog = SubResource("Resource_4am3b")

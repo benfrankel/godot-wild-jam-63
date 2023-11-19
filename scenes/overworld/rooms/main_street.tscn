@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://r4yxqyce07n1"]
+[gd_scene load_steps=17 format=3 uid="uid://r4yxqyce07n1"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_e4t5u"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_wfug2"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_4k55o"]
+[ext_resource type="PackedScene" uid="uid://tgstmbbg871e" path="res://scenes/overworld/npcs/special/item_tutorial_cat.tscn" id="3_a4mlk"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_8re1c"]
 [ext_resource type="Resource" uid="uid://clg0g6yo6l2st" path="res://assets/resources/items/BossItemSandwich.tres" id="4_jrvde"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_66omq"]
@@ -37,6 +38,9 @@ y_sort_enabled = true
 [node name="Player" parent="Objects" instance=ExtResource("2_wfug2")]
 unique_name_in_owner = true
 position = Vector2(-153, -27)
+
+[node name="ItemTutorialCat" parent="Objects" instance=ExtResource("3_a4mlk")]
+position = Vector2(121, 269)
 
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true

@@ -32,7 +32,7 @@ unique_name_in_owner = true
 position = Vector2(-16, 208)
 
 [node name="TutorialCat" parent="Objects" instance=ExtResource("8_ma38j")]
-position = Vector2(13, 113)
+position = Vector2(125, -64)
 
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true

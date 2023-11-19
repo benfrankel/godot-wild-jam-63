@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://fi2xcmonrb8y"]
+[gd_scene load_steps=9 format=3 uid="uid://fi2xcmonrb8y"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://assets/overworld/generic_npcs.png" id="1_vew74"]
 [ext_resource type="Script" path="res://scenes/interaction_system/interaction_component.gd" id="2_nx6o8"]
 [ext_resource type="Script" path="res://scenes/dialog_system/data/dialog_data.gd" id="3_w60qa"]
-[ext_resource type="Resource" uid="uid://dwaewvj8khe76" path="res://assets/resources/items/ItemLaserPointer.tres" id="4_puefv"]
+[ext_resource type="Resource" uid="uid://dl3wtk3igd3i" path="res://assets/resources/items/BossItemLaser.tres" id="4_fgqia"]
+[ext_resource type="Resource" uid="uid://cmxqg01v5elm0" path="res://assets/resources/combat/enemies/tutorial_cat.tres" id="5_y36yy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n10ug"]
 radius = 3.5
@@ -14,7 +15,7 @@ script = ExtResource("3_w60qa")
 character_name = "Frankie"
 text_speed = 40.0
 auto_progress = false
-lines = Array[String](["Heya there, bud!", "Things have been getting crazy this part of town.", "Like, cool cats are going completely feral!", "You best take care of yourself", "I got a spare piece, so don't say I never did nothing for ya!", "Just make sure the feral doesn't get too suspicious of ya when fending them off!", "Tire them out enough and they'll leave you alone"])
+lines = Array[String](["Hey there, Giuseppe!", "Things have been crazy around this part of town, huh?", "It seems like every other day there's another mutant cat out there. Those poor things. It could even happen to a cool cat like me or you!", "On top of that, I've noticed an uptick in shady business lately. You best keep yourself safe.", "I got a spare piece I can lend, so don't say I never did nothing for ya!", "Let me give ya a quick rundown of how you can use it.", "You gotta dodge whatever they throw at ya, to keep their suspicion (sus) low.", "If you can keep it up long enough, you'll see their exhaustion (exh) increase, sure enough.", "Give it a test run with me, I'll show you the ropes."])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4ci"]
 size = Vector2(40, 38)
@@ -35,8 +36,10 @@ shape = SubResource("CapsuleShape2D_n10ug")
 position = Vector2(0, -20)
 script = ExtResource("2_nx6o8")
 auto_trigger = true
+one_shot = true
 dialog = SubResource("Resource_ucr13")
-gift = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_puefv")])
+gift = Array[Resource("res://scripts/resource_types/Item.gd")]([ExtResource("4_fgqia")])
+enemy = ExtResource("5_y36yy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
 position = Vector2(0, 19)
