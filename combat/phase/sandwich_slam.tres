@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="AttackPhase" load_steps=5 format=3 uid="uid://b5m6wqxxvxy0w"]
+
+[ext_resource type="PackedScene" uid="uid://chd0srhk8arrb" path="res://combat/projectile/sandwich.tscn" id="1_akxat"]
+[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_h3cej"]
+[ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="3_248mn"]
+
+[sub_resource type="Resource" id="Resource_l4jvw"]
+script = ExtResource("2_h3cej")
+projectile = ExtResource("1_akxat")
+delay = 0.0
+cooldown = 1.0
+count = 1
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.1
+lifetime = 1.5
+despawn_time = 0.1
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 100.0
+angle = 90.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[resource]
+script = ExtResource("3_248mn")
+delay = 0.2
+cooldown = 1.0
+count = 11
+position = Vector2(-1, -1)
+position_step = Vector2(0.2, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1.1, 1.1)
+patterns = Array[ExtResource("2_h3cej")]([SubResource("Resource_l4jvw")])

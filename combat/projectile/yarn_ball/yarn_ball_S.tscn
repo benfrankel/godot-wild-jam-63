@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw747i8qe5l7b"]
+
+[ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_ctppt"]
+[ext_resource type="Texture2D" uid="uid://b8r7we2r5wvih" path="res://combat/projectile/yarn_ball/yarn_ball_S.png" id="2_mlvw5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y4jp0"]
+bounce = 0.75
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qce5h"]
+radius = 4.0
+
+[node name="YarnBallS" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_y4jp0")
+script = ExtResource("1_ctppt")
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("2_mlvw5")
+flip_h = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_qce5h")

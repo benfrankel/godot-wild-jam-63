@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="AttackPhase" load_steps=6 format=3 uid="uid://cc0jck8ai0x1d"]
+
+[ext_resource type="PackedScene" uid="uid://r5nxd4ax7gr0" path="res://combat/projectile/yarn_ball/yarn_ball_M.tscn" id="1_8xtkv"]
+[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_rs4in"]
+[ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="3_3yx2w"]
+
+[sub_resource type="Resource" id="Resource_wk82g"]
+script = ExtResource("2_rs4in")
+projectile = ExtResource("1_8xtkv")
+delay = 0.0
+cooldown = 0.0
+count = 5
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 1.0
+lifetime = 3.0
+despawn_time = 0.5
+position = Vector2(0, 0)
+position_step = Vector2(0.5, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(-1, 1)
+speed = 200.0
+angle = -90.0
+angle_step = 0.0
+angular_velocity = 100.0
+
+[sub_resource type="Resource" id="Resource_5cb77"]
+script = ExtResource("2_rs4in")
+projectile = ExtResource("1_8xtkv")
+delay = 1.0
+cooldown = 0.0
+count = 4
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 1.0
+lifetime = 3.0
+despawn_time = 0.5
+position = Vector2(0.25, 0)
+position_step = Vector2(0.5, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(-1, 1)
+speed = 200.0
+angle = -90.0
+angle_step = 0.0
+angular_velocity = 100.0
+
+[resource]
+script = ExtResource("3_3yx2w")
+delay = 0.0
+cooldown = 2.0
+count = 4
+position = Vector2(-1, -1.25)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[ExtResource("2_rs4in")]([SubResource("Resource_wk82g"), SubResource("Resource_5cb77")])

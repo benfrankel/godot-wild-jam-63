@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3aj4q7x1mqan"]
+
+[ext_resource type="Script" path="res://overworld/door/door.gd" id="1_ewud0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6y335"]
+size = Vector2(32, 32)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_ewud0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6y335")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

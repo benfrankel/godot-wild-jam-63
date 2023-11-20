@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwenn0r4tasiy"]
+
+[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/main_tile_set.tres" id="1_e711w"]
+[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_e44f4"]
+[ext_resource type="PackedScene" uid="uid://da28k80r7yfkj" path="res://overworld/npcs/special/pj.tscn" id="3_4wvwk"]
+[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/transport/door.tscn" id="3_dwvbi"]
+[ext_resource type="PackedScene" uid="uid://dm1vjjj0kw0ov" path="res://overworld/npcs/boss/button.tscn" id="4_ccn7c"]
+[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_6utrv"]
+[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_ubeyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84qjq"]
+size = Vector2(77, 11)
+
+[node name="TailorShop" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("1_e711w")
+format = 2
+layer_0/name = "Floor"
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(262149, 262145, 1, 196613, 262145, 2, 131077, 1, 6, 262148, 262145, 3, 196612, 65537, 3, 262147, 65537, 2, 196611, 262145, 3, 262146, 327681, 1, 196610, 327681, 2, 327681, 65537, 5, 262145, 458753, 0, 196609, 393217, 1, 327680, 1, 7, 262144, 393217, 3, 196608, 65537, 2, 327679, 196609, 3, 262143, 458753, 3, 327678, 196609, 3, 262142, 458753, 2, 327677, 262145, 3, 262141, 131073, 3, 524289, 65537, 4, 458753, 65537, 6, 393217, 1, 5, 524288, 1, 5, 458752, 65537, 5, 393216, 1, 6, 65541, 65537, 6, 5, 1, 6, -65531, 1, 5, -131067, 327681, 3, -196603, 262145, 3, -262139, 65537, 3, -131068, 65537, 3, -196604, 1, 0, -262140, 65537, 3, -131069, 131073, 2, -196605, 65537, 1, -262141, 65537, 2, -131070, 196609, 1, -196606, 458753, 2, -262142, 1, 0, -131071, 1, 2, -196607, 196609, 2, -262143, 65537, 0, -131072, 393217, 2, -196608, 393217, 2, -262144, 65537, 3, -65537, 262145, 1, -131073, 65537, 1, -196609, 131073, 0, -65538, 458753, 1, -131074, 327681, 1, -196610, 131073, 2, -65539, 327681, 1, -131075, 327681, 0, -196611, 1, 2, 393215, 327681, 1, 327682, 262145, 3, 131076, 458753, 2, -65532, 458753, 3)
+layer_1/name = "Object"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(196609, 917513, 4, -262141, 327689, 1, -262143, 327689, 1, -65539, 327689, 9, -262142, 327689, 5, -262140, 327689, 3, -262139, 327689, 3, 131073, 917513, 3, -327676, 327689, 2, -327675, 327689, 2, -327679, 327689, 0, -327677, 327689, 0, -327678, 327689, 4)
+layer_2/name = "Wall"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = true
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(-262147, 65539, 3, 524290, 196611, 2, 458754, 196611, 1, 393218, 196611, 1, 327682, 327683, 0, 327686, 458755, 2, 327685, 65539, 3, 327684, 65539, 3, 327683, 65539, 3, 262150, 196611, 1, 196614, 196611, 1, 131078, 196611, 1, 65542, 196611, 1, 6, 196611, 1, -65530, 196611, 1, -131066, 196611, 1, -196602, 196611, 1, -262138, 196611, 1, -327674, 458755, 0, -327675, 65539, 3, -327676, 65539, 3, -327677, 65539, 3, -327678, 65539, 3, -327679, 65539, 3, -327680, 65539, 3, -262145, 65539, 3, -262146, 65539, 3, -262148, 327683, 0, -4, 327683, 2, -65540, 196611, 1, -131076, 196611, 1, -196612, 196611, 1, -65532, 458755, 0, -65533, 65539, 3, -65534, 65539, 3, -65535, 65539, 3, -65536, 65539, 3, -1, 65539, 3, -2, 65539, 3, -3, 65539, 3, 131076, 458755, 2, 65540, 196611, 1, 4, 196611, 1, 131075, 65539, 3, 131074, 65539, 3, 131073, 65539, 3, 131072, 65539, 3, 196607, 65539, 3, 196606, 65539, 3, 196605, 65539, 3, 196604, 327683, 0, 393212, 327683, 2, 327676, 196611, 1, 262140, 196611, 1, 393215, 458755, 0, 393214, 65539, 3, 393213, 65539, 3, 589823, 196611, 2, 524287, 196611, 1, 458751, 196611, 1)
+layer_3/name = "Decal"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = true
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array(-262148, 655369, 8)
+
+[node name="Player" parent="TileMap" instance=ExtResource("2_e44f4")]
+unique_name_in_owner = true
+position = Vector2(33, 210)
+
+[node name="PjNPC" parent="TileMap" instance=ExtResource("3_4wvwk")]
+position = Vector2(-81, 104)
+
+[node name="Button" parent="TileMap" instance=ExtResource("4_ccn7c")]
+position = Vector2(-48, -120)
+
+[node name="Doors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MainStreet" parent="Doors" instance=ExtResource("3_dwvbi")]
+position = Vector2(32, 275)
+scale = Vector2(3.0392, 0.41051)
+target_room = "res://overworld/room/main_street.tscn"
+target_door = 1
+
+[node name="BGM_Load" type="Node" parent="."]
+script = ExtResource("5_6utrv")
+music = ExtResource("6_ubeyw")
+
+[node name="Barrier" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(31, 288.5)
+shape = SubResource("RectangleShape2D_84qjq")

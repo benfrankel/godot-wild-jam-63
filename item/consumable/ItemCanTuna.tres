@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://ck51fflytvlgq"]
+
+[ext_resource type="Script" path="res://item/Item.gd" id="1_i0sar"]
+[ext_resource type="Script" path="res://item/consumable/red_sus_50.gd" id="1_p00to"]
+[ext_resource type="Texture2D" uid="uid://vrf2dtiauqmt" path="res://item/consumable/icons.png" id="3_87xx8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgkmc"]
+atlas = ExtResource("3_87xx8")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_i0sar")
+item_name = "Canned Tuna"
+description = "Reduces suspicion by 50%"
+texture = SubResource("AtlasTexture_qgkmc")
+effects = Array[Script]([ExtResource("1_p00to")])
+is_boss_item = false

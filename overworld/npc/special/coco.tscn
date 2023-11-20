@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpxlqho3kvegi"]
+
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_2c3jt"]
+[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_fwdin"]
+[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_f8duo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="Resource" id="Resource_n6q0v"]
+script = ExtResource("3_f8duo")
+character_name = "Coco the Shrewd"
+text_speed = 30.0
+auto_progress = false
+lines = Array[String](["These mutant cats are a sore sight, eh?", "I've tried all manner of hisses, whistles, chirps, and even meows to spook 'em off, but nothing works.", "The only sound that had an effect actually made MORE of 'em show their tails. Ironic...", "Just so you know what NOT to do, the sound I made was: [wave amp=50.0 freq=5.0 connected=1]/pspspsps[/wave]"])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
+size = Vector2(32, 32)
+
+[node name="CocoNPC" type="StaticBody2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_2c3jt")
+offset = Vector2(1, -18)
+region_enabled = true
+region_rect = Rect2(28, 0, 28, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fqno1")
+
+[node name="InteractionComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2_fwdin")
+dialog = SubResource("Resource_n6q0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+shape = SubResource("RectangleShape2D_75wn5")

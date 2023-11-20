@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkf84k8q140ub"]
+
+[ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_rke8u"]
+[ext_resource type="Texture2D" uid="uid://dgtrwjvil8j3a" path="res://combat/projectile/glass_cup/glass_cup_M_shard5.png" id="2_1if54"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntbwt"]
+radius = 3.23908
+height = 19.2964
+
+[node name="GlassCupMShard5" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+center_of_mass_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_rke8u")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(-12, 1.00004)
+rotation = 1.5708
+texture = ExtResource("2_1if54")
+flip_h = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-12.9999, -1.99996)
+rotation = 1.5708
+scale = Vector2(0.92619, 0.932816)
+shape = SubResource("CapsuleShape2D_ntbwt")

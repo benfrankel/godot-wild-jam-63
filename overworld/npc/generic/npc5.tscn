@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://bt318oqn6o5e0"]
+
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_e3vv3"]
+[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_eg0g7"]
+[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_syxd3"]
+[ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://item/consumable/ItemMilk.tres" id="4_m87oi"]
+[ext_resource type="Texture2D" uid="uid://dg66xn88h73oy" path="res://overworld/npc/accessories/npc_glasses.png" id="5_q6mxq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="Resource" id="Resource_n6q0v"]
+script = ExtResource("3_syxd3")
+character_name = "Alex"
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["It sure is hot out today. I got some milk to cool down.", "Actually... there's no way I can finish all of this, what was I thinking?"])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
+size = Vector2(32, 32)
+
+[node name="NPC5" type="StaticBody2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_e3vv3")
+offset = Vector2(1, -18)
+region_enabled = true
+region_rect = Rect2(252, 0, 28, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fqno1")
+
+[node name="InteractionComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2_eg0g7")
+dialog = SubResource("Resource_n6q0v")
+gift = Array[Resource("res://item/Item.gd")]([ExtResource("4_m87oi")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+shape = SubResource("RectangleShape2D_75wn5")
+
+[node name="NpcGlasses" type="Sprite2D" parent="."]
+position = Vector2(1, -17)
+texture = ExtResource("5_q6mxq")

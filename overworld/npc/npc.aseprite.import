@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ccprobyaksjmn"
+path="res://.godot/imported/npc.aseprite-f3b5c5094013e08627c62611d2faa893.res"
+
+[deps]
+
+source_file="res://overworld/npc/npc.aseprite"
+dest_files=["res://.godot/imported/npc.aseprite-f3b5c5094013e08627c62611d2faa893.res"]
+
+[params]
+

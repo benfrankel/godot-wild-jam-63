@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bpdwsfl03l8h8"
+path="res://.godot/imported/player.aseprite-68a4c910cc576076525fedd2836c5053.res"
+
+[deps]
+
+source_file="res://overworld/player/player.aseprite"
+dest_files=["res://.godot/imported/player.aseprite-68a4c910cc576076525fedd2836c5053.res"]
+
+[params]
+

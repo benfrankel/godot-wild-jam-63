@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf8c5l2bowub0"]
+
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_h5l6h"]
+[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_je2h7"]
+[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_ui55t"]
+[ext_resource type="Resource" uid="uid://bxlawrtuugwk8" path="res://item/consumable/ItemSprayBottle.tres" id="4_8mkru"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="Resource" id="Resource_n6q0v"]
+script = ExtResource("3_ui55t")
+character_name = "Rudy"
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Could you hold this for me?"])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
+size = Vector2(32, 32)
+
+[node name="NPC4" type="StaticBody2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_h5l6h")
+offset = Vector2(1, -18)
+region_enabled = true
+region_rect = Rect2(168, 0, 28, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fqno1")
+
+[node name="InteractionComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2_je2h7")
+dialog = SubResource("Resource_n6q0v")
+gift = Array[Resource("res://item/Item.gd")]([ExtResource("4_8mkru")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+shape = SubResource("RectangleShape2D_75wn5")

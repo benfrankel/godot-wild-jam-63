@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=16 format=3 uid="uid://cmxqg01v5elm0"]
+
+[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="1_0h2qi"]
+[ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="1_ejang"]
+[ext_resource type="PackedScene" uid="uid://go8wioqaw0wh" path="res://combat/projectile/glass_cup/glass_cup_M.tscn" id="1_i3xlr"]
+[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_8cgwu"]
+[ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="3_e8x2e"]
+[ext_resource type="PackedScene" uid="uid://bw747i8qe5l7b" path="res://combat/projectile/yarn_ball/yarn_ball_S.tscn" id="4_bfk2r"]
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="5_3yghj"]
+[ext_resource type="Resource" uid="uid://qnqncmbkk1no" path="res://combat/phase/dagger_toss.tres" id="5_p2ops"]
+
+[sub_resource type="Resource" id="Resource_16tda"]
+script = ExtResource("2_8cgwu")
+projectile = ExtResource("1_i3xlr")
+delay = 0.0
+cooldown = 1.0
+count = 6
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(-0.9, -1.25)
+position_step = Vector2(0.3, 0)
+rotation = -90.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 200.0
+angle = -90.0
+angle_step = 0.0
+angular_velocity = 180.0
+
+[sub_resource type="Resource" id="Resource_862qm"]
+script = ExtResource("3_e8x2e")
+delay = 0.0
+cooldown = 1.0
+count = 1
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[ExtResource("2_8cgwu")]([SubResource("Resource_16tda")])
+
+[sub_resource type="Resource" id="Resource_hh6l6"]
+script = ExtResource("2_8cgwu")
+projectile = ExtResource("4_bfk2r")
+delay = 0.0
+cooldown = 0.1
+count = 32
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 5.0
+despawn_time = 0.5
+position = Vector2(1.2, 1)
+position_step = Vector2(0, -0.1)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 300.0
+angle = -105.0
+angle_step = -1.0
+angular_velocity = 45.0
+
+[sub_resource type="Resource" id="Resource_1flvs"]
+script = ExtResource("3_e8x2e")
+delay = 5.0
+cooldown = 1.0
+count = 1
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[ExtResource("2_8cgwu")]([SubResource("Resource_hh6l6")])
+
+[sub_resource type="Resource" id="Resource_4am3b"]
+script = ExtResource("1_0h2qi")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Ah well, it takes some gettin' used to, that's for sure.", "Maybe you should have a look around town, get some practice in, and see if you can figure out what's going on?"])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvwrq"]
+atlas = ExtResource("5_3yghj")
+region = Rect2(56, 0, 28, 44)
+
+[sub_resource type="Resource" id="Resource_8tgir"]
+script = ExtResource("1_0h2qi")
+character_name = ""
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["I knew you had it in ya.", "Maybe you should have a look around town, see if you can figure out what's going on?"])
+
+[resource]
+script = ExtResource("1_ejang")
+name = "Frankie"
+is_mafia = false
+portrait = SubResource("AtlasTexture_tvwrq")
+bg_color = Color(0.12549, 0.207843, 0.239216, 1)
+bg_overlay_color = Color(0.145098, 0.141176, 0.188235, 1)
+max_exhaustion = 20.0
+exhaustion_cooldown = 1.0
+max_suspicion = 4.0
+attack_phases = Array[ExtResource("3_e8x2e")]([SubResource("Resource_862qm"), SubResource("Resource_1flvs"), ExtResource("5_p2ops")])
+win_dialog = SubResource("Resource_8tgir")
+lose_dialog = SubResource("Resource_4am3b")

@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="AttackPhase" load_steps=6 format=3 uid="uid://dclf36lasoeml"]
+
+[ext_resource type="PackedScene" uid="uid://r2nbmcdstcs0" path="res://combat/projectile/cat_arm/cat_arm3.tscn" id="1_ko0ss"]
+[ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="1_lw2um"]
+[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_iwe2d"]
+
+[sub_resource type="Resource" id="Resource_43hch"]
+script = ExtResource("2_iwe2d")
+projectile = ExtResource("1_ko0ss")
+delay = 0.0
+cooldown = 1.0
+count = 1
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 0.385
+despawn_time = 0.5
+position = Vector2(-1.5, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 300.0
+angle = 0.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[sub_resource type="Resource" id="Resource_iu3jw"]
+script = ExtResource("2_iwe2d")
+projectile = ExtResource("1_ko0ss")
+delay = 0.0
+cooldown = 1.0
+count = 1
+skip = -1
+skip_step = 0
+random_skips = 0
+spawn_time = 0.5
+lifetime = 0.385
+despawn_time = 0.5
+position = Vector2(1.5, 0)
+position_step = Vector2(0, 0)
+rotation = 180.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+speed = 300.0
+angle = 180.0
+angle_step = 0.0
+angular_velocity = 0.0
+
+[resource]
+script = ExtResource("1_lw2um")
+delay = 0.0
+cooldown = 2.0
+count = 3
+position = Vector2(0, 0)
+position_step = Vector2(0, 0)
+rotation = 0.0
+rotation_step = 0.0
+scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
+patterns = Array[ExtResource("2_iwe2d")]([SubResource("Resource_43hch"), SubResource("Resource_iu3jw")])
