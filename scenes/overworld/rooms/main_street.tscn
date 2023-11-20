@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://r4yxqyce07n1"]
+[gd_scene load_steps=24 format=3 uid="uid://r4yxqyce07n1"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_e4t5u"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_wfug2"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_4k55o"]
 [ext_resource type="PackedScene" uid="uid://tgstmbbg871e" path="res://scenes/overworld/npcs/special/item_tutorial_cat.tscn" id="3_a4mlk"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="4_8re1c"]
 [ext_resource type="PackedScene" uid="uid://cq6sv218kthwx" path="res://scenes/overworld/npcs/generic/npc1.tscn" id="4_eqpp1"]
 [ext_resource type="Resource" uid="uid://clg0g6yo6l2st" path="res://assets/resources/items/BossItemSandwich.tres" id="4_jrvde"]
 [ext_resource type="PackedScene" uid="uid://blixfanxcne4d" path="res://scenes/overworld/npcs/generic/npc2.tscn" id="4_rch1i"]
@@ -128,17 +127,6 @@ position = Vector2(-96, 433)
 scale = Vector2(3.05265, 0.407197)
 target_room = "res://scenes/overworld/rooms/intro_room.tscn"
 target_door = 0
-
-[node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-position = Vector2(-95, 397)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.3
-drag_top_margin = 0.0
-drag_right_margin = 0.3
-editor_draw_drag_margin = true
-script = ExtResource("4_8re1c")
-target = NodePath("../TileMap/Player")
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_66omq")

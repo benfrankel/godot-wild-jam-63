@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://di58vs8f3t0nv"]
+[gd_scene load_steps=8 format=3 uid="uid://di58vs8f3t0nv"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_5d5e5"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_d22be"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://scenes/overworld/transport/door.tscn" id="3_f7pq7"]
 [ext_resource type="PackedScene" uid="uid://bjg3ahy5gyfwo" path="res://scenes/overworld/npcs/special/cutie_pie.tscn" id="3_hma1a"]
 [ext_resource type="PackedScene" uid="uid://c8x5ujewyqavo" path="res://scenes/overworld/npcs/boss/muffin.tscn" id="4_doel5"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="4_pqa3i"]
 [ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_emrdf"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_78ft2"]
 
@@ -51,17 +50,6 @@ position = Vector2(-65, -161)
 scale = Vector2(2.42945, 0.422573)
 target_room = "res://scenes/overworld/rooms/main_street.tscn"
 target_door = 3
-
-[node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-position = Vector2(-66, -141)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.3
-drag_top_margin = 0.0
-drag_right_margin = 0.3
-editor_draw_drag_margin = true
-script = ExtResource("4_pqa3i")
-target = NodePath("../TileMap/Player")
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_emrdf")
