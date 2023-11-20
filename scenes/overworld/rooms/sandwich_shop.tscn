@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhixxfusjb4mv"]
+[gd_scene load_steps=11 format=3 uid="uid://bhixxfusjb4mv"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://scenes/overworld/rooms/main_tile_set.tres" id="1_dnnd0"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://scenes/overworld/player/player.tscn" id="2_i0bod"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bt0v6ie6u3wyq" path="res://scenes/overworld/npcs/boss/lady_muttonsnuf.tscn" id="5_r6d14"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_aff8d"]
 [ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://scenes/overworld/npcs/special/ruby.tscn" id="8_javja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7da"]
+size = Vector2(77, 11)
 
 [node name="SandwichShop" type="Node2D"]
 
@@ -25,7 +28,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(458752, 9, 3, 524288, 9, 4, 458753, 65545, 3, 524289, 65545, 4, -196604, 589833, 1, -196603, 655369, 1, 196612, 589833, 1, 196613, 655369, 1, 65540, 589833, 1, 65541, 655369, 1, -65532, 589833, 1, -65531, 655369, 1, 196609, 589833, 1, 196610, 655369, 1, 65537, 589833, 1, 65538, 655369, 1, -65535, 589833, 1, -65534, 655369, 1, -196607, 589833, 1, -196606, 655369, 1, -131075, 327689, 3, -65539, 327689, 3, 262141, 327689, 3, 327677, 327689, 3, 131076, 589833, 0, 131077, 655369, 0, 131073, 589833, 0, 131074, 655369, 0, 1, 589833, 0, 2, 655369, 0, 4, 589833, 0, 5, 655369, 0, -131068, 589833, 0, -131067, 655369, 0, -262140, 589833, 0, -262139, 655369, 0, -262143, 589833, 0, -262142, 655369, 0, -131071, 589833, 0, -131070, 655369, 0, 196605, 327689, 2, -196611, 327689, 2)
+layer_1/tile_data = PackedInt32Array(-196604, 589833, 1, -196603, 655369, 1, 196612, 589833, 1, 196613, 655369, 1, 65540, 589833, 1, 65541, 655369, 1, -65532, 589833, 1, -65531, 655369, 1, 196609, 589833, 1, 196610, 655369, 1, 65537, 589833, 1, 65538, 655369, 1, -65535, 589833, 1, -65534, 655369, 1, -196607, 589833, 1, -196606, 655369, 1, -131075, 327689, 3, -65539, 327689, 3, 262141, 327689, 3, 327677, 327689, 3, 131076, 589833, 0, 131077, 655369, 0, 131073, 589833, 0, 131074, 655369, 0, 1, 589833, 0, 2, 655369, 0, 4, 589833, 0, 5, 655369, 0, -131068, 589833, 0, -131067, 655369, 0, -262140, 589833, 0, -262139, 655369, 0, -262143, 589833, 0, -262142, 655369, 0, -131071, 589833, 0, -131070, 655369, 0, 196605, 327689, 2, -196611, 327689, 2)
 layer_2/name = "Object2"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -39,7 +42,7 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array(458752, 851976, 4, 524288, 851976, 5, 458753, 917512, 4, 524289, 917512, 5, 524290, 196611, 2, 458754, 196611, 1, 393218, 196611, 1, 327682, 327683, 0, 589823, 196611, 2, 524287, 196611, 1, 458751, 196611, 1, 393215, 458755, 0, 393214, 65539, 3, 393213, 65539, 3, 393212, 327683, 2, 327676, 196611, 1, 262140, 196611, 1, 196604, 196611, 1, 131068, 196611, 1, 65532, 196611, 1, -4, 196611, 1, -65540, 196611, 1, -131076, 196611, 1, -196612, 327683, 0, -262138, 458755, 0, -262139, 65539, 3, -262140, 65539, 3, -262141, 65539, 3, -262142, 65539, 3, -262143, 65539, 3, -262144, 65539, 3, -196609, 65539, 3, -196610, 65539, 3, -196611, 65539, 3, 327686, 458755, 2, 262150, 196611, 1, 196614, 196611, 1, 131078, 196611, 1, 65542, 196611, 1, 6, 196611, 1, -65530, 196611, 1, -131066, 196611, 1, -196602, 196611, 1, 327685, 65539, 3, 327684, 65539, 3, 327683, 65539, 3)
+layer_3/tile_data = PackedInt32Array(524290, 196611, 2, 458754, 196611, 1, 393218, 196611, 1, 327682, 327683, 0, 589823, 196611, 2, 524287, 196611, 1, 458751, 196611, 1, 393215, 458755, 0, 393214, 65539, 3, 393213, 65539, 3, 393212, 327683, 2, 327676, 196611, 1, 262140, 196611, 1, 196604, 196611, 1, 131068, 196611, 1, 65532, 196611, 1, -4, 196611, 1, -65540, 196611, 1, -131076, 196611, 1, -196612, 327683, 0, -262138, 458755, 0, -262139, 65539, 3, -262140, 65539, 3, -262141, 65539, 3, -262142, 65539, 3, -262143, 65539, 3, -262144, 65539, 3, -196609, 65539, 3, -196610, 65539, 3, -196611, 65539, 3, 327686, 458755, 2, 262150, 196611, 1, 196614, 196611, 1, 131078, 196611, 1, 65542, 196611, 1, 6, 196611, 1, -65530, 196611, 1, -131066, 196611, 1, -196602, 196611, 1, 327685, 65539, 3, 327684, 65539, 3, 327683, 65539, 3)
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_i0bod")]
 unique_name_in_owner = true
@@ -58,12 +61,13 @@ position = Vector2(63, -11)
 unique_name_in_owner = true
 
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_t4dy4")]
-position = Vector2(32, 236)
+position = Vector2(32, 273)
 scale = Vector2(2.56, 0.44)
 target_room = "res://scenes/overworld/rooms/main_street.tscn"
 target_door = 0
 
 [node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+position = Vector2(32, 250)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.3
@@ -76,3 +80,9 @@ target = NodePath("../TileMap/Player")
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_1x6n6")
 music = ExtResource("6_aff8d")
+
+[node name="Barrier" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
+position = Vector2(31, 288.5)
+shape = SubResource("RectangleShape2D_ug7da")

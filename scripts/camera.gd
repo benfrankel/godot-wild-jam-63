@@ -6,6 +6,7 @@ class_name CameraFollowPlayer
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
 	global_position = target.global_position
+	align()
 
 func _process(_delta: float) -> void:
 	# use camera position smoothing instead
