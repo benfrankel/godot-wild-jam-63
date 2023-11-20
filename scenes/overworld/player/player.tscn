@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://bxd1qvmfjiis7" path="res://scenes/overworld/player/Character.png" id="3_6ue2i"]
 [ext_resource type="AudioStream" uid="uid://dkuku5raxeqvx" path="res://assets/audio/click.wav" id="3_6ytp7"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbshv"]
-load_path = "res://.godot/imported/Character.png-f9bd1b456b5c85e8f8ee1178f16f0660.ctex"
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8g7cc"]
 radius = 4.0
 height = 14.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbshv"]
+load_path = "res://.godot/imported/Character.png-f9bd1b456b5c85e8f8ee1178f16f0660.ctex"
 
 [sub_resource type="Animation" id="Animation_y2cej"]
 resource_name = "RESET"
@@ -677,7 +677,7 @@ script = ExtResource("1_pmhck")
 
 [node name="Image" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = SubResource("CompressedTexture2D_dbshv")
+texture = ExtResource("3_6ue2i")
 offset = Vector2(0, -21)
 hframes = 6
 vframes = 6
