@@ -89,14 +89,14 @@ static func random_attack_phases() -> Array[AttackPhase]:
 
 static func random_loot() -> Inventory:
 	const LOOT_LIST: Array[Item] = [
-		preload("res://item/consumable/ItemCanTuna.tres"),
-		preload("res://item/consumable/ItemCatnip.tres"),
-		preload("res://item/consumable/ItemCucumber.tres"),
-		preload("res://item/consumable/ItemSprayBottle.tres"),
+		preload("res://item/consumable/canned_tuna/ItemCannedTuna.tres"),
+		preload("res://item/consumable/catnip/ItemCatnip.tres"),
+		preload("res://item/consumable/cucumber/ItemCucumber.tres"),
+		preload("res://item/consumable/spray_bottle/ItemSprayBottle.tres"),
 	]
 	const LOOT_CHANCE := 0.2
 	const RARE_LOOT_LIST: Array[Item] = [
-		preload("res://item/consumable/ItemMilk.tres"),
+		preload("res://item/consumable/milk/ItemMilk.tres"),
 	]
 	const RARE_LOOT_CHANCE := 0.05
 	const LOOT_ATTEMPTS: int = 4

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://chd0srhk8arrb"]
 
 [ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_nvgsp"]
-[ext_resource type="Texture2D" uid="uid://cxhr6fl3xjt26" path="res://item/boss/sandwich.png" id="2_u1pce"]
+[ext_resource type="Texture2D" uid="uid://cxhr6fl3xjt26" path="res://item/boss/tasty_sandwich/sandwich.png" id="2_u1pce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7q5u"]
 size = Vector2(10, 11)

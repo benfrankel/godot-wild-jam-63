@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="3_me17j"]
 [ext_resource type="Resource" uid="uid://bhiy5seawhav8" path="res://item/boss/BossItemBeer.tres" id="3_vi2xy"]
 [ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="4_86d6p"]
-[ext_resource type="Script" path="res://item/Inventory.gd" id="4_uaaw8"]
+[ext_resource type="Script" path="res://item/inventory.gd" id="4_uaaw8"]
 [ext_resource type="PackedScene" uid="uid://go8wioqaw0wh" path="res://combat/projectile/glass_cup/glass_cup_M.tscn" id="5_tvs38"]
 [ext_resource type="PackedScene" uid="uid://7ix26o6i7yxp" path="res://combat/projectile/dead_fish/dead_fish_L.tscn" id="6_pjn3l"]
 
@@ -153,8 +153,8 @@ lines = Array[String](["Now you've done it, my suit-coat is ruined!", "Ah, wait,
 
 [sub_resource type="Resource" id="Resource_mrx7a"]
 script = ExtResource("4_uaaw8")
-items = Array[Resource("res://item/Item.gd")]([])
-boss_items = Array[Resource("res://item/Item.gd")]([ExtResource("3_vi2xy")])
+items = Array[Resource("res://item/item.gd")]([])
+boss_items = Array[Resource("res://item/item.gd")]([ExtResource("3_vi2xy")])
 capacity = 10
 boss_items_capacity = 5
 

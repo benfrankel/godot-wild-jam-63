@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_f7pq7"]
 [ext_resource type="PackedScene" uid="uid://bjg3ahy5gyfwo" path="res://overworld/npc/special/cutie_pie.tscn" id="3_hma1a"]
 [ext_resource type="PackedScene" uid="uid://c8x5ujewyqavo" path="res://overworld/npc/boss/muffin/muffin.tscn" id="4_doel5"]
-[ext_resource type="Script" path="res://bgm/BGM_Load.gd" id="5_emrdf"]
-[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://bgm/song4.wav" id="6_78ft2"]
+[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_emrdf"]
+[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_78ft2"]
 
 [node name="Hideout" type="Node2D"]
 

@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://df3ja020saton" path="res://item/boss/BossItemHandcuffs.tres" id="4_5m1hf"]
 [ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="4_5ueka"]
 [ext_resource type="PackedScene" uid="uid://r5nxd4ax7gr0" path="res://combat/projectile/yarn_ball/yarn_ball_M.tscn" id="5_3fuhg"]
-[ext_resource type="Script" path="res://item/Inventory.gd" id="5_pghpi"]
+[ext_resource type="Script" path="res://item/inventory.gd" id="5_pghpi"]
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="6_b6cxu"]
 [ext_resource type="PackedScene" uid="uid://chd0srhk8arrb" path="res://combat/projectile/sandwich.tscn" id="7_ioxtf"]
 
@@ -222,8 +222,8 @@ lines = Array[String](["Crooked be, oh my, oh me...", "*cough* *cough*", "Hey yo
 
 [sub_resource type="Resource" id="Resource_bj6d4"]
 script = ExtResource("5_pghpi")
-items = Array[Resource("res://item/Item.gd")]([])
-boss_items = Array[Resource("res://item/Item.gd")]([ExtResource("4_5m1hf")])
+items = Array[Resource("res://item/item.gd")]([])
+boss_items = Array[Resource("res://item/item.gd")]([ExtResource("4_5m1hf")])
 capacity = 10
 boss_items_capacity = 5
 

@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://da28k80r7yfkj" path="res://overworld/npc/special/pj.tscn" id="3_4wvwk"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_dwvbi"]
 [ext_resource type="PackedScene" uid="uid://dm1vjjj0kw0ov" path="res://overworld/npc/boss/button/button.tscn" id="4_ccn7c"]
-[ext_resource type="Script" path="res://bgm/BGM_Load.gd" id="5_6utrv"]
-[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://bgm/song4.wav" id="6_ubeyw"]
+[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_6utrv"]
+[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_ubeyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84qjq"]
 size = Vector2(77, 11)

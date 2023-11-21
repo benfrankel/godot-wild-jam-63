@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://overworld/player/player.gd" id="1_pmhck"]
 [ext_resource type="Script" path="res://overworld/interaction/interaction_sensor.gd" id="2_vteu5"]
 [ext_resource type="Texture2D" uid="uid://bxd1qvmfjiis7" path="res://overworld/player/Character.png" id="3_6ue2i"]
-[ext_resource type="AudioStream" uid="uid://dkuku5raxeqvx" path="res://assets/audio/click.wav" id="3_6ytp7"]
+[ext_resource type="AudioStream" uid="uid://dkuku5raxeqvx" path="res://overworld/player/interact.wav" id="4_fry7w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbshv"]
+load_path = "res://.godot/imported/Character.png-f9bd1b456b5c85e8f8ee1178f16f0660.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8g7cc"]
 radius = 4.0
 height = 14.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbshv"]
-load_path = "res://.godot/imported/Character.png-f9bd1b456b5c85e8f8ee1178f16f0660.ctex"
 
 [sub_resource type="Animation" id="Animation_y2cej"]
 resource_name = "RESET"
@@ -677,11 +677,11 @@ script = ExtResource("1_pmhck")
 
 [node name="Image" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("3_6ue2i")
+texture = SubResource("CompressedTexture2D_dbshv")
 offset = Vector2(0, -21)
 hframes = 6
 vframes = 6
-frame = 20
+frame = 26
 metadata/_aseprite_wizard_config_ = {
 "keep_anim_length": false,
 "layer": "Character",
@@ -722,7 +722,7 @@ parameters/Idle/blend_position = Vector2(-0.00192308, 0.148936)
 parameters/Walk/blend_position = Vector2(-0.00384617, 0.157447)
 
 [node name="SFX_Interact" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_6ytp7")
+stream = ExtResource("4_fry7w")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3

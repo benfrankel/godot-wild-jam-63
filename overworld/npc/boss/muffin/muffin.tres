@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_cy50v"]
 [ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="4_d70fk"]
 [ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://item/consumable/ItemCatnip.tres" id="4_snedj"]
-[ext_resource type="Script" path="res://item/Inventory.gd" id="5_4g5y1"]
+[ext_resource type="Script" path="res://item/inventory.gd" id="5_4g5y1"]
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="5_mtnxy"]
 [ext_resource type="PackedScene" uid="uid://r5nxd4ax7gr0" path="res://combat/projectile/yarn_ball/yarn_ball_M.tscn" id="6_j1gsh"]
 [ext_resource type="PackedScene" uid="uid://ddykboalfb6lh" path="res://combat/projectile/dead_fish/dead_fish_S.tscn" id="7_gylsa"]
@@ -585,8 +585,8 @@ lines = Array[String](["You bastard. *huff* *huff*", "That's what I get for smok
 
 [sub_resource type="Resource" id="Resource_bj6d4"]
 script = ExtResource("5_4g5y1")
-items = Array[Resource("res://item/Item.gd")]([ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj")])
-boss_items = Array[Resource("res://item/Item.gd")]([])
+items = Array[Resource("res://item/item.gd")]([ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj"), ExtResource("4_snedj")])
+boss_items = Array[Resource("res://item/item.gd")]([])
 capacity = 10
 boss_items_capacity = 5
 

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_ag372"]
 [ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://item/consumable/ItemMilk.tres" id="4_hndid"]
 [ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://item/consumable/ItemCatnip.tres" id="5_ksx5w"]
-[ext_resource type="Script" path="res://item/Inventory.gd" id="6_fhlss"]
+[ext_resource type="Script" path="res://item/inventory.gd" id="6_fhlss"]
 
 [sub_resource type="Resource" id="Resource_j73wm"]
 script = ExtResource("1_vvs6q")
@@ -27,8 +27,8 @@ lines = Array[String](["*huff* *puff* how're you so fast..."])
 
 [sub_resource type="Resource" id="Resource_bx88g"]
 script = ExtResource("6_fhlss")
-items = Array[Resource("res://item/Item.gd")]([ExtResource("4_hndid"), ExtResource("5_ksx5w")])
-boss_items = Array[Resource("res://item/Item.gd")]([])
+items = Array[Resource("res://item/item.gd")]([ExtResource("4_hndid"), ExtResource("5_ksx5w")])
+boss_items = Array[Resource("res://item/item.gd")]([])
 capacity = 10
 boss_items_capacity = 5
 

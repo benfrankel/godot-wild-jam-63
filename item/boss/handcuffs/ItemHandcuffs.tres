@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://df3ja020saton"]
+
+[ext_resource type="Script" path="res://item/item.gd" id="2_c7by2"]
+[ext_resource type="Texture2D" uid="uid://mnadqihaf7u8" path="res://item/boss/handcuffs/handcuffs.png" id="3_755ob"]
+
+[resource]
+script = ExtResource("2_c7by2")
+item_name = "Handcuffs"
+description = "Put an end to the madness"
+texture = ExtResource("3_755ob")
+effects = Array[Script]([])
+is_boss_item = true

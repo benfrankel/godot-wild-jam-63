@@ -38,7 +38,7 @@ script = ExtResource("2_nx6o8")
 auto_trigger = true
 one_shot = true
 dialog = SubResource("Resource_ucr13")
-gift = Array[Resource("res://item/Item.gd")]([ExtResource("4_fgqia")])
+gift = Array[Resource("res://item/item.gd")]([ExtResource("4_fgqia")])
 enemy = ExtResource("5_y36yy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]

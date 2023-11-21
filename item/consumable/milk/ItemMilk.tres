@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://dilby1tktyy1i"]
+
+[ext_resource type="Script" path="res://item/consumable/milk/inc_exh_25.gd" id="1_3reft"]
+[ext_resource type="Script" path="res://item/item.gd" id="2_3wt06"]
+[ext_resource type="Texture2D" uid="uid://vrf2dtiauqmt" path="res://item/consumable/icons.png" id="3_sscw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4p78"]
+atlas = ExtResource("3_sscw4")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_3wt06")
+item_name = "Milk"
+description = "Increases exhaustion by 25%"
+texture = SubResource("AtlasTexture_e4p78")
+effects = Array[Script]([ExtResource("1_3reft")])
+is_boss_item = false
