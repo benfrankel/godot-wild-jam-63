@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://combat/laser/laser.tscn" id="1_dvnqk"]
 [ext_resource type="Script" path="res://combat/combat.gd" id="1_npvr5"]
-[ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://combat/gui/combat_background.png" id="2_k3uv0"]
+[ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://combat/combat_background.png" id="2_k3uv0"]
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_1bgdu"]
-[ext_resource type="Texture2D" uid="uid://b0xjckorhdlei" path="res://combat/mutant1.png" id="4_fikq3"]
-[ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://combat/gui/arena_background.png" id="4_gsscs"]
-[ext_resource type="Script" path="res://combat/bite_mode/BiteBuffer.gd" id="7_gslqi"]
-[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="8_ytdk2"]
+[ext_resource type="Texture2D" uid="uid://b0xjckorhdlei" path="res://overworld/encounter/mutant1.png" id="4_fikq3"]
+[ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://combat/arena_background.png" id="4_gsscs"]
+[ext_resource type="Script" path="res://cheat/bite_mode/BiteBuffer.gd" id="7_gslqi"]
+[ext_resource type="Script" path="res://bgm/BGM_Load.gd" id="8_gn1r7"]
 [ext_resource type="AudioStream" uid="uid://cmeqt0hd72clv" path="res://assets/audio/PixelPunch_By_Dk.wav" id="9_gv7x6"]
 [ext_resource type="AudioStream" uid="uid://bapl7s41vr2nw" path="res://assets/audio/idkwhichisthis.wav" id="10_14ejk"]
 
@@ -223,7 +223,7 @@ unique_name_in_owner = true
 [node name="ExhaustionTimer" type="Timer" parent="."]
 
 [node name="BGM_Load" type="Node" parent="."]
-script = ExtResource("8_ytdk2")
+script = ExtResource("8_gn1r7")
 music = ExtResource("9_gv7x6")
 crossfade = 0.1
 reset_on_end = true

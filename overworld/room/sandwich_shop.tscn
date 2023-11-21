@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhixxfusjb4mv"]
 
-[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/main_tile_set.tres" id="1_dnnd0"]
+[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_dnnd0"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_i0bod"]
-[ext_resource type="PackedScene" uid="uid://bt318oqn6o5e0" path="res://overworld/npcs/generic/npc5.tscn" id="3_6q3c1"]
-[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/transport/door.tscn" id="3_t4dy4"]
-[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_1x6n6"]
-[ext_resource type="PackedScene" uid="uid://bt0v6ie6u3wyq" path="res://overworld/npcs/boss/lady_muttonsnuf.tscn" id="5_r6d14"]
-[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_aff8d"]
-[ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://overworld/npcs/special/ruby.tscn" id="8_javja"]
+[ext_resource type="PackedScene" uid="uid://bt318oqn6o5e0" path="res://overworld/npc/generic/npc5.tscn" id="3_6q3c1"]
+[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_t4dy4"]
+[ext_resource type="Script" path="res://bgm/BGM_Load.gd" id="5_1x6n6"]
+[ext_resource type="PackedScene" uid="uid://bt0v6ie6u3wyq" path="res://overworld/npc/boss/lady_muttonsnuf/lady_muttonsnuf.tscn" id="5_r6d14"]
+[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://bgm/song4.wav" id="6_aff8d"]
+[ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://overworld/npc/special/ruby.tscn" id="8_javja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7da"]
 size = Vector2(77, 11)

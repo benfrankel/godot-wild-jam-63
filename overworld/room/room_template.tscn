@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="1_wwx0g"]
 [ext_resource type="TileSet" path="res://overworld/tileset.tres" id="1_xvmvc"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="3_p4pl4"]
 
 [node name="Room" type="Node2D"]
 
@@ -19,14 +18,3 @@ unique_name_in_owner = true
 
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true
-
-[node name="CameraFollowPlayer" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.3
-drag_top_margin = 0.3
-drag_right_margin = 0.3
-drag_bottom_margin = 0.3
-editor_draw_drag_margin = true
-script = ExtResource("3_p4pl4")
-target = NodePath("../Objects/Player")

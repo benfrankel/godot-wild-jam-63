@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://ceo5nb7evdjkm"]
 
-[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/main_tile_set.tres" id="1_jtsoe"]
+[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_jtsoe"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_abuon"]
-[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/transport/door.tscn" id="3_gdal2"]
+[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_gdal2"]
 [ext_resource type="Resource" uid="uid://dl3wtk3igd3i" path="res://item/boss/BossItemLaser.tres" id="4_l5ghw"]
-[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_cbesi"]
-[ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://assets/audio/compos/song2.wav" id="6_68g5q"]
-[ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://overworld/npcs/special/tutorial_cat.tscn" id="8_ma38j"]
+[ext_resource type="Script" path="res://bgm/BGM_Load.gd" id="5_cbesi"]
+[ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://bgm/song2.wav" id="6_68g5q"]
+[ext_resource type="PackedScene" uid="uid://fi2xcmonrb8y" path="res://overworld/npc/special/tutorial_cat.tscn" id="8_ma38j"]
 
 [node name="IntroRoom" type="Node2D"]
 

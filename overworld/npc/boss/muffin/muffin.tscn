@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8x5ujewyqavo"]
+
+[ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_hybbe"]
+[ext_resource type="Script" path="res://overworld/npc/boss/muffin.gd" id="1_pf214"]
+[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_iyd8f"]
+[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_djrcn"]
+[ext_resource type="Resource" uid="uid://cs7hex3e5p1c" path="res://overworld/npc/boss/muffin.tres" id="5_y5pk5"]
+[ext_resource type="Texture2D" uid="uid://bfc1hf4onltbr" path="res://overworld/npc/accessories/npc_the_boss.png" id="8_k4d2x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="Resource" id="Resource_n6q0v"]
+script = ExtResource("3_djrcn")
+character_name = "Muffin"
+text_speed = 40.0
+auto_progress = false
+lines = Array[String](["Heya pipsqueak!", "You sure are a real thorn in my side.", "Regretfully for you, I'm feeling awfully restless."])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75wn5"]
+size = Vector2(32, 42)
+
+[node name="Muffin" type="StaticBody2D"]
+script = ExtResource("1_pf214")
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_hybbe")
+offset = Vector2(1, -18)
+region_enabled = true
+region_rect = Rect2(308, 0, 28, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fqno1")
+
+[node name="InteractionComponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("2_iyd8f")
+auto_trigger = true
+dialog = SubResource("Resource_n6q0v")
+enemy = ExtResource("5_y5pk5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_75wn5")
+debug_color = Color(0.952941, 0.196078, 0.223529, 0.419608)
+
+[node name="NpcTheBoss" type="Sprite2D" parent="."]
+position = Vector2(1, -19)
+texture = ExtResource("8_k4d2x")
+
+[connection signal="combat_won" from="InteractionComponent" to="." method="_on_interaction_component_combat_won"]

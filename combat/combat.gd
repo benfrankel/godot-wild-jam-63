@@ -1,8 +1,8 @@
 extends Node2D
 class_name Combat
 
-const ITEM_ENTRY_SCENE := preload("res://combat/gui/item_entry.tscn") as PackedScene
-const MAFIA_MUSIC := preload("res://assets/audio/compos/song3.wav") as AudioStreamWAV
+const ITEM_ENTRY_SCENE := preload("res://combat/inventory/item_entry.tscn") as PackedScene
+const MAFIA_MUSIC := preload("res://bgm/song3.wav") as AudioStreamWAV
 
 @export var enemy: Enemy # exporting to allow quick testing
 var state := CombatState.new()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhpbwdxan7dh7" path="res://gui/cover_x4.png" id="1_okuy6"]
 [ext_resource type="Script" path="res://gui/main_menu.gd" id="1_r6xid"]
-[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="3_540sc"]
+[ext_resource type="Script" path="res://bgm/BGM_Load.gd" id="3_540sc"]
 [ext_resource type="AudioStream" uid="uid://cgkjm41y6o2ei" path="res://assets/audio/compos/song1.wav" id="4_i5amu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbfow"]
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r6xid")
 start_scene = "res://overworld/room/room1.tscn"
-start_ui = "res://overworld/gui/cheat_line.tscn"
+start_ui = "res://cheat/cheat_line.tscn"
 
 [node name="BGCOL" type="ColorRect" parent="."]
 layout_mode = 1

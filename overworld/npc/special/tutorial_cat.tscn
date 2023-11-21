@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_nx6o8"]
 [ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_w60qa"]
 [ext_resource type="Resource" uid="uid://dl3wtk3igd3i" path="res://item/boss/BossItemLaser.tres" id="4_fgqia"]
-[ext_resource type="Resource" uid="uid://cmxqg01v5elm0" path="res://combat/enemy/tutorial_cat.tres" id="5_y36yy"]
+[ext_resource type="Resource" uid="uid://cmxqg01v5elm0" path="res://overworld/npc/special/tutorial_cat.tres" id="5_y36yy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n10ug"]
 radius = 3.5

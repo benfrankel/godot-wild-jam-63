@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://m8bhqfomxupn"]
 
-[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/main_tile_set.tres" id="1_sl5k2"]
+[ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_sl5k2"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_govro"]
-[ext_resource type="PackedScene" uid="uid://udhnyc07fphe" path="res://overworld/npcs/special/bella.tscn" id="3_ei0bw"]
-[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/transport/door.tscn" id="3_vp2jm"]
-[ext_resource type="PackedScene" uid="uid://dkx8j4l2wy3ba" path="res://overworld/npcs/boss/ezekiel.tscn" id="4_b06ym"]
-[ext_resource type="Script" path="res://scripts/bgm/BGM_Load.gd" id="5_7piba"]
-[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://assets/audio/compos/song4.wav" id="6_65usr"]
+[ext_resource type="PackedScene" uid="uid://udhnyc07fphe" path="res://overworld/npc/special/bella.tscn" id="3_ei0bw"]
+[ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_vp2jm"]
+[ext_resource type="PackedScene" uid="uid://dkx8j4l2wy3ba" path="res://overworld/npc/boss/ezekiel/ezekiel.tscn" id="4_b06ym"]
+[ext_resource type="Script" path="res://bgm/BGM_Load.gd" id="5_7piba"]
+[ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://bgm/song4.wav" id="6_65usr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cemnq"]
 size = Vector2(77, 11)
