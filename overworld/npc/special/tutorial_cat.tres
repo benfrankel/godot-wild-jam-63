@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=16 format=3 uid="uid://cmxqg01v5elm0"]
 
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="1_0h2qi"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="1_0h2qi"]
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="1_ejang"]
 [ext_resource type="PackedScene" uid="uid://go8wioqaw0wh" path="res://combat/projectile/glass_cup/glass_cup_M.tscn" id="1_i3xlr"]
 [ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_8cgwu"]

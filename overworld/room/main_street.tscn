@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bf8c5l2bowub0" path="res://overworld/npc/generic/npc4.tscn" id="6_m50pu"]
 [ext_resource type="AudioStream" uid="uid://bsqnp718ercae" path="res://game/bgm/song2.wav" id="6_pud57"]
 [ext_resource type="Resource" uid="uid://df3ja020saton" path="res://item/boss/BossItemHandcuffs.tres" id="7_i6itj"]
-[ext_resource type="Script" path="res://overworld/encounter/overworld_combat_area.gd" id="7_y8p6l"]
+[ext_resource type="Script" path="res://overworld/encounter/encounter_area.gd" id="7_y8p6l"]
 [ext_resource type="PackedScene" uid="uid://bpxlqho3kvegi" path="res://overworld/npc/special/coco.tscn" id="8_2d51q"]
 [ext_resource type="PackedScene" uid="uid://jjr5sr25uoal" path="res://overworld/npc/generic/npc3.tscn" id="14_oankj"]
 

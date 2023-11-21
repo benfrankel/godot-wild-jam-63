@@ -1,8 +1,7 @@
+class_name EncounterArea
 extends Area2D
-class_name CombatArea
-"""
-Translates any arbitrary collider (including CollisionPolygon2D) into a grid of cells where each cell triggers a new rng check for starting a fight. This also allows different areas to have different fights available
-"""
+## Translates any collider into a grid of cells that can randomly trigger combat.
+## This also allows different areas to have different fights available.
 
 
 @export var cell_size := 32.0
@@ -13,7 +12,7 @@ Translates any arbitrary collider (including CollisionPolygon2D) into a grid of 
 
 var is_active := true
 var last_cell := Vector2.ONE * -1
-var target_body : Node2D
+var target_body: Node2D
 
 
 func _ready() -> void:
@@ -36,13 +35,13 @@ func _try_do_combat() -> void:
 	if await GameManager.enter_combat(enemy) and clear_on_win:
 		is_active = false
 
-func _get_cell(global_pos : Vector2) -> Vector2:
+func _get_cell(global_pos: Vector2) -> Vector2:
 	return (global_pos / cell_size).floor()
 
-func _on_body_enter(body : Node2D) -> void:
+func _on_body_enter(body: Node2D) -> void:
 	if body is Player:
 		target_body = body
 
-func _on_body_exit(body : Node2D) -> void:
+func _on_body_exit(body: Node2D) -> void:
 	if body == target_body:
 		target_body = null

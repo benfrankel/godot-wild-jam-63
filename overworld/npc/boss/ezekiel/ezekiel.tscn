@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_l43hc"]
 [ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_yhuuw"]
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_myp5g"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_myp5g"]
 [ext_resource type="Resource" uid="uid://ujojflk4xm3q" path="res://overworld/npc/boss/ezekiel/ezekiel.tres" id="4_ii4xo"]
 [ext_resource type="Texture2D" uid="uid://d364c1hk4eiiq" path="res://overworld/npc/accessories/npc_ezekiel_shirt.png" id="5_fopxk"]
 

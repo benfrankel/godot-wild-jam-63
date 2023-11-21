@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://cg2314ggu6pfb" path="res://combat/pattern/dagger_simple_L.tres" id="1_bag35"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://overworld/npc/boss/enemy_sheet.png" id="1_frldv"]
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="1_un6ex"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="1_un6ex"]
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="1_vaw1r"]
 [ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="2_jt62r"]
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="3_me17j"]

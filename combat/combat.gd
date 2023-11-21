@@ -1,17 +1,30 @@
-extends Node2D
 class_name Combat
+extends Node2D
+
+
+signal player_damaged
+
 
 const ITEM_ENTRY_SCENE := preload("res://combat/inventory/item_entry.tscn") as PackedScene
 const MAFIA_MUSIC := preload("res://game/bgm/song3.wav") as AudioStreamWAV
 
 @export var enemy: Enemy # exporting to allow quick testing
+
 var state := CombatState.new()
 var item_entries: Array[CombatItemEntry]
-@onready var laser := %Laser as Laser
+
+@onready var background := $Background as Sprite2D
+@onready var background_overlay := $BackgroundOverlay as Sprite2D
+@onready var enemy_portrait := $EnemyPortrait as TextureRect
+@onready var enemy_name := $Hud/EnemyName as Label
+@onready var arena_bounds := $Arena/Bounds as CollisionShape2D
 @onready var exh_meter := $Hud/ExhSus/ExhSusMeter/ExhMeter as ProgressBar
 @onready var sus_meter := $Hud/ExhSus/ExhSusMeter/SusMeter as ProgressBar
-
-signal player_damaged
+@onready var inventory_l := $Hud/Inventory/InventoryL as VBoxContainer
+@onready var inventory_r := $Hud/Inventory/InventoryR as VBoxContainer
+@onready var projectiles_root := $Projectiles as Node2D
+@onready var laser := %Laser as Laser
+@onready var exhaustion_timer := $ExhaustionTimer as Timer
 
 
 func _ready() -> void:
@@ -21,23 +34,24 @@ func _ready() -> void:
 		enemy.lose_dialog.character_name = enemy.name
 	
 	# Set up CombatState
-	state.projectiles_root = $Projectiles
+	state.projectiles_root = projectiles_root
 	state.enemy = enemy
 	state.changed.connect(_on_state_change)
 	
 	# Set up nodes
-	$Background.self_modulate = enemy.bg_color
-	$BackgroundOverlay.self_modulate = enemy.bg_overlay_color
-	$EnemyPortrait.texture = enemy.portrait
-	$Hud/EnemyName.text = enemy.name
+	background.self_modulate = enemy.bg_color
+	background_overlay.self_modulate = enemy.bg_overlay_color
+	enemy_portrait.texture = enemy.portrait
+	enemy_name.text = enemy.name
 	exh_meter.max_value = enemy.max_exhaustion
 	sus_meter.max_value = enemy.max_suspicion
-	$ExhaustionTimer.start(enemy.exhaustion_cooldown)
+	laser.move_to_mouse()
+	exhaustion_timer.start(enemy.exhaustion_cooldown)
 	for idx in GameManager.player_inventory.items.size():
 		var item_entry := ITEM_ENTRY_SCENE.instantiate() as CombatItemEntry
 		item_entry.slot = idx
 		item_entry.combat_state = state
-		var container := $Hud/Inventory/InventoryL if idx < 5 else $Hud/Inventory/InventoryR
+		var container := inventory_l if idx < 5 else inventory_r
 		container.add_child(item_entry)
 		if idx == 0:
 			item_entry.grab_focus()
@@ -143,7 +157,7 @@ func launch_pattern(pattern: AttackPattern) -> void:
 			projectile.custom_set_scale(pattern.scale)
 			projectile.linear_velocity = pattern.speed * Vector2.from_angle(deg_to_rad(pattern.angle))
 			projectile.angular_velocity = deg_to_rad(pattern.angular_velocity)
-			$Projectiles.add_child(projectile)
+			projectiles_root.add_child(projectile)
 		
 		# Step pattern
 		pattern.position += pattern.position_step
@@ -157,8 +171,8 @@ func launch_pattern(pattern: AttackPattern) -> void:
 
 
 func get_global_arena_rect() -> Rect2:
-	var arena: Rect2 = ($Arena/Bounds.shape as RectangleShape2D).get_rect()
-	arena.position += $Arena/Bounds.global_position
+	var arena: Rect2 = (arena_bounds.shape as RectangleShape2D).get_rect()
+	arena.position += arena_bounds.global_position
 	return arena
 
 
@@ -182,6 +196,7 @@ func _on_laser_got_hit(_projectile: Projectile) -> void:
 	state.suspicion += 1
 	state.emit_changed()
 	player_damaged.emit()
+
 
 func _on_state_change() -> void:
 	exh_meter.value = state.exhaustion

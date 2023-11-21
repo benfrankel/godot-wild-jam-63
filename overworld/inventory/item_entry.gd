@@ -5,18 +5,23 @@ extends HBoxContainer
 signal action_button_pressed
 
 
+@onready var button := $BtnAction as Button
+@onready var icon := $Icon as TextureRect
+@onready var label := $Label as Label
+
+
 func set_item(item: Item) -> void:
-	$Icon.texture = item.texture
-	$Label.text = item.item_name
+	icon.texture = item.texture
+	label.text = item.item_name
 	tooltip_text = item.description
 
 
 func set_action_name(action_name: String) -> void:
-	$BtnAction.text = action_name
+	button.text = action_name
 
 
 func set_no_action() -> void:
-	$BtnAction.queue_free()
+	button.queue_free()
 
 
 func _on_btn_action_pressed() -> void:

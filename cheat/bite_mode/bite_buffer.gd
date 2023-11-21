@@ -1,7 +1,6 @@
 extends VBoxContainer
 
 
-
 func _on_combat_player_damaged() -> void:
 	if not GameManager.bite_mode:
 		return

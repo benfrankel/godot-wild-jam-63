@@ -6,10 +6,11 @@ signal target_found(target: Node)
 ## emitted when an interaction is no longer available
 signal target_lost
 
+
 ## the current target interaction, or null
 var target: InteractionComponent
 var is_active := true
-@onready var interact_sfx := $"../SFX_Interact"
+@onready var interact_sfx := $"../SFX_Interact" as AudioStreamPlayer
 
 
 func _process(_delta: float) -> void:
@@ -24,7 +25,7 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	var seen = get_collider() as InteractionComponent
+	var seen := get_collider() as InteractionComponent
 	if target and not seen:
 		target = null
 		target_lost.emit()

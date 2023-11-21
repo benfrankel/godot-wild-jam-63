@@ -1,10 +1,13 @@
 extends Control
 
+
 @export_file("*.tscn") var start_scene := ""
 @export_file("*.tscn") var start_ui := ""
-@onready var quit_btn := $%BtnQuit
-@onready var play_btn := $%BtnPlay
-@onready var color_rect := $ColorRect
+
+@onready var quit_btn := %BtnQuit as Button
+@onready var play_btn := %BtnPlay as Button
+@onready var color_rect := $ColorRect as ColorRect
+
 
 func _ready() -> void:
 	if OS.has_feature("web"):

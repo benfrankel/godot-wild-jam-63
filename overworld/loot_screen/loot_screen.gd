@@ -5,6 +5,7 @@ extends Control
 const LOOT_SCREEN_SCENE := "res://overworld/loot_screen/loot_screen.tscn"
 
 @export var loot: Inventory
+
 @onready var node_loot := $CenterContainer/VBoxContainer/InventoryPanel as InventoryPanel
 
 

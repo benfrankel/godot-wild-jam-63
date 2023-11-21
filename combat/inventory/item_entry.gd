@@ -2,9 +2,11 @@ class_name CombatItemEntry
 extends PanelContainer
 
 
-@onready var stylebox := get_theme_stylebox("panel") as StyleBoxFlat
 var slot: int
 var combat_state: CombatState
+
+@onready var stylebox := get_theme_stylebox("panel") as StyleBoxFlat
+@onready var icon := $ItemIcon as TextureRect
 
 
 func _ready() -> void:
@@ -24,7 +26,7 @@ func _input(event: InputEvent) -> void:
 
 
 func update() -> void:
-	$ItemIcon.texture = GameManager.player_inventory.items[slot].texture
+	icon.texture = GameManager.player_inventory.items[slot].texture
 	if has_focus():
 		stylebox.set_border_width_all(1)
 	else:

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=11 format=3 uid="uid://byluh5sbaxr8g"]
 
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="1_vvs6q"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="1_vvs6q"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://overworld/npc/boss/enemy_sheet.png" id="2_tno4r"]
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_ag372"]
-[ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://item/consumable/ItemMilk.tres" id="4_hndid"]
-[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://item/consumable/ItemCatnip.tres" id="5_ksx5w"]
+[ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://item/consumable/milk/ItemMilk.tres" id="4_hndid"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://item/consumable/catnip/ItemCatnip.tres" id="5_ksx5w"]
 [ext_resource type="Script" path="res://item/inventory.gd" id="6_fhlss"]
 
 [sub_resource type="Resource" id="Resource_j73wm"]

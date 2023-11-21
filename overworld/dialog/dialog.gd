@@ -1,7 +1,21 @@
 extends Control
 class_name Dialog
 
+
+signal dialog_ended
+
+
 const DIALOG_SCENE := "res://overworld/dialog/dialog.tscn"
+
+@export var current_data: DialogData
+
+var line_index := 0
+var tween: Tween
+
+@onready var character_label := %CharacterLabel as Label
+@onready var textbox := %TextBox as RichTextLabel
+@onready var sfx_progress := $SFX_Progress as AudioStreamPlayer
+
 
 ## Utility function to load a dialog with specific data
 static func create_dialog(data: DialogData) -> Dialog:
@@ -9,26 +23,18 @@ static func create_dialog(data: DialogData) -> Dialog:
 	d.current_data = data
 	return d
 
-@onready var character_label := $%CharacterLabel
-@onready var textbox := $%TextBox as RichTextLabel
-@onready var sfx_progress := $SFX_Progress
-@export var current_data : DialogData
 
-signal dialog_ended
-
-var line_index := 0
-var tween : Tween
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_dialog(current_data)
 
-func set_dialog(data : DialogData) -> void:
+
+func set_dialog(data: DialogData) -> void:
 	current_data = data
 	if not current_data:
 		return
 	character_label.text = current_data.character_name
 	call_deferred("_load_line")
+
 
 func _load_line() -> void:
 	if tween:
@@ -51,8 +57,10 @@ func _load_line() -> void:
 	tween.tween_property(textbox, "visible_ratio", 1.0, duration)
 	tween.tween_callback(_on_line_end)
 
+
 func _on_line_end() -> void:
 	line_index += 1
+
 
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("interact"):
@@ -66,4 +74,3 @@ func _input(event: InputEvent) -> void:
 	else:
 		_load_line()
 	sfx_progress.play()
-		

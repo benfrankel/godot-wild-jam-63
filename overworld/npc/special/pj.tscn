@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_yt408"]
 [ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_4obf8"]
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_n56jn"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_n56jn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0

@@ -3,7 +3,9 @@ extends CharacterBody2D
 
 
 @export_range(0.0, 1000.0) var speed := 100.0
+
 var is_animated := false
+
 @onready var anim_tree := $AnimationTree as AnimationTree
 @onready var interact_sensor := $InteractionSensor as RayCast2D
 

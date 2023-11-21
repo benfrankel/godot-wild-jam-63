@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_1bgdu"]
 [ext_resource type="Texture2D" uid="uid://b0xjckorhdlei" path="res://overworld/encounter/mutant1.png" id="4_fikq3"]
 [ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://combat/arena_background.png" id="4_gsscs"]
-[ext_resource type="Script" path="res://cheat/bite_mode/BiteBuffer.gd" id="7_gslqi"]
+[ext_resource type="Script" path="res://cheat/bite_mode/bite_buffer.gd" id="6_s4gui"]
 [ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="8_s33d5"]
 [ext_resource type="AudioStream" uid="uid://cmeqt0hd72clv" path="res://game/bgm/PixelPunch_By_Dk.wav" id="9_dj5up"]
 [ext_resource type="AudioStream" uid="uid://bapl7s41vr2nw" path="res://combat/hit.wav" id="10_mnyim"]
@@ -211,7 +211,7 @@ offset_top = -79.0
 offset_right = 151.0
 offset_bottom = 102.0
 grow_horizontal = 0
-script = ExtResource("7_gslqi")
+script = ExtResource("6_s4gui")
 
 [node name="Projectiles" type="Node2D" parent="."]
 

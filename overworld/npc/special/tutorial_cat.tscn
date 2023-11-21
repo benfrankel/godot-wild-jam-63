@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_vew74"]
 [ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_nx6o8"]
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_w60qa"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_w60qa"]
 [ext_resource type="Resource" uid="uid://dl3wtk3igd3i" path="res://item/boss/BossItemLaser.tres" id="4_fgqia"]
 [ext_resource type="Resource" uid="uid://cmxqg01v5elm0" path="res://overworld/npc/special/tutorial_cat.tres" id="5_y36yy"]
 

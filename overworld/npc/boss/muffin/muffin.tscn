@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_hybbe"]
 [ext_resource type="Script" path="res://overworld/npc/boss/muffin.gd" id="1_pf214"]
 [ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_iyd8f"]
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="3_djrcn"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_djrcn"]
 [ext_resource type="Resource" uid="uid://cs7hex3e5p1c" path="res://overworld/npc/boss/muffin.tres" id="5_y5pk5"]
 [ext_resource type="Texture2D" uid="uid://bfc1hf4onltbr" path="res://overworld/npc/accessories/npc_the_boss.png" id="8_k4d2x"]
 

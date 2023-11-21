@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=49 format=3 uid="uid://cs7hex3e5p1c"]
 
 [ext_resource type="Resource" uid="uid://cg2314ggu6pfb" path="res://combat/pattern/dagger_simple_L.tres" id="1_f8826"]
-[ext_resource type="Script" path="res://overworld/dialog/data/dialog_data.gd" id="1_rj3yb"]
+[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="1_rj3yb"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://overworld/npc/boss/enemy_sheet.png" id="2_825p3"]
 [ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="2_rrfco"]
 [ext_resource type="PackedScene" uid="uid://chd0srhk8arrb" path="res://combat/projectile/sandwich.tscn" id="3_78jkg"]

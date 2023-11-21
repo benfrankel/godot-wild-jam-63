@@ -5,9 +5,11 @@ extends Area2D
 signal got_hit(projectile: Projectile)
 
 
+@onready var combat := $".." as Combat
+
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	move_to_mouse()
 
 
 func _exit_tree() -> void:
@@ -26,5 +28,5 @@ func _on_body_entered(body: Node2D):
 
 
 func move_to_mouse() -> void:
-	var arena: Rect2 = $"..".get_global_arena_rect()
+	var arena: Rect2 = combat.get_global_arena_rect()
 	global_position = get_global_mouse_position().clamp(arena.position, arena.end)

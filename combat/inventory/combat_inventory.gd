@@ -1,12 +1,13 @@
-extends Control
 class_name CombatInventory
+extends Control
 
-var combat_state : CombatState
 
-@onready var inven :InventoryPanel = $InventoryPanel
+var combat_state: CombatState
 
-func _on_inventory_panel_item_action_pressed(item : Item) -> void:
+@onready var inv := $InventoryPanel as InventoryPanel
+
+
+func _on_inventory_panel_item_action_pressed(item: Item) -> void:
 	item.apply_effects(combat_state)
-	inven.inventory.remove_item(item)
-	inven.reload_visuals()
-	
+	inv.inventory.remove_item(item)
+	inv.reload_visuals()
