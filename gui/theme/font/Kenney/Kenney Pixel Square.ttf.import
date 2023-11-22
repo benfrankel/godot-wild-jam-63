@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://o3p44i0rohb6"
+path="res://.godot/imported/Kenney Pixel Square.ttf-db50f5f58f21a4bde16d23c042d352d3.fontdata"
+
+[deps]
+
+source_file="res://gui/theme/font/Kenney/Kenney Pixel Square.ttf"
+dest_files=["res://.godot/imported/Kenney Pixel Square.ttf-db50f5f58f21a4bde16d23c042d352d3.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

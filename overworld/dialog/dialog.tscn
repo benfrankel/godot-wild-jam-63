@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c18v5gt5qy8pc"]
 
-[ext_resource type="Theme" uid="uid://bbtyhsmcmpxrn" path="res://game/theme/main_theme.tres" id="1_lj0u1"]
+[ext_resource type="Theme" uid="uid://bbtyhsmcmpxrn" path="res://gui/theme/main_theme.tres" id="1_lj0u1"]
 [ext_resource type="Script" path="res://overworld/dialog/dialog.gd" id="1_v2710"]
 [ext_resource type="AudioStream" uid="uid://cceiiy68sdrpw" path="res://overworld/dialog/progress.wav" id="3_olf87"]
 
