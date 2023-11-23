@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhpbwdxan7dh7" path="res://gui/cover_x4.png" id="1_okuy6"]
 [ext_resource type="Script" path="res://gui/main_menu/main_menu.gd" id="1_r6xid"]
-[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="3_540sc"]
+[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="3_540sc"]
 [ext_resource type="AudioStream" uid="uid://cgkjm41y6o2ei" path="res://game/bgm/song1.wav" id="4_i5amu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbfow"]
@@ -111,7 +111,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BGM_Load" type="Node" parent="."]
+[node name="BGMLoad" type="Node" parent="."]
 script = ExtResource("3_540sc")
 music = ExtResource("4_i5amu")
 crossfade = 0.2

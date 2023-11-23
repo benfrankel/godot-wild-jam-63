@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_f7pq7"]
 [ext_resource type="PackedScene" uid="uid://bjg3ahy5gyfwo" path="res://overworld/npc/special/cutie_pie.tscn" id="3_hma1a"]
 [ext_resource type="PackedScene" uid="uid://c8x5ujewyqavo" path="res://overworld/npc/boss/muffin/muffin.tscn" id="4_doel5"]
-[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_emrdf"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_78ft2"]
+[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="6_vw2p4"]
 
 [node name="Hideout" type="Node2D"]
 
@@ -57,6 +57,6 @@ position = Vector2(-65, -166)
 target_room = "res://overworld/room/main_street.tscn"
 target_door = 4
 
-[node name="BGM_Load" type="Node" parent="."]
-script = ExtResource("5_emrdf")
+[node name="BGMLoad" type="Node" parent="."]
+script = ExtResource("6_vw2p4")
 music = ExtResource("6_78ft2")

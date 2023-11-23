@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://da28k80r7yfkj" path="res://overworld/npc/special/pj.tscn" id="3_4wvwk"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_dwvbi"]
 [ext_resource type="PackedScene" uid="uid://dm1vjjj0kw0ov" path="res://overworld/npc/boss/button/button.tscn" id="4_ccn7c"]
-[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_6utrv"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_ubeyw"]
+[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="6_w36wu"]
 
 [node name="TailorShop" type="Node2D"]
 
@@ -58,6 +58,6 @@ scale = Vector2(-1, -1)
 target_room = "res://overworld/room/main_street.tscn"
 target_door = 2
 
-[node name="BGM_Load" type="Node" parent="."]
-script = ExtResource("5_6utrv")
+[node name="BGMLoad" type="Node" parent="."]
+script = ExtResource("6_w36wu")
 music = ExtResource("6_ubeyw")

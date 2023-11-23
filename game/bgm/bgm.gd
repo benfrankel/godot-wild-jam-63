@@ -1,12 +1,14 @@
 extends Node
 
-@onready var active := $A as AudioStreamPlayer
-@onready var background := $B as AudioStreamPlayer
-
-var tween : Tween
 
 const SILENCE_VOLUME := -80.0
 const QUIET_VOLUME := -20.0
+
+var tween: Tween
+
+@onready var active := $Active as AudioStreamPlayer
+@onready var background := $Background as AudioStreamPlayer
+
 
 func play_stream(audio: AudioStream, duration := 0.5, volume := 0.0) -> void:
 	if tween:

@@ -66,7 +66,7 @@ func do_loot_screen(loot: LootScreen) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit"):
+	if GameManager.pausing_allowed and event.is_action_pressed("exit"):
 		get_viewport().set_input_as_handled()
 		var p := pause_scene.instantiate()
 		hi_res_gui_root.add_child(p)

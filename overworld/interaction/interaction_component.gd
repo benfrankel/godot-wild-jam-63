@@ -37,6 +37,8 @@ func interact() -> void:
 	is_active = false
 
 	interacted_with.emit()
+	
+	GameManager.pausing_allowed = false
 	if dialog:
 		await GameManager.do_dialog(Dialog.create_dialog(dialog))
 	if gift:
@@ -48,5 +50,7 @@ func interact() -> void:
 			combat_won.emit()
 		else:
 			combat_lost.emit()
+	GameManager.pausing_allowed = true
+			
 	if not one_shot:
 		is_active = true

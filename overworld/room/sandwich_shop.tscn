@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_i0bod"]
 [ext_resource type="PackedScene" uid="uid://bt318oqn6o5e0" path="res://overworld/npc/generic/npc5.tscn" id="3_6q3c1"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_t4dy4"]
-[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_1x6n6"]
 [ext_resource type="PackedScene" uid="uid://bt0v6ie6u3wyq" path="res://overworld/npc/boss/lady_muttonsnuf/lady_muttonsnuf.tscn" id="5_r6d14"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_aff8d"]
+[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="7_5350b"]
 [ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://overworld/npc/special/ruby.tscn" id="8_javja"]
 
 [node name="SandwichShop" type="Node2D"]
@@ -62,6 +62,6 @@ scale = Vector2(-1, -1)
 target_room = "res://overworld/room/main_street.tscn"
 target_door = 1
 
-[node name="BGM_Load" type="Node" parent="."]
-script = ExtResource("5_1x6n6")
+[node name="BGMLoad" type="Node" parent="."]
+script = ExtResource("7_5350b")
 music = ExtResource("6_aff8d")

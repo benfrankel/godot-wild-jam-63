@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cq6sv218kthwx" path="res://overworld/npc/generic/npc1.tscn" id="4_eqpp1"]
 [ext_resource type="Resource" uid="uid://clg0g6yo6l2st" path="res://item/boss/tasty_sandwich/ItemTastySandwich.tres" id="4_jrvde"]
 [ext_resource type="PackedScene" uid="uid://blixfanxcne4d" path="res://overworld/npc/generic/npc2.tscn" id="4_rch1i"]
-[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_66omq"]
 [ext_resource type="Resource" uid="uid://cjqndudcdwate" path="res://item/boss/button/ItemButton.tres" id="5_mb2a7"]
 [ext_resource type="Resource" uid="uid://bhiy5seawhav8" path="res://item/boss/beer/ItemBeer.tres" id="6_l3b4c"]
 [ext_resource type="PackedScene" uid="uid://bf8c5l2bowub0" path="res://overworld/npc/generic/npc4.tscn" id="6_m50pu"]
@@ -15,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://df3ja020saton" path="res://item/boss/handcuffs/ItemHandcuffs.tres" id="7_i6itj"]
 [ext_resource type="Script" path="res://overworld/encounter/encounter_area.gd" id="7_y8p6l"]
 [ext_resource type="PackedScene" uid="uid://bpxlqho3kvegi" path="res://overworld/npc/special/coco.tscn" id="8_2d51q"]
+[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="14_hvkto"]
 [ext_resource type="PackedScene" uid="uid://jjr5sr25uoal" path="res://overworld/npc/generic/npc3.tscn" id="14_oankj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mc54"]
@@ -123,8 +123,8 @@ target_room = "res://overworld/room/hideout.tscn"
 target_door = 0
 requirement = ExtResource("7_i6itj")
 
-[node name="BGM_Load" type="Node" parent="."]
-script = ExtResource("5_66omq")
+[node name="BGMLoad" type="Node" parent="."]
+script = ExtResource("14_hvkto")
 music = ExtResource("6_pud57")
 
 [node name="Combat Zones" type="Node2D" parent="."]

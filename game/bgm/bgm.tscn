@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://game/bgm/bgm.gd" id="1_02c61"]
 
 [node name="BGM" type="Node"]
+process_mode = 3
 script = ExtResource("1_02c61")
 
-[node name="A" type="AudioStreamPlayer" parent="."]
+[node name="Active" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 
-[node name="B" type="AudioStreamPlayer" parent="."]
+[node name="Background" type="AudioStreamPlayer" parent="."]
 process_mode = 3

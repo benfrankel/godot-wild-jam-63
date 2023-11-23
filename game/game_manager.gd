@@ -12,7 +12,7 @@ const COMBAT_SCENE := preload("res://combat/combat.tscn") as PackedScene
 
 var viewport: ViewportManager
 var scene_backup: Node
-var pausing_allowed := true
+var pausing_allowed := false
 # load from default inventory for testing with different items
 var player_inventory := preload("res://overworld/player/PlayerDefaultInventory.tres") as Inventory
 var combat_size := Vector2(320.0, 180.0)
@@ -22,7 +22,7 @@ var bite_mode := false
 var won_last_combat := false
 
 
-func enter_room(room_path: String, door_idx: int) -> void:
+func enter_room(room_path: String, door_idx: int = -1) -> void:
 	var room := (load(room_path) as PackedScene).instantiate()
 	
 	# Teleport player to target door
@@ -37,7 +37,9 @@ func enter_room(room_path: String, door_idx: int) -> void:
 		anim_tree.set("parameters/Walk/blend_position", player.anim_tree.get("parameters/Walk/blend_position"))
 
 	pausing_allowed = false
-	(await viewport.swap_scene(room, true, false, overworld_size)).queue_free()
+	var old_room := await viewport.swap_scene(room, true, false, overworld_size)
+	if old_room:
+		old_room.queue_free()
 	
 	var player := viewport.pixel_level_root.get_child(0).get_node(PLAYER_PATH) as Player
 	player.anim_tree.advance(0.0)
@@ -55,7 +57,7 @@ func enter_combat(enemy: Enemy) -> bool:
 	if dog_mode:
 		combat.enemy.max_suspicion = 1
 	if enemy.is_mafia:
-		combat.get_node("BGM_Load").music = combat.MAFIA_MUSIC
+		combat.get_node("BGMLoad").music = combat.MAFIA_MUSIC
 	scene_backup = await viewport.swap_scene(combat, true, true, combat_size)
 	await exited_combat
 	return won_last_combat

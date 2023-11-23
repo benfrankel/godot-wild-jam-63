@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://udhnyc07fphe" path="res://overworld/npc/special/bella.tscn" id="3_ei0bw"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_vp2jm"]
 [ext_resource type="PackedScene" uid="uid://dkx8j4l2wy3ba" path="res://overworld/npc/boss/ezekiel/ezekiel.tscn" id="4_b06ym"]
-[ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_7piba"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_65usr"]
+[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="6_r2xd5"]
 
 [node name="Church" type="Node2D"]
 
@@ -58,6 +58,6 @@ scale = Vector2(-1, -1)
 target_room = "res://overworld/room/main_street.tscn"
 target_door = 3
 
-[node name="BGM_Load" type="Node" parent="."]
-script = ExtResource("5_7piba")
+[node name="BGMLoad" type="Node" parent="."]
+script = ExtResource("6_r2xd5")
 music = ExtResource("6_65usr")
