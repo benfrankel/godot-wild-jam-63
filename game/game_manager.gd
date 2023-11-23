@@ -23,15 +23,14 @@ var won_last_combat := false
 
 
 func enter_room(room_path: String, door_idx: int) -> void:
-	var room := (load(room_path) as PackedScene).instantiate() # may cause stutter here for large rooms.
+	var room := (load(room_path) as PackedScene).instantiate()
 	
 	# Teleport player to target door
 	if door_idx != -1:
 		var player := viewport.pixel_level_root.get_child(0).get_node(PLAYER_PATH) as Player
 		var next_player := room.get_node(PLAYER_PATH) as Player
 		var next_door := room.get_node(DOORS_PATH).get_children()[door_idx] as Door
-		next_door.is_active = false
-		next_player.global_position = next_door.global_position
+		next_player.global_position = next_door.exit_position()
 		next_player.speed = player.speed
 		var anim_tree := next_player.get_node("AnimationTree") as AnimationTree
 		anim_tree.set("parameters/Idle/blend_position", player.anim_tree.get("parameters/Idle/blend_position"))

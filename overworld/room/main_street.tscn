@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://r4yxqyce07n1"]
+[gd_scene load_steps=23 format=3 uid="uid://r4yxqyce07n1"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_e4t5u"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_wfug2"]
@@ -34,9 +34,6 @@ size = Vector2(119, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uetds"]
 size = Vector2(25, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8trin"]
-size = Vector2(77, 11)
 
 [node name="MainStreet" type="Node2D"]
 
@@ -95,39 +92,36 @@ position = Vector2(693, 199)
 [node name="Doors" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="SandwichShop" parent="Doors" instance=ExtResource("3_4k55o")]
-position = Vector2(31, -132)
-scale = Vector2(2.29631, 0.5101)
-target_room = "res://overworld/room/sandwich_shop.tscn"
-target_door = 0
-require = ExtResource("4_jrvde")
-
-[node name="Tailor" parent="Doors" instance=ExtResource("3_4k55o")]
-position = Vector2(256, -130)
-scale = Vector2(2.2637, 0.480001)
-target_room = "res://overworld/room/tailor_shop.tscn"
-target_door = 0
-require = ExtResource("5_mb2a7")
-
-[node name="Church" parent="Doors" instance=ExtResource("3_4k55o")]
-position = Vector2(704, -130)
-scale = Vector2(2.4832, 0.511789)
-target_room = "res://overworld/room/church.tscn"
-target_door = 0
-require = ExtResource("6_l3b4c")
-
-[node name="Hideout" parent="Doors" instance=ExtResource("3_4k55o")]
-position = Vector2(289, 594)
-scale = Vector2(2.81435, 0.412839)
-target_room = "res://overworld/room/hideout.tscn"
-target_door = 0
-require = ExtResource("7_i6itj")
-
-[node name="IntroLevel" parent="Doors" instance=ExtResource("3_4k55o")]
-position = Vector2(-96, 433)
-scale = Vector2(3.05265, 0.407197)
+[node name="IntroRoom" parent="Doors" instance=ExtResource("3_4k55o")]
+position = Vector2(-97, 451)
+rotation = 3.14159
 target_room = "res://overworld/room/intro_room.tscn"
 target_door = 0
+
+[node name="SandwichShop" parent="Doors" instance=ExtResource("3_4k55o")]
+position = Vector2(31, -131)
+target_room = "res://overworld/room/sandwich_shop.tscn"
+target_door = 0
+requirement = ExtResource("4_jrvde")
+
+[node name="TailorShop" parent="Doors" instance=ExtResource("3_4k55o")]
+position = Vector2(255, -131)
+target_room = "res://overworld/room/tailor_shop.tscn"
+target_door = 0
+requirement = ExtResource("5_mb2a7")
+
+[node name="Church" parent="Doors" instance=ExtResource("3_4k55o")]
+position = Vector2(703, -131)
+target_room = "res://overworld/room/church.tscn"
+target_door = 0
+requirement = ExtResource("6_l3b4c")
+
+[node name="Hideout" parent="Doors" instance=ExtResource("3_4k55o")]
+position = Vector2(287, 611)
+scale = Vector2(-1, -1)
+target_room = "res://overworld/room/hideout.tscn"
+target_door = 0
+requirement = ExtResource("7_i6itj")
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_66omq")
@@ -183,17 +177,3 @@ clear_on_win = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Zones/CombatArea5"]
 shape = SubResource("RectangleShape2D_uetds")
-
-[node name="Barrier" type="StaticBody2D" parent="."]
-position = Vector2(-126, 160)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(31, 288.5)
-shape = SubResource("RectangleShape2D_8trin")
-
-[node name="Barrier2" type="StaticBody2D" parent="."]
-position = Vector2(257, 319)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier2"]
-position = Vector2(31, 288.5)
-shape = SubResource("RectangleShape2D_8trin")

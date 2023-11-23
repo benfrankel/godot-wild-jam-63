@@ -41,7 +41,7 @@ layer_3/tile_data = PackedInt32Array()
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_abuon")]
 unique_name_in_owner = true
-position = Vector2(-33, 118)
+position = Vector2(-32, 117)
 
 [node name="TutorialCat" parent="TileMap" instance=ExtResource("8_ma38j")]
 position = Vector2(109, 105)
@@ -50,11 +50,10 @@ position = Vector2(109, 105)
 unique_name_in_owner = true
 
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_gdal2")]
-position = Vector2(256, -94)
-scale = Vector2(2.36, 0.520001)
+position = Vector2(256, -99)
 target_room = "res://overworld/room/main_street.tscn"
-target_door = 4
-require = ExtResource("4_l5ghw")
+target_door = 0
+requirement = ExtResource("4_l5ghw")
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_cbesi")

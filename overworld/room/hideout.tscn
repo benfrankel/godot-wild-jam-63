@@ -53,10 +53,9 @@ position = Vector2(704, 406)
 unique_name_in_owner = true
 
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_f7pq7")]
-position = Vector2(-65, -161)
-scale = Vector2(2.42945, 0.422573)
+position = Vector2(-65, -166)
 target_room = "res://overworld/room/main_street.tscn"
-target_door = 3
+target_door = 4
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_emrdf")

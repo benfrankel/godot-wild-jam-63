@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://m8bhqfomxupn"]
+[gd_scene load_steps=8 format=3 uid="uid://m8bhqfomxupn"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_sl5k2"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_govro"]
@@ -7,9 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dkx8j4l2wy3ba" path="res://overworld/npc/boss/ezekiel/ezekiel.tscn" id="4_b06ym"]
 [ext_resource type="Script" path="res://game/bgm/BGM_Load.gd" id="5_7piba"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_65usr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cemnq"]
-size = Vector2(77, 11)
 
 [node name="Church" type="Node2D"]
 
@@ -56,18 +53,11 @@ position = Vector2(140, -921)
 unique_name_in_owner = true
 
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_vp2jm")]
-position = Vector2(16, 274)
-scale = Vector2(3.27837, 0.507186)
+position = Vector2(16, 291)
+scale = Vector2(-1, -1)
 target_room = "res://overworld/room/main_street.tscn"
-target_door = 2
+target_door = 3
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_7piba")
 music = ExtResource("6_65usr")
-
-[node name="Barrier" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(16, 289)
-scale = Vector2(1.49681, 1)
-shape = SubResource("RectangleShape2D_cemnq")

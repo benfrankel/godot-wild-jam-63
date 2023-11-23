@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhixxfusjb4mv"]
+[gd_scene load_steps=9 format=3 uid="uid://bhixxfusjb4mv"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_dnnd0"]
 [ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_i0bod"]
@@ -8,9 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bt0v6ie6u3wyq" path="res://overworld/npc/boss/lady_muttonsnuf/lady_muttonsnuf.tscn" id="5_r6d14"]
 [ext_resource type="AudioStream" uid="uid://cbbvjghfwtrpn" path="res://game/bgm/song4.wav" id="6_aff8d"]
 [ext_resource type="PackedScene" uid="uid://bnwtg7vqa8m6s" path="res://overworld/npc/special/ruby.tscn" id="8_javja"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7da"]
-size = Vector2(77, 11)
 
 [node name="SandwichShop" type="Node2D"]
 
@@ -60,17 +57,11 @@ position = Vector2(63, -11)
 unique_name_in_owner = true
 
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_t4dy4")]
-position = Vector2(32, 273)
-scale = Vector2(2.56, 0.44)
+position = Vector2(32, 291)
+scale = Vector2(-1, -1)
 target_room = "res://overworld/room/main_street.tscn"
-target_door = 0
+target_door = 1
 
 [node name="BGM_Load" type="Node" parent="."]
 script = ExtResource("5_1x6n6")
 music = ExtResource("6_aff8d")
-
-[node name="Barrier" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier"]
-position = Vector2(31, 288.5)
-shape = SubResource("RectangleShape2D_ug7da")
