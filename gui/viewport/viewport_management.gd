@@ -1,20 +1,23 @@
-extends Node
 class_name ViewportManager
+extends Node
+
 
 @export var pause_scene: PackedScene
 @export var transition_time := 0.2
 
 @onready var pixel_level_root := $PixelScene/SubViewport as SubViewport
 @onready var hi_res_gui_root := $HiResGUIRoot as Control
-
 @onready var trans := $TransitionFX as ColorRect
+
 
 func _ready() -> void:
 	GameManager.viewport = self
 
-func pause(is_paused :bool) -> void:
+
+func pause(is_paused: bool) -> void:
 	if is_inside_tree():
 		get_tree().paused = is_paused
+
 
 func swap_scene(scene: Node, fade_out := true, fade_in := true, new_size := Vector2.ZERO) -> Node:
 	pause(true)
@@ -35,13 +38,15 @@ func swap_scene(scene: Node, fade_out := true, fade_in := true, new_size := Vect
 	pause(false)
 	
 	return prev_scene
+
 	
 func fade(target := 1.0) -> void:
 	var t := get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	t.tween_property(trans, "modulate:a", target, transition_time)
 	await t.finished # makes this func awaitable
 
-func do_dialog(dialog : Dialog) -> void:
+
+func do_dialog(dialog: Dialog) -> void:
 	hi_res_gui_root.call_deferred("add_child", dialog)
 	var player := pixel_level_root.get_child(0).get_node(GameManager.PLAYER_PATH) as Player
 	player.is_animated = true
@@ -50,6 +55,7 @@ func do_dialog(dialog : Dialog) -> void:
 	await dialog.tree_exiting
 	player.is_animated = false
 
+
 func do_loot_screen(loot: LootScreen) -> void:
 	hi_res_gui_root.call_deferred("add_child", loot)
 	var player := pixel_level_root.get_child(0).get_node(GameManager.PLAYER_PATH) as Player
@@ -57,6 +63,7 @@ func do_loot_screen(loot: LootScreen) -> void:
 	await loot.tree_exiting
 	GameManager.player_inventory.consume_inventory(loot.loot)
 	player.is_animated = false
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):

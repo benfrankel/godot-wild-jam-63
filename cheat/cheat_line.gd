@@ -67,7 +67,12 @@ func attempt_cheat(code: String) -> void:
 		"/dogmode": do_dogmode()
 		"/1987" : do_bite_mode()
 		"/pyrious": do_pyrious()
+		"/clear": do_clear()
 		_: print("Invalid cheat code: ", code)
+
+
+func do_clear() -> void:
+	vfx_rect.visible = not vfx_rect.visible
 
 
 func do_hocuspocus() -> void:
