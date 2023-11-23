@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="1_vaw1r"]
 [ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="2_jt62r"]
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="3_me17j"]
-[ext_resource type="Resource" uid="uid://bhiy5seawhav8" path="res://item/boss/BossItemBeer.tres" id="3_vi2xy"]
+[ext_resource type="Resource" uid="uid://bhiy5seawhav8" path="res://item/boss/beer/ItemBeer.tres" id="3_vi2xy"]
 [ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="4_86d6p"]
 [ext_resource type="Script" path="res://item/inventory.gd" id="4_uaaw8"]
 [ext_resource type="PackedScene" uid="uid://go8wioqaw0wh" path="res://combat/projectile/glass_cup/glass_cup_M.tscn" id="5_tvs38"]

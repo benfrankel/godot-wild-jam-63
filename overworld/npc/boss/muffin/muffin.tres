@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chd0srhk8arrb" path="res://combat/projectile/sandwich.tscn" id="3_78jkg"]
 [ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_cy50v"]
 [ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="4_d70fk"]
-[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://item/consumable/ItemCatnip.tres" id="4_snedj"]
+[ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://item/consumable/catnip/ItemCatnip.tres" id="4_snedj"]
 [ext_resource type="Script" path="res://item/inventory.gd" id="5_4g5y1"]
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="5_mtnxy"]
 [ext_resource type="PackedScene" uid="uid://r5nxd4ax7gr0" path="res://combat/projectile/yarn_ball/yarn_ball_M.tscn" id="6_j1gsh"]
