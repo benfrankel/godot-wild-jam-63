@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://r4yxqyce07n1"]
+[gd_scene load_steps=22 format=3 uid="uid://r4yxqyce07n1"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_e4t5u"]
-[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_wfug2"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_4k55o"]
 [ext_resource type="PackedScene" uid="uid://tgstmbbg871e" path="res://overworld/npc/special/item_tutorial_cat.tscn" id="3_a4mlk"]
 [ext_resource type="PackedScene" uid="uid://cq6sv218kthwx" path="res://overworld/npc/generic/npc1.tscn" id="4_eqpp1"]
@@ -67,10 +66,6 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(1048586, 655369, 8, 786439, 524297, 6)
 
-[node name="Player" parent="TileMap" instance=ExtResource("2_wfug2")]
-unique_name_in_owner = true
-position = Vector2(113, 35)
-
 [node name="ItemTutorialCat" parent="TileMap" instance=ExtResource("3_a4mlk")]
 position = Vector2(21, 298)
 
@@ -95,31 +90,31 @@ unique_name_in_owner = true
 [node name="IntroRoom" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(-97, 451)
 rotation = 3.14159
-target_room = "res://overworld/room/intro_room.tscn"
+target_room = 0
 target_door = 0
 
 [node name="SandwichShop" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(31, -131)
-target_room = "res://overworld/room/sandwich_shop.tscn"
+target_room = 2
 target_door = 0
 requirement = ExtResource("4_jrvde")
 
 [node name="TailorShop" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(255, -131)
-target_room = "res://overworld/room/tailor_shop.tscn"
+target_room = 3
 target_door = 0
 requirement = ExtResource("5_mb2a7")
 
 [node name="Church" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(703, -131)
-target_room = "res://overworld/room/church.tscn"
+target_room = 4
 target_door = 0
 requirement = ExtResource("6_l3b4c")
 
 [node name="Hideout" parent="Doors" instance=ExtResource("3_4k55o")]
 position = Vector2(287, 611)
 scale = Vector2(-1, -1)
-target_room = "res://overworld/room/hideout.tscn"
+target_room = 5
 target_door = 0
 requirement = ExtResource("7_i6itj")
 

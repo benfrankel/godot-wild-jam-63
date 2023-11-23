@@ -14,35 +14,38 @@ var viewport: ViewportManager
 var scene_backup: Node
 var pausing_allowed := false
 # load from default inventory for testing with different items
-var player_inventory := preload("res://overworld/player/PlayerDefaultInventory.tres") as Inventory
+var player: Player
 var combat_size := Vector2(320.0, 180.0)
 var overworld_size := Vector2(320.0, 180.0)
 var dog_mode := false
 var bite_mode := false
 var won_last_combat := false
+var rooms: Array[Node] = [
+	preload("res://overworld/room/intro_room.tscn").instantiate(),
+	preload("res://overworld/room/main_street.tscn").instantiate(),
+	preload("res://overworld/room/sandwich_shop.tscn").instantiate(),
+	preload("res://overworld/room/tailor_shop.tscn").instantiate(),
+	preload("res://overworld/room/church.tscn").instantiate(),
+	preload("res://overworld/room/hideout.tscn").instantiate(),
+]
 
 
-func enter_room(room_path: String, door_idx: int = -1) -> void:
-	var room := (load(room_path) as PackedScene).instantiate()
-	
-	# Teleport player to target door
-	if door_idx != -1:
-		var player := viewport.pixel_level_root.get_child(0).get_node(PLAYER_PATH) as Player
-		var next_player := room.get_node(PLAYER_PATH) as Player
-		var next_door := room.get_node(DOORS_PATH).get_children()[door_idx] as Door
-		next_player.global_position = next_door.exit_position()
-		next_player.speed = player.speed
-		var anim_tree := next_player.get_node("AnimationTree") as AnimationTree
-		anim_tree.set("parameters/Idle/blend_position", player.anim_tree.get("parameters/Idle/blend_position"))
-		anim_tree.set("parameters/Walk/blend_position", player.anim_tree.get("parameters/Walk/blend_position"))
+func enter_room(room_idx: int, door_idx: int = -1) -> void:
+	assert(0 <= room_idx and room_idx < rooms.size())
+	var room := rooms[room_idx]
+	if not player:
+		player = room.get_node(PLAYER_PATH) as Player
 
 	pausing_allowed = false
-	var old_room := await viewport.swap_scene(room, true, false, overworld_size)
-	if old_room:
-		old_room.queue_free()
 	
-	var player := viewport.pixel_level_root.get_child(0).get_node(PLAYER_PATH) as Player
-	player.anim_tree.advance(0.0)
+	await viewport.swap_scene(room, true, false, overworld_size)
+	
+	# Teleport player into the room at the exit door
+	if door_idx != -1:
+		var exit_door := room.get_node(DOORS_PATH).get_children()[door_idx] as Door
+		player.global_position = exit_door.exit_position()
+	player.reparent(room.get_node("TileMap"))
+
 	viewport.pause(true)
 	await viewport.fade(0.0)
 	viewport.pause(false)

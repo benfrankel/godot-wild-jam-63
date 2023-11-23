@@ -21,12 +21,12 @@ func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_accept") or not has_focus():
 		return
 	
-	var item := GameManager.player_inventory.items.pop_at(slot) as Item
+	var item := GameManager.player.inventory.items.pop_at(slot) as Item
 	item.apply_effects(combat_state)
 
 
 func update() -> void:
-	icon.texture = GameManager.player_inventory.items[slot].texture
+	icon.texture = GameManager.player.inventory.items[slot].texture
 	if has_focus():
 		stylebox.set_border_width_all(1)
 	else:

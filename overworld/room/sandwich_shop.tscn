@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhixxfusjb4mv"]
+[gd_scene load_steps=8 format=3 uid="uid://bhixxfusjb4mv"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_dnnd0"]
-[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_i0bod"]
 [ext_resource type="PackedScene" uid="uid://bt318oqn6o5e0" path="res://overworld/npc/generic/npc5.tscn" id="3_6q3c1"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_t4dy4"]
 [ext_resource type="PackedScene" uid="uid://bt0v6ie6u3wyq" path="res://overworld/npc/boss/lady_muttonsnuf/lady_muttonsnuf.tscn" id="5_r6d14"]
@@ -40,10 +39,6 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
-[node name="Player" parent="TileMap" instance=ExtResource("2_i0bod")]
-unique_name_in_owner = true
-position = Vector2(34, 228)
-
 [node name="NPC5" parent="TileMap" instance=ExtResource("3_6q3c1")]
 position = Vector2(159, 117)
 
@@ -59,7 +54,7 @@ unique_name_in_owner = true
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_t4dy4")]
 position = Vector2(32, 291)
 scale = Vector2(-1, -1)
-target_room = "res://overworld/room/main_street.tscn"
+target_room = 1
 target_door = 1
 
 [node name="BGMLoad" type="Node" parent="."]

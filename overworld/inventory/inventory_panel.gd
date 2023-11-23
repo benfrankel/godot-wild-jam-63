@@ -22,14 +22,14 @@ enum InventoryStyle {
 
 func _ready() -> void:
 	if not inventory:
-		inventory = GameManager.player_inventory
+		inventory = GameManager.player.inventory
 	reload_visuals()
 
 
 func load_inventory(inv: Inventory) -> void:
 	inventory = inv
 	if not inventory:
-		inventory = GameManager.player_inventory
+		inventory = GameManager.player.inventory
 	reload_visuals()
 
 

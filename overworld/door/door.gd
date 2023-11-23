@@ -2,15 +2,15 @@ class_name Door
 extends Area2D
 
 
-@export_file("*.tscn") var target_room: String
-@export var target_door := -1
+@export var target_room: int = -1
+@export var target_door: int = -1
 @export var requirement: Item
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group(GameManager.PLAYER_GROUP):
 		return
-	if requirement and not GameManager.player_inventory.has_item(requirement):
+	if requirement and not GameManager.player.inventory.has_item(requirement):
 		return
 
 	GameManager.enter_room(target_room, target_door)

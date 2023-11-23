@@ -1,8 +1,8 @@
 extends Control
 
 
-@export_file("*.tscn") var start_scene := ""
 @export_file("*.tscn") var start_ui := ""
+@export var start_room: int = -1
 
 @onready var quit_btn := %BtnQuit as Button
 @onready var play_btn := %BtnPlay as Button
@@ -20,7 +20,7 @@ func _on_btn_play_pressed() -> void:
 	queue_free()
 	var ui := (load(start_ui) as PackedScene).instantiate()
 	GameManager.viewport.hi_res_gui_root.add_child(ui)
-	GameManager.enter_room(start_scene)
+	GameManager.enter_room(start_room)
 
 
 func _on_btn_quit_pressed() -> void:

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://di58vs8f3t0nv"]
+[gd_scene load_steps=7 format=3 uid="uid://di58vs8f3t0nv"]
 
 [ext_resource type="TileSet" uid="uid://cnsrref7v5e22" path="res://overworld/room/tiles/main_tile_set.tres" id="1_5d5e5"]
-[ext_resource type="PackedScene" uid="uid://cy55kyr0fh46x" path="res://overworld/player/player.tscn" id="2_d22be"]
 [ext_resource type="PackedScene" uid="uid://c3aj4q7x1mqan" path="res://overworld/door/door.tscn" id="3_f7pq7"]
 [ext_resource type="PackedScene" uid="uid://bjg3ahy5gyfwo" path="res://overworld/npc/special/cutie_pie.tscn" id="3_hma1a"]
 [ext_resource type="PackedScene" uid="uid://c8x5ujewyqavo" path="res://overworld/npc/boss/muffin/muffin.tscn" id="4_doel5"]
@@ -39,10 +38,6 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(589828, 524297, 3, 589835, 524297, 3, 786453, 589833, 0)
 
-[node name="Player" parent="TileMap" instance=ExtResource("2_d22be")]
-unique_name_in_owner = true
-position = Vector2(-69, -112)
-
 [node name="CutiePieNPC" parent="TileMap" instance=ExtResource("3_hma1a")]
 position = Vector2(-110, -86)
 
@@ -54,7 +49,7 @@ unique_name_in_owner = true
 
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_f7pq7")]
 position = Vector2(-65, -166)
-target_room = "res://overworld/room/main_street.tscn"
+target_room = 1
 target_door = 4
 
 [node name="BGMLoad" type="Node" parent="."]

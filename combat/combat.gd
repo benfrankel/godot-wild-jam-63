@@ -47,7 +47,7 @@ func _ready() -> void:
 	sus_meter.max_value = enemy.max_suspicion
 	laser.move_to_mouse()
 	exhaustion_timer.start(enemy.exhaustion_cooldown)
-	for idx in GameManager.player_inventory.items.size():
+	for idx in GameManager.player.inventory.items.size():
 		var item_entry := ITEM_ENTRY_SCENE.instantiate() as CombatItemEntry
 		item_entry.slot = idx
 		item_entry.combat_state = state

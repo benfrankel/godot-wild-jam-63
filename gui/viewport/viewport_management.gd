@@ -48,7 +48,7 @@ func fade(target := 1.0) -> void:
 
 func do_dialog(dialog: Dialog) -> void:
 	hi_res_gui_root.call_deferred("add_child", dialog)
-	var player := pixel_level_root.get_child(0).get_node(GameManager.PLAYER_PATH) as Player
+	var player := GameManager.player
 	player.is_animated = true
 	player.anim_tree.set("parameters/conditions/moving", false)
 	player.anim_tree.set("parameters/conditions/not_moving", true)
@@ -58,10 +58,10 @@ func do_dialog(dialog: Dialog) -> void:
 
 func do_loot_screen(loot: LootScreen) -> void:
 	hi_res_gui_root.call_deferred("add_child", loot)
-	var player := pixel_level_root.get_child(0).get_node(GameManager.PLAYER_PATH) as Player
+	var player := GameManager.player
 	player.is_animated = true
 	await loot.tree_exiting
-	GameManager.player_inventory.consume_inventory(loot.loot)
+	GameManager.player.inventory.consume_inventory(loot.loot)
 	player.is_animated = false
 
 

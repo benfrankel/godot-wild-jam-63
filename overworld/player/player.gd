@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export_range(0.0, 1000.0) var speed := 100.0
 
 var is_animated := false
+var inventory := preload("res://overworld/player/PlayerDefaultInventory.tres") as Inventory
 
 @onready var anim_tree := $AnimationTree as AnimationTree
 @onready var interact_sensor := $InteractionSensor as RayCast2D

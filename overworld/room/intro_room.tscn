@@ -51,7 +51,7 @@ unique_name_in_owner = true
 
 [node name="MainStreet" parent="Doors" instance=ExtResource("3_gdal2")]
 position = Vector2(256, -99)
-target_room = "res://overworld/room/main_street.tscn"
+target_room = 1
 target_door = 0
 requirement = ExtResource("4_l5ghw")
 

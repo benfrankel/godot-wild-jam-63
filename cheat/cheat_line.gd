@@ -79,10 +79,7 @@ func do_hocuspocus() -> void:
 	var vfx := preload("res://cheat/hocus_pocus_vfx.tscn").instantiate() as CPUParticles2D
 	vfx.one_shot = true
 	vfx.emitting = true
-	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Player
-	if not player:
-		push_warning("failed to find player target for hocus pocus")
-		return
+	var player := GameManager.player
 	player.add_sibling(vfx)
 	# center where player is looking
 	vfx.position = player.position + 30.0 * Vector2.from_angle(player.interact_sensor.rotation)
@@ -97,8 +94,7 @@ func do_pspspsps() -> void:
 
 
 func do_anypercent() -> void:
-	var player := get_tree().get_first_node_in_group(GameManager.PLAYER_GROUP) as Player
-	player.speed = 200.0
+	GameManager.player.speed = 200.0
 
 
 func do_openyoureyes() -> void:
