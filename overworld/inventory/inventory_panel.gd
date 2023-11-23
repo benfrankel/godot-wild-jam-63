@@ -1,8 +1,8 @@
-extends PanelContainer
 class_name InventoryPanel
+extends PanelContainer
 
 
-signal item_action_pressed(item : Item)
+signal item_action_pressed(item: Item)
 
 
 enum InventoryStyle {

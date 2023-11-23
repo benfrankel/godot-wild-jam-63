@@ -36,7 +36,7 @@ content_margin_bottom = 24.0
 bg_color = Color(1, 1, 1, 0.333333)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5txm"]
-bg_color = Color(0.203922, 0.133333, 0.278431, 0.321569)
+bg_color = Color(0.203922, 0.133333, 0.278431, 0.713726)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
