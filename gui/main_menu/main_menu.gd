@@ -20,6 +20,7 @@ func _on_btn_play_pressed() -> void:
 	queue_free()
 	var ui := (load(start_ui) as PackedScene).instantiate()
 	GameManager.viewport.hi_res_gui_root.add_child(ui)
+	GameManager.unlock()
 	GameManager.enter_room(start_room)
 
 

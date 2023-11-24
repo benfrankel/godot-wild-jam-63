@@ -15,6 +15,11 @@ static func create(inv: Inventory) -> LootScreen:
 	return l
 
 
+func run() -> void:
+	await GameManager.do_ui(self)
+	GameManager.player.inventory.consume_inventory(loot)
+
+
 func _ready() -> void:
 	node_loot.load_inventory(loot)
 

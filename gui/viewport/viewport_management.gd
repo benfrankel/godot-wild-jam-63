@@ -46,27 +46,7 @@ func fade(target := 1.0) -> void:
 	await t.finished # makes this func awaitable
 
 
-func do_dialog(dialog: Dialog) -> void:
-	hi_res_gui_root.call_deferred("add_child", dialog)
-	var player := GameManager.player
-	player.is_animated = true
-	player.anim_tree.set("parameters/conditions/moving", false)
-	player.anim_tree.set("parameters/conditions/not_moving", true)
-	await dialog.tree_exiting
-	player.is_animated = false
-
-
-func do_loot_screen(loot: LootScreen) -> void:
-	hi_res_gui_root.call_deferred("add_child", loot)
-	var player := GameManager.player
-	player.is_animated = true
-	await loot.tree_exiting
-	GameManager.player.inventory.consume_inventory(loot.loot)
-	player.is_animated = false
-
-
 func _unhandled_input(event: InputEvent) -> void:
-	if GameManager.pausing_allowed and event.is_action_pressed("exit"):
+	if not GameManager.is_locked and event.is_action_pressed("exit"):
 		get_viewport().set_input_as_handled()
-		var p := pause_scene.instantiate()
-		hi_res_gui_root.add_child(p)
+		GameManager.do_ui(pause_scene.instantiate())

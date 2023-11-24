@@ -32,7 +32,7 @@ func _try_do_combat() -> void:
 		return
 
 	var enemy: Enemy = enemy_list.pick_random() if not enemy_list.is_empty() else EnemyGen.random_enemy()
-	if await GameManager.enter_combat(enemy) and clear_on_win:
+	if await GameManager.do_combat(enemy) and clear_on_win:
 		is_active = false
 
 func _get_cell(global_pos: Vector2) -> Vector2:

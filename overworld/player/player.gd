@@ -4,7 +4,6 @@ extends CharacterBody2D
 
 @export_range(0.0, 1000.0) var speed := 100.0
 
-var is_animated := false
 var inventory := preload("res://overworld/player/PlayerDefaultInventory.tres") as Inventory
 
 @onready var anim_tree := $AnimationTree as AnimationTree
@@ -12,7 +11,7 @@ var inventory := preload("res://overworld/player/PlayerDefaultInventory.tres") a
 
 
 func _physics_process(_delta: float) -> void:
-	if is_animated:
+	if GameManager.is_locked:
 		return
 
 	var direction := Input.get_vector("left", "right", "up", "down")

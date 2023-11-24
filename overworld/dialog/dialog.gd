@@ -18,10 +18,14 @@ var tween: Tween
 
 
 ## Utility function to load a dialog with specific data
-static func create_dialog(data: DialogData) -> Dialog:
+static func create(data: DialogData) -> Dialog:
 	var d := load(DIALOG_SCENE).instantiate() as Dialog
 	d.current_data = data
 	return d
+
+
+func run() -> void:
+	await GameManager.do_ui(self)
 
 
 func _ready() -> void:

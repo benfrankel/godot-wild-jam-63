@@ -13,12 +13,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_text_newline") and has_focus():
 		get_viewport().set_input_as_handled()
 		exit_cheat_mode()
-	elif event.is_action_pressed("cheat") and GameManager.pausing_allowed and not get_tree().paused:
+	elif event.is_action_pressed("cheat") and not GameManager.is_locked:
 		enter_cheat_mode()
 
 
 func enter_cheat_mode() -> void:
-	GameManager.pausing_allowed = false
+	await GameManager.lock()
 	get_tree().paused = true
 	grab_focus()
 	visible = true
@@ -47,7 +47,6 @@ func enter_cheat_mode() -> void:
 
 
 func exit_cheat_mode() -> void:
-	GameManager.pausing_allowed = true
 	get_tree().paused = false
 	release_focus()
 	attempt_cheat(text)
@@ -55,7 +54,7 @@ func exit_cheat_mode() -> void:
 	text = ""
 	
 	vfx_rect.material = backup_vfx
-
+	GameManager.unlock()
 
 
 func attempt_cheat(code: String) -> void:
@@ -90,7 +89,7 @@ func do_hocuspocus() -> void:
 
 
 func do_pspspsps() -> void:
-	GameManager.enter_combat(EnemyGen.random_enemy())
+	GameManager.do_combat(EnemyGen.random_enemy())
 
 
 func do_anypercent() -> void:
@@ -111,4 +110,4 @@ func do_bite_mode() -> void:
 
 
 func do_pyrious() -> void:
-	GameManager.enter_combat(load("res://overworld/npc/boss/muffin/muffin.tres"))
+	GameManager.do_combat(load("res://overworld/npc/boss/muffin/muffin.tres"))

@@ -37,22 +37,18 @@ func interact() -> void:
 	is_active = false
 
 	interacted_with.emit()
-	
-	GameManager.pausing_allowed = false
 
 	if dialog:
-		await GameManager.do_dialog(Dialog.create_dialog(dialog))
+		await Dialog.create(dialog).run()
 	if gift:
-		await GameManager.viewport.do_loot_screen(LootScreen.create(Inventory.from_items(gift.duplicate())))
+		await LootScreen.create(Inventory.from_items(gift.duplicate())).run()
 		gift.clear()
 	if enemy:
-		if await GameManager.enter_combat(enemy):
+		if await GameManager.do_combat(enemy):
 			enemy = null
 			combat_won.emit()
 		else:
 			combat_lost.emit()
-
-	GameManager.pausing_allowed = true
 			
 	if not one_shot:
 		is_active = true

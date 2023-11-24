@@ -179,12 +179,11 @@ func get_global_arena_rect() -> Rect2:
 static func finish(enemy_: Enemy, win: bool) -> void:
 	await GameManager.exit_combat(win)
 	if win:
-		await GameManager.do_dialog(Dialog.create_dialog(enemy_.win_dialog))
+		await Dialog.create(enemy_.win_dialog).run()
 		if enemy_.win_loot and (enemy_.win_loot.items or enemy_.win_loot.boss_items):
-			await GameManager.viewport.do_loot_screen(LootScreen.create(enemy_.win_loot))
-		
+			await LootScreen.create(enemy_.win_loot).run()
 	else:
-		GameManager.do_dialog(Dialog.create_dialog(enemy_.lose_dialog))
+		Dialog.create(enemy_.lose_dialog).run()
 
 
 func _on_exhaustion_timer_timeout() -> void:

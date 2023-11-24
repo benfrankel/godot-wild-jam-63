@@ -8,11 +8,7 @@ var prior_mouse_state: Input.MouseMode
 
 
 func _ready() -> void:
-	prior_mouse_state = Input.mouse_mode # grab previous state
-	if not GameManager.pausing_allowed:
-		# mouse state is automatically applied when leaving the tree for any reason, so we need to know the state before queue free
-		queue_free()
-		return
+	prior_mouse_state = Input.mouse_mode
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE # pause menu requires mouse access
 	get_tree().paused = true
 	first_button.grab_focus()
