@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://b7thg02sjej0q" path="res://gui/theme/font/anna anthropy/Jaywalk.ttf" id="1_42eoq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7qkl"]
-bg_color = Color(0, 0, 0, 0)
+draw_center = false
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -15,12 +15,12 @@ expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4o12"]
-bg_color = Color(0, 0, 0, 0)
+draw_center = false
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 0.501961)
 expand_margin_left = 4.0
 expand_margin_top = 4.0
 expand_margin_right = 4.0
@@ -45,6 +45,7 @@ corner_radius_bottom_left = 8
 [resource]
 default_font = ExtResource("1_42eoq")
 default_font_size = 24
+Button/colors/font_hover_color = Color(0.87451, 0.87451, 0.87451, 1)
 Button/styles/focus = SubResource("StyleBoxFlat_f7qkl")
 Button/styles/hover = SubResource("StyleBoxFlat_l4o12")
 Button/styles/normal = SubResource("StyleBoxEmpty_fndkb")
