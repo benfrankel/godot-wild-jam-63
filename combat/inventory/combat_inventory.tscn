@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cleapq7vr4kfp"]
 
-[ext_resource type="Script" path="res://combat/inventory/combat_inventory.gd" id="1_7u6o3"]
+[ext_resource type="Script" uid="uid://bat7ljpdy1mdr" path="res://combat/inventory/combat_inventory.gd" id="1_7u6o3"]
 [ext_resource type="PackedScene" uid="uid://blts3g4blkbns" path="res://overworld/inventory/inventory_panel.tscn" id="1_opyor"]
 
 [node name="CombatInventory" type="Control"]

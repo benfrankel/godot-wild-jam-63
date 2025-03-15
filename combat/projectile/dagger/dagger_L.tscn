@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2rhohgveru23"]
 
-[ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_a8lne"]
+[ext_resource type="Script" uid="uid://d1i8h5g0rdmsg" path="res://combat/projectile/projectile.gd" id="1_a8lne"]
 [ext_resource type="Texture2D" uid="uid://c2rb6crfh7qtf" path="res://combat/projectile/dagger/weapon_daggers.png" id="1_rvva0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b7f0f"]

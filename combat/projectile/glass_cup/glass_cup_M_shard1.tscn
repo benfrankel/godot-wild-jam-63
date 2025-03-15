@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://5ueewki7f5r2"]
 
-[ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_xws6m"]
+[ext_resource type="Script" uid="uid://d1i8h5g0rdmsg" path="res://combat/projectile/projectile.gd" id="1_xws6m"]
 [ext_resource type="Texture2D" uid="uid://du7jmh35uwirw" path="res://combat/projectile/glass_cup/glass_cup_M_shard1.png" id="2_krram"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lojvs"]

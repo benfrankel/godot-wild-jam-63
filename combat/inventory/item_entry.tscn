@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cu6xo6ingr7om"]
 
-[ext_resource type="Script" path="res://combat/inventory/item_entry.gd" id="1_ehpbj"]
+[ext_resource type="Script" uid="uid://bob7xv8cqa6op" path="res://combat/inventory/item_entry.gd" id="1_ehpbj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3bgk"]
 resource_local_to_scene = true

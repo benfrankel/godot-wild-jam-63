@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4ur4d7j3iane"]
 
-[ext_resource type="Script" path="res://game/bgm/bgm.gd" id="1_02c61"]
+[ext_resource type="Script" uid="uid://dakq35u1y4068" path="res://game/bgm/bgm.gd" id="1_02c61"]
 
 [node name="BGM" type="Node"]
 process_mode = 3

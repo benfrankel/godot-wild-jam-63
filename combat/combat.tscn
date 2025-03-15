@@ -1,13 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://ck2541i45duru"]
+[gd_scene load_steps=20 format=3 uid="uid://ck2541i45duru"]
 
 [ext_resource type="PackedScene" uid="uid://d2wt5n12rfam" path="res://combat/laser/laser.tscn" id="1_dvnqk"]
-[ext_resource type="Script" path="res://combat/combat.gd" id="1_npvr5"]
+[ext_resource type="Script" uid="uid://4yu6af7blh4v" path="res://combat/combat.gd" id="1_npvr5"]
 [ext_resource type="Texture2D" uid="uid://1mqkiv64f08b" path="res://combat/combat_background.png" id="2_k3uv0"]
-[ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_1bgdu"]
+[ext_resource type="Script" uid="uid://dxcofoj53366t" path="res://combat/phase/attack_phase.gd" id="2_q6cuf"]
+[ext_resource type="Script" uid="uid://dksdsh7mqc6q" path="res://combat/enemy/enemy.gd" id="3_1bgdu"]
 [ext_resource type="Texture2D" uid="uid://b0xjckorhdlei" path="res://overworld/encounter/mutant1.png" id="4_fikq3"]
 [ext_resource type="Texture2D" uid="uid://opfqa6ickmd0" path="res://combat/arena_background.png" id="4_gsscs"]
-[ext_resource type="Script" path="res://cheat/bite_mode/bite_buffer.gd" id="6_s4gui"]
-[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="8_s33d5"]
+[ext_resource type="Script" uid="uid://bgx7wa80hw5b4" path="res://cheat/bite_mode/bite_buffer.gd" id="6_s4gui"]
+[ext_resource type="Script" uid="uid://dl80v2g5su6ja" path="res://game/bgm/bgm_load.gd" id="8_s33d5"]
 [ext_resource type="AudioStream" uid="uid://cmeqt0hd72clv" path="res://game/bgm/PixelPunch_By_Dk.wav" id="9_dj5up"]
 [ext_resource type="AudioStream" uid="uid://bapl7s41vr2nw" path="res://combat/hit.wav" id="10_mnyim"]
 
@@ -20,7 +21,7 @@ bg_overlay_color = Color(0.121569, 0.133333, 0.160784, 1)
 max_exhaustion = 20.0
 exhaustion_cooldown = 0.5
 max_suspicion = 8.0
-attack_phases = Array[Resource("res://combat/phase/attack_phase.gd")]([])
+attack_phases = Array[ExtResource("2_q6cuf")]([])
 
 [sub_resource type="Gradient" id="Gradient_sdbt7"]
 offsets = PackedFloat32Array(1)

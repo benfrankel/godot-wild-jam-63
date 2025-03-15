@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://clg0g6yo6l2st"]
 
-[ext_resource type="Script" path="res://item/item.gd" id="2_1e65q"]
+[ext_resource type="Script" uid="uid://2gybd6tqky0y" path="res://item/item.gd" id="2_1e65q"]
 [ext_resource type="Texture2D" uid="uid://cxhr6fl3xjt26" path="res://item/boss/tasty_sandwich/sandwich.png" id="3_1rwew"]
 
 [resource]

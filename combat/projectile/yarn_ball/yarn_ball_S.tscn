@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bw747i8qe5l7b"]
 
-[ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_ctppt"]
+[ext_resource type="Script" uid="uid://d1i8h5g0rdmsg" path="res://combat/projectile/projectile.gd" id="1_ctppt"]
 [ext_resource type="Texture2D" uid="uid://b8r7we2r5wvih" path="res://combat/projectile/yarn_ball/yarn_ball_S.png" id="2_mlvw5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y4jp0"]

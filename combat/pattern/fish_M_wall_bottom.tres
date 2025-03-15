@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AttackPattern" load_steps=3 format=3 uid="uid://codkvidpwdn3d"]
 
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="1_mvnsd"]
-[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_lj1l2"]
+[ext_resource type="Script" uid="uid://mqd2csx204fm" path="res://combat/pattern/attack_pattern.gd" id="2_lj1l2"]
 
 [resource]
 script = ExtResource("2_lj1l2")

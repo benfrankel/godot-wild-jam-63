@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy10q155606wn"]
 
-[ext_resource type="Script" path="res://overworld/loot_screen/loot_screen.gd" id="1_oros4"]
+[ext_resource type="Script" uid="uid://dwx2dt41hqxaw" path="res://overworld/loot_screen/loot_screen.gd" id="1_oros4"]
 [ext_resource type="PackedScene" uid="uid://blts3g4blkbns" path="res://overworld/inventory/inventory_panel.tscn" id="2_cekc6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5lbvm"]

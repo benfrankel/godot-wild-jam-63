@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3aj4q7x1mqan"]
 
-[ext_resource type="Script" path="res://overworld/door/door.gd" id="1_ewud0"]
+[ext_resource type="Script" uid="uid://b8gwlx3b75n1b" path="res://overworld/door/door.gd" id="1_ewud0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y335"]
 size = Vector2(114, 6)

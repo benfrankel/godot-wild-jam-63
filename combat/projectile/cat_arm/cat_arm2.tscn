@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://1hwv6e4l122q"]
 
-[ext_resource type="Script" path="res://combat/projectile/cat_arm/cat_arm.gd" id="1_3vdrx"]
+[ext_resource type="Script" uid="uid://bx65ks8w827ye" path="res://combat/projectile/cat_arm/cat_arm.gd" id="1_3vdrx"]
 [ext_resource type="Texture2D" uid="uid://dkp6qtg2eofgc" path="res://combat/projectile/cat_arm/arms.png" id="2_h26y6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0r6e"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ilcisjmvb23h"]
 
-[ext_resource type="Script" path="res://overworld/inventory/item_entry.gd" id="1_dgji7"]
+[ext_resource type="Script" uid="uid://bikfjpu13kg5l" path="res://overworld/inventory/item_entry.gd" id="1_dgji7"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7t0qy"]
 size = Vector2(16, 16)

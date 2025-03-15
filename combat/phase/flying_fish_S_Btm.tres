@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="AttackPhase" load_steps=5 format=3 uid="uid://ddkw62opfid4p"]
 
 [ext_resource type="PackedScene" uid="uid://ddykboalfb6lh" path="res://combat/projectile/dead_fish/dead_fish_S.tscn" id="1_2ryd2"]
-[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_basl1"]
-[ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="3_my7ie"]
+[ext_resource type="Script" uid="uid://mqd2csx204fm" path="res://combat/pattern/attack_pattern.gd" id="2_basl1"]
+[ext_resource type="Script" uid="uid://dxcofoj53366t" path="res://combat/phase/attack_phase.gd" id="3_my7ie"]
 
 [sub_resource type="Resource" id="Resource_n754q"]
 script = ExtResource("2_basl1")

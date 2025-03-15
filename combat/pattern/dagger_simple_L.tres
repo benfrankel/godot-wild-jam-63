@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AttackPattern" load_steps=3 format=3 uid="uid://cg2314ggu6pfb"]
 
 [ext_resource type="PackedScene" uid="uid://d2rhohgveru23" path="res://combat/projectile/dagger/dagger_L.tscn" id="1_ahpk8"]
-[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_sr3ep"]
+[ext_resource type="Script" uid="uid://mqd2csx204fm" path="res://combat/pattern/attack_pattern.gd" id="2_sr3ep"]
 
 [resource]
 script = ExtResource("2_sr3ep")

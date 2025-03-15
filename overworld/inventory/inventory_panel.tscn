@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://blts3g4blkbns"]
 
 [ext_resource type="PackedScene" uid="uid://ilcisjmvb23h" path="res://overworld/inventory/item_entry.tscn" id="1_42vg2"]
-[ext_resource type="Script" path="res://overworld/inventory/inventory_panel.gd" id="1_hvdv6"]
+[ext_resource type="Script" uid="uid://bb6yh5mhcrhn6" path="res://overworld/inventory/inventory_panel.gd" id="1_hvdv6"]
 
 [node name="InventoryPanel" type="PanelContainer"]
 script = ExtResource("1_hvdv6")

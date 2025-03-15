@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjg3ahy5gyfwo"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_80p4h"]
-[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_gvxyf"]
-[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_7nj4c"]
+[ext_resource type="Script" uid="uid://b5v3uuyurmkps" path="res://overworld/interaction/interaction_component.gd" id="2_gvxyf"]
+[ext_resource type="Script" uid="uid://3lresu3wrwfa" path="res://overworld/dialog/dialog_data.gd" id="3_7nj4c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0

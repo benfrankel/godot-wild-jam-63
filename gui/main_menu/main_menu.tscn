@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c2vgewmf8wsju"]
 
 [ext_resource type="Texture2D" uid="uid://bhpbwdxan7dh7" path="res://gui/cover_x4.png" id="1_okuy6"]
-[ext_resource type="Script" path="res://gui/main_menu/main_menu.gd" id="1_r6xid"]
-[ext_resource type="Script" path="res://game/bgm/bgm_load.gd" id="3_540sc"]
+[ext_resource type="Script" uid="uid://b204oresc568r" path="res://gui/main_menu/main_menu.gd" id="1_r6xid"]
+[ext_resource type="Script" uid="uid://dl80v2g5su6ja" path="res://game/bgm/bgm_load.gd" id="3_540sc"]
 [ext_resource type="AudioStream" uid="uid://cgkjm41y6o2ei" path="res://game/bgm/song1.wav" id="4_i5amu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbfow"]

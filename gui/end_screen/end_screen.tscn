@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://burk45w5oh7h2"]
 
-[ext_resource type="Script" path="res://gui/end_screen/end_screen.gd" id="1_6mcns"]
+[ext_resource type="Script" uid="uid://ciww2l36xq5r6" path="res://gui/end_screen/end_screen.gd" id="1_6mcns"]
 [ext_resource type="Texture2D" uid="uid://bhpbwdxan7dh7" path="res://gui/cover_x4.png" id="2_6x1n8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w45fn"]
@@ -55,8 +55,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5hwku"]
 _data = {
-"RESET": SubResource("Animation_hhnl0"),
-"text_scroll": SubResource("Animation_61oc7")
+&"RESET": SubResource("Animation_hhnl0"),
+&"text_scroll": SubResource("Animation_61oc7")
 }
 
 [node name="EndScreen" type="Control"]

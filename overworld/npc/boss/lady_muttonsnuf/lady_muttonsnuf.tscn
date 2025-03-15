@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bt0v6ie6u3wyq"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_vtaun"]
-[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_27sga"]
-[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_ym0th"]
+[ext_resource type="Script" uid="uid://b5v3uuyurmkps" path="res://overworld/interaction/interaction_component.gd" id="2_27sga"]
+[ext_resource type="Script" uid="uid://3lresu3wrwfa" path="res://overworld/dialog/dialog_data.gd" id="3_ym0th"]
 [ext_resource type="Resource" uid="uid://cwh30jr4tiyjd" path="res://overworld/npc/boss/lady_muttonsnuf/lady_muttonsnuf.tres" id="4_5xxok"]
 [ext_resource type="Texture2D" uid="uid://buu6kvq4oyswp" path="res://overworld/npc/accessories/npc_earring.png" id="5_5i5mj"]
 

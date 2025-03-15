@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://tgstmbbg871e"]
+[gd_scene load_steps=11 format=3 uid="uid://tgstmbbg871e"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_g2yfb"]
-[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_pab63"]
-[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_ioqtq"]
-[ext_resource type="Resource" uid="uid://bxlawrtuugwk8" path="res://item/consumable/ItemSprayBottle.tres" id="4_cunh0"]
-[ext_resource type="Resource" uid="uid://b7ihq53ypryco" path="res://item/consumable/ItemCucumber.tres" id="5_ysqxe"]
-[ext_resource type="Resource" uid="uid://ck51fflytvlgq" path="res://item/consumable/ItemCanTuna.tres" id="6_3q7u5"]
+[ext_resource type="Script" uid="uid://b5v3uuyurmkps" path="res://overworld/interaction/interaction_component.gd" id="2_pab63"]
+[ext_resource type="Script" uid="uid://3lresu3wrwfa" path="res://overworld/dialog/dialog_data.gd" id="3_ioqtq"]
+[ext_resource type="Resource" uid="uid://bxlawrtuugwk8" path="res://item/consumable/spray_bottle/ItemSprayBottle.tres" id="4_cunh0"]
+[ext_resource type="Script" uid="uid://2gybd6tqky0y" path="res://item/item.gd" id="4_rwmbr"]
+[ext_resource type="Resource" uid="uid://b7ihq53ypryco" path="res://item/consumable/cucumber/ItemCucumber.tres" id="5_ysqxe"]
+[ext_resource type="Resource" uid="uid://ck51fflytvlgq" path="res://item/consumable/canned_tuna/ItemCannedTuna.tres" id="6_3q7u5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqno1"]
 radius = 4.0
@@ -39,7 +40,7 @@ script = ExtResource("2_pab63")
 auto_trigger = true
 one_shot = true
 dialog = SubResource("Resource_n6q0v")
-gift = Array[Resource("res://item/item.gd")]([ExtResource("4_cunh0"), ExtResource("5_ysqxe"), ExtResource("6_3q7u5")])
+gift = Array[ExtResource("4_rwmbr")]([ExtResource("4_cunh0"), ExtResource("5_ysqxe"), ExtResource("6_3q7u5")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
 position = Vector2(0.5, 23.5)

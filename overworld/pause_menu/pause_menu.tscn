@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pknwhm1v0qh3"]
 
-[ext_resource type="Script" path="res://overworld/pause_menu/pause_menu.gd" id="1_an0tv"]
+[ext_resource type="Script" uid="uid://obrr4u6vos6t" path="res://overworld/pause_menu/pause_menu.gd" id="1_an0tv"]
 [ext_resource type="PackedScene" uid="uid://blts3g4blkbns" path="res://overworld/inventory/inventory_panel.tscn" id="1_gu0jv"]
 
 [node name="PauseMenu" type="Control"]

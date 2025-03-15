@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://btig22osf1onp"]
 
-[ext_resource type="Script" path="res://gui/viewport/viewport_management.gd" id="1_oukxq"]
+[ext_resource type="Script" uid="uid://ckm4rxj08hcp8" path="res://gui/viewport/viewport_management.gd" id="1_oukxq"]
 [ext_resource type="PackedScene" uid="uid://pknwhm1v0qh3" path="res://overworld/pause_menu/pause_menu.tscn" id="2_lrauu"]
 [ext_resource type="Material" uid="uid://dukmvhqtqsqu8" path="res://gui/viewport/screen_vfx/crt_screen_effect.tres" id="3_b8tx2"]
 [ext_resource type="PackedScene" uid="uid://c2vgewmf8wsju" path="res://gui/main_menu/main_menu.tscn" id="5_scb48"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://fi2xcmonrb8y"]
+[gd_scene load_steps=10 format=3 uid="uid://fi2xcmonrb8y"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_vew74"]
-[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_nx6o8"]
-[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_w60qa"]
-[ext_resource type="Resource" uid="uid://dl3wtk3igd3i" path="res://item/boss/BossItemLaser.tres" id="4_fgqia"]
+[ext_resource type="Script" uid="uid://b5v3uuyurmkps" path="res://overworld/interaction/interaction_component.gd" id="2_nx6o8"]
+[ext_resource type="Script" uid="uid://3lresu3wrwfa" path="res://overworld/dialog/dialog_data.gd" id="3_w60qa"]
+[ext_resource type="Resource" uid="uid://dl3wtk3igd3i" path="res://item/boss/laser_pointer/ItemLaserPointer.tres" id="4_fgqia"]
+[ext_resource type="Script" uid="uid://2gybd6tqky0y" path="res://item/item.gd" id="4_gbd1k"]
 [ext_resource type="Resource" uid="uid://cmxqg01v5elm0" path="res://overworld/npc/special/tutorial_cat.tres" id="5_y36yy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n10ug"]
@@ -38,7 +39,7 @@ script = ExtResource("2_nx6o8")
 auto_trigger = true
 one_shot = true
 dialog = SubResource("Resource_ucr13")
-gift = Array[Resource("res://item/item.gd")]([ExtResource("4_fgqia")])
+gift = Array[ExtResource("4_gbd1k")]([ExtResource("4_fgqia")])
 enemy = ExtResource("5_y36yy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]

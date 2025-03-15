@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://buth5bb0t35gq"]
 
 [ext_resource type="Texture2D" uid="uid://w1aukt5txrpp" path="res://overworld/npc/generic_npcs.png" id="1_rjxl8"]
-[ext_resource type="Script" path="res://overworld/interaction/interaction_component.gd" id="2_7f2to"]
-[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="3_jjl6u"]
+[ext_resource type="Script" uid="uid://b5v3uuyurmkps" path="res://overworld/interaction/interaction_component.gd" id="2_7f2to"]
+[ext_resource type="Script" uid="uid://3lresu3wrwfa" path="res://overworld/dialog/dialog_data.gd" id="3_jjl6u"]
 [ext_resource type="Resource" uid="uid://byluh5sbaxr8g" path="res://overworld/npc/goon/goon1.tres" id="4_buhpj"]
 [ext_resource type="Texture2D" uid="uid://dpbg1qtorkkm2" path="res://overworld/npc/accessories/npc_eyepatch.png" id="4_dguns"]
 

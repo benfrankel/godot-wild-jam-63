@@ -711,7 +711,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fdakc"]
 _data = {
-"anim": SubResource("Animation_plk30")
+&"anim": SubResource("Animation_plk30")
 }
 
 [node name="BiteModeVFX" type="PanelContainer"]

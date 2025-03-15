@@ -1,17 +1,18 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=27 format=3 uid="uid://ujojflk4xm3q"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=28 format=3 uid="uid://ujojflk4xm3q"]
 
-[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="1_7cfdg"]
+[ext_resource type="Script" uid="uid://3lresu3wrwfa" path="res://overworld/dialog/dialog_data.gd" id="1_7cfdg"]
 [ext_resource type="Resource" uid="uid://dgwccirpvoy7y" path="res://combat/phase/fish_corners_cw.tres" id="1_kk2le"]
 [ext_resource type="Texture2D" uid="uid://crchd6hq5fahb" path="res://overworld/npc/boss/ezekiel/ezekiel.png" id="2_gltc4"]
 [ext_resource type="PackedScene" uid="uid://bw747i8qe5l7b" path="res://combat/projectile/yarn_ball/yarn_ball_S.tscn" id="2_y4rnh"]
-[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="3_nhiiq"]
-[ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_xq1mj"]
+[ext_resource type="Script" uid="uid://mqd2csx204fm" path="res://combat/pattern/attack_pattern.gd" id="3_nhiiq"]
+[ext_resource type="Script" uid="uid://dksdsh7mqc6q" path="res://combat/enemy/enemy.gd" id="3_xq1mj"]
 [ext_resource type="Resource" uid="uid://df3ja020saton" path="res://item/boss/handcuffs/ItemHandcuffs.tres" id="4_5m1hf"]
-[ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="4_5ueka"]
+[ext_resource type="Script" uid="uid://dxcofoj53366t" path="res://combat/phase/attack_phase.gd" id="4_5ueka"]
 [ext_resource type="PackedScene" uid="uid://r5nxd4ax7gr0" path="res://combat/projectile/yarn_ball/yarn_ball_M.tscn" id="5_3fuhg"]
-[ext_resource type="Script" path="res://item/inventory.gd" id="5_pghpi"]
+[ext_resource type="Script" uid="uid://c47otkp0peevn" path="res://item/inventory.gd" id="5_pghpi"]
 [ext_resource type="PackedScene" uid="uid://deqkbfeyp4vi4" path="res://combat/projectile/dead_fish/dead_fish_M.tscn" id="6_b6cxu"]
 [ext_resource type="PackedScene" uid="uid://chd0srhk8arrb" path="res://combat/projectile/sandwich.tscn" id="7_ioxtf"]
+[ext_resource type="Script" uid="uid://2gybd6tqky0y" path="res://item/item.gd" id="11_2l0wm"]
 
 [sub_resource type="Resource" id="Resource_hh6l6"]
 script = ExtResource("3_nhiiq")
@@ -222,8 +223,8 @@ lines = Array[String](["Crooked be, oh my, oh me...", "*cough* *cough*", "Hey yo
 
 [sub_resource type="Resource" id="Resource_bj6d4"]
 script = ExtResource("5_pghpi")
-items = Array[Resource("res://item/item.gd")]([])
-boss_items = Array[Resource("res://item/item.gd")]([ExtResource("4_5m1hf")])
+items = Array[ExtResource("11_2l0wm")]([])
+boss_items = Array[ExtResource("11_2l0wm")]([ExtResource("4_5m1hf")])
 capacity = 10
 boss_items_capacity = 5
 

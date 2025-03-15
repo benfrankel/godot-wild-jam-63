@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=11 format=3 uid="uid://byluh5sbaxr8g"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=13 format=3 uid="uid://byluh5sbaxr8g"]
 
-[ext_resource type="Script" path="res://overworld/dialog/dialog_data.gd" id="1_vvs6q"]
+[ext_resource type="Script" uid="uid://dxcofoj53366t" path="res://combat/phase/attack_phase.gd" id="1_tal44"]
+[ext_resource type="Script" uid="uid://3lresu3wrwfa" path="res://overworld/dialog/dialog_data.gd" id="1_vvs6q"]
 [ext_resource type="Texture2D" uid="uid://hwbrf6hus47e" path="res://overworld/npc/boss/enemy_sheet.png" id="2_tno4r"]
-[ext_resource type="Script" path="res://combat/enemy/enemy.gd" id="3_ag372"]
+[ext_resource type="Script" uid="uid://dksdsh7mqc6q" path="res://combat/enemy/enemy.gd" id="3_ag372"]
 [ext_resource type="Resource" uid="uid://dilby1tktyy1i" path="res://item/consumable/milk/ItemMilk.tres" id="4_hndid"]
+[ext_resource type="Script" uid="uid://2gybd6tqky0y" path="res://item/item.gd" id="5_1vpgk"]
 [ext_resource type="Resource" uid="uid://yt2d713uneud" path="res://item/consumable/catnip/ItemCatnip.tres" id="5_ksx5w"]
-[ext_resource type="Script" path="res://item/inventory.gd" id="6_fhlss"]
+[ext_resource type="Script" uid="uid://c47otkp0peevn" path="res://item/inventory.gd" id="6_fhlss"]
 
 [sub_resource type="Resource" id="Resource_j73wm"]
 script = ExtResource("1_vvs6q")
@@ -27,8 +29,8 @@ lines = Array[String](["*huff* *puff* how're you so fast..."])
 
 [sub_resource type="Resource" id="Resource_bx88g"]
 script = ExtResource("6_fhlss")
-items = Array[Resource("res://item/item.gd")]([ExtResource("4_hndid"), ExtResource("5_ksx5w")])
-boss_items = Array[Resource("res://item/item.gd")]([])
+items = Array[ExtResource("5_1vpgk")]([ExtResource("4_hndid"), ExtResource("5_ksx5w")])
+boss_items = Array[ExtResource("5_1vpgk")]([])
 capacity = 10
 boss_items_capacity = 5
 
@@ -42,7 +44,7 @@ bg_overlay_color = Color(0.466667, 0.360784, 0.262745, 1)
 max_exhaustion = 20.0
 exhaustion_cooldown = 0.5
 max_suspicion = 8.0
-attack_phases = Array[Resource("res://combat/phase/attack_phase.gd")]([])
+attack_phases = Array[ExtResource("1_tal44")]([])
 win_loot = SubResource("Resource_bx88g")
 win_dialog = SubResource("Resource_x3hrn")
 lose_dialog = SubResource("Resource_j73wm")

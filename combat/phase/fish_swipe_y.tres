@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="AttackPhase" load_steps=10 format=3 uid="uid://bvwnumfyb401a"]
 
-[ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_7rv5t"]
-[ext_resource type="Script" path="res://combat/phase/attack_phase.gd" id="1_iqhxc"]
-[ext_resource type="Script" path="res://combat/pattern/attack_pattern.gd" id="2_af6d6"]
+[ext_resource type="Script" uid="uid://d1i8h5g0rdmsg" path="res://combat/projectile/projectile.gd" id="1_7rv5t"]
+[ext_resource type="Script" uid="uid://dxcofoj53366t" path="res://combat/phase/attack_phase.gd" id="1_iqhxc"]
+[ext_resource type="Script" uid="uid://mqd2csx204fm" path="res://combat/pattern/attack_pattern.gd" id="2_af6d6"]
 [ext_resource type="Texture2D" uid="uid://ck278etie6tkn" path="res://combat/projectile/dead_fish/dead_fish_M.png" id="2_atcug"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0fwm"]
@@ -87,6 +87,9 @@ delay = 0.0
 cooldown = 1.0
 count = 4
 position = Vector2(0, 0)
+position_step = Vector2(0, 0)
 rotation = 0.0
+rotation_step = 0.0
 scale = Vector2(1, 1)
+scale_step = Vector2(1, 1)
 patterns = Array[ExtResource("2_af6d6")]([SubResource("Resource_8v1pp"), SubResource("Resource_065vs")])

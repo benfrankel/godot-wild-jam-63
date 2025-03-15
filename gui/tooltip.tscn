@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dnnyxmnxwss2x"]
+
+[node name="Tooltip" type="Panel"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 12.0

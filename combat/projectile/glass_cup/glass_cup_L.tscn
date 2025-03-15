@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtv818xd0ui2r"]
 
-[ext_resource type="Script" path="res://combat/projectile/glass_cup/glass_cup_L.gd" id="1_yduw5"]
+[ext_resource type="Script" uid="uid://b33mr7t8b4c8a" path="res://combat/projectile/glass_cup/glass_cup_L.gd" id="1_yduw5"]
 [ext_resource type="Texture2D" uid="uid://cpja4tdrttltj" path="res://combat/projectile/glass_cup/glass_cup_L.png" id="2_ginfd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gd0xf"]

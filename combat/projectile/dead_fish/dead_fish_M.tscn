@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://deqkbfeyp4vi4"]
 
-[ext_resource type="Script" path="res://combat/projectile/projectile.gd" id="1_se47u"]
+[ext_resource type="Script" uid="uid://d1i8h5g0rdmsg" path="res://combat/projectile/projectile.gd" id="1_se47u"]
 [ext_resource type="Texture2D" uid="uid://ck278etie6tkn" path="res://combat/projectile/dead_fish/dead_fish_M.png" id="2_tsht0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0fwm"]
